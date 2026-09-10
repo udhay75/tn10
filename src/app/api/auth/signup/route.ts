@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { isMongoConfigured, getMongoDb } from '@/lib/db/mongodb';
 import { queryPostgres } from '@/lib/db/postgres';
 import { hashPassword } from '@/lib/auth/password';
+import { saveInMemoryUser } from '@/lib/auth/in-memory-users';
 import { StudentProfile } from '@/types';
 import crypto from 'crypto';
 
@@ -87,6 +88,20 @@ export async function POST(req: NextRequest) {
     } catch {
       // PostgreSQL not connected, fall through
     }
+
+    // 3. In-Memory Store for fallback
+    saveInMemoryUser({
+      id: userProfile.id,
+      email: normalizedEmail,
+      display_name: userProfile.display_name,
+      password_hash: hash,
+      salt: salt,
+      is_admin: Boolean(userProfile.is_admin),
+      class_code: userProfile.class_code,
+      medium_code: userProfile.medium_code,
+      interface_lang: userProfile.interface_lang,
+      created_at: userProfile.created_at,
+    });
 
     return NextResponse.json({ success: true, user: userProfile });
   } catch (err: any) {

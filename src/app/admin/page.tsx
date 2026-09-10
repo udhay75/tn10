@@ -1,9 +1,9 @@
 'use client';
 
 // ============================================================================
-// Admin Curriculum Console
-// Implements the 5-step reusable PDF import, draft review, and publishing workflow.
-// Enforces admin-only access and idempotent updates preserving student progress.
+// Admin Curriculum Console & Security Management
+// Implements 5-step PDF import workflow + Admin Account & Password Management.
+// Enforces strict admin-only access and persistent database updates.
 // ============================================================================
 
 import React, { useState } from 'react';
@@ -16,12 +16,17 @@ import {
   CheckCircle2, 
   Edit3, 
   Eye, 
+  EyeOff,
   RefreshCw, 
   Save, 
   ShieldCheck, 
   BookOpen,
   ArrowRight,
-  Sparkles
+  Sparkles,
+  KeyRound,
+  Lock,
+  Mail,
+  Layers
 } from 'lucide-react';
 import { useAuth } from '@/lib/auth/auth-context';
 import { useI18n } from '@/lib/i18n/i18n-context';
@@ -34,10 +39,21 @@ import { DraftChecklistItem, CurriculumDraft } from '@/types';
 import { cacheCurriculum } from '@/lib/db/indexeddb';
 
 export default function AdminPage() {
-  const { user, isAdmin, signInDemo } = useAuth();
+  const { user, isAdmin } = useAuth();
   const { t, lang } = useI18n();
-  const { curriculum } = useStudy();
+  const { curriculum, availableSubjects } = useStudy();
 
+  // Admin Password Management State
+  const [currentPassword, setCurrentPassword] = useState('');
+  const [newPassword, setNewPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [showPasswords, setShowPasswords] = useState(false);
+  const [passwordStatus, setPasswordStatus] = useState<{
+    type: 'idle' | 'loading' | 'success' | 'error';
+    message: string;
+  }>({ type: 'idle', message: '' });
+
+  // Curriculum PDF Import State
   const [activeDraft, setActiveDraft] = useState<CurriculumDraft | null>(null);
   const [draftItems, setDraftItems] = useState<DraftChecklistItem[]>([]);
   const [isExtracting, setIsExtracting] = useState(false);
@@ -50,30 +66,113 @@ export default function AdminPage() {
     printed_page: 0,
   });
 
+  // Handle Admin Password Change
+  const handleChangePassword = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setPasswordStatus({ type: 'idle', message: '' });
+
+    if (!currentPassword || !newPassword || !confirmPassword) {
+      setPasswordStatus({ type: 'error', message: 'Please fill in all password fields.' });
+      return;
+    }
+
+    if (newPassword.length < 6) {
+      setPasswordStatus({ type: 'error', message: 'New password must be at least 6 characters.' });
+      return;
+    }
+
+    if (newPassword !== confirmPassword) {
+      setPasswordStatus({ type: 'error', message: 'New passwords do not match. Please re-type.' });
+      return;
+    }
+
+    setPasswordStatus({ type: 'loading', message: 'Updating password in database...' });
+
+    try {
+      const res = await fetch('/api/admin/change-password', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          email: user?.email || 'admin@tn10.udhees.com',
+          current_password: currentPassword,
+          new_password: newPassword,
+        }),
+      });
+
+      const data = await res.json().catch(() => ({}));
+
+      if (!res.ok) {
+        setPasswordStatus({
+          type: 'error',
+          message: data.error || `Update failed (HTTP ${res.status})`,
+        });
+        return;
+      }
+
+      setPasswordStatus({
+        type: 'success',
+        message: data.message || 'Administrator password successfully updated in database.',
+      });
+      setCurrentPassword('');
+      setNewPassword('');
+      setConfirmPassword('');
+    } catch (err: any) {
+      setPasswordStatus({
+        type: 'error',
+        message: err.message || 'Failed to update administrator password',
+      });
+    }
+  };
+
   // Guard: Admin role required
   if (!isAdmin) {
     return (
-      <div className="bg-slate-900 border border-slate-800 rounded-3xl p-8 max-w-lg mx-auto text-center space-y-4 my-12">
-        <div className="w-14 h-14 rounded-2xl bg-purple-500/10 text-purple-400 border border-purple-500/30 flex items-center justify-center mx-auto">
+      <div className="bg-slate-900/90 border border-slate-800 rounded-3xl p-8 max-w-lg mx-auto text-center space-y-5 my-10 shadow-2xl backdrop-blur-xl">
+        <div className="w-14 h-14 rounded-2xl bg-purple-500/10 text-purple-400 border border-purple-500/30 flex items-center justify-center mx-auto shadow-lg shadow-purple-500/20">
           <ShieldAlert className="w-7 h-7" />
         </div>
-        <h2 className="text-xl font-bold text-white">Administrator Access Required</h2>
-        <p className="text-xs text-slate-400 leading-relaxed">
-          Curriculum management, PDF imports, and edition publishing are restricted to authorized school administrators and textbook coordinators.
-        </p>
-        <div className="pt-2">
-          <button
-            onClick={() => signInDemo('admin')}
-            className="px-5 py-2.5 bg-purple-600 hover:bg-purple-500 text-white rounded-xl text-xs font-bold transition cursor-pointer shadow-md"
+        
+        <div>
+          <h2 className="text-xl font-bold text-white">Administrator Access Required</h2>
+          <p className="text-xs text-slate-400 leading-relaxed mt-1">
+            Curriculum management, PDF imports, and edition publishing are restricted to authorized school administrators and textbook coordinators.
+          </p>
+        </div>
+
+        {/* Default Admin Account Card for Fresh Installs */}
+        <div className="bg-slate-950/70 p-4 rounded-2xl border border-white/[0.08] text-left text-xs space-y-2">
+          <div className="flex items-center gap-1.5 text-purple-400 font-bold text-[11px] uppercase tracking-wider">
+            <KeyRound className="w-3.5 h-3.5" />
+            <span>Default Administrator Account</span>
+          </div>
+          <div className="flex items-center justify-between text-slate-400 text-xs py-1 border-b border-white/[0.05]">
+            <span>Email:</span>
+            <code className="text-blue-300 font-bold font-mono">admin@tn10.udhees.com</code>
+          </div>
+          <div className="flex items-center justify-between text-slate-400 text-xs py-1">
+            <span>Default Password:</span>
+            <code className="text-amber-300 font-bold font-mono">Admin@TN10</code>
+          </div>
+          <p className="text-[10px] text-slate-500 pt-1 leading-normal">
+            💡 Sign in with this default account. You will then be prompted to update your password in the Admin Console.
+          </p>
+        </div>
+
+        <div className="pt-1">
+          <Link
+            href="/auth?admin=true"
+            className="w-full py-3 px-4 bg-purple-600 hover:bg-purple-500 text-white rounded-xl text-xs font-bold transition flex items-center justify-center gap-2 cursor-pointer shadow-lg shadow-purple-600/25"
           >
-            Switch to Demo Admin Account
-          </button>
+            <ShieldCheck className="w-4 h-4" />
+            <span>Sign In as Administrator</span>
+            <ArrowRight className="w-4 h-4" />
+          </Link>
         </div>
       </div>
     );
   }
 
-  // Step 1 & 2: Simulate or trigger PDF extraction
+  // Step 1 & 2: PDF extraction draft simulation
   const handleExtractFromPdf = async () => {
     setIsExtracting(true);
     setPublishSuccess(false);
@@ -132,28 +231,184 @@ export default function AdminPage() {
 
   return (
     <div className="space-y-6 animate-in fade-in duration-300 max-w-5xl mx-auto">
-      {/* Header */}
-      <div className="bg-gradient-to-r from-purple-950/40 via-slate-900 to-slate-900 border border-purple-500/30 rounded-3xl p-6 sm:p-8 shadow-xl">
-        <div className="flex items-center gap-2 mb-2">
-          <ShieldCheck className="w-4 h-4 text-purple-400" />
-          <span className="text-xs font-bold text-purple-300 uppercase tracking-wide">
-            {t.admin.title}
+      {/* Top Banner: Administrator Console Identity */}
+      <div className="bg-gradient-to-r from-purple-950/50 via-slate-900 to-slate-900 border border-purple-500/30 rounded-3xl p-6 sm:p-8 shadow-xl">
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <ShieldCheck className="w-5 h-5 text-purple-400" />
+            <span className="text-xs font-bold text-purple-300 uppercase tracking-wider">
+              Administrator Security & Curriculum Console
+            </span>
+          </div>
+          <span className="px-2.5 py-0.5 rounded-full bg-purple-500/20 text-purple-300 border border-purple-500/30 text-[11px] font-bold">
+            Admin Verified
           </span>
         </div>
-        <h1 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
-          Curriculum Import & Review Console
+        <h1 className="text-2xl sm:text-3xl font-black text-white tracking-tight mt-2">
+          School Curriculum & System Administration
         </h1>
-        <p className="text-sm text-slate-300 mt-2 max-w-2xl leading-relaxed">
-          {t.admin.subtitle}
+        <p className="text-xs sm:text-sm text-slate-300 mt-2 max-w-2xl leading-relaxed">
+          Logged in as <span className="font-mono text-purple-300 font-bold">{user?.email}</span>. Manage curriculum editions, review PDF extraction drafts, and maintain administrator credentials.
         </p>
 
         <div className="mt-4 inline-flex items-center gap-2 bg-emerald-500/10 text-emerald-300 border border-emerald-500/30 px-3 py-1.5 rounded-xl text-xs font-semibold">
           <CheckCircle2 className="w-4 h-4" />
-          <span>{t.admin.safeUpdateNotice}</span>
+          <span>Non-destructive updates: Student marks, understanding scores and revision histories are strictly preserved.</span>
         </div>
       </div>
 
-      {/* Active Edition Card */}
+      {/* SECTION 1: Administrator Password & Account Security */}
+      <div className="bg-slate-900/90 border border-slate-800 rounded-3xl p-6 shadow-sm space-y-4">
+        <div className="flex items-center justify-between pb-3 border-b border-slate-800">
+          <div className="flex items-center gap-2.5">
+            <div className="w-9 h-9 rounded-xl bg-purple-600/20 text-purple-300 border border-purple-500/30 flex items-center justify-center">
+              <KeyRound className="w-4 h-4 text-purple-400" />
+            </div>
+            <div>
+              <h2 className="text-base font-bold text-white">Administrator Account Security</h2>
+              <p className="text-xs text-slate-400">
+                Change default admin password (`Admin@TN10`) to a secure password saved directly to MongoDB.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Security Warning Banner */}
+        <div className="bg-amber-950/30 border border-amber-500/30 rounded-2xl p-3.5 flex items-start gap-3 text-xs text-amber-200">
+          <AlertCircle className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
+          <div>
+            <span className="font-bold text-amber-300 block mb-0.5">Deployment Security Notice</span>
+            <span>
+              If this instance was recently installed, please change the default administrator password immediately. Once updated, the default password is completely deactivated.
+            </span>
+          </div>
+        </div>
+
+        {/* Password Feedback */}
+        {passwordStatus.type === 'error' && (
+          <div className="p-3 bg-rose-500/15 border border-rose-500/30 rounded-xl text-xs text-rose-300 flex items-center gap-2">
+            <AlertCircle className="w-4 h-4 text-rose-400 shrink-0" />
+            <span>{passwordStatus.message}</span>
+          </div>
+        )}
+        {passwordStatus.type === 'success' && (
+          <div className="p-3 bg-emerald-500/15 border border-emerald-500/30 rounded-xl text-xs text-emerald-300 flex items-center gap-2">
+            <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+            <span>{passwordStatus.message}</span>
+          </div>
+        )}
+
+        {/* Password Form */}
+        <form onSubmit={handleChangePassword} className="space-y-4 pt-1">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            <div>
+              <label className="block text-[11px] font-semibold text-slate-300 mb-1.5">Current Password</label>
+              <div className="relative">
+                <Lock className="w-3.5 h-3.5 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" />
+                <input
+                  type={showPasswords ? 'text' : 'password'}
+                  required
+                  value={currentPassword}
+                  onChange={(e) => setCurrentPassword(e.target.value)}
+                  placeholder="e.g. Admin@TN10"
+                  className="w-full bg-slate-950 border border-white/[0.08] rounded-xl pl-9 pr-3 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-purple-500 transition"
+                />
+              </div>
+            </div>
+
+            <div>
+              <label className="block text-[11px] font-semibold text-slate-300 mb-1.5">New Password</label>
+              <div className="relative">
+                <Lock className="w-3.5 h-3.5 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" />
+                <input
+                  type={showPasswords ? 'text' : 'password'}
+                  required
+                  value={newPassword}
+                  onChange={(e) => setNewPassword(e.target.value)}
+                  placeholder="At least 6 characters"
+                  className="w-full bg-slate-950 border border-white/[0.08] rounded-xl pl-9 pr-3 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-purple-500 transition"
+                />
+              </div>
+            </div>
+
+            <div>
+              <label className="block text-[11px] font-semibold text-slate-300 mb-1.5">Confirm New Password</label>
+              <div className="relative">
+                <Lock className="w-3.5 h-3.5 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" />
+                <input
+                  type={showPasswords ? 'text' : 'password'}
+                  required
+                  value={confirmPassword}
+                  onChange={(e) => setConfirmPassword(e.target.value)}
+                  placeholder="Re-type new password"
+                  className="w-full bg-slate-950 border border-white/[0.08] rounded-xl pl-9 pr-3 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-purple-500 transition"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pt-1">
+            <button
+              type="button"
+              onClick={() => setShowPasswords(!showPasswords)}
+              className="inline-flex items-center gap-1.5 text-xs text-slate-400 hover:text-slate-200 cursor-pointer"
+            >
+              {showPasswords ? <EyeOff className="w-3.5 h-3.5" /> : <Eye className="w-3.5 h-3.5" />}
+              <span>{showPasswords ? 'Hide password characters' : 'Show password characters'}</span>
+            </button>
+
+            <button
+              type="submit"
+              disabled={passwordStatus.type === 'loading'}
+              className="px-5 py-2.5 bg-purple-600 hover:bg-purple-500 disabled:opacity-50 text-white rounded-xl text-xs font-bold transition flex items-center justify-center gap-2 cursor-pointer shadow-md shadow-purple-600/20 shrink-0"
+            >
+              {passwordStatus.type === 'loading' ? (
+                <>
+                  <RefreshCw className="w-3.5 h-3.5 animate-spin" />
+                  <span>Saving...</span>
+                </>
+              ) : (
+                <>
+                  <Save className="w-3.5 h-3.5" />
+                  <span>Update Admin Password</span>
+                </>
+              )}
+            </button>
+          </div>
+        </form>
+      </div>
+
+      {/* SECTION 2: 5 Canonical Subjects System Overview */}
+      <div className="bg-slate-900/90 border border-slate-800 rounded-3xl p-6 shadow-sm space-y-3">
+        <div className="flex items-center justify-between pb-2 border-b border-slate-800">
+          <div className="flex items-center gap-2">
+            <Layers className="w-4 h-4 text-blue-400" />
+            <h2 className="text-base font-bold text-white">Active Canonical Curriculum Standards</h2>
+          </div>
+          <span className="text-xs text-slate-400 font-semibold">5 Official Board Subjects</span>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-5 gap-3 pt-1">
+          {availableSubjects.map((sub) => (
+            <div key={sub.code} className="bg-slate-950/70 p-3.5 rounded-2xl border border-white/[0.06] space-y-1.5">
+              <div className="flex items-center justify-between">
+                <span className="text-lg">{sub.icon}</span>
+                <span className="text-[10px] font-bold px-1.5 py-0.5 rounded bg-blue-500/10 text-blue-300 border border-blue-500/20">
+                  {sub.edition}
+                </span>
+              </div>
+              <div>
+                <span className="text-xs font-bold text-white block">{sub.title}</span>
+                <span className="text-[10px] text-slate-400">
+                  {sub.unitsCount} Units • {sub.itemsCount} Activities
+                </span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* SECTION 3: Active Textbook & Extraction */}
       <div className="bg-slate-900/90 border border-slate-800 rounded-3xl p-6 shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
           <span className="text-xs font-bold text-slate-400 uppercase tracking-wide block mb-1">
@@ -199,7 +454,7 @@ export default function AdminPage() {
         </div>
       )}
 
-      {/* Extraction Draft Review Area */}
+      {/* SECTION 4: Extraction Draft Review Area */}
       {activeDraft && (
         <div className="bg-slate-900/90 border border-slate-800 rounded-3xl p-6 shadow-sm space-y-4">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-slate-800">

@@ -31,7 +31,7 @@ import { useStudy } from '@/lib/store/study-context';
 
 export default function SettingsPage() {
   const router = useRouter();
-  const { user, isDemoMode, isAdmin, signInDemo, signOut } = useAuth();
+  const { user, isAdmin, signOut } = useAuth();
   const { lang, setLang, t } = useI18n();
   const { syncStatus, unsyncedCount, triggerSync, availableSubjects, activeSubject, setActiveSubject } = useStudy();
 
@@ -132,28 +132,17 @@ export default function SettingsPage() {
               </div>
             </div>
 
-            {/* Quick Demo Switcher */}
-            {isDemoMode && (
+            {/* Admin Console Shortcut */}
+            {isAdmin && (
               <div className="hidden sm:flex flex-col items-end gap-1.5">
-                <span className="text-[10px] text-slate-400 uppercase tracking-wider font-semibold">Switch Role:</span>
-                <div className="inline-flex rounded-xl bg-slate-950/80 p-1 border border-white/[0.08]">
-                  <button
-                    onClick={() => signInDemo('student')}
-                    className={`px-3 py-1 rounded-lg text-xs font-bold transition cursor-pointer ${
-                      !isAdmin ? 'bg-blue-600 text-white shadow-md' : 'text-slate-400 hover:text-white'
-                    }`}
-                  >
-                    Student
-                  </button>
-                  <button
-                    onClick={() => signInDemo('admin')}
-                    className={`px-3 py-1 rounded-lg text-xs font-bold transition cursor-pointer ${
-                      isAdmin ? 'bg-purple-600 text-white shadow-md' : 'text-slate-400 hover:text-white'
-                    }`}
-                  >
-                    Admin
-                  </button>
-                </div>
+                <span className="text-[10px] text-purple-400 uppercase tracking-wider font-semibold">Administrator</span>
+                <Link
+                  href="/admin"
+                  className="px-3 py-1.5 rounded-xl bg-purple-600/20 hover:bg-purple-600/30 text-purple-300 border border-purple-500/30 text-xs font-bold transition flex items-center gap-1.5 shadow-sm"
+                >
+                  <ShieldCheck className="w-3.5 h-3.5 text-purple-400" />
+                  <span>Admin Console</span>
+                </Link>
               </div>
             )}
           </div>

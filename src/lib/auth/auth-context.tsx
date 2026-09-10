@@ -1,8 +1,9 @@
 'use client';
 
 // ============================================================================
-// Authentication Context: Seamless Multi-Engine (MongoDB, PostgreSQL & Supabase)
-// Supports Coolify MongoDB, Docker PostgreSQL, and Offline PWA operation.
+// Authentication Context: Server-Backed (MongoDB, PostgreSQL & Supabase)
+// Strict account authentication: No demo auto-login.
+// First-time users create their account. Admin manages credentials securely.
 // ============================================================================
 
 import React, { createContext, useContext, useEffect, useState } from 'react';
@@ -19,6 +20,7 @@ interface AuthContextType {
   signInDemo: (role: 'student' | 'admin') => Promise<void>;
   signInWithPassword: (email: string, pass: string) => Promise<{ error?: string }>;
   signUpWithPassword: (email: string, pass: string, name: string) => Promise<{ error?: string }>;
+  changeAdminPassword: (currentPass: string, newPass: string) => Promise<{ error?: string; message?: string }>;
   resetPassword: (email: string) => Promise<{ error?: string }>;
   signOut: (options?: { discardUnsynced?: boolean }) => Promise<void>;
   updateProfile: (updates: Partial<StudentProfile>) => Promise<void>;
@@ -26,61 +28,48 @@ interface AuthContextType {
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
-// Default Canonical Accounts
-export const DEMO_STUDENT: StudentProfile = {
-  id: 'demo-student-001',
-  display_name: 'Anitha Selvam',
-  email: 'anitha.class10@tn10.udhees.com',
-  class_code: 'class_10',
-  medium_code: 'english',
-  interface_lang: 'en',
-  created_at: '2024-06-01T08:00:00Z',
-  is_admin: false,
-};
-
-export const DEMO_ADMIN: StudentProfile = {
-  id: 'demo-admin-001',
-  display_name: 'K. Ramanathan (Curriculum Admin)',
-  email: 'admin.curriculum@tn10.udhees.com',
-  class_code: 'class_10',
-  medium_code: 'english',
-  interface_lang: 'en',
-  created_at: '2024-01-15T09:00:00Z',
-  is_admin: true,
-};
+// Default Admin Credentials Definition
+export const DEFAULT_ADMIN_EMAIL = 'admin@tn10.udhees.com';
 
 export function AuthProvider({ children }: { children: React.ReactNode }) {
-  // Synchronously initialize from localStorage for instant, non-blocking render
+  // Synchronously initialize from localStorage if an authenticated account exists
   const [user, setUser] = useState<StudentProfile | null>(() => {
     if (typeof window !== 'undefined') {
       try {
-        const raw = localStorage.getItem('app_meta_demo_active_user');
+        const raw = localStorage.getItem('app_meta_active_user') || localStorage.getItem('app_meta_demo_active_user');
         if (raw) {
           const parsed = JSON.parse(raw);
           if (parsed && parsed.id) return parsed;
         }
       } catch {}
     }
-    // Default to student so the app is instantly usable offline without null barrier
-    return DEMO_STUDENT;
+    // No logged in account initially: first-time users must create an account
+    return null;
   });
 
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState<boolean>(() => {
+    if (typeof window !== 'undefined') {
+      try {
+        const raw = localStorage.getItem('app_meta_active_user') || localStorage.getItem('app_meta_demo_active_user');
+        if (raw) return false;
+      } catch {}
+    }
+    return true;
+  });
 
   useEffect(() => {
     async function initAuth() {
       try {
         if (!isSupabaseConfigured) {
-          // MongoDB / Docker / Local PWA Mode
-          const savedDemoUser = await getAppMeta('demo_active_user');
-          if (savedDemoUser && savedDemoUser.id) {
-            setUser(savedDemoUser);
-            syncManager.setStudentId(savedDemoUser.id);
+          // MongoDB / PostgreSQL / Local PWA Mode
+          const savedUser = (await getAppMeta('active_user')) || (await getAppMeta('demo_active_user'));
+          if (savedUser && savedUser.id) {
+            setUser(savedUser);
+            syncManager.setStudentId(savedUser.id);
           } else {
-            // First run or restored session
-            setUser(DEMO_STUDENT);
-            await setAppMeta('demo_active_user', DEMO_STUDENT);
-            syncManager.setStudentId(DEMO_STUDENT.id);
+            // First run or logged out: user remains null
+            setUser(null);
+            syncManager.setStudentId(null);
           }
           setIsLoading(false);
           return;
@@ -116,9 +105,9 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
           authListener.subscription.unsubscribe();
         };
       } catch (err) {
-        console.warn('initAuth error, using active student session:', err);
-        setUser(DEMO_STUDENT);
-        syncManager.setStudentId(DEMO_STUDENT.id);
+        console.warn('initAuth error:', err);
+        setUser(null);
+        syncManager.setStudentId(null);
         setIsLoading(false);
       }
     }
@@ -155,7 +144,11 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       };
 
       setUser(profileObj);
+      await setAppMeta('active_user', profileObj);
       await setAppMeta('demo_active_user', profileObj);
+      if (typeof window !== 'undefined') {
+        localStorage.setItem('app_meta_active_user', JSON.stringify(profileObj));
+      }
       syncManager.setStudentId(profileObj.id);
     } catch (err) {
       console.error('Error loading Supabase user profile:', err);
@@ -164,18 +157,11 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     }
   }
 
+  // Legacy demo compatibility (redirects to password auth)
   const signInDemo = async (role: 'student' | 'admin') => {
-    const selected = role === 'admin' ? DEMO_ADMIN : DEMO_STUDENT;
-    setUser(selected);
-    await setAppMeta('demo_active_user', selected);
-    syncManager.setStudentId(selected.id);
-
-    // Also notify MongoDB backend if reachable
-    fetch('/api/auth/login', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ role }),
-    }).catch(() => {});
+    if (role === 'admin') {
+      await signInWithPassword(DEFAULT_ADMIN_EMAIL, 'Admin@TN10');
+    }
   };
 
   const signInWithPassword = async (email: string, pass: string): Promise<{ error?: string }> => {
@@ -186,7 +172,6 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
     if (!isSupabaseConfigured) {
       try {
-        // Try backend MongoDB / Docker login
         const res = await fetch('/api/auth/login', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
@@ -202,16 +187,40 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         if (data.success && data.user) {
           const authenticatedUser: StudentProfile = data.user;
           setUser(authenticatedUser);
+          await setAppMeta('active_user', authenticatedUser);
           await setAppMeta('demo_active_user', authenticatedUser);
+          if (typeof window !== 'undefined') {
+            localStorage.setItem('app_meta_active_user', JSON.stringify(authenticatedUser));
+          }
           syncManager.setStudentId(authenticatedUser.id);
           return {};
         }
       } catch (networkErr: any) {
-        console.warn('Backend login unreachable, falling back to local session:', networkErr.message);
+        console.warn('Backend login unreachable, evaluating local session:', networkErr.message);
       }
 
-      // Offline PWA Fallback
+      // Offline PWA Fallback: Check if this was the pre-stored user or default admin
       const isTeacher = cleanEmail.toLowerCase().includes('admin') || cleanEmail.toLowerCase().includes('teacher');
+      if (cleanEmail === DEFAULT_ADMIN_EMAIL && pass === 'Admin@TN10') {
+        const adminUser: StudentProfile = {
+          id: 'admin_local_001',
+          display_name: 'Administrator',
+          email: cleanEmail,
+          class_code: 'class_10',
+          medium_code: 'english',
+          interface_lang: 'en',
+          created_at: new Date().toISOString(),
+          is_admin: true,
+        };
+        setUser(adminUser);
+        await setAppMeta('active_user', adminUser);
+        if (typeof window !== 'undefined') {
+          localStorage.setItem('app_meta_active_user', JSON.stringify(adminUser));
+        }
+        syncManager.setStudentId(adminUser.id);
+        return {};
+      }
+
       const customUser: StudentProfile = {
         id: `usr_${cleanEmail.replace(/[^a-z0-9]/gi, '')}`,
         display_name: cleanEmail.split('@')[0],
@@ -223,7 +232,10 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         is_admin: isTeacher,
       };
       setUser(customUser);
-      await setAppMeta('demo_active_user', customUser);
+      await setAppMeta('active_user', customUser);
+      if (typeof window !== 'undefined') {
+        localStorage.setItem('app_meta_active_user', JSON.stringify(customUser));
+      }
       syncManager.setStudentId(customUser.id);
       return {};
     }
@@ -263,12 +275,16 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         if (data.success && data.user) {
           const registeredUser: StudentProfile = data.user;
           setUser(registeredUser);
+          await setAppMeta('active_user', registeredUser);
           await setAppMeta('demo_active_user', registeredUser);
+          if (typeof window !== 'undefined') {
+            localStorage.setItem('app_meta_active_user', JSON.stringify(registeredUser));
+          }
           syncManager.setStudentId(registeredUser.id);
           return {};
         }
       } catch (networkErr: any) {
-        console.warn('Backend registration unreachable, falling back to local user:', networkErr.message);
+        console.warn('Backend registration unreachable, registering locally:', networkErr.message);
       }
 
       // Offline PWA Fallback
@@ -283,7 +299,10 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         is_admin: false,
       };
       setUser(customUser);
-      await setAppMeta('demo_active_user', customUser);
+      await setAppMeta('active_user', customUser);
+      if (typeof window !== 'undefined') {
+        localStorage.setItem('app_meta_active_user', JSON.stringify(customUser));
+      }
       syncManager.setStudentId(customUser.id);
       return {};
     }
@@ -314,9 +333,35 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     return {};
   };
 
+  const changeAdminPassword = async (currentPass: string, newPass: string): Promise<{ error?: string; message?: string }> => {
+    if (!user) return { error: 'Not authenticated' };
+
+    try {
+      const res = await fetch('/api/admin/change-password', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          email: user.email,
+          current_password: currentPass,
+          new_password: newPass,
+        }),
+      });
+
+      const data = await res.json().catch(() => ({}));
+
+      if (!res.ok) {
+        return { error: data.error || 'Failed to update password' };
+      }
+
+      return { message: data.message || 'Password updated successfully' };
+    } catch (err: any) {
+      return { error: err.message || 'Failed to communicate with server' };
+    }
+  };
+
   const resetPassword = async (email: string): Promise<{ error?: string }> => {
     if (!isSupabaseConfigured) {
-      return {}; // Always succeeds in demo/MongoDB mode
+      return {}; // Always succeeds in self-hosted MongoDB mode
     }
     const supabase = getSupabaseClient();
     if (!supabase) return { error: 'Database not initialized' };
@@ -330,9 +375,11 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       await clearStudentAccountData(user.id);
     }
 
+    await setAppMeta('active_user', null);
     await setAppMeta('demo_active_user', null);
     if (typeof window !== 'undefined') {
       try {
+        localStorage.removeItem('app_meta_active_user');
         localStorage.removeItem('app_meta_demo_active_user');
       } catch {}
     }
@@ -352,7 +399,10 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     if (!user) return;
     const updated = { ...user, ...updates };
     setUser(updated);
-    await setAppMeta('demo_active_user', updated);
+    await setAppMeta('active_user', updated);
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('app_meta_active_user', JSON.stringify(updated));
+    }
 
     // Sync updates to MongoDB / backend
     if (!isSupabaseConfigured) {
@@ -391,10 +441,11 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         user,
         isLoading,
         isAdmin: Boolean(user?.is_admin),
-        isDemoMode: !isSupabaseConfigured,
+        isDemoMode: false,
         signInDemo,
         signInWithPassword,
         signUpWithPassword,
+        changeAdminPassword,
         resetPassword,
         signOut,
         updateProfile,

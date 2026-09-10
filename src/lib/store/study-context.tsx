@@ -255,7 +255,7 @@ export function StudyProvider({ children }: { children: React.ReactNode }) {
         });
 
         // Load student-specific data if logged in
-        const currentStudent = user || (typeof window !== 'undefined' ? JSON.parse(localStorage.getItem('app_meta_demo_active_user') || 'null') : null);
+        const currentStudent = user || (typeof window !== 'undefined' ? JSON.parse(localStorage.getItem('app_meta_active_user') || localStorage.getItem('app_meta_demo_active_user') || 'null') : null);
         if (currentStudent) {
           syncManager.setStudentId(currentStudent.id);
           const progressList = await getStudentProgressList(currentStudent.id);
@@ -380,7 +380,7 @@ export function StudyProvider({ children }: { children: React.ReactNode }) {
     updater: (prev: StudentProgress) => StudentProgress,
     lessonId?: string
   ) => {
-    const activeStudentId = user?.id || (typeof window !== 'undefined' ? localStorage.getItem('app_meta_active_student_id') || 'demo-student-001' : 'demo-student-001');
+    const activeStudentId = user?.id || (typeof window !== 'undefined' ? (JSON.parse(localStorage.getItem('app_meta_active_user') || 'null')?.id || localStorage.getItem('app_meta_active_student_id') || 'guest_student') : 'guest_student');
 
     const current: StudentProgress = progressMap[itemCode] || {
       id: `${activeStudentId}_${itemCode}`,
