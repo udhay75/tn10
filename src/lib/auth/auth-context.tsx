@@ -374,8 +374,12 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
           body: JSON.stringify({ email: cleanEmail }),
         });
         const data = await res.json().catch(() => ({}));
-        if (!res.ok) {
-          return { error: data.error || `Request failed (HTTP ${res.status})` };
+        if (!res.ok || data.error) {
+          return { 
+            error: data.error || `Request failed (HTTP ${res.status})`,
+            resetLink: data.resetLink,
+            smtpConfigured: data.smtpConfigured,
+          };
         }
         return {
           message: data.message,

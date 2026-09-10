@@ -93,11 +93,12 @@ export async function POST(req: NextRequest) {
       } else {
         return NextResponse.json(
           {
+            success: false,
             error: mailResult.error || 'Failed to dispatch password reset email',
             smtpConfigured: true,
             resetLink,
           },
-          { status: 500 }
+          { status: 200 }
         );
       }
     }

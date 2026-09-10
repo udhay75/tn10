@@ -14,15 +14,28 @@ export function isSmtpConfigured(): boolean {
 }
 
 export function getMailTransporter() {
-  const host = process.env.SMTP_HOST || process.env.MAIL_HOST;
+  const host = (process.env.SMTP_HOST || process.env.MAIL_HOST || '').trim();
   const port = Number(process.env.SMTP_PORT || process.env.MAIL_PORT || 587);
-  const user = process.env.SMTP_USER || process.env.MAIL_USERNAME;
-  const pass = process.env.SMTP_PASS || process.env.MAIL_PASSWORD;
-  const secure = process.env.SMTP_SECURE === 'true' || port === 465;
+  const user = (process.env.SMTP_USER || process.env.MAIL_USERNAME || '').trim();
+  let pass = (process.env.SMTP_PASS || process.env.MAIL_PASSWORD || '').trim();
 
   if (!host || !user || !pass) {
     return null;
   }
+
+  // For Gmail accounts: strip spaces from 16-character App Passwords and use Gmail service
+  if (host.includes('gmail.com') || user.includes('@gmail.com')) {
+    pass = pass.replace(/\s+/g, '');
+    return nodemailer.createTransport({
+      service: 'gmail',
+      auth: {
+        user,
+        pass,
+      },
+    });
+  }
+
+  const secure = process.env.SMTP_SECURE === 'true' || port === 465;
 
   return nodemailer.createTransport({
     host,
@@ -31,6 +44,9 @@ export function getMailTransporter() {
     auth: {
       user,
       pass,
+    },
+    tls: {
+      rejectUnauthorized: false,
     },
   });
 }
@@ -206,9 +222,15 @@ Tamil Nadu Class 10 Samacheer Kalvi Study Tracker
     };
   } catch (err: any) {
     console.error('Nodemailer sendMail error:', err);
+    let friendlyError = `Failed to deliver email: ${err.message}`;
+
+    if (err.message && (err.message.includes('535') || err.message.includes('BadCredentials'))) {
+      friendlyError = 'Gmail Authentication Failed (535 Bad Credentials). Google blocks your regular login password. You must use a 16-character Google "App Password". Go to https://myaccount.google.com/apppasswords, generate an App Password, and paste it into SMTP_PASS in Coolify.';
+    }
+
     return {
       success: false,
-      error: `Failed to deliver email: ${err.message}`,
+      error: friendlyError,
     };
   }
 }

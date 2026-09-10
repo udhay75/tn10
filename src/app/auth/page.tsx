@@ -107,6 +107,9 @@ function AuthContent() {
         const res = await resetPassword(email);
         if (res.error) {
           setError(res.error);
+          if (res.resetLink) {
+            setResetDirectLink(res.resetLink);
+          }
         } else {
           setSuccess(res.message || 'Password reset link sent to your email.');
           if (res.resetLink && res.smtpConfigured === false) {
@@ -332,9 +335,23 @@ function AuthContent() {
         {/* Form */}
         <form onSubmit={handleSubmit} className="space-y-4">
           {error && (
-            <div className="p-3 bg-rose-500/15 border border-rose-500/30 rounded-xl text-xs text-rose-300 animate-in fade-in flex items-center gap-2">
-              <AlertCircle className="w-4 h-4 text-rose-400 shrink-0" />
-              <span>{error}</span>
+            <div className="p-3 bg-rose-500/15 border border-rose-500/30 rounded-xl text-xs text-rose-300 animate-in fade-in space-y-2">
+              <div className="flex items-start gap-2">
+                <AlertCircle className="w-4 h-4 text-rose-400 shrink-0 mt-0.5" />
+                <span className="leading-relaxed">{error}</span>
+              </div>
+              {resetDirectLink && (
+                <div className="pt-2 border-t border-rose-500/20 text-[11px]">
+                  <p className="text-slate-300 mb-1.5">Direct Reset Link (while SMTP is being resolved):</p>
+                  <a
+                    href={resetDirectLink}
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-blue-600 hover:bg-blue-500 text-white rounded-lg font-bold text-[11px] transition shadow-md"
+                  >
+                    <span>Click Here to Reset Password Now</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </a>
+                </div>
+              )}
             </div>
           )}
           {success && (
