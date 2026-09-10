@@ -272,7 +272,7 @@ export default function AuthPage() {
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="student@school.tn.gov.in"
+                placeholder="student@tn10.udhees.com"
                 className="w-full bg-slate-950/80 border border-white/[0.08] rounded-xl pl-10 pr-3 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition"
               />
             </div>

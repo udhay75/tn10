@@ -7,7 +7,7 @@ import { StudentProfile } from '@/types';
 const DEMO_STUDENT: StudentProfile = {
   id: 'demo-student-001',
   display_name: 'Anitha Selvam',
-  email: 'anitha.class10@tnschools.gov.in',
+  email: 'anitha.class10@tn10.udhees.com',
   class_code: 'class_10',
   medium_code: 'english',
   interface_lang: 'en',
@@ -18,7 +18,7 @@ const DEMO_STUDENT: StudentProfile = {
 const DEMO_ADMIN: StudentProfile = {
   id: 'demo-admin-001',
   display_name: 'K. Ramanathan (Curriculum Admin)',
-  email: 'admin.curriculum@tnschools.gov.in',
+  email: 'admin.curriculum@tn10.udhees.com',
   class_code: 'class_10',
   medium_code: 'english',
   interface_lang: 'en',
@@ -32,10 +32,18 @@ export async function POST(req: NextRequest) {
     const { email, password, role } = body;
 
     // 1. Explicit Quick Demo Switch
-    if (role === 'student' || email === DEMO_STUDENT.email) {
+    if (
+      role === 'student' || 
+      email === DEMO_STUDENT.email || 
+      email === 'student@tn10.udhees.com'
+    ) {
       return NextResponse.json({ success: true, user: DEMO_STUDENT });
     }
-    if (role === 'admin' || email === DEMO_ADMIN.email) {
+    if (
+      role === 'admin' || 
+      email === DEMO_ADMIN.email || 
+      email === 'admin@tn10.udhees.com'
+    ) {
       return NextResponse.json({ success: true, user: DEMO_ADMIN });
     }
 

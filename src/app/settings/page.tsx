@@ -117,7 +117,7 @@ export default function SettingsPage() {
                     </span>
                   )}
                 </div>
-                <p className="text-xs text-slate-400 font-mono mt-0.5">{user?.email || 'student@school.tn.gov.in'}</p>
+                <p className="text-xs text-slate-400 font-mono mt-0.5">{user?.email || 'student@tn10.udhees.com'}</p>
                 
                 <div className="pt-2">
                   <Link

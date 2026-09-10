@@ -30,7 +30,7 @@ const AuthContext = createContext<AuthContextType | undefined>(undefined);
 export const DEMO_STUDENT: StudentProfile = {
   id: 'demo-student-001',
   display_name: 'Anitha Selvam',
-  email: 'anitha.class10@tnschools.gov.in',
+  email: 'anitha.class10@tn10.udhees.com',
   class_code: 'class_10',
   medium_code: 'english',
   interface_lang: 'en',
@@ -41,7 +41,7 @@ export const DEMO_STUDENT: StudentProfile = {
 export const DEMO_ADMIN: StudentProfile = {
   id: 'demo-admin-001',
   display_name: 'K. Ramanathan (Curriculum Admin)',
-  email: 'admin.curriculum@tnschools.gov.in',
+  email: 'admin.curriculum@tn10.udhees.com',
   class_code: 'class_10',
   medium_code: 'english',
   interface_lang: 'en',

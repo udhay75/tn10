@@ -26,6 +26,6 @@ $$ LANGUAGE plpgsql STABLE;
 -- Insert default demo accounts into auth.users if not present
 INSERT INTO auth.users (id, email)
 VALUES 
-    ('a0000000-0000-0000-0000-000000000001', 'anitha.class10@tnschools.gov.in'),
-    ('a0000000-0000-0000-0000-000000000002', 'admin.curriculum@tnschools.gov.in')
+    ('a0000000-0000-0000-0000-000000000001', 'anitha.class10@tn10.udhees.com'),
+    ('a0000000-0000-0000-0000-000000000002', 'admin.curriculum@tn10.udhees.com')
 ON CONFLICT (id) DO NOTHING;
