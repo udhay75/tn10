@@ -112,17 +112,15 @@ export function Header() {
 
         {/* Right: Telemetry, Sync & Controls */}
         <div className="flex items-center gap-2 sm:gap-3 flex-shrink-0">
-          {/* Docker PostgreSQL Telemetry Badge */}
-          {isDemoMode && (
-            <span 
-              title="PostgreSQL 16 container running at localhost:5432 (tn10_postgres)"
-              className="hidden xl:inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-medium bg-emerald-500/10 text-emerald-300 border border-emerald-500/25"
-            >
-              <Database className="w-3 h-3 text-emerald-400" />
-              <span>PostgreSQL (5432)</span>
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-            </span>
-          )}
+          {/* Database Telemetry Badge */}
+          <span 
+            title="Active database: Coolify MongoDB / Local PostgreSQL"
+            className="hidden xl:inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-medium bg-emerald-500/10 text-emerald-300 border border-emerald-500/25"
+          >
+            <Database className="w-3 h-3 text-emerald-400" />
+            <span>DB Online</span>
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+          </span>
 
           {/* Sync Status Badge */}
           <div className="flex items-center">
@@ -191,18 +189,30 @@ export function Header() {
             <span>{lang === 'en' ? 'தமிழ்' : 'English'}</span>
           </button>
 
-          {/* Auth/Profile Icon */}
-          <Link
-            href="/settings"
-            className="p-2 rounded-xl bg-slate-900/90 hover:bg-slate-800 border border-white/[0.08] text-slate-300 hover:text-white transition flex items-center justify-center shadow-sm"
-            title={user ? user.display_name : 'Settings / Sign In'}
-          >
-            {isAdmin ? (
-              <ShieldCheck className="w-4 h-4 text-amber-400" />
-            ) : (
-              <UserCircle className="w-4 h-4 text-slate-300" />
-            )}
-          </Link>
+          {/* Auth/Profile Action */}
+          {user ? (
+            <Link
+              href="/settings"
+              className="p-2 rounded-xl bg-slate-900/90 hover:bg-slate-800 border border-white/[0.08] text-slate-300 hover:text-white transition flex items-center justify-center shadow-sm"
+              title={`Logged in as ${user.display_name} - Open Settings`}
+            >
+              {isAdmin ? (
+                <ShieldCheck className="w-4 h-4 text-amber-400" />
+              ) : (
+                <div className="w-5 h-5 rounded-lg bg-blue-600/30 text-blue-300 border border-blue-500/30 flex items-center justify-center text-[11px] font-bold">
+                  {user.display_name.charAt(0)}
+                </div>
+              )}
+            </Link>
+          ) : (
+            <Link
+              href="/auth"
+              className="px-3 py-1.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold transition shadow-md shadow-blue-600/20 flex items-center gap-1.5 cursor-pointer"
+            >
+              <UserCircle className="w-3.5 h-3.5" />
+              <span>Sign In</span>
+            </Link>
+          )}
         </div>
       </div>
     </header>

@@ -137,6 +137,12 @@ class SyncManager {
               const errData = await res.json().catch(() => ({}));
               throw new Error(errData.error || `HTTP ${res.status}`);
             }
+            const data = await res.json().catch(() => ({}));
+            if (data.offline) {
+              this.currentStatus = 'unsynced';
+              this.notify();
+              return { success: false, error: 'Database server is offline' };
+            }
           } else if (mutation.action === 'log_revision') {
             const payload = mutation.payload as RevisionHistoryEntry;
             const res = await fetch('/api/revision', {
@@ -148,6 +154,12 @@ class SyncManager {
               const errData = await res.json().catch(() => ({}));
               throw new Error(errData.error || `HTTP ${res.status}`);
             }
+            const data = await res.json().catch(() => ({}));
+            if (data.offline) {
+              this.currentStatus = 'unsynced';
+              this.notify();
+              return { success: false, error: 'Database server is offline' };
+            }
           }
           await removeMutation(mutation.id);
         }
@@ -155,8 +167,8 @@ class SyncManager {
         this.notify();
         return { success: true };
       } catch (err: any) {
-        console.warn('Docker DB sync fallback:', err.message);
-        // If offline or local api unreachable, keep in IndexedDB queue
+        console.warn('Backend sync note:', err.message);
+        // Keep in IndexedDB queue
         this.currentStatus = 'unsynced';
         this.notify();
         return { success: false, error: err.message };

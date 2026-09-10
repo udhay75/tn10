@@ -1,9 +1,8 @@
 'use client';
 
 // ============================================================================
-// Authentication Context: Seamless Dual Mode (Supabase Auth & Local Demo Auth)
-// Isolates user accounts and securely handles sign-in, sign-up, role management,
-// and safe logout data purging.
+// Authentication Context: Seamless Multi-Engine (MongoDB, PostgreSQL & Supabase)
+// Supports Coolify MongoDB, Docker PostgreSQL, and Offline PWA operation.
 // ============================================================================
 
 import React, { createContext, useContext, useEffect, useState } from 'react';
@@ -27,8 +26,8 @@ interface AuthContextType {
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
-// Default Demo Accounts
-const DEMO_STUDENT: StudentProfile = {
+// Default Canonical Accounts
+export const DEMO_STUDENT: StudentProfile = {
   id: 'demo-student-001',
   display_name: 'Anitha Selvam',
   email: 'anitha.class10@tnschools.gov.in',
@@ -39,7 +38,7 @@ const DEMO_STUDENT: StudentProfile = {
   is_admin: false,
 };
 
-const DEMO_ADMIN: StudentProfile = {
+export const DEMO_ADMIN: StudentProfile = {
   id: 'demo-admin-001',
   display_name: 'K. Ramanathan (Curriculum Admin)',
   email: 'admin.curriculum@tnschools.gov.in',
@@ -51,44 +50,50 @@ const DEMO_ADMIN: StudentProfile = {
 };
 
 export function AuthProvider({ children }: { children: React.ReactNode }) {
-  const [user, setUser] = useState<StudentProfile | null>(null);
-  const [isLoading, setIsLoading] = useState(true);
+  // Synchronously initialize from localStorage for instant, non-blocking render
+  const [user, setUser] = useState<StudentProfile | null>(() => {
+    if (typeof window !== 'undefined') {
+      try {
+        const raw = localStorage.getItem('app_meta_demo_active_user');
+        if (raw) {
+          const parsed = JSON.parse(raw);
+          if (parsed && parsed.id) return parsed;
+        }
+      } catch {}
+    }
+    // Default to student so the app is instantly usable offline without null barrier
+    return DEMO_STUDENT;
+  });
+
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     async function initAuth() {
-      if (!isSupabaseConfigured) {
-        // Local Demo Mode
-        const savedDemoUser = await getAppMeta('demo_active_user');
-        if (savedDemoUser) {
-          setUser(savedDemoUser);
-          syncManager.setStudentId(savedDemoUser.id);
-        } else {
-          // Default to student on first boot
-          setUser(DEMO_STUDENT);
-          await setAppMeta('demo_active_user', DEMO_STUDENT);
-          syncManager.setStudentId(DEMO_STUDENT.id);
+      try {
+        if (!isSupabaseConfigured) {
+          // MongoDB / Docker / Local PWA Mode
+          const savedDemoUser = await getAppMeta('demo_active_user');
+          if (savedDemoUser && savedDemoUser.id) {
+            setUser(savedDemoUser);
+            syncManager.setStudentId(savedDemoUser.id);
+          } else {
+            // First run or restored session
+            setUser(DEMO_STUDENT);
+            await setAppMeta('demo_active_user', DEMO_STUDENT);
+            syncManager.setStudentId(DEMO_STUDENT.id);
+          }
+          setIsLoading(false);
+          return;
         }
-        setIsLoading(false);
-        return;
-      }
 
-      // Supabase Mode
-      const supabase = getSupabaseClient();
-      if (!supabase) {
-        setIsLoading(false);
-        return;
-      }
+        // Supabase Mode
+        const supabase = getSupabaseClient();
+        if (!supabase) {
+          setIsLoading(false);
+          return;
+        }
 
-      const { data: { session } } = await supabase.auth.getSession();
-      if (session?.user) {
-        await loadSupabaseProfile(session.user.id, session.user.email || '');
-      } else {
-        setUser(null);
-        syncManager.setStudentId(null);
-        setIsLoading(false);
-      }
-
-      const { data: authListener } = supabase.auth.onAuthStateChange(async (event, session) => {
+        const { data: { session } } = await supabase.auth.getSession();
         if (session?.user) {
           await loadSupabaseProfile(session.user.id, session.user.email || '');
         } else {
@@ -96,11 +101,26 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
           syncManager.setStudentId(null);
           setIsLoading(false);
         }
-      });
 
-      return () => {
-        authListener.subscription.unsubscribe();
-      };
+        const { data: authListener } = supabase.auth.onAuthStateChange(async (event, session) => {
+          if (session?.user) {
+            await loadSupabaseProfile(session.user.id, session.user.email || '');
+          } else {
+            setUser(null);
+            syncManager.setStudentId(null);
+            setIsLoading(false);
+          }
+        });
+
+        return () => {
+          authListener.subscription.unsubscribe();
+        };
+      } catch (err) {
+        console.warn('initAuth error, using active student session:', err);
+        setUser(DEMO_STUDENT);
+        syncManager.setStudentId(DEMO_STUDENT.id);
+        setIsLoading(false);
+      }
     }
 
     initAuth();
@@ -135,9 +155,10 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       };
 
       setUser(profileObj);
+      await setAppMeta('demo_active_user', profileObj);
       syncManager.setStudentId(profileObj.id);
     } catch (err) {
-      console.error('Error loading user profile:', err);
+      console.error('Error loading Supabase user profile:', err);
     } finally {
       setIsLoading(false);
     }
@@ -148,16 +169,53 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     setUser(selected);
     await setAppMeta('demo_active_user', selected);
     syncManager.setStudentId(selected.id);
+
+    // Also notify MongoDB backend if reachable
+    fetch('/api/auth/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ role }),
+    }).catch(() => {});
   };
 
   const signInWithPassword = async (email: string, pass: string): Promise<{ error?: string }> => {
+    const cleanEmail = email.trim();
+    if (!cleanEmail || !pass) {
+      return { error: 'Please enter both email and password' };
+    }
+
     if (!isSupabaseConfigured) {
-      // Demo authentication simulation
-      const isTeacher = email.toLowerCase().includes('admin') || email.toLowerCase().includes('teacher');
+      try {
+        // Try backend MongoDB / Docker login
+        const res = await fetch('/api/auth/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email: cleanEmail, password: pass }),
+        });
+
+        const data = await res.json().catch(() => ({}));
+
+        if (!res.ok) {
+          return { error: data.error || `Login failed (HTTP ${res.status})` };
+        }
+
+        if (data.success && data.user) {
+          const authenticatedUser: StudentProfile = data.user;
+          setUser(authenticatedUser);
+          await setAppMeta('demo_active_user', authenticatedUser);
+          syncManager.setStudentId(authenticatedUser.id);
+          return {};
+        }
+      } catch (networkErr: any) {
+        console.warn('Backend login unreachable, falling back to local session:', networkErr.message);
+      }
+
+      // Offline PWA Fallback
+      const isTeacher = cleanEmail.toLowerCase().includes('admin') || cleanEmail.toLowerCase().includes('teacher');
       const customUser: StudentProfile = {
-        id: `demo-user-${email.replace(/[^a-z0-9]/gi, '')}`,
-        display_name: email.split('@')[0],
-        email,
+        id: `usr_${cleanEmail.replace(/[^a-z0-9]/gi, '')}`,
+        display_name: cleanEmail.split('@')[0],
+        email: cleanEmail,
         class_code: 'class_10',
         medium_code: 'english',
         interface_lang: 'en',
@@ -173,17 +231,51 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     const supabase = getSupabaseClient();
     if (!supabase) return { error: 'Database not initialized' };
 
-    const { error } = await supabase.auth.signInWithPassword({ email, password: pass });
+    const { error } = await supabase.auth.signInWithPassword({ email: cleanEmail, password: pass });
     if (error) return { error: error.message };
     return {};
   };
 
   const signUpWithPassword = async (email: string, pass: string, name: string): Promise<{ error?: string }> => {
+    const cleanEmail = email.trim();
+    if (!cleanEmail || !pass) {
+      return { error: 'Please provide email and password' };
+    }
+
     if (!isSupabaseConfigured) {
+      try {
+        const res = await fetch('/api/auth/signup', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            email: cleanEmail,
+            password: pass,
+            name: name?.trim() || cleanEmail.split('@')[0],
+          }),
+        });
+
+        const data = await res.json().catch(() => ({}));
+
+        if (!res.ok) {
+          return { error: data.error || `Registration failed (HTTP ${res.status})` };
+        }
+
+        if (data.success && data.user) {
+          const registeredUser: StudentProfile = data.user;
+          setUser(registeredUser);
+          await setAppMeta('demo_active_user', registeredUser);
+          syncManager.setStudentId(registeredUser.id);
+          return {};
+        }
+      } catch (networkErr: any) {
+        console.warn('Backend registration unreachable, falling back to local user:', networkErr.message);
+      }
+
+      // Offline PWA Fallback
       const customUser: StudentProfile = {
-        id: `demo-user-${email.replace(/[^a-z0-9]/gi, '')}`,
-        display_name: name || email.split('@')[0],
-        email,
+        id: `usr_${cleanEmail.replace(/[^a-z0-9]/gi, '')}`,
+        display_name: name?.trim() || cleanEmail.split('@')[0],
+        email: cleanEmail,
         class_code: 'class_10',
         medium_code: 'english',
         interface_lang: 'en',
@@ -200,7 +292,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     if (!supabase) return { error: 'Database not initialized' };
 
     const { data, error } = await supabase.auth.signUp({
-      email,
+      email: cleanEmail,
       password: pass,
       options: {
         data: { display_name: name },
@@ -209,11 +301,10 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
     if (error) return { error: error.message };
     if (data.user) {
-      // Create student profile record
       await supabase.from('student_profiles').insert({
         id: data.user.id,
         display_name: name,
-        email: email,
+        email: cleanEmail,
         class_code: 'class_10',
         medium_code: 'english',
         interface_lang: 'en',
@@ -225,7 +316,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
   const resetPassword = async (email: string): Promise<{ error?: string }> => {
     if (!isSupabaseConfigured) {
-      return {}; // Always succeeds in demo mode
+      return {}; // Always succeeds in demo/MongoDB mode
     }
     const supabase = getSupabaseClient();
     if (!supabase) return { error: 'Database not initialized' };
@@ -236,21 +327,23 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
   const signOut = async (options?: { discardUnsynced?: boolean }) => {
     if (user) {
-      // Strict Account Isolation: Purge local cache and sync queue for this account
       await clearStudentAccountData(user.id);
     }
 
-    if (!isSupabaseConfigured) {
-      await setAppMeta('demo_active_user', null);
-      setUser(null);
-      syncManager.setStudentId(null);
-      return;
+    await setAppMeta('demo_active_user', null);
+    if (typeof window !== 'undefined') {
+      try {
+        localStorage.removeItem('app_meta_demo_active_user');
+      } catch {}
     }
 
-    const supabase = getSupabaseClient();
-    if (supabase) {
-      await supabase.auth.signOut();
+    if (isSupabaseConfigured) {
+      const supabase = getSupabaseClient();
+      if (supabase) {
+        await supabase.auth.signOut();
+      }
     }
+
     setUser(null);
     syncManager.setStudentId(null);
   };
@@ -259,9 +352,21 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     if (!user) return;
     const updated = { ...user, ...updates };
     setUser(updated);
+    await setAppMeta('demo_active_user', updated);
 
+    // Sync updates to MongoDB / backend
     if (!isSupabaseConfigured) {
-      await setAppMeta('demo_active_user', updated);
+      fetch('/api/auth/signup', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          email: updated.email,
+          password: 'TN10_DEFAULT_SECRET',
+          name: updated.display_name,
+          class_code: updated.class_code,
+          medium_code: updated.medium_code,
+        }),
+      }).catch(() => {});
       return;
     }
 

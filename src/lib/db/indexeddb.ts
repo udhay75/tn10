@@ -213,14 +213,47 @@ export async function clearStudentAccountData(studentId: string): Promise<void> 
 // App Metadata Store
 // ----------------------------------------------------------------------------
 export async function getAppMeta(key: string): Promise<any> {
-  const db = await getDB();
-  const record = await db.get('app_meta', key);
-  return record ? record.value : null;
+  try {
+    const db = await getDB();
+    const record = await db.get('app_meta', key);
+    if (record !== undefined && record !== null) {
+      return record.value;
+    }
+  } catch (err) {
+    console.warn(`IndexedDB getAppMeta('${key}') note:`, err);
+  }
+
+  // Fallback to localStorage
+  if (typeof window !== 'undefined') {
+    try {
+      const stored = localStorage.getItem(`app_meta_${key}`);
+      return stored ? JSON.parse(stored) : null;
+    } catch {
+      return null;
+    }
+  }
+  return null;
 }
 
 export async function setAppMeta(key: string, value: any): Promise<void> {
-  const db = await getDB();
-  const tx = db.transaction('app_meta', 'readwrite');
-  await tx.store.put({ key, value, updated_at: Date.now() });
-  await tx.done;
+  // Always mirror to localStorage synchronously for instant retrieval
+  if (typeof window !== 'undefined') {
+    try {
+      if (value === null || value === undefined) {
+        localStorage.removeItem(`app_meta_${key}`);
+      } else {
+        localStorage.setItem(`app_meta_${key}`, JSON.stringify(value));
+      }
+    } catch {}
+  }
+
+  try {
+    const db = await getDB();
+    const tx = db.transaction('app_meta', 'readwrite');
+    await tx.store.put({ key, value, updated_at: Date.now() });
+    await tx.done;
+  } catch (err) {
+    console.warn(`IndexedDB setAppMeta('${key}') note:`, err);
+  }
 }
+

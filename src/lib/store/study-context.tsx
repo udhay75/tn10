@@ -255,23 +255,60 @@ export function StudyProvider({ children }: { children: React.ReactNode }) {
         });
 
         // Load student-specific data if logged in
-        if (user) {
-          syncManager.setStudentId(user.id);
-          const progressList = await getStudentProgressList(user.id);
+        const currentStudent = user || (typeof window !== 'undefined' ? JSON.parse(localStorage.getItem('app_meta_demo_active_user') || 'null') : null);
+        if (currentStudent) {
+          syncManager.setStudentId(currentStudent.id);
+          const progressList = await getStudentProgressList(currentStudent.id);
           const map: Record<string, StudentProgress> = {};
           progressList.forEach((p) => {
             map[p.item_code] = p;
           });
           setProgressMap(map);
 
-          const history = await getStudentRevisionHistory(user.id);
+          const history = await getStudentRevisionHistory(currentStudent.id);
           setRevisionHistory(history);
 
-          const savedLastLessonId = await getAppMeta(`last_studied_${user.id}`);
+          const savedLastLessonId = await getAppMeta(`last_studied_${currentStudent.id}`);
           if (savedLastLessonId) {
             setLastStudiedLessonId(savedLastLessonId);
           }
+
+          // Asynchronously fetch and merge any cloud records from MongoDB / PostgreSQL
+          fetch(`/api/progress?student_id=${encodeURIComponent(currentStudent.id)}`)
+            .then((res) => (res.ok ? res.json() : []))
+            .then(async (remoteRecords) => {
+              if (Array.isArray(remoteRecords) && remoteRecords.length > 0) {
+                setProgressMap((prev) => {
+                  const merged = { ...prev };
+                  remoteRecords.forEach((r: any) => {
+                    if (r.item_code) {
+                      const fullItem: StudentProgress = {
+                        id: `${currentStudent.id}_${r.item_code}`,
+                        student_id: currentStudent.id,
+                        item_code: r.item_code,
+                        completion_status: r.completion_status || 'not_started',
+                        understanding_status: r.understanding_status || 'not_assessed',
+                        study_again: Boolean(r.study_again),
+                        personal_notes: r.personal_notes || '',
+                        notes_updated_at: r.notes_updated_at || null,
+                        last_studied_at: r.last_studied_at || null,
+                        next_revision_date: r.next_revision_date || null,
+                        sync_version: r.sync_version || 1,
+                        updated_at: r.updated_at || new Date().toISOString(),
+                      };
+                      if (!merged[r.item_code] || (fullItem.sync_version >= (merged[r.item_code].sync_version || 0))) {
+                        merged[r.item_code] = fullItem;
+                        saveItemProgressLocal(fullItem).catch(() => {});
+                      }
+                    }
+                  });
+                  return merged;
+                });
+              }
+            })
+            .catch(() => {});
         } else {
+          // Default to empty for guest
           setProgressMap({});
           setRevisionHistory([]);
           setLastStudiedLessonId(null);
@@ -343,11 +380,11 @@ export function StudyProvider({ children }: { children: React.ReactNode }) {
     updater: (prev: StudentProgress) => StudentProgress,
     lessonId?: string
   ) => {
-    if (!user) return;
+    const activeStudentId = user?.id || (typeof window !== 'undefined' ? localStorage.getItem('app_meta_active_student_id') || 'demo-student-001' : 'demo-student-001');
 
     const current: StudentProgress = progressMap[itemCode] || {
-      id: `${user.id}_${itemCode}`,
-      student_id: user.id,
+      id: `${activeStudentId}_${itemCode}`,
+      student_id: activeStudentId,
       item_code: itemCode,
       completion_status: 'not_started',
       understanding_status: 'not_assessed',
@@ -361,42 +398,54 @@ export function StudyProvider({ children }: { children: React.ReactNode }) {
     };
 
     const updated = updater(current);
+    updated.id = `${activeStudentId}_${itemCode}`;
+    updated.student_id = activeStudentId;
     updated.sync_version = (current.sync_version || 0) + 1;
     updated.updated_at = new Date().toISOString();
     updated.last_studied_at = new Date().toISOString();
 
-    // 1. Save locally to IndexedDB immediately
-    await saveItemProgressLocal(updated);
-
-    // 2. Update reactive React state
+    // 1. Optimistic React state update immediately (0ms UI latency!)
     setProgressMap((prev) => ({
       ...prev,
       [itemCode]: updated,
     }));
 
-    // Update last studied lesson
+    // Update last studied lesson state
     if (lessonId) {
       setLastStudiedLessonId(lessonId);
-      await setAppMeta(`last_studied_${user.id}`, lessonId);
     }
 
-    // 3. Enqueue mutation for background sync
-    const mutation: SyncMutation = {
-      id: `mut_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`,
-      client_mutation_id: `cl_${user.id}_${itemCode}_${Date.now()}`,
-      student_id: user.id,
-      action: 'upsert_progress',
-      entity_type: 'student_item_progress',
-      entity_id: itemCode,
-      payload: updated,
-      base_version: current.sync_version || 0,
-      timestamp: Date.now(),
-      attempts: 0,
-      status: 'pending',
-    };
+    // 2. Persist to IndexedDB in safe non-blocking background task
+    try {
+      await saveItemProgressLocal(updated);
+      if (lessonId) {
+        await setAppMeta(`last_studied_${activeStudentId}`, lessonId);
+      }
+    } catch (saveErr) {
+      console.warn('saveItemProgressLocal note:', saveErr);
+    }
 
-    await enqueueMutation(mutation);
-    syncManager.refreshStatus();
+    // 3. Enqueue mutation for background sync to MongoDB / Docker
+    try {
+      const mutation: SyncMutation = {
+        id: `mut_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`,
+        client_mutation_id: `cl_${activeStudentId}_${itemCode}_${Date.now()}`,
+        student_id: activeStudentId,
+        action: 'upsert_progress',
+        entity_type: 'student_item_progress',
+        entity_id: itemCode,
+        payload: updated,
+        base_version: current.sync_version || 0,
+        timestamp: Date.now(),
+        attempts: 0,
+        status: 'pending',
+      };
+
+      await enqueueMutation(mutation);
+      syncManager.refreshStatus();
+    } catch (queueErr) {
+      console.warn('enqueueMutation note:', queueErr);
+    }
   };
 
   // Completion status updater

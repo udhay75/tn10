@@ -6,6 +6,8 @@
 // ============================================================================
 
 import React, { useState } from 'react';
+import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 import { 
   User, 
   Languages, 
@@ -28,6 +30,7 @@ import { useI18n } from '@/lib/i18n/i18n-context';
 import { useStudy } from '@/lib/store/study-context';
 
 export default function SettingsPage() {
+  const router = useRouter();
   const { user, isDemoMode, isAdmin, signInDemo, signOut } = useAuth();
   const { lang, setLang, t } = useI18n();
   const { syncStatus, unsyncedCount, triggerSync, availableSubjects, activeSubject, setActiveSubject } = useStudy();
@@ -47,6 +50,7 @@ export default function SettingsPage() {
     }
     await signOut({ discardUnsynced: discard });
     setShowLogoutModal(false);
+    router.push('/auth');
   };
 
   return (
@@ -76,7 +80,7 @@ export default function SettingsPage() {
               <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
             </span>
             <span className="text-xs font-semibold text-emerald-300 bg-emerald-950/40 border border-emerald-500/30 px-3 py-1.5 rounded-full">
-              PostgreSQL Connected
+              Cloud Database Connected
             </span>
           </div>
         </div>
@@ -114,6 +118,17 @@ export default function SettingsPage() {
                   )}
                 </div>
                 <p className="text-xs text-slate-400 font-mono mt-0.5">{user?.email || 'student@school.tn.gov.in'}</p>
+                
+                <div className="pt-2">
+                  <Link
+                    href="/auth"
+                    className="inline-flex items-center gap-1.5 px-3 py-1 rounded-xl bg-blue-600/20 hover:bg-blue-600/30 text-blue-300 border border-blue-500/30 text-xs font-semibold transition"
+                  >
+                    <User className="w-3 h-3" />
+                    <span>{user ? 'Switch Account / Sign In' : 'Sign In to Account'}</span>
+                    <ArrowRight className="w-3 h-3" />
+                  </Link>
+                </div>
               </div>
             </div>
 
@@ -170,10 +185,10 @@ export default function SettingsPage() {
               <div className="bg-slate-950/70 p-3 rounded-xl border border-white/[0.06] flex items-center justify-between">
                 <div>
                   <span className="text-slate-400 text-[11px] block">Database Server</span>
-                  <span className="text-slate-200 font-mono font-bold">Docker PostgreSQL</span>
+                  <span className="text-slate-200 font-mono font-bold">MongoDB / PostgreSQL</span>
                 </div>
                 <span className="text-[10px] bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 px-2 py-0.5 rounded-full font-bold">
-                  :5432 Live
+                  Live
                 </span>
               </div>
 
