@@ -6,7 +6,7 @@
 // Enforces strict admin-only access and persistent database updates.
 // ============================================================================
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { 
   ShieldAlert, 
@@ -26,7 +26,15 @@ import {
   KeyRound,
   Lock,
   Mail,
-  Layers
+  Layers,
+  Users,
+  GraduationCap,
+  Activity,
+  Database,
+  Search,
+  X,
+  Calendar,
+  Filter
 } from 'lucide-react';
 import { useAuth } from '@/lib/auth/auth-context';
 import { useI18n } from '@/lib/i18n/i18n-context';
@@ -38,10 +46,85 @@ import {
 import { DraftChecklistItem, CurriculumDraft } from '@/types';
 import { cacheCurriculum } from '@/lib/db/indexeddb';
 
+export interface AdminUser {
+  id: string;
+  email: string;
+  display_name: string;
+  is_admin: boolean;
+  class_code: string;
+  medium_code: string;
+  interface_lang: string;
+  completed_activities: number;
+  created_at: string;
+  updated_at: string | null;
+}
+
+export interface PlatformStats {
+  totalUsers: number;
+  totalStudents: number;
+  totalAdmins: number;
+  totalCompletedActivities: number;
+  totalRevisions: number;
+  dbStatus: 'online' | 'offline';
+  engine: string;
+}
+
 export default function AdminPage() {
   const { user, isAdmin } = useAuth();
   const { t, lang } = useI18n();
   const { curriculum, availableSubjects } = useStudy();
+
+  // Platform Analytics & User Directory State
+  const [usersList, setUsersList] = useState<AdminUser[]>([]);
+  const [platformStats, setPlatformStats] = useState<PlatformStats | null>(null);
+  const [usersLoading, setUsersLoading] = useState<boolean>(true);
+  const [usersError, setUsersError] = useState<string | null>(null);
+  const [searchUserQuery, setSearchUserQuery] = useState<string>('');
+  const [roleFilter, setRoleFilter] = useState<'all' | 'students' | 'admins'>('all');
+
+  const fetchAdminUsers = async () => {
+    setUsersLoading(true);
+    setUsersError(null);
+    try {
+      const res = await fetch('/api/admin/users');
+      const data = await res.json();
+      if (res.ok && data.success) {
+        setUsersList(data.users || []);
+        setPlatformStats(data.stats || null);
+      } else {
+        setUsersError(data.error || 'Failed to load user analytics');
+      }
+    } catch (err: any) {
+      setUsersError(err.message || 'Network error fetching user statistics');
+    } finally {
+      setUsersLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    if (isAdmin) {
+      fetchAdminUsers();
+    }
+  }, [isAdmin]);
+
+  const filteredUsers = usersList.filter((u) => {
+    const matchesRole = 
+      roleFilter === 'all' 
+        ? true 
+        : roleFilter === 'admins' 
+        ? u.is_admin 
+        : !u.is_admin;
+
+    const query = searchUserQuery.trim().toLowerCase();
+    const matchesSearch = 
+      !query || 
+      u.email.toLowerCase().includes(query) || 
+      u.display_name.toLowerCase().includes(query) ||
+      u.class_code.toLowerCase().includes(query) ||
+      u.medium_code.toLowerCase().includes(query);
+
+    return matchesRole && matchesSearch;
+  });
 
   // Admin Password Management State
   const [currentPassword, setCurrentPassword] = useState('');
@@ -254,6 +337,329 @@ export default function AdminPage() {
         <div className="mt-4 inline-flex items-center gap-2 bg-emerald-500/10 text-emerald-300 border border-emerald-500/30 px-3 py-1.5 rounded-xl text-xs font-semibold">
           <CheckCircle2 className="w-4 h-4" />
           <span>Non-destructive updates: Student marks, understanding scores and revision histories are strictly preserved.</span>
+        </div>
+      </div>
+
+      {/* SECTION: Platform Telemetry & System Analytics Bento Grid */}
+      <div className="space-y-3">
+        <div className="flex items-center justify-between px-1">
+          <div className="flex items-center gap-2">
+            <Activity className="w-4 h-4 text-purple-400" />
+            <h2 className="text-sm font-bold text-white uppercase tracking-wider">
+              Platform Telemetry & Live Metrics
+            </h2>
+          </div>
+          <button
+            onClick={fetchAdminUsers}
+            disabled={usersLoading}
+            className="inline-flex items-center gap-1.5 text-xs text-purple-400 hover:text-purple-300 font-medium cursor-pointer transition disabled:opacity-50"
+            title="Refresh statistics and user list"
+          >
+            <RefreshCw className={`w-3.5 h-3.5 ${usersLoading ? 'animate-spin' : ''}`} />
+            <span>Sync Data</span>
+          </button>
+        </div>
+
+        <div className="grid grid-cols-2 lg:grid-cols-5 gap-3">
+          {/* Card 1: Total Registered Users */}
+          <div className="bg-slate-900/90 border border-slate-800 rounded-2xl p-4 shadow-sm relative overflow-hidden group hover:border-slate-700 transition">
+            <div className="flex items-center justify-between mb-2">
+              <span className="text-[11px] font-semibold text-slate-400 uppercase tracking-wide">Total Users</span>
+              <div className="w-7 h-7 rounded-lg bg-blue-500/10 text-blue-400 border border-blue-500/20 flex items-center justify-center">
+                <Users className="w-3.5 h-3.5" />
+              </div>
+            </div>
+            <div className="text-2xl font-black text-white tracking-tight">
+              {usersLoading && !platformStats ? '...' : (platformStats?.totalUsers ?? usersList.length)}
+            </div>
+            <div className="text-[10px] text-slate-500 mt-1 flex items-center gap-1">
+              <span>All registered accounts</span>
+            </div>
+          </div>
+
+          {/* Card 2: Enrolled Students */}
+          <div className="bg-slate-900/90 border border-slate-800 rounded-2xl p-4 shadow-sm relative overflow-hidden group hover:border-slate-700 transition">
+            <div className="flex items-center justify-between mb-2">
+              <span className="text-[11px] font-semibold text-slate-400 uppercase tracking-wide">Students</span>
+              <div className="w-7 h-7 rounded-lg bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 flex items-center justify-center">
+                <GraduationCap className="w-3.5 h-3.5" />
+              </div>
+            </div>
+            <div className="text-2xl font-black text-white tracking-tight">
+              {usersLoading && !platformStats ? '...' : (platformStats?.totalStudents ?? 0)}
+            </div>
+            <div className="text-[10px] text-emerald-400/80 mt-1 flex items-center gap-1">
+              <span>Active learners</span>
+            </div>
+          </div>
+
+          {/* Card 3: Administrators */}
+          <div className="bg-slate-900/90 border border-slate-800 rounded-2xl p-4 shadow-sm relative overflow-hidden group hover:border-slate-700 transition">
+            <div className="flex items-center justify-between mb-2">
+              <span className="text-[11px] font-semibold text-slate-400 uppercase tracking-wide">Admins</span>
+              <div className="w-7 h-7 rounded-lg bg-purple-500/10 text-purple-400 border border-purple-500/20 flex items-center justify-center">
+                <ShieldCheck className="w-3.5 h-3.5" />
+              </div>
+            </div>
+            <div className="text-2xl font-black text-white tracking-tight">
+              {usersLoading && !platformStats ? '...' : (platformStats?.totalAdmins ?? 1)}
+            </div>
+            <div className="text-[10px] text-purple-400/80 mt-1 flex items-center gap-1">
+              <span>Authorized staff</span>
+            </div>
+          </div>
+
+          {/* Card 4: Learning Activities Completed */}
+          <div className="bg-slate-900/90 border border-slate-800 rounded-2xl p-4 shadow-sm relative overflow-hidden group hover:border-slate-700 transition">
+            <div className="flex items-center justify-between mb-2">
+              <span className="text-[11px] font-semibold text-slate-400 uppercase tracking-wide">Activities Done</span>
+              <div className="w-7 h-7 rounded-lg bg-amber-500/10 text-amber-400 border border-amber-500/20 flex items-center justify-center">
+                <CheckCircle2 className="w-3.5 h-3.5" />
+              </div>
+            </div>
+            <div className="text-2xl font-black text-amber-400 tracking-tight">
+              {usersLoading && !platformStats ? '...' : (platformStats?.totalCompletedActivities ?? 0)}
+            </div>
+            <div className="text-[10px] text-slate-500 mt-1 flex items-center gap-1">
+              <span>Across all subjects</span>
+            </div>
+          </div>
+
+          {/* Card 5: Database Connection & Health */}
+          <div className="col-span-2 sm:col-span-1 bg-slate-900/90 border border-slate-800 rounded-2xl p-4 shadow-sm relative overflow-hidden group hover:border-slate-700 transition">
+            <div className="flex items-center justify-between mb-2">
+              <span className="text-[11px] font-semibold text-slate-400 uppercase tracking-wide">Database</span>
+              <div className={`w-7 h-7 rounded-lg ${platformStats?.dbStatus === 'online' ? 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20' : 'bg-blue-500/10 text-blue-400 border-blue-500/20'} border flex items-center justify-center`}>
+                <Database className="w-3.5 h-3.5" />
+              </div>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className={`w-2 h-2 rounded-full ${platformStats?.dbStatus === 'online' ? 'bg-emerald-400' : 'bg-blue-400'} animate-pulse`}></span>
+              <span className="text-sm font-bold text-white capitalize">
+                {platformStats?.engine === 'mongodb' ? 'MongoDB' : 'In-Memory'}
+              </span>
+            </div>
+            <div className="text-[10px] text-slate-400 mt-1 flex items-center gap-1">
+              <span className="truncate">
+                {platformStats?.totalRevisions ?? 0} revisions tracked
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* SECTION: Registered Students & User Directory */}
+      <div className="bg-slate-900/90 border border-slate-800 rounded-3xl p-6 shadow-sm space-y-4">
+        {/* Header & Controls */}
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-slate-800">
+          <div>
+            <div className="flex items-center gap-2">
+              <Users className="w-4 h-4 text-purple-400" />
+              <h2 className="text-base font-bold text-white">Learner & User Directory</h2>
+              <span className="text-xs px-2 py-0.5 rounded-full bg-purple-500/20 text-purple-300 font-bold border border-purple-500/30">
+                {filteredUsers.length}
+              </span>
+            </div>
+            <p className="text-xs text-slate-400 mt-0.5">
+              Live accounts registered in the platform database with activity progress and study medium.
+            </p>
+          </div>
+
+          <div className="flex flex-col sm:flex-row sm:items-center gap-2.5">
+            {/* Search Box */}
+            <div className="relative">
+              <Search className="w-3.5 h-3.5 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" />
+              <input
+                type="search"
+                inputMode="search"
+                autoComplete="off"
+                autoCorrect="off"
+                autoCapitalize="off"
+                spellCheck={false}
+                data-lpignore="true"
+                data-form-type="other"
+                value={searchUserQuery}
+                onChange={(e) => setSearchUserQuery(e.target.value)}
+                placeholder="Search by name, email..."
+                className="w-full sm:w-56 bg-slate-950 border border-white/[0.08] rounded-xl pl-8 pr-8 py-2 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-purple-500 transition"
+              />
+              {searchUserQuery && (
+                <button
+                  onClick={() => setSearchUserQuery('')}
+                  className="absolute right-2.5 top-1/2 -translate-y-1/2 text-slate-400 hover:text-white"
+                >
+                  <X className="w-3 h-3" />
+                </button>
+              )}
+            </div>
+
+            {/* Filter Tabs */}
+            <div className="flex items-center p-1 bg-slate-950 rounded-xl border border-white/[0.06] text-xs">
+              <button
+                onClick={() => setRoleFilter('all')}
+                className={`px-2.5 py-1 rounded-lg font-medium transition cursor-pointer ${
+                  roleFilter === 'all'
+                    ? 'bg-purple-600 text-white shadow-sm'
+                    : 'text-slate-400 hover:text-slate-200'
+                }`}
+              >
+                All ({usersList.length})
+              </button>
+              <button
+                onClick={() => setRoleFilter('students')}
+                className={`px-2.5 py-1 rounded-lg font-medium transition cursor-pointer ${
+                  roleFilter === 'students'
+                    ? 'bg-purple-600 text-white shadow-sm'
+                    : 'text-slate-400 hover:text-slate-200'
+                }`}
+              >
+                Students ({platformStats?.totalStudents ?? 0})
+              </button>
+              <button
+                onClick={() => setRoleFilter('admins')}
+                className={`px-2.5 py-1 rounded-lg font-medium transition cursor-pointer ${
+                  roleFilter === 'admins'
+                    ? 'bg-purple-600 text-white shadow-sm'
+                    : 'text-slate-400 hover:text-slate-200'
+                }`}
+              >
+                Admins ({platformStats?.totalAdmins ?? 0})
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {/* Directory Table */}
+        <div className="overflow-x-auto rounded-2xl border border-white/[0.06] bg-slate-950/50">
+          <table className="w-full text-left text-xs border-collapse">
+            <thead className="bg-slate-950 text-slate-400 sticky top-0 uppercase text-[10px] tracking-wider border-b border-slate-800">
+              <tr>
+                <th className="p-3.5">User</th>
+                <th className="p-3.5">Role</th>
+                <th className="p-3.5">Class & Medium</th>
+                <th className="p-3.5 text-center">Activities Completed</th>
+                <th className="p-3.5">Joined Date</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-slate-800/60 font-sans">
+              {usersLoading && usersList.length === 0 ? (
+                <tr>
+                  <td colSpan={5} className="p-8 text-center text-slate-400">
+                    <div className="flex flex-col items-center justify-center gap-2">
+                      <RefreshCw className="w-5 h-5 text-purple-400 animate-spin" />
+                      <span>Loading registered users from database...</span>
+                    </div>
+                  </td>
+                </tr>
+              ) : filteredUsers.length === 0 ? (
+                <tr>
+                  <td colSpan={5} className="p-8 text-center text-slate-400">
+                    <div className="flex flex-col items-center justify-center gap-2">
+                      <Users className="w-6 h-6 text-slate-600" />
+                      <span className="font-semibold text-slate-300">No users found</span>
+                      <span className="text-[11px] text-slate-500">
+                        {searchUserQuery ? `No user matches "${searchUserQuery}"` : 'No accounts registered yet.'}
+                      </span>
+                    </div>
+                  </td>
+                </tr>
+              ) : (
+                filteredUsers.map((item) => {
+                  const initials = (item.display_name || item.email || 'ST')
+                    .slice(0, 2)
+                    .toUpperCase();
+                  const isCurrentAdmin = item.email.toLowerCase() === (user?.email || '').toLowerCase();
+
+                  return (
+                    <tr key={item.id || item.email} className="hover:bg-slate-800/40 transition">
+                      {/* User Avatar + Details */}
+                      <td className="p-3.5">
+                        <div className="flex items-center gap-3">
+                          <div className={`w-8 h-8 rounded-xl flex items-center justify-center font-bold text-[11px] shrink-0 ${
+                            item.is_admin 
+                              ? 'bg-purple-600/30 text-purple-300 border border-purple-500/40' 
+                              : 'bg-blue-600/20 text-blue-300 border border-blue-500/30'
+                          }`}>
+                            {initials}
+                          </div>
+                          <div className="min-w-0">
+                            <div className="flex items-center gap-1.5">
+                              <span className="font-semibold text-white truncate">{item.display_name}</span>
+                              {isCurrentAdmin && (
+                                <span className="text-[10px] font-bold px-1.5 py-0.2 rounded bg-purple-500/20 text-purple-300">
+                                  You
+                                </span>
+                              )}
+                            </div>
+                            <span className="text-[11px] text-slate-400 font-mono block truncate">
+                              {item.email}
+                            </span>
+                          </div>
+                        </div>
+                      </td>
+
+                      {/* Role Badge */}
+                      <td className="p-3.5">
+                        {item.is_admin ? (
+                          <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-purple-500/15 text-purple-300 border border-purple-500/30 font-bold text-[11px]">
+                            <ShieldCheck className="w-3 h-3 text-purple-400" />
+                            <span>Administrator</span>
+                          </span>
+                        ) : (
+                          <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-blue-500/15 text-blue-300 border border-blue-500/30 font-semibold text-[11px]">
+                            <GraduationCap className="w-3 h-3 text-blue-400" />
+                            <span>Student</span>
+                          </span>
+                        )}
+                      </td>
+
+                      {/* Class & Medium */}
+                      <td className="p-3.5 text-slate-300">
+                        <span className="capitalize font-medium block">
+                          {item.class_code.replace('_', ' ')}
+                        </span>
+                        <span className="text-[11px] text-slate-400 capitalize block">
+                          {item.medium_code} Medium ({item.interface_lang?.toUpperCase() || 'EN'})
+                        </span>
+                      </td>
+
+                      {/* Completed Activities */}
+                      <td className="p-3.5 text-center">
+                        <span className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-lg font-bold text-[11px] ${
+                          item.completed_activities > 0 
+                            ? 'bg-emerald-500/15 text-emerald-300 border border-emerald-500/30' 
+                            : 'bg-slate-800/80 text-slate-400 border border-slate-700'
+                        }`}>
+                          <CheckCircle2 className="w-3 h-3" />
+                          <span>{item.completed_activities} done</span>
+                        </span>
+                      </td>
+
+                      {/* Registration Date */}
+                      <td className="p-3.5 text-slate-400 text-[11px]">
+                        <div className="flex items-center gap-1.5">
+                          <Calendar className="w-3.5 h-3.5 text-slate-500 shrink-0" />
+                          <span>
+                            {item.created_at ? new Date(item.created_at).toLocaleDateString('en-IN', {
+                              day: 'numeric',
+                              month: 'short',
+                              year: 'numeric'
+                            }) : 'Default'}
+                          </span>
+                        </div>
+                      </td>
+                    </tr>
+                  );
+                })
+              )}
+            </tbody>
+          </table>
+        </div>
+
+        {/* Footer info */}
+        <div className="flex items-center justify-between text-[11px] text-slate-500 pt-1">
+          <span>Showing {filteredUsers.length} of {usersList.length} total registered accounts</span>
+          <span>Automatic sync with Coolify MongoDB</span>
         </div>
       </div>
 

@@ -2,6 +2,8 @@ import { NextResponse } from 'next/server';
 import { queryPostgres } from '@/lib/db/postgres';
 import { isMongoConfigured, getMongoDb } from '@/lib/db/mongodb';
 
+export const dynamic = 'force-dynamic';
+
 export async function GET() {
   try {
     // 1. MongoDB Mode (Coolify)

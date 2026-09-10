@@ -52,6 +52,10 @@ export function getInMemoryUser(email: string): StoredUser | undefined {
   return usersMap.get(email.toLowerCase());
 }
 
+export function getAllInMemoryUsers(): StoredUser[] {
+  return Array.from(usersMap.values());
+}
+
 export function updateInMemoryUserPassword(email: string, password_hash: string, salt: string): boolean {
   const existing = usersMap.get(email.toLowerCase());
   if (!existing) return false;

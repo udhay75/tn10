@@ -6,6 +6,8 @@ import scienceCurriculum from '@/data/class_10_science_2024.json';
 import socialScienceCurriculum from '@/data/class_10_social_science_2025.json';
 import tamilCurriculum from '@/data/class_10_tamil_2025.json';
 
+export const dynamic = 'force-dynamic';
+
 export async function GET(req: NextRequest) {
   const { searchParams } = new URL(req.url);
   const subject = searchParams.get('subject') || 'class_10_tamil';
