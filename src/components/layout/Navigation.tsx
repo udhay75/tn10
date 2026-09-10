@@ -61,7 +61,7 @@ export function Navigation() {
       {/* Mobile Floating Bottom Dock (Touch-optimised, modern blur) */}
       <nav 
         aria-label="Mobile Navigation"
-        className="md:hidden fixed bottom-3 left-3 right-3 z-40 bg-slate-950/90 backdrop-blur-2xl border border-white/[0.1] rounded-2xl px-3 py-1.5 flex items-center justify-around shadow-2xl safe-area-pb"
+        className="md:hidden fixed bottom-2 left-2 right-2 z-40 bg-slate-950/95 backdrop-blur-2xl border border-white/[0.12] rounded-2xl px-2 py-1 flex items-center justify-around shadow-2xl safe-area-pb ring-1 ring-white/[0.05]"
       >
         {navItems.map((item) => {
           const Icon = item.icon;
@@ -69,9 +69,14 @@ export function Navigation() {
             <Link
               key={item.href}
               href={item.href}
-              className={`relative flex flex-col items-center justify-center min-w-[56px] min-h-[46px] py-1 px-2 rounded-xl transition-all duration-200 ${
+              onClick={() => {
+                if (typeof window !== 'undefined' && 'vibrate' in navigator) {
+                  try { navigator.vibrate(8); } catch {}
+                }
+              }}
+              className={`relative flex flex-col items-center justify-center flex-1 min-h-[48px] py-1 px-1 rounded-xl transition-all duration-200 active:scale-95 ${
                 item.active 
-                  ? 'text-blue-400 font-bold scale-105' 
+                  ? 'text-blue-400 font-bold' 
                   : 'text-slate-400 hover:text-slate-200'
               }`}
             >

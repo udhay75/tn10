@@ -44,7 +44,7 @@ export default function RootLayout({
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
       </head>
-      <body className="font-sans antialiased text-slate-100 bg-[#070a12] selection:bg-blue-600 selection:text-white pb-20 md:pb-8">
+      <body className="font-sans antialiased text-slate-100 bg-[#070a12] selection:bg-blue-600 selection:text-white pb-28 md:pb-12">
         <AuthProvider>
           <I18nProvider>
             <StudyProvider>
@@ -52,7 +52,7 @@ export default function RootLayout({
                 <PwaNetworkBanner />
                 <Header />
                 <Navigation />
-                <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6">
+                <main className="flex-1 max-w-7xl w-full mx-auto px-3 sm:px-6 lg:px-8 py-4 sm:py-6">
                   {children}
                 </main>
                 <PwaInstallPrompt />

@@ -175,15 +175,15 @@ export default function DashboardPage() {
             </p>
 
             {/* Quick Study Action Buttons */}
-            <div className="flex flex-wrap items-center gap-3 mt-6">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 mt-5">
               {lastStudiedLesson && (
                 <Link
                   href={`/lesson/${lastStudiedLesson.id}`}
                   onClick={() => triggerHaptic('light')}
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white text-xs sm:text-sm font-bold shadow-lg shadow-blue-600/25 transition-all duration-200 active:scale-95 cursor-pointer"
+                  className="inline-flex items-center justify-between sm:justify-start gap-2 px-4 py-3 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white text-xs sm:text-sm font-bold shadow-lg shadow-blue-600/25 transition-all duration-200 active:scale-95 cursor-pointer"
                 >
-                  <span>{t.dashboard.continueStudying}: <strong>{lastStudiedLesson.title}</strong></span>
-                  <ArrowRight className="w-4 h-4" />
+                  <span className="truncate">Continue: <strong>{lastStudiedLesson.title}</strong></span>
+                  <ArrowRight className="w-4 h-4 shrink-0" />
                 </Link>
               )}
 
@@ -191,16 +191,39 @@ export default function DashboardPage() {
                 <Link
                   href="/revision"
                   onClick={() => triggerHaptic('light')}
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-indigo-500/15 hover:bg-indigo-500/25 text-indigo-300 border border-indigo-500/30 text-xs sm:text-sm font-bold transition-all duration-200 active:scale-95 cursor-pointer"
+                  className="inline-flex items-center justify-between sm:justify-start gap-2 px-4 py-3 rounded-xl bg-indigo-500/15 hover:bg-indigo-500/25 text-indigo-300 border border-indigo-500/30 text-xs sm:text-sm font-bold transition-all duration-200 active:scale-95 cursor-pointer"
                 >
-                  <Bookmark className="w-4 h-4 text-indigo-400 fill-indigo-400/40" />
-                  <span>{overallStats.studyAgainCount} {t.dashboard.studyAgainBtn}</span>
+                  <span className="flex items-center gap-1.5">
+                    <Bookmark className="w-4 h-4 text-indigo-400 fill-indigo-400/40" />
+                    <span>{overallStats.studyAgainCount} {t.dashboard.studyAgainBtn}</span>
+                  </span>
+                  <ArrowRight className="w-4 h-4 shrink-0 sm:hidden" />
                 </Link>
               )}
             </div>
+
+            {/* Mobile Overall Progress Bar */}
+            <div className="flex lg:hidden items-center justify-between p-3.5 rounded-2xl bg-slate-950/80 border border-white/[0.08] mt-4">
+              <div className="flex items-center gap-3">
+                <CircularProgress 
+                  percentage={overallStats.percentage} 
+                  size={46} 
+                  strokeWidth={4.5} 
+                  colorClass="text-emerald-400" 
+                />
+                <div>
+                  <span className="text-xs font-bold text-white block">
+                    Overall: {overallStats.percentage}% Completed
+                  </span>
+                  <span className="text-[11px] text-slate-400">
+                    {overallStats.completed} of {overallStats.total} items done across 5 subjects
+                  </span>
+                </div>
+              </div>
+            </div>
           </div>
 
-          {/* Hero Overall Progress Ring Capsule */}
+          {/* Hero Overall Progress Ring Capsule (Desktop) */}
           <div className="hidden lg:flex flex-col items-center justify-center p-6 rounded-3xl bg-slate-950/70 border border-white/[0.08] shrink-0 shadow-2xl backdrop-blur-md">
             <CircularProgress 
               percentage={overallStats.percentage} 
@@ -210,7 +233,7 @@ export default function DashboardPage() {
               label="Overall"
             />
             <span className="text-xs font-bold text-white mt-3">
-              {overallStats.completed} / {overallStats.total} {lang === 'ta' ? 'முடிந்தது' : 'Done'}
+              {overallStats.completed} / {overallStats.total} Done
             </span>
             <span className="text-[10px] text-slate-400 font-medium">
               5 Subjects Unified

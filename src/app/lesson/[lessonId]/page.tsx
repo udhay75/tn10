@@ -283,16 +283,16 @@ export default function LessonPage() {
                 return (
                   <div
                     key={item.id}
-                    className={`glass-panel rounded-3xl p-5 transition-all duration-200 ${
+                    className={`glass-panel rounded-2xl sm:rounded-3xl p-4 sm:p-5 transition-all duration-200 ${
                       prog.study_again 
                         ? 'border-indigo-500/50 shadow-lg shadow-indigo-500/10 ring-1 ring-indigo-500/30' 
                         : 'border-white/[0.08] hover:border-white/[0.14]'
                     }`}
                   >
                     {/* Top Bar: Label, Badge, Page Ref & Study Again Toggle */}
-                    <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-3 mb-4">
+                    <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-2.5 mb-3.5">
                       <div className="space-y-1 max-w-2xl">
-                        <div className="flex items-center gap-2">
+                        <div className="flex flex-wrap items-center gap-2">
                           <span className={`text-[10px] font-bold px-2 py-0.5 rounded-md ${
                             item.item_type === 'source_activity'
                               ? 'bg-blue-500/10 text-blue-300 border border-blue-500/25'
@@ -304,7 +304,7 @@ export default function LessonPage() {
                             {t.lesson.pageRef}: Book p. {item.printed_page} (PDF p. {item.pdf_page})
                           </span>
                         </div>
-                        <h3 className="text-base font-bold text-white pt-1">
+                        <h3 className="text-sm sm:text-base font-bold text-white pt-0.5">
                           {item.label}
                         </h3>
                         {item.description && (
@@ -317,7 +317,7 @@ export default function LessonPage() {
                       {/* Independent 'Study Again' Bookmark Toggle Button */}
                       <button
                         onClick={() => handleToggleStudyAgain(item.id)}
-                        className={`inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-bold transition-all duration-200 active:scale-95 cursor-pointer shrink-0 tap-bounce ${
+                        className={`inline-flex items-center justify-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-bold transition-all duration-200 active:scale-95 cursor-pointer shrink-0 tap-bounce w-full sm:w-auto ${
                           prog.study_again
                             ? 'bg-indigo-600 text-white shadow-lg shadow-indigo-600/30 border border-indigo-400'
                             : 'bg-slate-800/80 text-slate-300 hover:text-white hover:bg-slate-700 border border-white/[0.08]'
@@ -330,16 +330,16 @@ export default function LessonPage() {
                     </div>
 
                     {/* Controls Row: Completion & Understanding (Separated!) */}
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 pt-3 border-t border-white/[0.06]">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-3.5 pt-3 border-t border-white/[0.06]">
                       {/* Completion 3-State Toggle */}
                       <div>
-                        <span className="block text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-2">
+                        <span className="block text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-1.5">
                           {t.lesson.completionLabel}
                         </span>
-                        <div className="grid grid-cols-3 gap-1.5 bg-slate-950 p-1 rounded-2xl border border-white/[0.06]">
+                        <div className="grid grid-cols-3 gap-1.5 bg-slate-950 p-1 rounded-xl border border-white/[0.06]">
                           <button
                             onClick={() => handleUpdateCompletion(item.id, 'not_started')}
-                            className={`py-2 px-2 rounded-xl text-xs font-bold transition cursor-pointer tap-bounce ${
+                            className={`py-2.5 px-1 sm:px-2 rounded-xl text-xs font-bold transition cursor-pointer tap-bounce ${
                               prog.completion_status === 'not_started'
                                 ? 'bg-slate-700 text-white shadow-md'
                                 : 'text-slate-400 hover:text-slate-200'
@@ -349,7 +349,7 @@ export default function LessonPage() {
                           </button>
                           <button
                             onClick={() => handleUpdateCompletion(item.id, 'in_progress')}
-                            className={`py-2 px-2 rounded-xl text-xs font-bold transition cursor-pointer tap-bounce ${
+                            className={`py-2.5 px-1 sm:px-2 rounded-xl text-xs font-bold transition cursor-pointer tap-bounce ${
                               prog.completion_status === 'in_progress'
                                 ? 'bg-amber-600 text-white shadow-md'
                                 : 'text-slate-400 hover:text-slate-200'
@@ -359,7 +359,7 @@ export default function LessonPage() {
                           </button>
                           <button
                             onClick={() => handleUpdateCompletion(item.id, 'completed')}
-                            className={`py-2 px-2 rounded-xl text-xs font-bold transition cursor-pointer tap-bounce ${
+                            className={`py-2.5 px-1 sm:px-2 rounded-xl text-xs font-bold transition cursor-pointer tap-bounce ${
                               prog.completion_status === 'completed'
                                 ? 'bg-emerald-600 text-white shadow-md'
                                 : 'text-slate-400 hover:text-slate-200'
@@ -372,13 +372,13 @@ export default function LessonPage() {
 
                       {/* Understanding 4-State Toggle */}
                       <div>
-                        <span className="block text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-2">
+                        <span className="block text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-1.5">
                           {t.lesson.understandingLabel}
                         </span>
-                        <div className="grid grid-cols-4 gap-1 bg-slate-950 p-1 rounded-2xl border border-white/[0.06]">
+                        <div className="grid grid-cols-4 gap-1 bg-slate-950 p-1 rounded-xl border border-white/[0.06]">
                           <button
                             onClick={() => handleUpdateUnderstanding(item.id, 'not_assessed')}
-                            className={`py-2 px-1 text-center rounded-xl text-[11px] font-bold transition cursor-pointer truncate tap-bounce ${
+                            className={`py-2.5 px-0.5 sm:px-1 text-center rounded-xl text-[11px] sm:text-xs font-bold transition cursor-pointer truncate tap-bounce ${
                               prog.understanding_status === 'not_assessed'
                                 ? 'bg-slate-700 text-white'
                                 : 'text-slate-400 hover:text-slate-200'
@@ -389,7 +389,7 @@ export default function LessonPage() {
                           </button>
                           <button
                             onClick={() => handleUpdateUnderstanding(item.id, 'need_help')}
-                            className={`py-2 px-1 text-center rounded-xl text-[11px] font-bold transition cursor-pointer truncate tap-bounce ${
+                            className={`py-2.5 px-0.5 sm:px-1 text-center rounded-xl text-[11px] sm:text-xs font-bold transition cursor-pointer truncate tap-bounce ${
                               prog.understanding_status === 'need_help'
                                 ? 'bg-rose-600 text-white shadow-sm'
                                 : 'text-slate-400 hover:text-slate-200'
@@ -400,7 +400,7 @@ export default function LessonPage() {
                           </button>
                           <button
                             onClick={() => handleUpdateUnderstanding(item.id, 'partly_understood')}
-                            className={`py-2 px-1 text-center rounded-xl text-[11px] font-bold transition cursor-pointer truncate tap-bounce ${
+                            className={`py-2.5 px-0.5 sm:px-1 text-center rounded-xl text-[11px] sm:text-xs font-bold transition cursor-pointer truncate tap-bounce ${
                               prog.understanding_status === 'partly_understood'
                                 ? 'bg-amber-600 text-white shadow-sm'
                                 : 'text-slate-400 hover:text-slate-200'
@@ -411,7 +411,7 @@ export default function LessonPage() {
                           </button>
                           <button
                             onClick={() => handleUpdateUnderstanding(item.id, 'understood')}
-                            className={`py-2 px-1 text-center rounded-xl text-[11px] font-bold transition cursor-pointer truncate tap-bounce ${
+                            className={`py-2.5 px-0.5 sm:px-1 text-center rounded-xl text-[11px] sm:text-xs font-bold transition cursor-pointer truncate tap-bounce ${
                               prog.understanding_status === 'understood'
                                 ? 'bg-emerald-600 text-white shadow-sm'
                                 : 'text-slate-400 hover:text-slate-200'
