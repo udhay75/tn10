@@ -1,8 +1,8 @@
 'use client';
 
 // ============================================================================
-// Authentication Page: Student Account Creation & School Administrator Access
-// Supports MongoDB (Coolify), PostgreSQL, and Offline PWA operation.
+// Authentication Page: Student Account Creation, Sign In & Password Reset
+// Supports MongoDB (Coolify), Nodemailer SMTP, and Offline PWA operation.
 // ============================================================================
 
 import React, { useState, useEffect, Suspense } from 'react';
@@ -22,7 +22,8 @@ import {
   EyeOff, 
   LogOut, 
   RefreshCw,
-  Info
+  AlertCircle,
+  KeyRound
 } from 'lucide-react';
 import { useAuth } from '@/lib/auth/auth-context';
 import { useI18n } from '@/lib/i18n/i18n-context';
@@ -30,29 +31,48 @@ import { useI18n } from '@/lib/i18n/i18n-context';
 function AuthContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const { user, isAdmin, signInWithPassword, signUpWithPassword, resetPassword, signOut } = useAuth();
+  const { 
+    user, 
+    isAdmin, 
+    signInWithPassword, 
+    signUpWithPassword, 
+    resetPassword, 
+    confirmPasswordReset, 
+    signOut 
+  } = useAuth();
   const { t, lang } = useI18n();
 
-  const [mode, setMode] = useState<'signup' | 'signin' | 'reset'>('signup');
+  const [mode, setMode] = useState<'signup' | 'signin' | 'reset' | 'reset-confirm'>('signup');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
   const [name, setName] = useState('');
+  const [token, setToken] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState<string | null>(null);
+  const [resetDirectLink, setResetDirectLink] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
+    const urlToken = searchParams.get('token');
+    const urlEmail = searchParams.get('email');
     const isAdminParam = searchParams.get('admin') === 'true';
     const requestedMode = searchParams.get('mode');
 
-    if (isAdminParam) {
+    if (urlToken) {
+      setMode('reset-confirm');
+      setToken(urlToken);
+      if (urlEmail) setEmail(urlEmail);
+    } else if (isAdminParam) {
       setMode('signin');
       setEmail('admin@tn10.udhees.com');
     } else if (requestedMode === 'signin') {
       setMode('signin');
     } else if (requestedMode === 'signup') {
       setMode('signup');
+    } else if (requestedMode === 'reset') {
+      setMode('reset');
     }
   }, [searchParams]);
 
@@ -60,6 +80,7 @@ function AuthContent() {
     e.preventDefault();
     setError(null);
     setSuccess(null);
+    setResetDirectLink(null);
     setLoading(true);
 
     try {
@@ -68,7 +89,6 @@ function AuthContent() {
         if (res.error) {
           setError(res.error);
         } else {
-          // If admin, navigate to /admin; if student, navigate to /dashboard
           const cleanEmail = email.trim().toLowerCase();
           if (cleanEmail === 'admin@tn10.udhees.com' || cleanEmail === 'admin.curriculum@tn10.udhees.com') {
             router.push('/admin');
@@ -88,7 +108,25 @@ function AuthContent() {
         if (res.error) {
           setError(res.error);
         } else {
-          setSuccess('Password reset link sent to your email address.');
+          setSuccess(res.message || 'Password reset link sent to your email.');
+          if (res.resetLink && res.smtpConfigured === false) {
+            setResetDirectLink(res.resetLink);
+          }
+        }
+      } else if (mode === 'reset-confirm') {
+        if (password !== confirmPassword) {
+          setError('Passwords do not match. Please verify and re-type.');
+          setLoading(false);
+          return;
+        }
+
+        const res = await confirmPasswordReset(email, token, password);
+        if (res.error) {
+          setError(res.error);
+        } else {
+          setSuccess(res.message || 'Password reset successful! You can now sign in with your new password.');
+          setPassword('');
+          setConfirmPassword('');
         }
       }
     } catch (err: any) {
@@ -139,41 +177,45 @@ function AuthContent() {
                 ? 'Create your student account to track progress, save notes & study offline'
                 : mode === 'signin'
                 ? 'Sign in to continue your revision sprints and study checklist'
-                : 'Enter your email to receive password reset instructions'}
+                : mode === 'reset'
+                ? 'Enter your registered email to receive a password reset link'
+                : 'Choose and confirm your new secure password'}
             </p>
           </div>
         </div>
 
-        {/* Canonical 5-Subject Pills Overview */}
-        <div className="bg-slate-950/60 p-3 rounded-2xl border border-white/[0.06] space-y-2">
-          <div className="flex items-center justify-between text-[11px] font-semibold text-slate-400 px-1">
-            <span className="flex items-center gap-1.5">
-              <Layers className="w-3.5 h-3.5 text-blue-400" />
-              Canonical Subjects:
-            </span>
-            <span className="text-[10px] text-slate-500">2025 / 2024</span>
+        {/* Canonical 5-Subject Pills Overview (shown on main auth screens) */}
+        {mode !== 'reset-confirm' && (
+          <div className="bg-slate-950/60 p-3 rounded-2xl border border-white/[0.06] space-y-2">
+            <div className="flex items-center justify-between text-[11px] font-semibold text-slate-400 px-1">
+              <span className="flex items-center gap-1.5">
+                <Layers className="w-3.5 h-3.5 text-blue-400" />
+                Canonical Subjects:
+              </span>
+              <span className="text-[10px] text-slate-500">2025 / 2024</span>
+            </div>
+            <div className="flex items-center justify-between gap-1 text-[11px]">
+              <span className="px-2 py-1 bg-amber-500/15 text-amber-300 border border-amber-500/30 rounded-lg font-bold">
+                📜 Tamil
+              </span>
+              <span className="px-2 py-1 bg-indigo-500/15 text-indigo-300 border border-indigo-500/30 rounded-lg font-bold">
+                📘 English
+              </span>
+              <span className="px-2 py-1 bg-cyan-500/15 text-cyan-300 border border-cyan-500/30 rounded-lg font-bold">
+                📐 Math
+              </span>
+              <span className="px-2 py-1 bg-purple-500/15 text-purple-300 border border-purple-500/30 rounded-lg font-bold">
+                🔬 Science
+              </span>
+              <span className="px-2 py-1 bg-emerald-500/15 text-emerald-300 border border-emerald-500/30 rounded-lg font-bold">
+                🌍 Social
+              </span>
+            </div>
           </div>
-          <div className="flex items-center justify-between gap-1 text-[11px]">
-            <span className="px-2 py-1 bg-amber-500/15 text-amber-300 border border-amber-500/30 rounded-lg font-bold">
-              📜 Tamil
-            </span>
-            <span className="px-2 py-1 bg-indigo-500/15 text-indigo-300 border border-indigo-500/30 rounded-lg font-bold">
-              📘 English
-            </span>
-            <span className="px-2 py-1 bg-cyan-500/15 text-cyan-300 border border-cyan-500/30 rounded-lg font-bold">
-              📐 Math
-            </span>
-            <span className="px-2 py-1 bg-purple-500/15 text-purple-300 border border-purple-500/30 rounded-lg font-bold">
-              🔬 Science
-            </span>
-            <span className="px-2 py-1 bg-emerald-500/15 text-emerald-300 border border-emerald-500/30 rounded-lg font-bold">
-              🌍 Social
-            </span>
-          </div>
-        </div>
+        )}
 
         {/* Current Active Account Card (if logged in) */}
-        {user && (
+        {user && mode !== 'reset-confirm' && (
           <div className="bg-slate-950/80 border border-emerald-500/30 rounded-2xl p-4 space-y-3">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2.5">
@@ -224,31 +266,46 @@ function AuthContent() {
           </div>
         )}
 
-        {/* Mode Switcher Tabs */}
-        <div className="flex items-center justify-center bg-slate-950/80 p-1 rounded-2xl border border-white/[0.08]">
-          <button
-            type="button"
-            onClick={() => { setMode('signup'); setError(null); setSuccess(null); }}
-            className={`flex-1 py-2.5 text-xs font-bold rounded-xl transition cursor-pointer ${
-              mode === 'signup'
-                ? 'bg-blue-600 text-white shadow-md shadow-blue-600/20'
-                : 'text-slate-400 hover:text-white'
-            }`}
-          >
-            Create Student Account
-          </button>
-          <button
-            type="button"
-            onClick={() => { setMode('signin'); setError(null); setSuccess(null); }}
-            className={`flex-1 py-2.5 text-xs font-bold rounded-xl transition cursor-pointer ${
-              mode === 'signin'
-                ? 'bg-blue-600 text-white shadow-md shadow-blue-600/20'
-                : 'text-slate-400 hover:text-white'
-            }`}
-          >
-            Sign In
-          </button>
-        </div>
+        {/* Mode Switcher Tabs (shown on standard auth screens) */}
+        {mode !== 'reset-confirm' && (
+          <div className="flex items-center justify-center bg-slate-950/80 p-1 rounded-2xl border border-white/[0.08]">
+            <button
+              type="button"
+              onClick={() => { setMode('signup'); setError(null); setSuccess(null); }}
+              className={`flex-1 py-2.5 text-xs font-bold rounded-xl transition cursor-pointer ${
+                mode === 'signup'
+                  ? 'bg-blue-600 text-white shadow-md shadow-blue-600/20'
+                  : 'text-slate-400 hover:text-white'
+              }`}
+            >
+              Create Student Account
+            </button>
+            <button
+              type="button"
+              onClick={() => { setMode('signin'); setError(null); setSuccess(null); }}
+              className={`flex-1 py-2.5 text-xs font-bold rounded-xl transition cursor-pointer ${
+                mode === 'signin'
+                  ? 'bg-blue-600 text-white shadow-md shadow-blue-600/20'
+                  : 'text-slate-400 hover:text-white'
+              }`}
+            >
+              Sign In
+            </button>
+          </div>
+        )}
+
+        {/* Mode: Reset Confirmation Banner */}
+        {mode === 'reset-confirm' && (
+          <div className="bg-blue-950/40 border border-blue-500/30 rounded-2xl p-3.5 flex items-center gap-2.5 text-xs text-blue-200">
+            <KeyRound className="w-5 h-5 text-blue-400 shrink-0" />
+            <div>
+              <span className="font-bold text-white block">Reset Your Account Password</span>
+              <span className="text-[11px] text-slate-300">
+                Verified reset token active for <span className="font-mono text-blue-300 font-semibold">{email || 'your account'}</span>
+              </span>
+            </div>
+          </div>
+        )}
 
         {/* Administrator Quick Helper Banner in Sign In Mode */}
         {mode === 'signin' && (
@@ -276,14 +333,28 @@ function AuthContent() {
         <form onSubmit={handleSubmit} className="space-y-4">
           {error && (
             <div className="p-3 bg-rose-500/15 border border-rose-500/30 rounded-xl text-xs text-rose-300 animate-in fade-in flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-rose-400 shrink-0" />
+              <AlertCircle className="w-4 h-4 text-rose-400 shrink-0" />
               <span>{error}</span>
             </div>
           )}
           {success && (
-            <div className="p-3 bg-emerald-500/15 border border-emerald-500/30 rounded-xl text-xs text-emerald-300 animate-in fade-in flex items-center gap-2">
-              <CheckCircle2 className="w-4 h-4 shrink-0 text-emerald-400" />
-              <span>{success}</span>
+            <div className="p-3 bg-emerald-500/15 border border-emerald-500/30 rounded-xl text-xs text-emerald-300 animate-in fade-in space-y-2">
+              <div className="flex items-center gap-2">
+                <CheckCircle2 className="w-4 h-4 shrink-0 text-emerald-400" />
+                <span>{success}</span>
+              </div>
+              {resetDirectLink && (
+                <div className="pt-2 border-t border-emerald-500/20 text-[11px]">
+                  <p className="text-slate-300 mb-1.5">Direct Reset Link (SMTP unconfigured fallback):</p>
+                  <a
+                    href={resetDirectLink}
+                    className="inline-flex items-center gap-1 px-3 py-1.5 bg-emerald-600 hover:bg-emerald-500 text-white rounded-lg font-bold text-[11px] transition"
+                  >
+                    <span>Click to Set New Password</span>
+                    <ArrowRight className="w-3 h-3" />
+                  </a>
+                </div>
+              )}
             </div>
           )}
 
@@ -304,27 +375,31 @@ function AuthContent() {
             </div>
           )}
 
-          <div>
-            <label className="block text-[11px] font-semibold text-slate-300 mb-1.5">
-              {mode === 'signup' ? 'Student Email Address' : 'Email Address'}
-            </label>
-            <div className="relative">
-              <Mail className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
-              <input
-                type="email"
-                required
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder={mode === 'signup' ? 'student@tn10.udhees.com' : 'your.email@tn10.udhees.com'}
-                className="w-full bg-slate-950/80 border border-white/[0.08] rounded-xl pl-10 pr-3 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition"
-              />
+          {mode !== 'reset-confirm' && (
+            <div>
+              <label className="block text-[11px] font-semibold text-slate-300 mb-1.5">
+                {mode === 'signup' ? 'Student Email Address' : 'Email Address'}
+              </label>
+              <div className="relative">
+                <Mail className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
+                <input
+                  type="email"
+                  required
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder={mode === 'signup' ? 'student@tn10.udhees.com' : 'your.email@tn10.udhees.com'}
+                  className="w-full bg-slate-950/80 border border-white/[0.08] rounded-xl pl-10 pr-3 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition"
+                />
+              </div>
             </div>
-          </div>
+          )}
 
           {mode !== 'reset' && (
             <div>
               <div className="flex items-center justify-between mb-1.5">
-                <label className="text-[11px] font-semibold text-slate-300">Password</label>
+                <label className="text-[11px] font-semibold text-slate-300">
+                  {mode === 'reset-confirm' ? 'New Password' : 'Password'}
+                </label>
                 {mode === 'signin' && (
                   <button
                     type="button"
@@ -342,7 +417,7 @@ function AuthContent() {
                   required
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  placeholder="••••••••"
+                  placeholder={mode === 'reset-confirm' ? 'At least 6 characters' : '••••••••'}
                   className="w-full bg-slate-950/80 border border-white/[0.08] rounded-xl pl-10 pr-10 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition"
                 />
                 <button
@@ -353,6 +428,23 @@ function AuthContent() {
                 >
                   {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
                 </button>
+              </div>
+            </div>
+          )}
+
+          {mode === 'reset-confirm' && (
+            <div>
+              <label className="block text-[11px] font-semibold text-slate-300 mb-1.5">Confirm New Password</label>
+              <div className="relative">
+                <Lock className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
+                <input
+                  type={showPassword ? 'text' : 'password'}
+                  required
+                  value={confirmPassword}
+                  onChange={(e) => setConfirmPassword(e.target.value)}
+                  placeholder="Re-type new password"
+                  className="w-full bg-slate-950/80 border border-white/[0.08] rounded-xl pl-10 pr-10 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition"
+                />
               </div>
             </div>
           )}
@@ -374,7 +466,9 @@ function AuthContent() {
                     ? 'Create Student Account'
                     : mode === 'signin'
                     ? 'Sign In to Account'
-                    : 'Send Password Reset Link'}
+                    : mode === 'reset'
+                    ? 'Send Password Reset Link'
+                    : 'Set New Password & Sign In'}
                 </span>
                 <ArrowRight className="w-4 h-4" />
               </>
@@ -389,7 +483,7 @@ function AuthContent() {
               Already registered?{' '}
               <button
                 type="button"
-                onClick={() => { setMode('signin'); setError(null); }}
+                onClick={() => { setMode('signin'); setError(null); setSuccess(null); }}
                 className="text-blue-400 hover:text-blue-300 font-semibold cursor-pointer ml-1"
               >
                 Sign in here
@@ -400,7 +494,7 @@ function AuthContent() {
               First time here?{' '}
               <button
                 type="button"
-                onClick={() => { setMode('signup'); setError(null); }}
+                onClick={() => { setMode('signup'); setError(null); setSuccess(null); }}
                 className="text-blue-400 hover:text-blue-300 font-semibold cursor-pointer ml-1"
               >
                 Create your student account
@@ -409,10 +503,10 @@ function AuthContent() {
           ) : (
             <button
               type="button"
-              onClick={() => { setMode('signin'); setError(null); }}
-              className="text-blue-400 hover:text-blue-300 font-semibold cursor-pointer"
+              onClick={() => { setMode('signin'); setError(null); setSuccess(null); }}
+              className="text-blue-400 hover:text-blue-300 font-semibold cursor-pointer inline-flex items-center gap-1"
             >
-              Back to sign in
+              <span>Back to sign in</span>
             </button>
           )}
         </div>

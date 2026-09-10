@@ -21,7 +21,8 @@ interface AuthContextType {
   signInWithPassword: (email: string, pass: string) => Promise<{ error?: string }>;
   signUpWithPassword: (email: string, pass: string, name: string) => Promise<{ error?: string }>;
   changeAdminPassword: (currentPass: string, newPass: string) => Promise<{ error?: string; message?: string }>;
-  resetPassword: (email: string) => Promise<{ error?: string }>;
+  resetPassword: (email: string) => Promise<{ error?: string; message?: string; smtpConfigured?: boolean; resetLink?: string }>;
+  confirmPasswordReset: (email: string, token: string, newPassword: string) => Promise<{ error?: string; message?: string }>;
   signOut: (options?: { discardUnsynced?: boolean }) => Promise<void>;
   updateProfile: (updates: Partial<StudentProfile>) => Promise<void>;
 }
@@ -359,15 +360,70 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     }
   };
 
-  const resetPassword = async (email: string): Promise<{ error?: string }> => {
-    if (!isSupabaseConfigured) {
-      return {}; // Always succeeds in self-hosted MongoDB mode
+  const resetPassword = async (email: string): Promise<{ error?: string; message?: string; smtpConfigured?: boolean; resetLink?: string }> => {
+    const cleanEmail = email.trim();
+    if (!cleanEmail) {
+      return { error: 'Please enter your email address' };
     }
+
+    if (!isSupabaseConfigured) {
+      try {
+        const res = await fetch('/api/auth/forgot-password', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email: cleanEmail }),
+        });
+        const data = await res.json().catch(() => ({}));
+        if (!res.ok) {
+          return { error: data.error || `Request failed (HTTP ${res.status})` };
+        }
+        return {
+          message: data.message,
+          smtpConfigured: data.smtpConfigured,
+          resetLink: data.resetLink,
+        };
+      } catch (networkErr: any) {
+        return { error: networkErr.message || 'Failed to connect to authentication server' };
+      }
+    }
+
     const supabase = getSupabaseClient();
     if (!supabase) return { error: 'Database not initialized' };
-    const { error } = await supabase.auth.resetPasswordForEmail(email);
+    const { error } = await supabase.auth.resetPasswordForEmail(cleanEmail);
     if (error) return { error: error.message };
-    return {};
+    return { message: 'Password reset link sent to your email.' };
+  };
+
+  const confirmPasswordReset = async (email: string, token: string, newPassword: string): Promise<{ error?: string; message?: string }> => {
+    if (!email || !token || !newPassword) {
+      return { error: 'All fields are required' };
+    }
+    if (newPassword.length < 6) {
+      return { error: 'New password must be at least 6 characters' };
+    }
+
+    if (!isSupabaseConfigured) {
+      try {
+        const res = await fetch('/api/auth/reset-password', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email: email.trim(), token: token.trim(), new_password: newPassword }),
+        });
+        const data = await res.json().catch(() => ({}));
+        if (!res.ok) {
+          return { error: data.error || `Reset failed (HTTP ${res.status})` };
+        }
+        return { message: data.message };
+      } catch (networkErr: any) {
+        return { error: networkErr.message || 'Failed to connect to authentication server' };
+      }
+    }
+
+    const supabase = getSupabaseClient();
+    if (!supabase) return { error: 'Database not initialized' };
+    const { error } = await supabase.auth.updateUser({ password: newPassword });
+    if (error) return { error: error.message };
+    return { message: 'Password reset successfully' };
   };
 
   const signOut = async (options?: { discardUnsynced?: boolean }) => {
@@ -447,6 +503,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         signUpWithPassword,
         changeAdminPassword,
         resetPassword,
+        confirmPasswordReset,
         signOut,
         updateProfile,
       }}
