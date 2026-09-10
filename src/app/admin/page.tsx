@@ -517,6 +517,10 @@ export default function AdminPage() {
                         {isEditing ? (
                           <input
                             type="text"
+                            autoComplete="off"
+                            autoCorrect="off"
+                            spellCheck={false}
+                            data-lpignore="true"
                             value={editForm.section_name}
                             onChange={(e) => setEditForm({ ...editForm, section_name: e.target.value })}
                             className="bg-slate-950 border border-slate-700 rounded px-2 py-1 text-xs text-white"
@@ -529,6 +533,10 @@ export default function AdminPage() {
                         {isEditing ? (
                           <input
                             type="text"
+                            autoComplete="off"
+                            autoCorrect="off"
+                            spellCheck={false}
+                            data-lpignore="true"
                             value={editForm.label}
                             onChange={(e) => setEditForm({ ...editForm, label: e.target.value })}
                             className="w-full bg-slate-950 border border-slate-700 rounded px-2 py-1 text-xs text-white"
@@ -557,6 +565,8 @@ export default function AdminPage() {
                         {isEditing ? (
                           <input
                             type="number"
+                            autoComplete="off"
+                            data-lpignore="true"
                             value={editForm.printed_page}
                             onChange={(e) => setEditForm({ ...editForm, printed_page: Number(e.target.value) })}
                             className="w-16 bg-slate-950 border border-slate-700 rounded px-2 py-1 text-xs text-white"

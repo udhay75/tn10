@@ -75,19 +75,34 @@ export default function CurriculumPage() {
         </div>
 
         {/* Search Bar */}
-        <div className="relative w-full md:w-72">
-          <Search className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
+        <div className="relative w-full md:w-72" role="search">
+          <Search className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
           <input
-            type="text"
+            type="search"
+            name="lesson_search"
+            id="lesson_search"
+            inputMode="search"
+            enterKeyHint="search"
+            autoComplete="off"
+            autoCorrect="off"
+            autoCapitalize="none"
+            spellCheck={false}
+            data-form-type="other"
+            data-lpignore="true"
+            data-1p-ignore="true"
+            data-dashlane-ignore="true"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             placeholder={lang === 'ta' ? 'பாடங்களை தேடுக...' : 'Search lessons or topics...'}
-            className="w-full pl-9 pr-8 py-2 bg-slate-950/80 border border-white/[0.1] rounded-2xl text-xs text-white placeholder-slate-500 focus:outline-none focus:border-blue-500/80 transition-colors"
+            className="w-full pl-9 pr-8 py-2 bg-slate-950/80 border border-white/[0.1] rounded-2xl text-xs text-white placeholder-slate-500 focus:outline-none focus:border-blue-500/80 transition-colors [&::-webkit-search-cancel-button]:hidden [&::-webkit-search-decoration]:hidden"
+            aria-label={lang === 'ta' ? 'பாடங்களை தேடுக' : 'Search lessons'}
           />
           {searchQuery && (
             <button 
+              type="button"
               onClick={() => setSearchQuery('')}
-              className="absolute right-2.5 top-1/2 -translate-y-1/2 text-slate-400 hover:text-white p-1"
+              className="absolute right-2.5 top-1/2 -translate-y-1/2 text-slate-400 hover:text-white p-1 cursor-pointer"
+              aria-label="Clear search"
             >
               <X className="w-3.5 h-3.5" />
             </button>
