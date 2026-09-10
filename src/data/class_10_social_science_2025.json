@@ -1,0 +1,3094 @@
+{
+  "board": {
+    "code": "tn_state_board",
+    "name": "Tamil Nadu State Board of School Education",
+    "state": "Tamil Nadu"
+  },
+  "class": {
+    "grade_number": 10,
+    "title": "Standard 10",
+    "code": "class_10"
+  },
+  "medium": {
+    "code": "english",
+    "name": "English Medium"
+  },
+  "subject": {
+    "code": "class_10_social_science",
+    "title": "Social Science",
+    "curriculum_version": "2025 Edition",
+    "textbook": {
+      "title": "Standard Ten Social Science",
+      "edition": "Revised Edition 2020, 2022, 2023, 2025, Reprint 2021, 2024",
+      "first_edition_year": 2019,
+      "reprint_year": 2025,
+      "publisher": "Tamil Nadu Textbook and Educational Services Corporation",
+      "source_file": "Class_10_Social_Science_English_2025_Edition.pdf",
+      "total_pages": 344,
+      "page_offset": 6
+    }
+  },
+  "units": [
+    {
+      "id": "tn10_soc_u1",
+      "unit_number": 1,
+      "title": "Unit 1: Outbreak of World War I and Its Aftermath",
+      "theme": "History: European Imperialism, Balkan Crisis, World War I, Russian Revolution & League of Nations",
+      "lessons": [
+        {
+          "id": "tn10_soc_u1_l1_theory_and_concepts",
+          "unit_id": "tn10_soc_u1",
+          "unit_number": 1,
+          "lesson_number": 1,
+          "lesson_type": "theory",
+          "title": "Outbreak of World War I and Its Aftermath: Core Concepts & Theory",
+          "author": "Tamil Nadu State Board (History)",
+          "is_memoriter": false,
+          "printed_page_start": 1,
+          "printed_page_end": 13,
+          "pdf_page_start": 7,
+          "pdf_page_end": 19,
+          "checklist_items": [
+            {
+              "id": "tn10_soc_u1_l1_theory_and_concepts_item_1_concept_reading",
+              "lesson_id": "tn10_soc_u1_l1_theory_and_concepts",
+              "order_index": 1,
+              "item_type": "source_activity",
+              "section_name": "Core Concepts",
+              "label": "Read & Understand Core Concepts: Outbreak of World War I and Its Aftermath",
+              "description": "Read foundational principles, key events, definitions, constitutional articles, and core mechanisms of Outbreak of World War I and Its Aftermath.",
+              "printed_page": 1,
+              "pdf_page": 7,
+              "source_reference": "Standard Ten Social Science (History), pp. 1–13",
+              "is_required": true
+            },
+            {
+              "id": "tn10_soc_u1_l1_theory_and_concepts_item_2_activities_and_case_studies",
+              "lesson_id": "tn10_soc_u1_l1_theory_and_concepts",
+              "order_index": 2,
+              "item_type": "source_activity",
+              "section_name": "In-text Figures & Case Studies",
+              "label": "In-text Activities, Tables, Infographics & Case Studies",
+              "description": "Review illustrated diagrams, statistical charts, comparative tables, and in-text case studies for Outbreak of World War I and Its Aftermath.",
+              "printed_page": 2,
+              "pdf_page": 8,
+              "source_reference": "Standard Ten Social Science (History), In-text features",
+              "is_required": true
+            }
+          ]
+        },
+        {
+          "id": "tn10_soc_u1_l2_textbook_evaluation",
+          "unit_id": "tn10_soc_u1",
+          "unit_number": 1,
+          "lesson_number": 2,
+          "lesson_type": "exercise",
+          "title": "Outbreak of World War I and Its Aftermath: Textbook Evaluation & Assessment",
+          "author": "Tamil Nadu State Board (History)",
+          "is_memoriter": false,
+          "printed_page_start": 14,
+          "printed_page_end": 15,
+          "pdf_page_start": 20,
+          "pdf_page_end": 21,
+          "checklist_items": [
+            {
+              "id": "tn10_soc_u1_l2_textbook_evaluation_item_1_objective_questions",
+              "lesson_id": "tn10_soc_u1_l2_textbook_evaluation",
+              "order_index": 1,
+              "item_type": "source_activity",
+              "section_name": "Objective Evaluation (Part I)",
+              "label": "Part I: MCQs, Fill in Blanks, True/False & Match Items",
+              "description": "Complete all 1-mark multiple choice questions, fill in the blanks, matching pairs, and assertion-reason questions for Unit 1.",
+              "printed_page": 14,
+              "pdf_page": 20,
+              "source_reference": "Standard Ten Social Science, Unit 1 Evaluation, Part I",
+              "is_required": true
+            },
+            {
+              "id": "tn10_soc_u1_l2_textbook_evaluation_item_2_short_answers",
+              "lesson_id": "tn10_soc_u1_l2_textbook_evaluation",
+              "order_index": 2,
+              "item_type": "source_activity",
+              "section_name": "Short Answers & Distinctions (Part II)",
+              "label": "Part II: Short Answer Questions & Distinguish Between (2 Marks)",
+              "description": "Answer all concise 2-mark conceptual questions, distinguish between pairs, and give reasons for Unit 1.",
+              "printed_page": 15,
+              "pdf_page": 21,
+              "source_reference": "Standard Ten Social Science, Unit 1 Evaluation, Part II",
+              "is_required": true
+            },
+            {
+              "id": "tn10_soc_u1_l2_textbook_evaluation_item_3_detailed_answers",
+              "lesson_id": "tn10_soc_u1_l2_textbook_evaluation",
+              "order_index": 3,
+              "item_type": "source_activity",
+              "section_name": "Detailed Answers & Essays (Part III)",
+              "label": "Part III: Detailed Answers, Essays & HOTS (5 & 8 Marks)",
+              "description": "Write comprehensive paragraph/essay answers, historical event analyses, and Higher Order Thinking Questions for Unit 1.",
+              "printed_page": 15,
+              "pdf_page": 21,
+              "source_reference": "Standard Ten Social Science, Unit 1 Evaluation, Part III",
+              "is_required": true
+            },
+            {
+              "id": "tn10_soc_u1_l2_textbook_evaluation_item_4_map_and_timeline",
+              "lesson_id": "tn10_soc_u1_l2_textbook_evaluation",
+              "order_index": 4,
+              "item_type": "source_activity",
+              "section_name": "Board Exam Map & Timeline Skills",
+              "label": "Board Exam Map Work & Timeline Skills: Outbreak of World War I and Its Aftermath",
+              "description": "Practice marking key exam locations on outline maps: World Map: European belligerents (Britain, France, Germany, Italy, Austria-Hungary), Balkans & Gallipoli; Timeline (1914–1919).",
+              "printed_page": 15,
+              "pdf_page": 21,
+              "source_reference": "Standard Ten Social Science, Unit 1 Map / Timeline Exercise",
+              "is_required": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tn10_soc_u2",
+      "unit_number": 2,
+      "title": "Unit 2: The World between two World Wars",
+      "theme": "History: Great Depression, Rise of Fascism in Italy (Mussolini), Nazism in Germany (Hitler) & Anti-Colonial Struggle",
+      "lessons": [
+        {
+          "id": "tn10_soc_u2_l1_theory_and_concepts",
+          "unit_id": "tn10_soc_u2",
+          "unit_number": 2,
+          "lesson_number": 1,
+          "lesson_type": "theory",
+          "title": "The World between two World Wars: Core Concepts & Theory",
+          "author": "Tamil Nadu State Board (History)",
+          "is_memoriter": false,
+          "printed_page_start": 16,
+          "printed_page_end": 24,
+          "pdf_page_start": 22,
+          "pdf_page_end": 30,
+          "checklist_items": [
+            {
+              "id": "tn10_soc_u2_l1_theory_and_concepts_item_1_concept_reading",
+              "lesson_id": "tn10_soc_u2_l1_theory_and_concepts",
+              "order_index": 1,
+              "item_type": "source_activity",
+              "section_name": "Core Concepts",
+              "label": "Read & Understand Core Concepts: The World between two World Wars",
+              "description": "Read foundational principles, key events, definitions, constitutional articles, and core mechanisms of The World between two World Wars.",
+              "printed_page": 16,
+              "pdf_page": 22,
+              "source_reference": "Standard Ten Social Science (History), pp. 16–24",
+              "is_required": true
+            },
+            {
+              "id": "tn10_soc_u2_l1_theory_and_concepts_item_2_activities_and_case_studies",
+              "lesson_id": "tn10_soc_u2_l1_theory_and_concepts",
+              "order_index": 2,
+              "item_type": "source_activity",
+              "section_name": "In-text Figures & Case Studies",
+              "label": "In-text Activities, Tables, Infographics & Case Studies",
+              "description": "Review illustrated diagrams, statistical charts, comparative tables, and in-text case studies for The World between two World Wars.",
+              "printed_page": 17,
+              "pdf_page": 23,
+              "source_reference": "Standard Ten Social Science (History), In-text features",
+              "is_required": true
+            }
+          ]
+        },
+        {
+          "id": "tn10_soc_u2_l2_textbook_evaluation",
+          "unit_id": "tn10_soc_u2",
+          "unit_number": 2,
+          "lesson_number": 2,
+          "lesson_type": "exercise",
+          "title": "The World between two World Wars: Textbook Evaluation & Assessment",
+          "author": "Tamil Nadu State Board (History)",
+          "is_memoriter": false,
+          "printed_page_start": 25,
+          "printed_page_end": 26,
+          "pdf_page_start": 31,
+          "pdf_page_end": 32,
+          "checklist_items": [
+            {
+              "id": "tn10_soc_u2_l2_textbook_evaluation_item_1_objective_questions",
+              "lesson_id": "tn10_soc_u2_l2_textbook_evaluation",
+              "order_index": 1,
+              "item_type": "source_activity",
+              "section_name": "Objective Evaluation (Part I)",
+              "label": "Part I: MCQs, Fill in Blanks, True/False & Match Items",
+              "description": "Complete all 1-mark multiple choice questions, fill in the blanks, matching pairs, and assertion-reason questions for Unit 2.",
+              "printed_page": 25,
+              "pdf_page": 31,
+              "source_reference": "Standard Ten Social Science, Unit 2 Evaluation, Part I",
+              "is_required": true
+            },
+            {
+              "id": "tn10_soc_u2_l2_textbook_evaluation_item_2_short_answers",
+              "lesson_id": "tn10_soc_u2_l2_textbook_evaluation",
+              "order_index": 2,
+              "item_type": "source_activity",
+              "section_name": "Short Answers & Distinctions (Part II)",
+              "label": "Part II: Short Answer Questions & Distinguish Between (2 Marks)",
+              "description": "Answer all concise 2-mark conceptual questions, distinguish between pairs, and give reasons for Unit 2.",
+              "printed_page": 26,
+              "pdf_page": 32,
+              "source_reference": "Standard Ten Social Science, Unit 2 Evaluation, Part II",
+              "is_required": true
+            },
+            {
+              "id": "tn10_soc_u2_l2_textbook_evaluation_item_3_detailed_answers",
+              "lesson_id": "tn10_soc_u2_l2_textbook_evaluation",
+              "order_index": 3,
+              "item_type": "source_activity",
+              "section_name": "Detailed Answers & Essays (Part III)",
+              "label": "Part III: Detailed Answers, Essays & HOTS (5 & 8 Marks)",
+              "description": "Write comprehensive paragraph/essay answers, historical event analyses, and Higher Order Thinking Questions for Unit 2.",
+              "printed_page": 26,
+              "pdf_page": 32,
+              "source_reference": "Standard Ten Social Science, Unit 2 Evaluation, Part III",
+              "is_required": true
+            },
+            {
+              "id": "tn10_soc_u2_l2_textbook_evaluation_item_4_map_and_timeline",
+              "lesson_id": "tn10_soc_u2_l2_textbook_evaluation",
+              "order_index": 4,
+              "item_type": "source_activity",
+              "section_name": "Board Exam Map & Timeline Skills",
+              "label": "Board Exam Map Work & Timeline Skills: The World between two World Wars",
+              "description": "Practice marking key exam locations on outline maps: World Map: Axis & Allied spheres, Germany, Italy, Manchuria & Ethiopia; Timeline (1919–1939).",
+              "printed_page": 26,
+              "pdf_page": 32,
+              "source_reference": "Standard Ten Social Science, Unit 2 Map / Timeline Exercise",
+              "is_required": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tn10_soc_u3",
+      "unit_number": 3,
+      "title": "Unit 3: World War II",
+      "theme": "History: Outbreak of WWII, Blitzkrieg, Battle of Stalingrad, Holocaust, Pearl Harbor, Hiroshima-Nagasaki & UNO",
+      "lessons": [
+        {
+          "id": "tn10_soc_u3_l1_theory_and_concepts",
+          "unit_id": "tn10_soc_u3",
+          "unit_number": 3,
+          "lesson_number": 1,
+          "lesson_type": "theory",
+          "title": "World War II: Core Concepts & Theory",
+          "author": "Tamil Nadu State Board (History)",
+          "is_memoriter": false,
+          "printed_page_start": 27,
+          "printed_page_end": 36,
+          "pdf_page_start": 33,
+          "pdf_page_end": 42,
+          "checklist_items": [
+            {
+              "id": "tn10_soc_u3_l1_theory_and_concepts_item_1_concept_reading",
+              "lesson_id": "tn10_soc_u3_l1_theory_and_concepts",
+              "order_index": 1,
+              "item_type": "source_activity",
+              "section_name": "Core Concepts",
+              "label": "Read & Understand Core Concepts: World War II",
+              "description": "Read foundational principles, key events, definitions, constitutional articles, and core mechanisms of World War II.",
+              "printed_page": 27,
+              "pdf_page": 33,
+              "source_reference": "Standard Ten Social Science (History), pp. 27–36",
+              "is_required": true
+            },
+            {
+              "id": "tn10_soc_u3_l1_theory_and_concepts_item_2_activities_and_case_studies",
+              "lesson_id": "tn10_soc_u3_l1_theory_and_concepts",
+              "order_index": 2,
+              "item_type": "source_activity",
+              "section_name": "In-text Figures & Case Studies",
+              "label": "In-text Activities, Tables, Infographics & Case Studies",
+              "description": "Review illustrated diagrams, statistical charts, comparative tables, and in-text case studies for World War II.",
+              "printed_page": 28,
+              "pdf_page": 34,
+              "source_reference": "Standard Ten Social Science (History), In-text features",
+              "is_required": true
+            }
+          ]
+        },
+        {
+          "id": "tn10_soc_u3_l2_textbook_evaluation",
+          "unit_id": "tn10_soc_u3",
+          "unit_number": 3,
+          "lesson_number": 2,
+          "lesson_type": "exercise",
+          "title": "World War II: Textbook Evaluation & Assessment",
+          "author": "Tamil Nadu State Board (History)",
+          "is_memoriter": false,
+          "printed_page_start": 37,
+          "printed_page_end": 39,
+          "pdf_page_start": 43,
+          "pdf_page_end": 45,
+          "checklist_items": [
+            {
+              "id": "tn10_soc_u3_l2_textbook_evaluation_item_1_objective_questions",
+              "lesson_id": "tn10_soc_u3_l2_textbook_evaluation",
+              "order_index": 1,
+              "item_type": "source_activity",
+              "section_name": "Objective Evaluation (Part I)",
+              "label": "Part I: MCQs, Fill in Blanks, True/False & Match Items",
+              "description": "Complete all 1-mark multiple choice questions, fill in the blanks, matching pairs, and assertion-reason questions for Unit 3.",
+              "printed_page": 37,
+              "pdf_page": 43,
+              "source_reference": "Standard Ten Social Science, Unit 3 Evaluation, Part I",
+              "is_required": true
+            },
+            {
+              "id": "tn10_soc_u3_l2_textbook_evaluation_item_2_short_answers",
+              "lesson_id": "tn10_soc_u3_l2_textbook_evaluation",
+              "order_index": 2,
+              "item_type": "source_activity",
+              "section_name": "Short Answers & Distinctions (Part II)",
+              "label": "Part II: Short Answer Questions & Distinguish Between (2 Marks)",
+              "description": "Answer all concise 2-mark conceptual questions, distinguish between pairs, and give reasons for Unit 3.",
+              "printed_page": 38,
+              "pdf_page": 44,
+              "source_reference": "Standard Ten Social Science, Unit 3 Evaluation, Part II",
+              "is_required": true
+            },
+            {
+              "id": "tn10_soc_u3_l2_textbook_evaluation_item_3_detailed_answers",
+              "lesson_id": "tn10_soc_u3_l2_textbook_evaluation",
+              "order_index": 3,
+              "item_type": "source_activity",
+              "section_name": "Detailed Answers & Essays (Part III)",
+              "label": "Part III: Detailed Answers, Essays & HOTS (5 & 8 Marks)",
+              "description": "Write comprehensive paragraph/essay answers, historical event analyses, and Higher Order Thinking Questions for Unit 3.",
+              "printed_page": 39,
+              "pdf_page": 45,
+              "source_reference": "Standard Ten Social Science, Unit 3 Evaluation, Part III",
+              "is_required": true
+            },
+            {
+              "id": "tn10_soc_u3_l2_textbook_evaluation_item_4_map_and_timeline",
+              "lesson_id": "tn10_soc_u3_l2_textbook_evaluation",
+              "order_index": 4,
+              "item_type": "source_activity",
+              "section_name": "Board Exam Map & Timeline Skills",
+              "label": "Board Exam Map Work & Timeline Skills: World War II",
+              "description": "Practice marking key exam locations on outline maps: World Map: Major Pacific & European battlefronts, Normandy, Pearl Harbor, Hiroshima, Nagasaki; Timeline (1939–1945).",
+              "printed_page": 39,
+              "pdf_page": 45,
+              "source_reference": "Standard Ten Social Science, Unit 3 Map / Timeline Exercise",
+              "is_required": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tn10_soc_u4",
+      "unit_number": 4,
+      "title": "Unit 4: The World after World War II",
+      "theme": "History: Cold War, NATO vs Warsaw Pact, Non-Aligned Movement (NAM), Decolonization in Asia/Africa & European Union",
+      "lessons": [
+        {
+          "id": "tn10_soc_u4_l1_theory_and_concepts",
+          "unit_id": "tn10_soc_u4",
+          "unit_number": 4,
+          "lesson_number": 1,
+          "lesson_type": "theory",
+          "title": "The World after World War II: Core Concepts & Theory",
+          "author": "Tamil Nadu State Board (History)",
+          "is_memoriter": false,
+          "printed_page_start": 40,
+          "printed_page_end": 49,
+          "pdf_page_start": 46,
+          "pdf_page_end": 55,
+          "checklist_items": [
+            {
+              "id": "tn10_soc_u4_l1_theory_and_concepts_item_1_concept_reading",
+              "lesson_id": "tn10_soc_u4_l1_theory_and_concepts",
+              "order_index": 1,
+              "item_type": "source_activity",
+              "section_name": "Core Concepts",
+              "label": "Read & Understand Core Concepts: The World after World War II",
+              "description": "Read foundational principles, key events, definitions, constitutional articles, and core mechanisms of The World after World War II.",
+              "printed_page": 40,
+              "pdf_page": 46,
+              "source_reference": "Standard Ten Social Science (History), pp. 40–49",
+              "is_required": true
+            },
+            {
+              "id": "tn10_soc_u4_l1_theory_and_concepts_item_2_activities_and_case_studies",
+              "lesson_id": "tn10_soc_u4_l1_theory_and_concepts",
+              "order_index": 2,
+              "item_type": "source_activity",
+              "section_name": "In-text Figures & Case Studies",
+              "label": "In-text Activities, Tables, Infographics & Case Studies",
+              "description": "Review illustrated diagrams, statistical charts, comparative tables, and in-text case studies for The World after World War II.",
+              "printed_page": 41,
+              "pdf_page": 47,
+              "source_reference": "Standard Ten Social Science (History), In-text features",
+              "is_required": true
+            }
+          ]
+        },
+        {
+          "id": "tn10_soc_u4_l2_textbook_evaluation",
+          "unit_id": "tn10_soc_u4",
+          "unit_number": 4,
+          "lesson_number": 2,
+          "lesson_type": "exercise",
+          "title": "The World after World War II: Textbook Evaluation & Assessment",
+          "author": "Tamil Nadu State Board (History)",
+          "is_memoriter": false,
+          "printed_page_start": 50,
+          "printed_page_end": 52,
+          "pdf_page_start": 56,
+          "pdf_page_end": 58,
+          "checklist_items": [
+            {
+              "id": "tn10_soc_u4_l2_textbook_evaluation_item_1_objective_questions",
+              "lesson_id": "tn10_soc_u4_l2_textbook_evaluation",
+              "order_index": 1,
+              "item_type": "source_activity",
+              "section_name": "Objective Evaluation (Part I)",
+              "label": "Part I: MCQs, Fill in Blanks, True/False & Match Items",
+              "description": "Complete all 1-mark multiple choice questions, fill in the blanks, matching pairs, and assertion-reason questions for Unit 4.",
+              "printed_page": 50,
+              "pdf_page": 56,
+              "source_reference": "Standard Ten Social Science, Unit 4 Evaluation, Part I",
+              "is_required": true
+            },
+            {
+              "id": "tn10_soc_u4_l2_textbook_evaluation_item_2_short_answers",
+              "lesson_id": "tn10_soc_u4_l2_textbook_evaluation",
+              "order_index": 2,
+              "item_type": "source_activity",
+              "section_name": "Short Answers & Distinctions (Part II)",
+              "label": "Part II: Short Answer Questions & Distinguish Between (2 Marks)",
+              "description": "Answer all concise 2-mark conceptual questions, distinguish between pairs, and give reasons for Unit 4.",
+              "printed_page": 51,
+              "pdf_page": 57,
+              "source_reference": "Standard Ten Social Science, Unit 4 Evaluation, Part II",
+              "is_required": true
+            },
+            {
+              "id": "tn10_soc_u4_l2_textbook_evaluation_item_3_detailed_answers",
+              "lesson_id": "tn10_soc_u4_l2_textbook_evaluation",
+              "order_index": 3,
+              "item_type": "source_activity",
+              "section_name": "Detailed Answers & Essays (Part III)",
+              "label": "Part III: Detailed Answers, Essays & HOTS (5 & 8 Marks)",
+              "description": "Write comprehensive paragraph/essay answers, historical event analyses, and Higher Order Thinking Questions for Unit 4.",
+              "printed_page": 52,
+              "pdf_page": 58,
+              "source_reference": "Standard Ten Social Science, Unit 4 Evaluation, Part III",
+              "is_required": true
+            },
+            {
+              "id": "tn10_soc_u4_l2_textbook_evaluation_item_4_map_and_timeline",
+              "lesson_id": "tn10_soc_u4_l2_textbook_evaluation",
+              "order_index": 4,
+              "item_type": "source_activity",
+              "section_name": "Board Exam Map & Timeline Skills",
+              "label": "Board Exam Map Work & Timeline Skills: The World after World War II",
+              "description": "Practice marking key exam locations on outline maps: World Map: Cold War blocs, NATO members, Warsaw pact, Non-Aligned nations.",
+              "printed_page": 52,
+              "pdf_page": 58,
+              "source_reference": "Standard Ten Social Science, Unit 4 Map / Timeline Exercise",
+              "is_required": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tn10_soc_u5",
+      "unit_number": 5,
+      "title": "Unit 5: Social and Religious Reform Movements in the 19th Century",
+      "theme": "History: Brahmo Samaj, Arya Samaj, Ramakrishna Mission, Theosophical Society, Jyotiba Phule, Narayana Guru & Tamil Reformers",
+      "lessons": [
+        {
+          "id": "tn10_soc_u5_l1_theory_and_concepts",
+          "unit_id": "tn10_soc_u5",
+          "unit_number": 5,
+          "lesson_number": 1,
+          "lesson_type": "theory",
+          "title": "Social and Religious Reform Movements in the 19th Century: Core Concepts & Theory",
+          "author": "Tamil Nadu State Board (History)",
+          "is_memoriter": false,
+          "printed_page_start": 53,
+          "printed_page_end": 60,
+          "pdf_page_start": 59,
+          "pdf_page_end": 66,
+          "checklist_items": [
+            {
+              "id": "tn10_soc_u5_l1_theory_and_concepts_item_1_concept_reading",
+              "lesson_id": "tn10_soc_u5_l1_theory_and_concepts",
+              "order_index": 1,
+              "item_type": "source_activity",
+              "section_name": "Core Concepts",
+              "label": "Read & Understand Core Concepts: Social and Religious Reform Movements in the 19th Century",
+              "description": "Read foundational principles, key events, definitions, constitutional articles, and core mechanisms of Social and Religious Reform Movements in the 19th Century.",
+              "printed_page": 53,
+              "pdf_page": 59,
+              "source_reference": "Standard Ten Social Science (History), pp. 53–60",
+              "is_required": true
+            },
+            {
+              "id": "tn10_soc_u5_l1_theory_and_concepts_item_2_activities_and_case_studies",
+              "lesson_id": "tn10_soc_u5_l1_theory_and_concepts",
+              "order_index": 2,
+              "item_type": "source_activity",
+              "section_name": "In-text Figures & Case Studies",
+              "label": "In-text Activities, Tables, Infographics & Case Studies",
+              "description": "Review illustrated diagrams, statistical charts, comparative tables, and in-text case studies for Social and Religious Reform Movements in the 19th Century.",
+              "printed_page": 54,
+              "pdf_page": 60,
+              "source_reference": "Standard Ten Social Science (History), In-text features",
+              "is_required": true
+            }
+          ]
+        },
+        {
+          "id": "tn10_soc_u5_l2_textbook_evaluation",
+          "unit_id": "tn10_soc_u5",
+          "unit_number": 5,
+          "lesson_number": 2,
+          "lesson_type": "exercise",
+          "title": "Social and Religious Reform Movements in the 19th Century: Textbook Evaluation & Assessment",
+          "author": "Tamil Nadu State Board (History)",
+          "is_memoriter": false,
+          "printed_page_start": 61,
+          "printed_page_end": 62,
+          "pdf_page_start": 67,
+          "pdf_page_end": 68,
+          "checklist_items": [
+            {
+              "id": "tn10_soc_u5_l2_textbook_evaluation_item_1_objective_questions",
+              "lesson_id": "tn10_soc_u5_l2_textbook_evaluation",
+              "order_index": 1,
+              "item_type": "source_activity",
+              "section_name": "Objective Evaluation (Part I)",
+              "label": "Part I: MCQs, Fill in Blanks, True/False & Match Items",
+              "description": "Complete all 1-mark multiple choice questions, fill in the blanks, matching pairs, and assertion-reason questions for Unit 5.",
+              "printed_page": 61,
+              "pdf_page": 67,
+              "source_reference": "Standard Ten Social Science, Unit 5 Evaluation, Part I",
+              "is_required": true
+            },
+            {
+              "id": "tn10_soc_u5_l2_textbook_evaluation_item_2_short_answers",
+              "lesson_id": "tn10_soc_u5_l2_textbook_evaluation",
+              "order_index": 2,
+              "item_type": "source_activity",
+              "section_name": "Short Answers & Distinctions (Part II)",
+              "label": "Part II: Short Answer Questions & Distinguish Between (2 Marks)",
+              "description": "Answer all concise 2-mark conceptual questions, distinguish between pairs, and give reasons for Unit 5.",
+              "printed_page": 62,
+              "pdf_page": 68,
+              "source_reference": "Standard Ten Social Science, Unit 5 Evaluation, Part II",
+              "is_required": true
+            },
+            {
+              "id": "tn10_soc_u5_l2_textbook_evaluation_item_3_detailed_answers",
+              "lesson_id": "tn10_soc_u5_l2_textbook_evaluation",
+              "order_index": 3,
+              "item_type": "source_activity",
+              "section_name": "Detailed Answers & Essays (Part III)",
+              "label": "Part III: Detailed Answers, Essays & HOTS (5 & 8 Marks)",
+              "description": "Write comprehensive paragraph/essay answers, historical event analyses, and Higher Order Thinking Questions for Unit 5.",
+              "printed_page": 62,
+              "pdf_page": 68,
+              "source_reference": "Standard Ten Social Science, Unit 5 Evaluation, Part III",
+              "is_required": true
+            },
+            {
+              "id": "tn10_soc_u5_l2_textbook_evaluation_item_4_map_and_timeline",
+              "lesson_id": "tn10_soc_u5_l2_textbook_evaluation",
+              "order_index": 4,
+              "item_type": "source_activity",
+              "section_name": "Board Exam Map & Timeline Skills",
+              "label": "Board Exam Map Work & Timeline Skills: Social and Religious Reform Movements in the 19th Century",
+              "description": "Practice marking key exam locations on outline maps: India Map: Centers of socio-religious reforms (Calcutta, Bombay, Madras, Poona, Varanasi, Aligarh).",
+              "printed_page": 62,
+              "pdf_page": 68,
+              "source_reference": "Standard Ten Social Science, Unit 5 Map / Timeline Exercise",
+              "is_required": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tn10_soc_u6",
+      "unit_number": 6,
+      "title": "Unit 6: Early Revolts against British Rule in Tamil Nadu",
+      "theme": "History: Palayakkarar Rebellion, Puli Thevar, Veerapandiya Kattabomman, Velu Nachiyar, Marudu Brothers & Vellore Revolt of 1806",
+      "lessons": [
+        {
+          "id": "tn10_soc_u6_l1_theory_and_concepts",
+          "unit_id": "tn10_soc_u6",
+          "unit_number": 6,
+          "lesson_number": 1,
+          "lesson_type": "theory",
+          "title": "Early Revolts against British Rule in Tamil Nadu: Core Concepts & Theory",
+          "author": "Tamil Nadu State Board (History)",
+          "is_memoriter": false,
+          "printed_page_start": 63,
+          "printed_page_end": 72,
+          "pdf_page_start": 69,
+          "pdf_page_end": 78,
+          "checklist_items": [
+            {
+              "id": "tn10_soc_u6_l1_theory_and_concepts_item_1_concept_reading",
+              "lesson_id": "tn10_soc_u6_l1_theory_and_concepts",
+              "order_index": 1,
+              "item_type": "source_activity",
+              "section_name": "Core Concepts",
+              "label": "Read & Understand Core Concepts: Early Revolts against British Rule in Tamil Nadu",
+              "description": "Read foundational principles, key events, definitions, constitutional articles, and core mechanisms of Early Revolts against British Rule in Tamil Nadu.",
+              "printed_page": 63,
+              "pdf_page": 69,
+              "source_reference": "Standard Ten Social Science (History), pp. 63–72",
+              "is_required": true
+            },
+            {
+              "id": "tn10_soc_u6_l1_theory_and_concepts_item_2_activities_and_case_studies",
+              "lesson_id": "tn10_soc_u6_l1_theory_and_concepts",
+              "order_index": 2,
+              "item_type": "source_activity",
+              "section_name": "In-text Figures & Case Studies",
+              "label": "In-text Activities, Tables, Infographics & Case Studies",
+              "description": "Review illustrated diagrams, statistical charts, comparative tables, and in-text case studies for Early Revolts against British Rule in Tamil Nadu.",
+              "printed_page": 64,
+              "pdf_page": 70,
+              "source_reference": "Standard Ten Social Science (History), In-text features",
+              "is_required": true
+            }
+          ]
+        },
+        {
+          "id": "tn10_soc_u6_l2_textbook_evaluation",
+          "unit_id": "tn10_soc_u6",
+          "unit_number": 6,
+          "lesson_number": 2,
+          "lesson_type": "exercise",
+          "title": "Early Revolts against British Rule in Tamil Nadu: Textbook Evaluation & Assessment",
+          "author": "Tamil Nadu State Board (History)",
+          "is_memoriter": false,
+          "printed_page_start": 73,
+          "printed_page_end": 74,
+          "pdf_page_start": 79,
+          "pdf_page_end": 80,
+          "checklist_items": [
+            {
+              "id": "tn10_soc_u6_l2_textbook_evaluation_item_1_objective_questions",
+              "lesson_id": "tn10_soc_u6_l2_textbook_evaluation",
+              "order_index": 1,
+              "item_type": "source_activity",
+              "section_name": "Objective Evaluation (Part I)",
+              "label": "Part I: MCQs, Fill in Blanks, True/False & Match Items",
+              "description": "Complete all 1-mark multiple choice questions, fill in the blanks, matching pairs, and assertion-reason questions for Unit 6.",
+              "printed_page": 73,
+              "pdf_page": 79,
+              "source_reference": "Standard Ten Social Science, Unit 6 Evaluation, Part I",
+              "is_required": true
+            },
+            {
+              "id": "tn10_soc_u6_l2_textbook_evaluation_item_2_short_answers",
+              "lesson_id": "tn10_soc_u6_l2_textbook_evaluation",
+              "order_index": 2,
+              "item_type": "source_activity",
+              "section_name": "Short Answers & Distinctions (Part II)",
+              "label": "Part II: Short Answer Questions & Distinguish Between (2 Marks)",
+              "description": "Answer all concise 2-mark conceptual questions, distinguish between pairs, and give reasons for Unit 6.",
+              "printed_page": 74,
+              "pdf_page": 80,
+              "source_reference": "Standard Ten Social Science, Unit 6 Evaluation, Part II",
+              "is_required": true
+            },
+            {
+              "id": "tn10_soc_u6_l2_textbook_evaluation_item_3_detailed_answers",
+              "lesson_id": "tn10_soc_u6_l2_textbook_evaluation",
+              "order_index": 3,
+              "item_type": "source_activity",
+              "section_name": "Detailed Answers & Essays (Part III)",
+              "label": "Part III: Detailed Answers, Essays & HOTS (5 & 8 Marks)",
+              "description": "Write comprehensive paragraph/essay answers, historical event analyses, and Higher Order Thinking Questions for Unit 6.",
+              "printed_page": 74,
+              "pdf_page": 80,
+              "source_reference": "Standard Ten Social Science, Unit 6 Evaluation, Part III",
+              "is_required": true
+            },
+            {
+              "id": "tn10_soc_u6_l2_textbook_evaluation_item_4_map_and_timeline",
+              "lesson_id": "tn10_soc_u6_l2_textbook_evaluation",
+              "order_index": 4,
+              "item_type": "source_activity",
+              "section_name": "Board Exam Map & Timeline Skills",
+              "label": "Board Exam Map Work & Timeline Skills: Early Revolts against British Rule in Tamil Nadu",
+              "description": "Practice marking key exam locations on outline maps: Tamil Nadu Map: Palayam centers (Panchalankurichi, Nerkattumseval, Kalakadu, Sivagangai, Vellore Fort).",
+              "printed_page": 74,
+              "pdf_page": 80,
+              "source_reference": "Standard Ten Social Science, Unit 6 Map / Timeline Exercise",
+              "is_required": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tn10_soc_u7",
+      "unit_number": 7,
+      "title": "Unit 7: Anti-Colonial Movements and the Birth of Nationalism",
+      "theme": "History: 1857 Great Rebellion, Peasant & Tribal Uprisings (Santhal, Munda), Foundation of INC, Moderates vs Extremists & Partition of Bengal",
+      "lessons": [
+        {
+          "id": "tn10_soc_u7_l1_theory_and_concepts",
+          "unit_id": "tn10_soc_u7",
+          "unit_number": 7,
+          "lesson_number": 1,
+          "lesson_type": "theory",
+          "title": "Anti-Colonial Movements and the Birth of Nationalism: Core Concepts & Theory",
+          "author": "Tamil Nadu State Board (History)",
+          "is_memoriter": false,
+          "printed_page_start": 75,
+          "printed_page_end": 85,
+          "pdf_page_start": 81,
+          "pdf_page_end": 91,
+          "checklist_items": [
+            {
+              "id": "tn10_soc_u7_l1_theory_and_concepts_item_1_concept_reading",
+              "lesson_id": "tn10_soc_u7_l1_theory_and_concepts",
+              "order_index": 1,
+              "item_type": "source_activity",
+              "section_name": "Core Concepts",
+              "label": "Read & Understand Core Concepts: Anti-Colonial Movements and the Birth of Nationalism",
+              "description": "Read foundational principles, key events, definitions, constitutional articles, and core mechanisms of Anti-Colonial Movements and the Birth of Nationalism.",
+              "printed_page": 75,
+              "pdf_page": 81,
+              "source_reference": "Standard Ten Social Science (History), pp. 75–85",
+              "is_required": true
+            },
+            {
+              "id": "tn10_soc_u7_l1_theory_and_concepts_item_2_activities_and_case_studies",
+              "lesson_id": "tn10_soc_u7_l1_theory_and_concepts",
+              "order_index": 2,
+              "item_type": "source_activity",
+              "section_name": "In-text Figures & Case Studies",
+              "label": "In-text Activities, Tables, Infographics & Case Studies",
+              "description": "Review illustrated diagrams, statistical charts, comparative tables, and in-text case studies for Anti-Colonial Movements and the Birth of Nationalism.",
+              "printed_page": 76,
+              "pdf_page": 82,
+              "source_reference": "Standard Ten Social Science (History), In-text features",
+              "is_required": true
+            }
+          ]
+        },
+        {
+          "id": "tn10_soc_u7_l2_textbook_evaluation",
+          "unit_id": "tn10_soc_u7",
+          "unit_number": 7,
+          "lesson_number": 2,
+          "lesson_type": "exercise",
+          "title": "Anti-Colonial Movements and the Birth of Nationalism: Textbook Evaluation & Assessment",
+          "author": "Tamil Nadu State Board (History)",
+          "is_memoriter": false,
+          "printed_page_start": 86,
+          "printed_page_end": 88,
+          "pdf_page_start": 92,
+          "pdf_page_end": 94,
+          "checklist_items": [
+            {
+              "id": "tn10_soc_u7_l2_textbook_evaluation_item_1_objective_questions",
+              "lesson_id": "tn10_soc_u7_l2_textbook_evaluation",
+              "order_index": 1,
+              "item_type": "source_activity",
+              "section_name": "Objective Evaluation (Part I)",
+              "label": "Part I: MCQs, Fill in Blanks, True/False & Match Items",
+              "description": "Complete all 1-mark multiple choice questions, fill in the blanks, matching pairs, and assertion-reason questions for Unit 7.",
+              "printed_page": 86,
+              "pdf_page": 92,
+              "source_reference": "Standard Ten Social Science, Unit 7 Evaluation, Part I",
+              "is_required": true
+            },
+            {
+              "id": "tn10_soc_u7_l2_textbook_evaluation_item_2_short_answers",
+              "lesson_id": "tn10_soc_u7_l2_textbook_evaluation",
+              "order_index": 2,
+              "item_type": "source_activity",
+              "section_name": "Short Answers & Distinctions (Part II)",
+              "label": "Part II: Short Answer Questions & Distinguish Between (2 Marks)",
+              "description": "Answer all concise 2-mark conceptual questions, distinguish between pairs, and give reasons for Unit 7.",
+              "printed_page": 87,
+              "pdf_page": 93,
+              "source_reference": "Standard Ten Social Science, Unit 7 Evaluation, Part II",
+              "is_required": true
+            },
+            {
+              "id": "tn10_soc_u7_l2_textbook_evaluation_item_3_detailed_answers",
+              "lesson_id": "tn10_soc_u7_l2_textbook_evaluation",
+              "order_index": 3,
+              "item_type": "source_activity",
+              "section_name": "Detailed Answers & Essays (Part III)",
+              "label": "Part III: Detailed Answers, Essays & HOTS (5 & 8 Marks)",
+              "description": "Write comprehensive paragraph/essay answers, historical event analyses, and Higher Order Thinking Questions for Unit 7.",
+              "printed_page": 88,
+              "pdf_page": 94,
+              "source_reference": "Standard Ten Social Science, Unit 7 Evaluation, Part III",
+              "is_required": true
+            },
+            {
+              "id": "tn10_soc_u7_l2_textbook_evaluation_item_4_map_and_timeline",
+              "lesson_id": "tn10_soc_u7_l2_textbook_evaluation",
+              "order_index": 4,
+              "item_type": "source_activity",
+              "section_name": "Board Exam Map & Timeline Skills",
+              "label": "Board Exam Map Work & Timeline Skills: Anti-Colonial Movements and the Birth of Nationalism",
+              "description": "Practice marking key exam locations on outline maps: India Map: 1857 revolt centers (Delhi, Meerut, Kanpur, Lucknow, Jhansi, Bareilly, Gwalior).",
+              "printed_page": 88,
+              "pdf_page": 94,
+              "source_reference": "Standard Ten Social Science, Unit 7 Map / Timeline Exercise",
+              "is_required": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tn10_soc_u8",
+      "unit_number": 8,
+      "title": "Unit 8: Nationalism: Gandhian Phase",
+      "theme": "History: Rowlatt Act, Jallianwala Bagh, Non-Cooperation, Swarajists, Civil Disobedience, Salt Satyagraha (Dandi & Vedaranyam) & Quit India",
+      "lessons": [
+        {
+          "id": "tn10_soc_u8_l1_theory_and_concepts",
+          "unit_id": "tn10_soc_u8",
+          "unit_number": 8,
+          "lesson_number": 1,
+          "lesson_type": "theory",
+          "title": "Nationalism: Gandhian Phase: Core Concepts & Theory",
+          "author": "Tamil Nadu State Board (History)",
+          "is_memoriter": false,
+          "printed_page_start": 89,
+          "printed_page_end": 101,
+          "pdf_page_start": 95,
+          "pdf_page_end": 107,
+          "checklist_items": [
+            {
+              "id": "tn10_soc_u8_l1_theory_and_concepts_item_1_concept_reading",
+              "lesson_id": "tn10_soc_u8_l1_theory_and_concepts",
+              "order_index": 1,
+              "item_type": "source_activity",
+              "section_name": "Core Concepts",
+              "label": "Read & Understand Core Concepts: Nationalism: Gandhian Phase",
+              "description": "Read foundational principles, key events, definitions, constitutional articles, and core mechanisms of Nationalism: Gandhian Phase.",
+              "printed_page": 89,
+              "pdf_page": 95,
+              "source_reference": "Standard Ten Social Science (History), pp. 89–101",
+              "is_required": true
+            },
+            {
+              "id": "tn10_soc_u8_l1_theory_and_concepts_item_2_activities_and_case_studies",
+              "lesson_id": "tn10_soc_u8_l1_theory_and_concepts",
+              "order_index": 2,
+              "item_type": "source_activity",
+              "section_name": "In-text Figures & Case Studies",
+              "label": "In-text Activities, Tables, Infographics & Case Studies",
+              "description": "Review illustrated diagrams, statistical charts, comparative tables, and in-text case studies for Nationalism: Gandhian Phase.",
+              "printed_page": 90,
+              "pdf_page": 96,
+              "source_reference": "Standard Ten Social Science (History), In-text features",
+              "is_required": true
+            }
+          ]
+        },
+        {
+          "id": "tn10_soc_u8_l2_textbook_evaluation",
+          "unit_id": "tn10_soc_u8",
+          "unit_number": 8,
+          "lesson_number": 2,
+          "lesson_type": "exercise",
+          "title": "Nationalism: Gandhian Phase: Textbook Evaluation & Assessment",
+          "author": "Tamil Nadu State Board (History)",
+          "is_memoriter": false,
+          "printed_page_start": 102,
+          "printed_page_end": 104,
+          "pdf_page_start": 108,
+          "pdf_page_end": 110,
+          "checklist_items": [
+            {
+              "id": "tn10_soc_u8_l2_textbook_evaluation_item_1_objective_questions",
+              "lesson_id": "tn10_soc_u8_l2_textbook_evaluation",
+              "order_index": 1,
+              "item_type": "source_activity",
+              "section_name": "Objective Evaluation (Part I)",
+              "label": "Part I: MCQs, Fill in Blanks, True/False & Match Items",
+              "description": "Complete all 1-mark multiple choice questions, fill in the blanks, matching pairs, and assertion-reason questions for Unit 8.",
+              "printed_page": 102,
+              "pdf_page": 108,
+              "source_reference": "Standard Ten Social Science, Unit 8 Evaluation, Part I",
+              "is_required": true
+            },
+            {
+              "id": "tn10_soc_u8_l2_textbook_evaluation_item_2_short_answers",
+              "lesson_id": "tn10_soc_u8_l2_textbook_evaluation",
+              "order_index": 2,
+              "item_type": "source_activity",
+              "section_name": "Short Answers & Distinctions (Part II)",
+              "label": "Part II: Short Answer Questions & Distinguish Between (2 Marks)",
+              "description": "Answer all concise 2-mark conceptual questions, distinguish between pairs, and give reasons for Unit 8.",
+              "printed_page": 103,
+              "pdf_page": 109,
+              "source_reference": "Standard Ten Social Science, Unit 8 Evaluation, Part II",
+              "is_required": true
+            },
+            {
+              "id": "tn10_soc_u8_l2_textbook_evaluation_item_3_detailed_answers",
+              "lesson_id": "tn10_soc_u8_l2_textbook_evaluation",
+              "order_index": 3,
+              "item_type": "source_activity",
+              "section_name": "Detailed Answers & Essays (Part III)",
+              "label": "Part III: Detailed Answers, Essays & HOTS (5 & 8 Marks)",
+              "description": "Write comprehensive paragraph/essay answers, historical event analyses, and Higher Order Thinking Questions for Unit 8.",
+              "printed_page": 104,
+              "pdf_page": 110,
+              "source_reference": "Standard Ten Social Science, Unit 8 Evaluation, Part III",
+              "is_required": true
+            },
+            {
+              "id": "tn10_soc_u8_l2_textbook_evaluation_item_4_map_and_timeline",
+              "lesson_id": "tn10_soc_u8_l2_textbook_evaluation",
+              "order_index": 4,
+              "item_type": "source_activity",
+              "section_name": "Board Exam Map & Timeline Skills",
+              "label": "Board Exam Map Work & Timeline Skills: Nationalism: Gandhian Phase",
+              "description": "Practice marking key exam locations on outline maps: India Map & Timeline: Dandi, Vedaranyam, Champaran, Kheda, Chauri Chaura, Sabarmati, Wardha; Timeline (1920–1947).",
+              "printed_page": 104,
+              "pdf_page": 110,
+              "source_reference": "Standard Ten Social Science, Unit 8 Map / Timeline Exercise",
+              "is_required": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tn10_soc_u9",
+      "unit_number": 9,
+      "title": "Unit 9: Freedom Struggle in Tamil Nadu",
+      "theme": "History: Swadeshi Movement, V.O. Chidambaranar, Subramania Bharati, Non-Brahmin Movement, Justice Party, Rajaji & Kamaraj",
+      "lessons": [
+        {
+          "id": "tn10_soc_u9_l1_theory_and_concepts",
+          "unit_id": "tn10_soc_u9",
+          "unit_number": 9,
+          "lesson_number": 1,
+          "lesson_type": "theory",
+          "title": "Freedom Struggle in Tamil Nadu: Core Concepts & Theory",
+          "author": "Tamil Nadu State Board (History)",
+          "is_memoriter": false,
+          "printed_page_start": 105,
+          "printed_page_end": 112,
+          "pdf_page_start": 111,
+          "pdf_page_end": 118,
+          "checklist_items": [
+            {
+              "id": "tn10_soc_u9_l1_theory_and_concepts_item_1_concept_reading",
+              "lesson_id": "tn10_soc_u9_l1_theory_and_concepts",
+              "order_index": 1,
+              "item_type": "source_activity",
+              "section_name": "Core Concepts",
+              "label": "Read & Understand Core Concepts: Freedom Struggle in Tamil Nadu",
+              "description": "Read foundational principles, key events, definitions, constitutional articles, and core mechanisms of Freedom Struggle in Tamil Nadu.",
+              "printed_page": 105,
+              "pdf_page": 111,
+              "source_reference": "Standard Ten Social Science (History), pp. 105–112",
+              "is_required": true
+            },
+            {
+              "id": "tn10_soc_u9_l1_theory_and_concepts_item_2_activities_and_case_studies",
+              "lesson_id": "tn10_soc_u9_l1_theory_and_concepts",
+              "order_index": 2,
+              "item_type": "source_activity",
+              "section_name": "In-text Figures & Case Studies",
+              "label": "In-text Activities, Tables, Infographics & Case Studies",
+              "description": "Review illustrated diagrams, statistical charts, comparative tables, and in-text case studies for Freedom Struggle in Tamil Nadu.",
+              "printed_page": 106,
+              "pdf_page": 112,
+              "source_reference": "Standard Ten Social Science (History), In-text features",
+              "is_required": true
+            }
+          ]
+        },
+        {
+          "id": "tn10_soc_u9_l2_textbook_evaluation",
+          "unit_id": "tn10_soc_u9",
+          "unit_number": 9,
+          "lesson_number": 2,
+          "lesson_type": "exercise",
+          "title": "Freedom Struggle in Tamil Nadu: Textbook Evaluation & Assessment",
+          "author": "Tamil Nadu State Board (History)",
+          "is_memoriter": false,
+          "printed_page_start": 113,
+          "printed_page_end": 114,
+          "pdf_page_start": 119,
+          "pdf_page_end": 120,
+          "checklist_items": [
+            {
+              "id": "tn10_soc_u9_l2_textbook_evaluation_item_1_objective_questions",
+              "lesson_id": "tn10_soc_u9_l2_textbook_evaluation",
+              "order_index": 1,
+              "item_type": "source_activity",
+              "section_name": "Objective Evaluation (Part I)",
+              "label": "Part I: MCQs, Fill in Blanks, True/False & Match Items",
+              "description": "Complete all 1-mark multiple choice questions, fill in the blanks, matching pairs, and assertion-reason questions for Unit 9.",
+              "printed_page": 113,
+              "pdf_page": 119,
+              "source_reference": "Standard Ten Social Science, Unit 9 Evaluation, Part I",
+              "is_required": true
+            },
+            {
+              "id": "tn10_soc_u9_l2_textbook_evaluation_item_2_short_answers",
+              "lesson_id": "tn10_soc_u9_l2_textbook_evaluation",
+              "order_index": 2,
+              "item_type": "source_activity",
+              "section_name": "Short Answers & Distinctions (Part II)",
+              "label": "Part II: Short Answer Questions & Distinguish Between (2 Marks)",
+              "description": "Answer all concise 2-mark conceptual questions, distinguish between pairs, and give reasons for Unit 9.",
+              "printed_page": 114,
+              "pdf_page": 120,
+              "source_reference": "Standard Ten Social Science, Unit 9 Evaluation, Part II",
+              "is_required": true
+            },
+            {
+              "id": "tn10_soc_u9_l2_textbook_evaluation_item_3_detailed_answers",
+              "lesson_id": "tn10_soc_u9_l2_textbook_evaluation",
+              "order_index": 3,
+              "item_type": "source_activity",
+              "section_name": "Detailed Answers & Essays (Part III)",
+              "label": "Part III: Detailed Answers, Essays & HOTS (5 & 8 Marks)",
+              "description": "Write comprehensive paragraph/essay answers, historical event analyses, and Higher Order Thinking Questions for Unit 9.",
+              "printed_page": 114,
+              "pdf_page": 120,
+              "source_reference": "Standard Ten Social Science, Unit 9 Evaluation, Part III",
+              "is_required": true
+            },
+            {
+              "id": "tn10_soc_u9_l2_textbook_evaluation_item_4_map_and_timeline",
+              "lesson_id": "tn10_soc_u9_l2_textbook_evaluation",
+              "order_index": 4,
+              "item_type": "source_activity",
+              "section_name": "Board Exam Map & Timeline Skills",
+              "label": "Board Exam Map Work & Timeline Skills: Freedom Struggle in Tamil Nadu",
+              "description": "Practice marking key exam locations on outline maps: Tamil Nadu Map: Swadeshi Steam Navigation (Tuticorin, Colombo), Vedaranyam Salt March, Tirupur Kumaran memorial.",
+              "printed_page": 114,
+              "pdf_page": 120,
+              "source_reference": "Standard Ten Social Science, Unit 9 Map / Timeline Exercise",
+              "is_required": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tn10_soc_u10",
+      "unit_number": 10,
+      "title": "Unit 10: Social Transformation in Tamil Nadu",
+      "theme": "History: Dravidian Movement, South Indian Liberal Federation (Justice Party), Periyar E.V. Ramasamy, Self-Respect Movement & Women Emancipation",
+      "lessons": [
+        {
+          "id": "tn10_soc_u10_l1_theory_and_concepts",
+          "unit_id": "tn10_soc_u10",
+          "unit_number": 10,
+          "lesson_number": 1,
+          "lesson_type": "theory",
+          "title": "Social Transformation in Tamil Nadu: Core Concepts & Theory",
+          "author": "Tamil Nadu State Board (History)",
+          "is_memoriter": false,
+          "printed_page_start": 115,
+          "printed_page_end": 124,
+          "pdf_page_start": 121,
+          "pdf_page_end": 130,
+          "checklist_items": [
+            {
+              "id": "tn10_soc_u10_l1_theory_and_concepts_item_1_concept_reading",
+              "lesson_id": "tn10_soc_u10_l1_theory_and_concepts",
+              "order_index": 1,
+              "item_type": "source_activity",
+              "section_name": "Core Concepts",
+              "label": "Read & Understand Core Concepts: Social Transformation in Tamil Nadu",
+              "description": "Read foundational principles, key events, definitions, constitutional articles, and core mechanisms of Social Transformation in Tamil Nadu.",
+              "printed_page": 115,
+              "pdf_page": 121,
+              "source_reference": "Standard Ten Social Science (History), pp. 115–124",
+              "is_required": true
+            },
+            {
+              "id": "tn10_soc_u10_l1_theory_and_concepts_item_2_activities_and_case_studies",
+              "lesson_id": "tn10_soc_u10_l1_theory_and_concepts",
+              "order_index": 2,
+              "item_type": "source_activity",
+              "section_name": "In-text Figures & Case Studies",
+              "label": "In-text Activities, Tables, Infographics & Case Studies",
+              "description": "Review illustrated diagrams, statistical charts, comparative tables, and in-text case studies for Social Transformation in Tamil Nadu.",
+              "printed_page": 116,
+              "pdf_page": 122,
+              "source_reference": "Standard Ten Social Science (History), In-text features",
+              "is_required": true
+            }
+          ]
+        },
+        {
+          "id": "tn10_soc_u10_l2_textbook_evaluation",
+          "unit_id": "tn10_soc_u10",
+          "unit_number": 10,
+          "lesson_number": 2,
+          "lesson_type": "exercise",
+          "title": "Social Transformation in Tamil Nadu: Textbook Evaluation & Assessment",
+          "author": "Tamil Nadu State Board (History)",
+          "is_memoriter": false,
+          "printed_page_start": 125,
+          "printed_page_end": 127,
+          "pdf_page_start": 131,
+          "pdf_page_end": 133,
+          "checklist_items": [
+            {
+              "id": "tn10_soc_u10_l2_textbook_evaluation_item_1_objective_questions",
+              "lesson_id": "tn10_soc_u10_l2_textbook_evaluation",
+              "order_index": 1,
+              "item_type": "source_activity",
+              "section_name": "Objective Evaluation (Part I)",
+              "label": "Part I: MCQs, Fill in Blanks, True/False & Match Items",
+              "description": "Complete all 1-mark multiple choice questions, fill in the blanks, matching pairs, and assertion-reason questions for Unit 10.",
+              "printed_page": 125,
+              "pdf_page": 131,
+              "source_reference": "Standard Ten Social Science, Unit 10 Evaluation, Part I",
+              "is_required": true
+            },
+            {
+              "id": "tn10_soc_u10_l2_textbook_evaluation_item_2_short_answers",
+              "lesson_id": "tn10_soc_u10_l2_textbook_evaluation",
+              "order_index": 2,
+              "item_type": "source_activity",
+              "section_name": "Short Answers & Distinctions (Part II)",
+              "label": "Part II: Short Answer Questions & Distinguish Between (2 Marks)",
+              "description": "Answer all concise 2-mark conceptual questions, distinguish between pairs, and give reasons for Unit 10.",
+              "printed_page": 126,
+              "pdf_page": 132,
+              "source_reference": "Standard Ten Social Science, Unit 10 Evaluation, Part II",
+              "is_required": true
+            },
+            {
+              "id": "tn10_soc_u10_l2_textbook_evaluation_item_3_detailed_answers",
+              "lesson_id": "tn10_soc_u10_l2_textbook_evaluation",
+              "order_index": 3,
+              "item_type": "source_activity",
+              "section_name": "Detailed Answers & Essays (Part III)",
+              "label": "Part III: Detailed Answers, Essays & HOTS (5 & 8 Marks)",
+              "description": "Write comprehensive paragraph/essay answers, historical event analyses, and Higher Order Thinking Questions for Unit 10.",
+              "printed_page": 127,
+              "pdf_page": 133,
+              "source_reference": "Standard Ten Social Science, Unit 10 Evaluation, Part III",
+              "is_required": true
+            },
+            {
+              "id": "tn10_soc_u10_l2_textbook_evaluation_item_4_map_and_timeline",
+              "lesson_id": "tn10_soc_u10_l2_textbook_evaluation",
+              "order_index": 4,
+              "item_type": "source_activity",
+              "section_name": "Board Exam Map & Timeline Skills",
+              "label": "Board Exam Map Work & Timeline Skills: Social Transformation in Tamil Nadu",
+              "description": "Practice marking key exam locations on outline maps: Modern Indian History Comprehensive Timeline (1900–1950) & Historical Reform Centers.",
+              "printed_page": 127,
+              "pdf_page": 133,
+              "source_reference": "Standard Ten Social Science, Unit 10 Map / Timeline Exercise",
+              "is_required": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tn10_soc_u11",
+      "unit_number": 11,
+      "title": "Unit 11: India - Location, Relief and Drainage",
+      "theme": "Geography: Strategic Location of India, Himalayan Ranges, Northern Plains, Peninsular Plateau, Coastal Plains & River Systems",
+      "lessons": [
+        {
+          "id": "tn10_soc_u11_l1_theory_and_concepts",
+          "unit_id": "tn10_soc_u11",
+          "unit_number": 11,
+          "lesson_number": 1,
+          "lesson_type": "theory",
+          "title": "India - Location, Relief and Drainage: Core Concepts & Theory",
+          "author": "Tamil Nadu State Board (Geography)",
+          "is_memoriter": false,
+          "printed_page_start": 129,
+          "printed_page_end": 141,
+          "pdf_page_start": 135,
+          "pdf_page_end": 147,
+          "checklist_items": [
+            {
+              "id": "tn10_soc_u11_l1_theory_and_concepts_item_1_concept_reading",
+              "lesson_id": "tn10_soc_u11_l1_theory_and_concepts",
+              "order_index": 1,
+              "item_type": "source_activity",
+              "section_name": "Core Concepts",
+              "label": "Read & Understand Core Concepts: India - Location, Relief and Drainage",
+              "description": "Read foundational principles, key events, definitions, constitutional articles, and core mechanisms of India - Location, Relief and Drainage.",
+              "printed_page": 129,
+              "pdf_page": 135,
+              "source_reference": "Standard Ten Social Science (Geography), pp. 129–141",
+              "is_required": true
+            },
+            {
+              "id": "tn10_soc_u11_l1_theory_and_concepts_item_2_activities_and_case_studies",
+              "lesson_id": "tn10_soc_u11_l1_theory_and_concepts",
+              "order_index": 2,
+              "item_type": "source_activity",
+              "section_name": "In-text Figures & Case Studies",
+              "label": "In-text Activities, Tables, Infographics & Case Studies",
+              "description": "Review illustrated diagrams, statistical charts, comparative tables, and in-text case studies for India - Location, Relief and Drainage.",
+              "printed_page": 130,
+              "pdf_page": 136,
+              "source_reference": "Standard Ten Social Science (Geography), In-text features",
+              "is_required": true
+            }
+          ]
+        },
+        {
+          "id": "tn10_soc_u11_l2_textbook_evaluation",
+          "unit_id": "tn10_soc_u11",
+          "unit_number": 11,
+          "lesson_number": 2,
+          "lesson_type": "exercise",
+          "title": "India - Location, Relief and Drainage: Textbook Evaluation & Assessment",
+          "author": "Tamil Nadu State Board (Geography)",
+          "is_memoriter": false,
+          "printed_page_start": 142,
+          "printed_page_end": 143,
+          "pdf_page_start": 148,
+          "pdf_page_end": 149,
+          "checklist_items": [
+            {
+              "id": "tn10_soc_u11_l2_textbook_evaluation_item_1_objective_questions",
+              "lesson_id": "tn10_soc_u11_l2_textbook_evaluation",
+              "order_index": 1,
+              "item_type": "source_activity",
+              "section_name": "Objective Evaluation (Part I)",
+              "label": "Part I: MCQs, Fill in Blanks, True/False & Match Items",
+              "description": "Complete all 1-mark multiple choice questions, fill in the blanks, matching pairs, and assertion-reason questions for Unit 11.",
+              "printed_page": 142,
+              "pdf_page": 148,
+              "source_reference": "Standard Ten Social Science, Unit 11 Evaluation, Part I",
+              "is_required": true
+            },
+            {
+              "id": "tn10_soc_u11_l2_textbook_evaluation_item_2_short_answers",
+              "lesson_id": "tn10_soc_u11_l2_textbook_evaluation",
+              "order_index": 2,
+              "item_type": "source_activity",
+              "section_name": "Short Answers & Distinctions (Part II)",
+              "label": "Part II: Short Answer Questions & Distinguish Between (2 Marks)",
+              "description": "Answer all concise 2-mark conceptual questions, distinguish between pairs, and give reasons for Unit 11.",
+              "printed_page": 143,
+              "pdf_page": 149,
+              "source_reference": "Standard Ten Social Science, Unit 11 Evaluation, Part II",
+              "is_required": true
+            },
+            {
+              "id": "tn10_soc_u11_l2_textbook_evaluation_item_3_detailed_answers",
+              "lesson_id": "tn10_soc_u11_l2_textbook_evaluation",
+              "order_index": 3,
+              "item_type": "source_activity",
+              "section_name": "Detailed Answers & Essays (Part III)",
+              "label": "Part III: Detailed Answers, Essays & HOTS (5 & 8 Marks)",
+              "description": "Write comprehensive paragraph/essay answers, historical event analyses, and Higher Order Thinking Questions for Unit 11.",
+              "printed_page": 143,
+              "pdf_page": 149,
+              "source_reference": "Standard Ten Social Science, Unit 11 Evaluation, Part III",
+              "is_required": true
+            },
+            {
+              "id": "tn10_soc_u11_l2_textbook_evaluation_item_4_map_and_timeline",
+              "lesson_id": "tn10_soc_u11_l2_textbook_evaluation",
+              "order_index": 4,
+              "item_type": "source_activity",
+              "section_name": "Board Exam Map & Timeline Skills",
+              "label": "Board Exam Map Work & Timeline Skills: India - Location, Relief and Drainage",
+              "description": "Practice marking key exam locations on outline maps: India Map: Mountain ranges (Himalayas, Western/Eastern Ghats, Aravalli), Peaks (K2, Kanchenjunga), Major Rivers (Ganga, Brahmaputra, Godavari, Kaveri).",
+              "printed_page": 143,
+              "pdf_page": 149,
+              "source_reference": "Standard Ten Social Science, Unit 11 Map / Timeline Exercise",
+              "is_required": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tn10_soc_u12",
+      "unit_number": 12,
+      "title": "Unit 12: Climate and Natural Vegetation of India",
+      "theme": "Geography: Factors Affecting Climate, Southwest & Northeast Monsoons, Rainfall Distribution, Tropical Rainforests & Wildlife Sanctuaries",
+      "lessons": [
+        {
+          "id": "tn10_soc_u12_l1_theory_and_concepts",
+          "unit_id": "tn10_soc_u12",
+          "unit_number": 12,
+          "lesson_number": 1,
+          "lesson_type": "theory",
+          "title": "Climate and Natural Vegetation of India: Core Concepts & Theory",
+          "author": "Tamil Nadu State Board (Geography)",
+          "is_memoriter": false,
+          "printed_page_start": 144,
+          "printed_page_end": 151,
+          "pdf_page_start": 150,
+          "pdf_page_end": 157,
+          "checklist_items": [
+            {
+              "id": "tn10_soc_u12_l1_theory_and_concepts_item_1_concept_reading",
+              "lesson_id": "tn10_soc_u12_l1_theory_and_concepts",
+              "order_index": 1,
+              "item_type": "source_activity",
+              "section_name": "Core Concepts",
+              "label": "Read & Understand Core Concepts: Climate and Natural Vegetation of India",
+              "description": "Read foundational principles, key events, definitions, constitutional articles, and core mechanisms of Climate and Natural Vegetation of India.",
+              "printed_page": 144,
+              "pdf_page": 150,
+              "source_reference": "Standard Ten Social Science (Geography), pp. 144–151",
+              "is_required": true
+            },
+            {
+              "id": "tn10_soc_u12_l1_theory_and_concepts_item_2_activities_and_case_studies",
+              "lesson_id": "tn10_soc_u12_l1_theory_and_concepts",
+              "order_index": 2,
+              "item_type": "source_activity",
+              "section_name": "In-text Figures & Case Studies",
+              "label": "In-text Activities, Tables, Infographics & Case Studies",
+              "description": "Review illustrated diagrams, statistical charts, comparative tables, and in-text case studies for Climate and Natural Vegetation of India.",
+              "printed_page": 145,
+              "pdf_page": 151,
+              "source_reference": "Standard Ten Social Science (Geography), In-text features",
+              "is_required": true
+            }
+          ]
+        },
+        {
+          "id": "tn10_soc_u12_l2_textbook_evaluation",
+          "unit_id": "tn10_soc_u12",
+          "unit_number": 12,
+          "lesson_number": 2,
+          "lesson_type": "exercise",
+          "title": "Climate and Natural Vegetation of India: Textbook Evaluation & Assessment",
+          "author": "Tamil Nadu State Board (Geography)",
+          "is_memoriter": false,
+          "printed_page_start": 152,
+          "printed_page_end": 153,
+          "pdf_page_start": 158,
+          "pdf_page_end": 159,
+          "checklist_items": [
+            {
+              "id": "tn10_soc_u12_l2_textbook_evaluation_item_1_objective_questions",
+              "lesson_id": "tn10_soc_u12_l2_textbook_evaluation",
+              "order_index": 1,
+              "item_type": "source_activity",
+              "section_name": "Objective Evaluation (Part I)",
+              "label": "Part I: MCQs, Fill in Blanks, True/False & Match Items",
+              "description": "Complete all 1-mark multiple choice questions, fill in the blanks, matching pairs, and assertion-reason questions for Unit 12.",
+              "printed_page": 152,
+              "pdf_page": 158,
+              "source_reference": "Standard Ten Social Science, Unit 12 Evaluation, Part I",
+              "is_required": true
+            },
+            {
+              "id": "tn10_soc_u12_l2_textbook_evaluation_item_2_short_answers",
+              "lesson_id": "tn10_soc_u12_l2_textbook_evaluation",
+              "order_index": 2,
+              "item_type": "source_activity",
+              "section_name": "Short Answers & Distinctions (Part II)",
+              "label": "Part II: Short Answer Questions & Distinguish Between (2 Marks)",
+              "description": "Answer all concise 2-mark conceptual questions, distinguish between pairs, and give reasons for Unit 12.",
+              "printed_page": 153,
+              "pdf_page": 159,
+              "source_reference": "Standard Ten Social Science, Unit 12 Evaluation, Part II",
+              "is_required": true
+            },
+            {
+              "id": "tn10_soc_u12_l2_textbook_evaluation_item_3_detailed_answers",
+              "lesson_id": "tn10_soc_u12_l2_textbook_evaluation",
+              "order_index": 3,
+              "item_type": "source_activity",
+              "section_name": "Detailed Answers & Essays (Part III)",
+              "label": "Part III: Detailed Answers, Essays & HOTS (5 & 8 Marks)",
+              "description": "Write comprehensive paragraph/essay answers, historical event analyses, and Higher Order Thinking Questions for Unit 12.",
+              "printed_page": 153,
+              "pdf_page": 159,
+              "source_reference": "Standard Ten Social Science, Unit 12 Evaluation, Part III",
+              "is_required": true
+            },
+            {
+              "id": "tn10_soc_u12_l2_textbook_evaluation_item_4_map_and_timeline",
+              "lesson_id": "tn10_soc_u12_l2_textbook_evaluation",
+              "order_index": 4,
+              "item_type": "source_activity",
+              "section_name": "Board Exam Map & Timeline Skills",
+              "label": "Board Exam Map Work & Timeline Skills: Climate and Natural Vegetation of India",
+              "description": "Practice marking key exam locations on outline maps: India Map: Southwest monsoon wind direction, High and low rainfall zones, Forest types & Biosphere reserves (Nilgiri, Gulf of Mannar, Sundarbans).",
+              "printed_page": 153,
+              "pdf_page": 159,
+              "source_reference": "Standard Ten Social Science, Unit 12 Map / Timeline Exercise",
+              "is_required": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tn10_soc_u13",
+      "unit_number": 13,
+      "title": "Unit 13: India - Agriculture",
+      "theme": "Geography: Soil Types (Alluvial, Black, Red, Laterite), Irrigation Schemes, Multipurpose River Valley Projects, Food Crops & Commercial Agriculture",
+      "lessons": [
+        {
+          "id": "tn10_soc_u13_l1_theory_and_concepts",
+          "unit_id": "tn10_soc_u13",
+          "unit_number": 13,
+          "lesson_number": 1,
+          "lesson_type": "theory",
+          "title": "India - Agriculture: Core Concepts & Theory",
+          "author": "Tamil Nadu State Board (Geography)",
+          "is_memoriter": false,
+          "printed_page_start": 154,
+          "printed_page_end": 166,
+          "pdf_page_start": 160,
+          "pdf_page_end": 172,
+          "checklist_items": [
+            {
+              "id": "tn10_soc_u13_l1_theory_and_concepts_item_1_concept_reading",
+              "lesson_id": "tn10_soc_u13_l1_theory_and_concepts",
+              "order_index": 1,
+              "item_type": "source_activity",
+              "section_name": "Core Concepts",
+              "label": "Read & Understand Core Concepts: India - Agriculture",
+              "description": "Read foundational principles, key events, definitions, constitutional articles, and core mechanisms of India - Agriculture.",
+              "printed_page": 154,
+              "pdf_page": 160,
+              "source_reference": "Standard Ten Social Science (Geography), pp. 154–166",
+              "is_required": true
+            },
+            {
+              "id": "tn10_soc_u13_l1_theory_and_concepts_item_2_activities_and_case_studies",
+              "lesson_id": "tn10_soc_u13_l1_theory_and_concepts",
+              "order_index": 2,
+              "item_type": "source_activity",
+              "section_name": "In-text Figures & Case Studies",
+              "label": "In-text Activities, Tables, Infographics & Case Studies",
+              "description": "Review illustrated diagrams, statistical charts, comparative tables, and in-text case studies for India - Agriculture.",
+              "printed_page": 155,
+              "pdf_page": 161,
+              "source_reference": "Standard Ten Social Science (Geography), In-text features",
+              "is_required": true
+            }
+          ]
+        },
+        {
+          "id": "tn10_soc_u13_l2_textbook_evaluation",
+          "unit_id": "tn10_soc_u13",
+          "unit_number": 13,
+          "lesson_number": 2,
+          "lesson_type": "exercise",
+          "title": "India - Agriculture: Textbook Evaluation & Assessment",
+          "author": "Tamil Nadu State Board (Geography)",
+          "is_memoriter": false,
+          "printed_page_start": 167,
+          "printed_page_end": 169,
+          "pdf_page_start": 173,
+          "pdf_page_end": 175,
+          "checklist_items": [
+            {
+              "id": "tn10_soc_u13_l2_textbook_evaluation_item_1_objective_questions",
+              "lesson_id": "tn10_soc_u13_l2_textbook_evaluation",
+              "order_index": 1,
+              "item_type": "source_activity",
+              "section_name": "Objective Evaluation (Part I)",
+              "label": "Part I: MCQs, Fill in Blanks, True/False & Match Items",
+              "description": "Complete all 1-mark multiple choice questions, fill in the blanks, matching pairs, and assertion-reason questions for Unit 13.",
+              "printed_page": 167,
+              "pdf_page": 173,
+              "source_reference": "Standard Ten Social Science, Unit 13 Evaluation, Part I",
+              "is_required": true
+            },
+            {
+              "id": "tn10_soc_u13_l2_textbook_evaluation_item_2_short_answers",
+              "lesson_id": "tn10_soc_u13_l2_textbook_evaluation",
+              "order_index": 2,
+              "item_type": "source_activity",
+              "section_name": "Short Answers & Distinctions (Part II)",
+              "label": "Part II: Short Answer Questions & Distinguish Between (2 Marks)",
+              "description": "Answer all concise 2-mark conceptual questions, distinguish between pairs, and give reasons for Unit 13.",
+              "printed_page": 168,
+              "pdf_page": 174,
+              "source_reference": "Standard Ten Social Science, Unit 13 Evaluation, Part II",
+              "is_required": true
+            },
+            {
+              "id": "tn10_soc_u13_l2_textbook_evaluation_item_3_detailed_answers",
+              "lesson_id": "tn10_soc_u13_l2_textbook_evaluation",
+              "order_index": 3,
+              "item_type": "source_activity",
+              "section_name": "Detailed Answers & Essays (Part III)",
+              "label": "Part III: Detailed Answers, Essays & HOTS (5 & 8 Marks)",
+              "description": "Write comprehensive paragraph/essay answers, historical event analyses, and Higher Order Thinking Questions for Unit 13.",
+              "printed_page": 169,
+              "pdf_page": 175,
+              "source_reference": "Standard Ten Social Science, Unit 13 Evaluation, Part III",
+              "is_required": true
+            },
+            {
+              "id": "tn10_soc_u13_l2_textbook_evaluation_item_4_map_and_timeline",
+              "lesson_id": "tn10_soc_u13_l2_textbook_evaluation",
+              "order_index": 4,
+              "item_type": "source_activity",
+              "section_name": "Board Exam Map & Timeline Skills",
+              "label": "Board Exam Map Work & Timeline Skills: India - Agriculture",
+              "description": "Practice marking key exam locations on outline maps: India Map: Major crop regions (Rice, Wheat, Cotton, Sugarcane, Tea, Coffee) & Multipurpose dams (Bhakra Nangal, Hirakud, Mettur).",
+              "printed_page": 169,
+              "pdf_page": 175,
+              "source_reference": "Standard Ten Social Science, Unit 13 Map / Timeline Exercise",
+              "is_required": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tn10_soc_u14",
+      "unit_number": 14,
+      "title": "Unit 14: India - Resources and Industries",
+      "theme": "Geography: Metallic Minerals (Iron ore, Bauxite), Energy Resources (Coal, Petroleum, Nuclear, Solar), Cotton Textiles, Iron & Steel Plants",
+      "lessons": [
+        {
+          "id": "tn10_soc_u14_l1_theory_and_concepts",
+          "unit_id": "tn10_soc_u14",
+          "unit_number": 14,
+          "lesson_number": 1,
+          "lesson_type": "theory",
+          "title": "India - Resources and Industries: Core Concepts & Theory",
+          "author": "Tamil Nadu State Board (Geography)",
+          "is_memoriter": false,
+          "printed_page_start": 170,
+          "printed_page_end": 182,
+          "pdf_page_start": 176,
+          "pdf_page_end": 188,
+          "checklist_items": [
+            {
+              "id": "tn10_soc_u14_l1_theory_and_concepts_item_1_concept_reading",
+              "lesson_id": "tn10_soc_u14_l1_theory_and_concepts",
+              "order_index": 1,
+              "item_type": "source_activity",
+              "section_name": "Core Concepts",
+              "label": "Read & Understand Core Concepts: India - Resources and Industries",
+              "description": "Read foundational principles, key events, definitions, constitutional articles, and core mechanisms of India - Resources and Industries.",
+              "printed_page": 170,
+              "pdf_page": 176,
+              "source_reference": "Standard Ten Social Science (Geography), pp. 170–182",
+              "is_required": true
+            },
+            {
+              "id": "tn10_soc_u14_l1_theory_and_concepts_item_2_activities_and_case_studies",
+              "lesson_id": "tn10_soc_u14_l1_theory_and_concepts",
+              "order_index": 2,
+              "item_type": "source_activity",
+              "section_name": "In-text Figures & Case Studies",
+              "label": "In-text Activities, Tables, Infographics & Case Studies",
+              "description": "Review illustrated diagrams, statistical charts, comparative tables, and in-text case studies for India - Resources and Industries.",
+              "printed_page": 171,
+              "pdf_page": 177,
+              "source_reference": "Standard Ten Social Science (Geography), In-text features",
+              "is_required": true
+            }
+          ]
+        },
+        {
+          "id": "tn10_soc_u14_l2_textbook_evaluation",
+          "unit_id": "tn10_soc_u14",
+          "unit_number": 14,
+          "lesson_number": 2,
+          "lesson_type": "exercise",
+          "title": "India - Resources and Industries: Textbook Evaluation & Assessment",
+          "author": "Tamil Nadu State Board (Geography)",
+          "is_memoriter": false,
+          "printed_page_start": 183,
+          "printed_page_end": 185,
+          "pdf_page_start": 189,
+          "pdf_page_end": 191,
+          "checklist_items": [
+            {
+              "id": "tn10_soc_u14_l2_textbook_evaluation_item_1_objective_questions",
+              "lesson_id": "tn10_soc_u14_l2_textbook_evaluation",
+              "order_index": 1,
+              "item_type": "source_activity",
+              "section_name": "Objective Evaluation (Part I)",
+              "label": "Part I: MCQs, Fill in Blanks, True/False & Match Items",
+              "description": "Complete all 1-mark multiple choice questions, fill in the blanks, matching pairs, and assertion-reason questions for Unit 14.",
+              "printed_page": 183,
+              "pdf_page": 189,
+              "source_reference": "Standard Ten Social Science, Unit 14 Evaluation, Part I",
+              "is_required": true
+            },
+            {
+              "id": "tn10_soc_u14_l2_textbook_evaluation_item_2_short_answers",
+              "lesson_id": "tn10_soc_u14_l2_textbook_evaluation",
+              "order_index": 2,
+              "item_type": "source_activity",
+              "section_name": "Short Answers & Distinctions (Part II)",
+              "label": "Part II: Short Answer Questions & Distinguish Between (2 Marks)",
+              "description": "Answer all concise 2-mark conceptual questions, distinguish between pairs, and give reasons for Unit 14.",
+              "printed_page": 184,
+              "pdf_page": 190,
+              "source_reference": "Standard Ten Social Science, Unit 14 Evaluation, Part II",
+              "is_required": true
+            },
+            {
+              "id": "tn10_soc_u14_l2_textbook_evaluation_item_3_detailed_answers",
+              "lesson_id": "tn10_soc_u14_l2_textbook_evaluation",
+              "order_index": 3,
+              "item_type": "source_activity",
+              "section_name": "Detailed Answers & Essays (Part III)",
+              "label": "Part III: Detailed Answers, Essays & HOTS (5 & 8 Marks)",
+              "description": "Write comprehensive paragraph/essay answers, historical event analyses, and Higher Order Thinking Questions for Unit 14.",
+              "printed_page": 185,
+              "pdf_page": 191,
+              "source_reference": "Standard Ten Social Science, Unit 14 Evaluation, Part III",
+              "is_required": true
+            },
+            {
+              "id": "tn10_soc_u14_l2_textbook_evaluation_item_4_map_and_timeline",
+              "lesson_id": "tn10_soc_u14_l2_textbook_evaluation",
+              "order_index": 4,
+              "item_type": "source_activity",
+              "section_name": "Board Exam Map & Timeline Skills",
+              "label": "Board Exam Map Work & Timeline Skills: India - Resources and Industries",
+              "description": "Practice marking key exam locations on outline maps: India Map: Major mineral belts, Coal fields (Jharia, Raniganj), Oil fields (Mumbai High, Digboi) & Steel plants (Jamshedpur, Bhilai, Salem).",
+              "printed_page": 185,
+              "pdf_page": 191,
+              "source_reference": "Standard Ten Social Science, Unit 14 Map / Timeline Exercise",
+              "is_required": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tn10_soc_u15",
+      "unit_number": 15,
+      "title": "Unit 15: India - Population, Transport, Communication and Trade",
+      "theme": "Geography: Population Density, Urbanization, Golden Quadrilateral, Railway Zones, Major Seaports, International Airports & Trade Balance",
+      "lessons": [
+        {
+          "id": "tn10_soc_u15_l1_theory_and_concepts",
+          "unit_id": "tn10_soc_u15",
+          "unit_number": 15,
+          "lesson_number": 1,
+          "lesson_type": "theory",
+          "title": "India - Population, Transport, Communication and Trade: Core Concepts & Theory",
+          "author": "Tamil Nadu State Board (Geography)",
+          "is_memoriter": false,
+          "printed_page_start": 186,
+          "printed_page_end": 196,
+          "pdf_page_start": 192,
+          "pdf_page_end": 202,
+          "checklist_items": [
+            {
+              "id": "tn10_soc_u15_l1_theory_and_concepts_item_1_concept_reading",
+              "lesson_id": "tn10_soc_u15_l1_theory_and_concepts",
+              "order_index": 1,
+              "item_type": "source_activity",
+              "section_name": "Core Concepts",
+              "label": "Read & Understand Core Concepts: India - Population, Transport, Communication and Trade",
+              "description": "Read foundational principles, key events, definitions, constitutional articles, and core mechanisms of India - Population, Transport, Communication and Trade.",
+              "printed_page": 186,
+              "pdf_page": 192,
+              "source_reference": "Standard Ten Social Science (Geography), pp. 186–196",
+              "is_required": true
+            },
+            {
+              "id": "tn10_soc_u15_l1_theory_and_concepts_item_2_activities_and_case_studies",
+              "lesson_id": "tn10_soc_u15_l1_theory_and_concepts",
+              "order_index": 2,
+              "item_type": "source_activity",
+              "section_name": "In-text Figures & Case Studies",
+              "label": "In-text Activities, Tables, Infographics & Case Studies",
+              "description": "Review illustrated diagrams, statistical charts, comparative tables, and in-text case studies for India - Population, Transport, Communication and Trade.",
+              "printed_page": 187,
+              "pdf_page": 193,
+              "source_reference": "Standard Ten Social Science (Geography), In-text features",
+              "is_required": true
+            }
+          ]
+        },
+        {
+          "id": "tn10_soc_u15_l2_textbook_evaluation",
+          "unit_id": "tn10_soc_u15",
+          "unit_number": 15,
+          "lesson_number": 2,
+          "lesson_type": "exercise",
+          "title": "India - Population, Transport, Communication and Trade: Textbook Evaluation & Assessment",
+          "author": "Tamil Nadu State Board (Geography)",
+          "is_memoriter": false,
+          "printed_page_start": 197,
+          "printed_page_end": 199,
+          "pdf_page_start": 203,
+          "pdf_page_end": 205,
+          "checklist_items": [
+            {
+              "id": "tn10_soc_u15_l2_textbook_evaluation_item_1_objective_questions",
+              "lesson_id": "tn10_soc_u15_l2_textbook_evaluation",
+              "order_index": 1,
+              "item_type": "source_activity",
+              "section_name": "Objective Evaluation (Part I)",
+              "label": "Part I: MCQs, Fill in Blanks, True/False & Match Items",
+              "description": "Complete all 1-mark multiple choice questions, fill in the blanks, matching pairs, and assertion-reason questions for Unit 15.",
+              "printed_page": 197,
+              "pdf_page": 203,
+              "source_reference": "Standard Ten Social Science, Unit 15 Evaluation, Part I",
+              "is_required": true
+            },
+            {
+              "id": "tn10_soc_u15_l2_textbook_evaluation_item_2_short_answers",
+              "lesson_id": "tn10_soc_u15_l2_textbook_evaluation",
+              "order_index": 2,
+              "item_type": "source_activity",
+              "section_name": "Short Answers & Distinctions (Part II)",
+              "label": "Part II: Short Answer Questions & Distinguish Between (2 Marks)",
+              "description": "Answer all concise 2-mark conceptual questions, distinguish between pairs, and give reasons for Unit 15.",
+              "printed_page": 198,
+              "pdf_page": 204,
+              "source_reference": "Standard Ten Social Science, Unit 15 Evaluation, Part II",
+              "is_required": true
+            },
+            {
+              "id": "tn10_soc_u15_l2_textbook_evaluation_item_3_detailed_answers",
+              "lesson_id": "tn10_soc_u15_l2_textbook_evaluation",
+              "order_index": 3,
+              "item_type": "source_activity",
+              "section_name": "Detailed Answers & Essays (Part III)",
+              "label": "Part III: Detailed Answers, Essays & HOTS (5 & 8 Marks)",
+              "description": "Write comprehensive paragraph/essay answers, historical event analyses, and Higher Order Thinking Questions for Unit 15.",
+              "printed_page": 199,
+              "pdf_page": 205,
+              "source_reference": "Standard Ten Social Science, Unit 15 Evaluation, Part III",
+              "is_required": true
+            },
+            {
+              "id": "tn10_soc_u15_l2_textbook_evaluation_item_4_map_and_timeline",
+              "lesson_id": "tn10_soc_u15_l2_textbook_evaluation",
+              "order_index": 4,
+              "item_type": "source_activity",
+              "section_name": "Board Exam Map & Timeline Skills",
+              "label": "Board Exam Map Work & Timeline Skills: India - Population, Transport, Communication and Trade",
+              "description": "Practice marking key exam locations on outline maps: India Map: Golden quadrilateral highway, Major sea ports (Chennai, Mumbai, Kolkata, Kochi, Tuticorin) & International airports.",
+              "printed_page": 199,
+              "pdf_page": 205,
+              "source_reference": "Standard Ten Social Science, Unit 15 Map / Timeline Exercise",
+              "is_required": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tn10_soc_u16",
+      "unit_number": 16,
+      "title": "Unit 16: Physical Geography of Tamil Nadu",
+      "theme": "Geography: Location & Boundaries of Tamil Nadu, Western/Eastern Ghats, Plateaus, Coastal Plains, Rivers (Palar, Cauvery, Vaigai) & Climate",
+      "lessons": [
+        {
+          "id": "tn10_soc_u16_l1_theory_and_concepts",
+          "unit_id": "tn10_soc_u16",
+          "unit_number": 16,
+          "lesson_number": 1,
+          "lesson_type": "theory",
+          "title": "Physical Geography of Tamil Nadu: Core Concepts & Theory",
+          "author": "Tamil Nadu State Board (Geography)",
+          "is_memoriter": false,
+          "printed_page_start": 200,
+          "printed_page_end": 215,
+          "pdf_page_start": 206,
+          "pdf_page_end": 221,
+          "checklist_items": [
+            {
+              "id": "tn10_soc_u16_l1_theory_and_concepts_item_1_concept_reading",
+              "lesson_id": "tn10_soc_u16_l1_theory_and_concepts",
+              "order_index": 1,
+              "item_type": "source_activity",
+              "section_name": "Core Concepts",
+              "label": "Read & Understand Core Concepts: Physical Geography of Tamil Nadu",
+              "description": "Read foundational principles, key events, definitions, constitutional articles, and core mechanisms of Physical Geography of Tamil Nadu.",
+              "printed_page": 200,
+              "pdf_page": 206,
+              "source_reference": "Standard Ten Social Science (Geography), pp. 200–215",
+              "is_required": true
+            },
+            {
+              "id": "tn10_soc_u16_l1_theory_and_concepts_item_2_activities_and_case_studies",
+              "lesson_id": "tn10_soc_u16_l1_theory_and_concepts",
+              "order_index": 2,
+              "item_type": "source_activity",
+              "section_name": "In-text Figures & Case Studies",
+              "label": "In-text Activities, Tables, Infographics & Case Studies",
+              "description": "Review illustrated diagrams, statistical charts, comparative tables, and in-text case studies for Physical Geography of Tamil Nadu.",
+              "printed_page": 201,
+              "pdf_page": 207,
+              "source_reference": "Standard Ten Social Science (Geography), In-text features",
+              "is_required": true
+            }
+          ]
+        },
+        {
+          "id": "tn10_soc_u16_l2_textbook_evaluation",
+          "unit_id": "tn10_soc_u16",
+          "unit_number": 16,
+          "lesson_number": 2,
+          "lesson_type": "exercise",
+          "title": "Physical Geography of Tamil Nadu: Textbook Evaluation & Assessment",
+          "author": "Tamil Nadu State Board (Geography)",
+          "is_memoriter": false,
+          "printed_page_start": 216,
+          "printed_page_end": 218,
+          "pdf_page_start": 222,
+          "pdf_page_end": 224,
+          "checklist_items": [
+            {
+              "id": "tn10_soc_u16_l2_textbook_evaluation_item_1_objective_questions",
+              "lesson_id": "tn10_soc_u16_l2_textbook_evaluation",
+              "order_index": 1,
+              "item_type": "source_activity",
+              "section_name": "Objective Evaluation (Part I)",
+              "label": "Part I: MCQs, Fill in Blanks, True/False & Match Items",
+              "description": "Complete all 1-mark multiple choice questions, fill in the blanks, matching pairs, and assertion-reason questions for Unit 16.",
+              "printed_page": 216,
+              "pdf_page": 222,
+              "source_reference": "Standard Ten Social Science, Unit 16 Evaluation, Part I",
+              "is_required": true
+            },
+            {
+              "id": "tn10_soc_u16_l2_textbook_evaluation_item_2_short_answers",
+              "lesson_id": "tn10_soc_u16_l2_textbook_evaluation",
+              "order_index": 2,
+              "item_type": "source_activity",
+              "section_name": "Short Answers & Distinctions (Part II)",
+              "label": "Part II: Short Answer Questions & Distinguish Between (2 Marks)",
+              "description": "Answer all concise 2-mark conceptual questions, distinguish between pairs, and give reasons for Unit 16.",
+              "printed_page": 217,
+              "pdf_page": 223,
+              "source_reference": "Standard Ten Social Science, Unit 16 Evaluation, Part II",
+              "is_required": true
+            },
+            {
+              "id": "tn10_soc_u16_l2_textbook_evaluation_item_3_detailed_answers",
+              "lesson_id": "tn10_soc_u16_l2_textbook_evaluation",
+              "order_index": 3,
+              "item_type": "source_activity",
+              "section_name": "Detailed Answers & Essays (Part III)",
+              "label": "Part III: Detailed Answers, Essays & HOTS (5 & 8 Marks)",
+              "description": "Write comprehensive paragraph/essay answers, historical event analyses, and Higher Order Thinking Questions for Unit 16.",
+              "printed_page": 218,
+              "pdf_page": 224,
+              "source_reference": "Standard Ten Social Science, Unit 16 Evaluation, Part III",
+              "is_required": true
+            },
+            {
+              "id": "tn10_soc_u16_l2_textbook_evaluation_item_4_map_and_timeline",
+              "lesson_id": "tn10_soc_u16_l2_textbook_evaluation",
+              "order_index": 4,
+              "item_type": "source_activity",
+              "section_name": "Board Exam Map & Timeline Skills",
+              "label": "Board Exam Map Work & Timeline Skills: Physical Geography of Tamil Nadu",
+              "description": "Practice marking key exam locations on outline maps: Tamil Nadu Map: Doddabetta, Anaimudi, Palani hills, River Cauvery, Vaigai, Coromandel coast, Pichavaram mangrove & Gulf of Mannar.",
+              "printed_page": 218,
+              "pdf_page": 224,
+              "source_reference": "Standard Ten Social Science, Unit 16 Map / Timeline Exercise",
+              "is_required": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tn10_soc_u17",
+      "unit_number": 17,
+      "title": "Unit 17: Human Geography of Tamil Nadu",
+      "theme": "Geography: Agriculture in TN, Cropping Seasons, Water Resources, Livestock, Fisheries, Industrial Growth, Transport Infrastructure & Disaster Risk",
+      "lessons": [
+        {
+          "id": "tn10_soc_u17_l1_theory_and_concepts",
+          "unit_id": "tn10_soc_u17",
+          "unit_number": 17,
+          "lesson_number": 1,
+          "lesson_type": "theory",
+          "title": "Human Geography of Tamil Nadu: Core Concepts & Theory",
+          "author": "Tamil Nadu State Board (Geography)",
+          "is_memoriter": false,
+          "printed_page_start": 219,
+          "printed_page_end": 234,
+          "pdf_page_start": 225,
+          "pdf_page_end": 240,
+          "checklist_items": [
+            {
+              "id": "tn10_soc_u17_l1_theory_and_concepts_item_1_concept_reading",
+              "lesson_id": "tn10_soc_u17_l1_theory_and_concepts",
+              "order_index": 1,
+              "item_type": "source_activity",
+              "section_name": "Core Concepts",
+              "label": "Read & Understand Core Concepts: Human Geography of Tamil Nadu",
+              "description": "Read foundational principles, key events, definitions, constitutional articles, and core mechanisms of Human Geography of Tamil Nadu.",
+              "printed_page": 219,
+              "pdf_page": 225,
+              "source_reference": "Standard Ten Social Science (Geography), pp. 219–234",
+              "is_required": true
+            },
+            {
+              "id": "tn10_soc_u17_l1_theory_and_concepts_item_2_activities_and_case_studies",
+              "lesson_id": "tn10_soc_u17_l1_theory_and_concepts",
+              "order_index": 2,
+              "item_type": "source_activity",
+              "section_name": "In-text Figures & Case Studies",
+              "label": "In-text Activities, Tables, Infographics & Case Studies",
+              "description": "Review illustrated diagrams, statistical charts, comparative tables, and in-text case studies for Human Geography of Tamil Nadu.",
+              "printed_page": 220,
+              "pdf_page": 226,
+              "source_reference": "Standard Ten Social Science (Geography), In-text features",
+              "is_required": true
+            }
+          ]
+        },
+        {
+          "id": "tn10_soc_u17_l2_textbook_evaluation",
+          "unit_id": "tn10_soc_u17",
+          "unit_number": 17,
+          "lesson_number": 2,
+          "lesson_type": "exercise",
+          "title": "Human Geography of Tamil Nadu: Textbook Evaluation & Assessment",
+          "author": "Tamil Nadu State Board (Geography)",
+          "is_memoriter": false,
+          "printed_page_start": 235,
+          "printed_page_end": 237,
+          "pdf_page_start": 241,
+          "pdf_page_end": 243,
+          "checklist_items": [
+            {
+              "id": "tn10_soc_u17_l2_textbook_evaluation_item_1_objective_questions",
+              "lesson_id": "tn10_soc_u17_l2_textbook_evaluation",
+              "order_index": 1,
+              "item_type": "source_activity",
+              "section_name": "Objective Evaluation (Part I)",
+              "label": "Part I: MCQs, Fill in Blanks, True/False & Match Items",
+              "description": "Complete all 1-mark multiple choice questions, fill in the blanks, matching pairs, and assertion-reason questions for Unit 17.",
+              "printed_page": 235,
+              "pdf_page": 241,
+              "source_reference": "Standard Ten Social Science, Unit 17 Evaluation, Part I",
+              "is_required": true
+            },
+            {
+              "id": "tn10_soc_u17_l2_textbook_evaluation_item_2_short_answers",
+              "lesson_id": "tn10_soc_u17_l2_textbook_evaluation",
+              "order_index": 2,
+              "item_type": "source_activity",
+              "section_name": "Short Answers & Distinctions (Part II)",
+              "label": "Part II: Short Answer Questions & Distinguish Between (2 Marks)",
+              "description": "Answer all concise 2-mark conceptual questions, distinguish between pairs, and give reasons for Unit 17.",
+              "printed_page": 236,
+              "pdf_page": 242,
+              "source_reference": "Standard Ten Social Science, Unit 17 Evaluation, Part II",
+              "is_required": true
+            },
+            {
+              "id": "tn10_soc_u17_l2_textbook_evaluation_item_3_detailed_answers",
+              "lesson_id": "tn10_soc_u17_l2_textbook_evaluation",
+              "order_index": 3,
+              "item_type": "source_activity",
+              "section_name": "Detailed Answers & Essays (Part III)",
+              "label": "Part III: Detailed Answers, Essays & HOTS (5 & 8 Marks)",
+              "description": "Write comprehensive paragraph/essay answers, historical event analyses, and Higher Order Thinking Questions for Unit 17.",
+              "printed_page": 237,
+              "pdf_page": 243,
+              "source_reference": "Standard Ten Social Science, Unit 17 Evaluation, Part III",
+              "is_required": true
+            },
+            {
+              "id": "tn10_soc_u17_l2_textbook_evaluation_item_4_map_and_timeline",
+              "lesson_id": "tn10_soc_u17_l2_textbook_evaluation",
+              "order_index": 4,
+              "item_type": "source_activity",
+              "section_name": "Board Exam Map & Timeline Skills",
+              "label": "Board Exam Map Work & Timeline Skills: Human Geography of Tamil Nadu",
+              "description": "Practice marking key exam locations on outline maps: Tamil Nadu Map: Agro-climatic zones, Major crop areas, Textile clusters (Coimbatore, Tirupur), Ports (Ennore, Chennai, Tuticorin) & NH network.",
+              "printed_page": 237,
+              "pdf_page": 243,
+              "source_reference": "Standard Ten Social Science, Unit 17 Map / Timeline Exercise",
+              "is_required": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tn10_soc_u18",
+      "unit_number": 18,
+      "title": "Unit 18: Indian Constitution",
+      "theme": "Civics: Framing of Constitution, Preamble, Salient Features, Fundamental Rights (Articles 12–35), Directive Principles & Emergency Provisions",
+      "lessons": [
+        {
+          "id": "tn10_soc_u18_l1_theory_and_concepts",
+          "unit_id": "tn10_soc_u18",
+          "unit_number": 18,
+          "lesson_number": 1,
+          "lesson_type": "theory",
+          "title": "Indian Constitution: Core Concepts & Theory",
+          "author": "Tamil Nadu State Board (Civics)",
+          "is_memoriter": false,
+          "printed_page_start": 239,
+          "printed_page_end": 245,
+          "pdf_page_start": 245,
+          "pdf_page_end": 251,
+          "checklist_items": [
+            {
+              "id": "tn10_soc_u18_l1_theory_and_concepts_item_1_concept_reading",
+              "lesson_id": "tn10_soc_u18_l1_theory_and_concepts",
+              "order_index": 1,
+              "item_type": "source_activity",
+              "section_name": "Core Concepts",
+              "label": "Read & Understand Core Concepts: Indian Constitution",
+              "description": "Read foundational principles, key events, definitions, constitutional articles, and core mechanisms of Indian Constitution.",
+              "printed_page": 239,
+              "pdf_page": 245,
+              "source_reference": "Standard Ten Social Science (Civics), pp. 239–245",
+              "is_required": true
+            },
+            {
+              "id": "tn10_soc_u18_l1_theory_and_concepts_item_2_activities_and_case_studies",
+              "lesson_id": "tn10_soc_u18_l1_theory_and_concepts",
+              "order_index": 2,
+              "item_type": "source_activity",
+              "section_name": "In-text Figures & Case Studies",
+              "label": "In-text Activities, Tables, Infographics & Case Studies",
+              "description": "Review illustrated diagrams, statistical charts, comparative tables, and in-text case studies for Indian Constitution.",
+              "printed_page": 240,
+              "pdf_page": 246,
+              "source_reference": "Standard Ten Social Science (Civics), In-text features",
+              "is_required": true
+            }
+          ]
+        },
+        {
+          "id": "tn10_soc_u18_l2_textbook_evaluation",
+          "unit_id": "tn10_soc_u18",
+          "unit_number": 18,
+          "lesson_number": 2,
+          "lesson_type": "exercise",
+          "title": "Indian Constitution: Textbook Evaluation & Assessment",
+          "author": "Tamil Nadu State Board (Civics)",
+          "is_memoriter": false,
+          "printed_page_start": 246,
+          "printed_page_end": 247,
+          "pdf_page_start": 252,
+          "pdf_page_end": 253,
+          "checklist_items": [
+            {
+              "id": "tn10_soc_u18_l2_textbook_evaluation_item_1_objective_questions",
+              "lesson_id": "tn10_soc_u18_l2_textbook_evaluation",
+              "order_index": 1,
+              "item_type": "source_activity",
+              "section_name": "Objective Evaluation (Part I)",
+              "label": "Part I: MCQs, Fill in Blanks, True/False & Match Items",
+              "description": "Complete all 1-mark multiple choice questions, fill in the blanks, matching pairs, and assertion-reason questions for Unit 18.",
+              "printed_page": 246,
+              "pdf_page": 252,
+              "source_reference": "Standard Ten Social Science, Unit 18 Evaluation, Part I",
+              "is_required": true
+            },
+            {
+              "id": "tn10_soc_u18_l2_textbook_evaluation_item_2_short_answers",
+              "lesson_id": "tn10_soc_u18_l2_textbook_evaluation",
+              "order_index": 2,
+              "item_type": "source_activity",
+              "section_name": "Short Answers & Distinctions (Part II)",
+              "label": "Part II: Short Answer Questions & Distinguish Between (2 Marks)",
+              "description": "Answer all concise 2-mark conceptual questions, distinguish between pairs, and give reasons for Unit 18.",
+              "printed_page": 247,
+              "pdf_page": 253,
+              "source_reference": "Standard Ten Social Science, Unit 18 Evaluation, Part II",
+              "is_required": true
+            },
+            {
+              "id": "tn10_soc_u18_l2_textbook_evaluation_item_3_detailed_answers",
+              "lesson_id": "tn10_soc_u18_l2_textbook_evaluation",
+              "order_index": 3,
+              "item_type": "source_activity",
+              "section_name": "Detailed Answers & Essays (Part III)",
+              "label": "Part III: Detailed Answers, Essays & HOTS (5 & 8 Marks)",
+              "description": "Write comprehensive paragraph/essay answers, historical event analyses, and Higher Order Thinking Questions for Unit 18.",
+              "printed_page": 247,
+              "pdf_page": 253,
+              "source_reference": "Standard Ten Social Science, Unit 18 Evaluation, Part III",
+              "is_required": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tn10_soc_u19",
+      "unit_number": 19,
+      "title": "Unit 19: Central Government",
+      "theme": "Civics: President of India, Vice-President, Prime Minister, Council of Ministers, Parliament (Lok Sabha & Rajya Sabha) & Supreme Court",
+      "lessons": [
+        {
+          "id": "tn10_soc_u19_l1_theory_and_concepts",
+          "unit_id": "tn10_soc_u19",
+          "unit_number": 19,
+          "lesson_number": 1,
+          "lesson_type": "theory",
+          "title": "Central Government: Core Concepts & Theory",
+          "author": "Tamil Nadu State Board (Civics)",
+          "is_memoriter": false,
+          "printed_page_start": 248,
+          "printed_page_end": 255,
+          "pdf_page_start": 254,
+          "pdf_page_end": 261,
+          "checklist_items": [
+            {
+              "id": "tn10_soc_u19_l1_theory_and_concepts_item_1_concept_reading",
+              "lesson_id": "tn10_soc_u19_l1_theory_and_concepts",
+              "order_index": 1,
+              "item_type": "source_activity",
+              "section_name": "Core Concepts",
+              "label": "Read & Understand Core Concepts: Central Government",
+              "description": "Read foundational principles, key events, definitions, constitutional articles, and core mechanisms of Central Government.",
+              "printed_page": 248,
+              "pdf_page": 254,
+              "source_reference": "Standard Ten Social Science (Civics), pp. 248–255",
+              "is_required": true
+            },
+            {
+              "id": "tn10_soc_u19_l1_theory_and_concepts_item_2_activities_and_case_studies",
+              "lesson_id": "tn10_soc_u19_l1_theory_and_concepts",
+              "order_index": 2,
+              "item_type": "source_activity",
+              "section_name": "In-text Figures & Case Studies",
+              "label": "In-text Activities, Tables, Infographics & Case Studies",
+              "description": "Review illustrated diagrams, statistical charts, comparative tables, and in-text case studies for Central Government.",
+              "printed_page": 249,
+              "pdf_page": 255,
+              "source_reference": "Standard Ten Social Science (Civics), In-text features",
+              "is_required": true
+            }
+          ]
+        },
+        {
+          "id": "tn10_soc_u19_l2_textbook_evaluation",
+          "unit_id": "tn10_soc_u19",
+          "unit_number": 19,
+          "lesson_number": 2,
+          "lesson_type": "exercise",
+          "title": "Central Government: Textbook Evaluation & Assessment",
+          "author": "Tamil Nadu State Board (Civics)",
+          "is_memoriter": false,
+          "printed_page_start": 256,
+          "printed_page_end": 258,
+          "pdf_page_start": 262,
+          "pdf_page_end": 264,
+          "checklist_items": [
+            {
+              "id": "tn10_soc_u19_l2_textbook_evaluation_item_1_objective_questions",
+              "lesson_id": "tn10_soc_u19_l2_textbook_evaluation",
+              "order_index": 1,
+              "item_type": "source_activity",
+              "section_name": "Objective Evaluation (Part I)",
+              "label": "Part I: MCQs, Fill in Blanks, True/False & Match Items",
+              "description": "Complete all 1-mark multiple choice questions, fill in the blanks, matching pairs, and assertion-reason questions for Unit 19.",
+              "printed_page": 256,
+              "pdf_page": 262,
+              "source_reference": "Standard Ten Social Science, Unit 19 Evaluation, Part I",
+              "is_required": true
+            },
+            {
+              "id": "tn10_soc_u19_l2_textbook_evaluation_item_2_short_answers",
+              "lesson_id": "tn10_soc_u19_l2_textbook_evaluation",
+              "order_index": 2,
+              "item_type": "source_activity",
+              "section_name": "Short Answers & Distinctions (Part II)",
+              "label": "Part II: Short Answer Questions & Distinguish Between (2 Marks)",
+              "description": "Answer all concise 2-mark conceptual questions, distinguish between pairs, and give reasons for Unit 19.",
+              "printed_page": 257,
+              "pdf_page": 263,
+              "source_reference": "Standard Ten Social Science, Unit 19 Evaluation, Part II",
+              "is_required": true
+            },
+            {
+              "id": "tn10_soc_u19_l2_textbook_evaluation_item_3_detailed_answers",
+              "lesson_id": "tn10_soc_u19_l2_textbook_evaluation",
+              "order_index": 3,
+              "item_type": "source_activity",
+              "section_name": "Detailed Answers & Essays (Part III)",
+              "label": "Part III: Detailed Answers, Essays & HOTS (5 & 8 Marks)",
+              "description": "Write comprehensive paragraph/essay answers, historical event analyses, and Higher Order Thinking Questions for Unit 19.",
+              "printed_page": 258,
+              "pdf_page": 264,
+              "source_reference": "Standard Ten Social Science, Unit 19 Evaluation, Part III",
+              "is_required": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tn10_soc_u20",
+      "unit_number": 20,
+      "title": "Unit 20: State Government",
+      "theme": "Civics: Governor of Tamil Nadu, Chief Minister, State Council of Ministers, State Legislature (Vidhan Sabha) & High Court Jurisdiction",
+      "lessons": [
+        {
+          "id": "tn10_soc_u20_l1_theory_and_concepts",
+          "unit_id": "tn10_soc_u20",
+          "unit_number": 20,
+          "lesson_number": 1,
+          "lesson_type": "theory",
+          "title": "State Government: Core Concepts & Theory",
+          "author": "Tamil Nadu State Board (Civics)",
+          "is_memoriter": false,
+          "printed_page_start": 259,
+          "printed_page_end": 265,
+          "pdf_page_start": 265,
+          "pdf_page_end": 271,
+          "checklist_items": [
+            {
+              "id": "tn10_soc_u20_l1_theory_and_concepts_item_1_concept_reading",
+              "lesson_id": "tn10_soc_u20_l1_theory_and_concepts",
+              "order_index": 1,
+              "item_type": "source_activity",
+              "section_name": "Core Concepts",
+              "label": "Read & Understand Core Concepts: State Government",
+              "description": "Read foundational principles, key events, definitions, constitutional articles, and core mechanisms of State Government.",
+              "printed_page": 259,
+              "pdf_page": 265,
+              "source_reference": "Standard Ten Social Science (Civics), pp. 259–265",
+              "is_required": true
+            },
+            {
+              "id": "tn10_soc_u20_l1_theory_and_concepts_item_2_activities_and_case_studies",
+              "lesson_id": "tn10_soc_u20_l1_theory_and_concepts",
+              "order_index": 2,
+              "item_type": "source_activity",
+              "section_name": "In-text Figures & Case Studies",
+              "label": "In-text Activities, Tables, Infographics & Case Studies",
+              "description": "Review illustrated diagrams, statistical charts, comparative tables, and in-text case studies for State Government.",
+              "printed_page": 260,
+              "pdf_page": 266,
+              "source_reference": "Standard Ten Social Science (Civics), In-text features",
+              "is_required": true
+            }
+          ]
+        },
+        {
+          "id": "tn10_soc_u20_l2_textbook_evaluation",
+          "unit_id": "tn10_soc_u20",
+          "unit_number": 20,
+          "lesson_number": 2,
+          "lesson_type": "exercise",
+          "title": "State Government: Textbook Evaluation & Assessment",
+          "author": "Tamil Nadu State Board (Civics)",
+          "is_memoriter": false,
+          "printed_page_start": 266,
+          "printed_page_end": 268,
+          "pdf_page_start": 272,
+          "pdf_page_end": 274,
+          "checklist_items": [
+            {
+              "id": "tn10_soc_u20_l2_textbook_evaluation_item_1_objective_questions",
+              "lesson_id": "tn10_soc_u20_l2_textbook_evaluation",
+              "order_index": 1,
+              "item_type": "source_activity",
+              "section_name": "Objective Evaluation (Part I)",
+              "label": "Part I: MCQs, Fill in Blanks, True/False & Match Items",
+              "description": "Complete all 1-mark multiple choice questions, fill in the blanks, matching pairs, and assertion-reason questions for Unit 20.",
+              "printed_page": 266,
+              "pdf_page": 272,
+              "source_reference": "Standard Ten Social Science, Unit 20 Evaluation, Part I",
+              "is_required": true
+            },
+            {
+              "id": "tn10_soc_u20_l2_textbook_evaluation_item_2_short_answers",
+              "lesson_id": "tn10_soc_u20_l2_textbook_evaluation",
+              "order_index": 2,
+              "item_type": "source_activity",
+              "section_name": "Short Answers & Distinctions (Part II)",
+              "label": "Part II: Short Answer Questions & Distinguish Between (2 Marks)",
+              "description": "Answer all concise 2-mark conceptual questions, distinguish between pairs, and give reasons for Unit 20.",
+              "printed_page": 267,
+              "pdf_page": 273,
+              "source_reference": "Standard Ten Social Science, Unit 20 Evaluation, Part II",
+              "is_required": true
+            },
+            {
+              "id": "tn10_soc_u20_l2_textbook_evaluation_item_3_detailed_answers",
+              "lesson_id": "tn10_soc_u20_l2_textbook_evaluation",
+              "order_index": 3,
+              "item_type": "source_activity",
+              "section_name": "Detailed Answers & Essays (Part III)",
+              "label": "Part III: Detailed Answers, Essays & HOTS (5 & 8 Marks)",
+              "description": "Write comprehensive paragraph/essay answers, historical event analyses, and Higher Order Thinking Questions for Unit 20.",
+              "printed_page": 268,
+              "pdf_page": 274,
+              "source_reference": "Standard Ten Social Science, Unit 20 Evaluation, Part III",
+              "is_required": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tn10_soc_u21",
+      "unit_number": 21,
+      "title": "Unit 21: India’s Foreign Policy",
+      "theme": "Civics: Panchsheel Principles, Non-Alignment Policy, Disarmament, Anti-Apartheid, SAARC, Act East Policy & Nuclear Doctrine",
+      "lessons": [
+        {
+          "id": "tn10_soc_u21_l1_theory_and_concepts",
+          "unit_id": "tn10_soc_u21",
+          "unit_number": 21,
+          "lesson_number": 1,
+          "lesson_type": "theory",
+          "title": "India’s Foreign Policy: Core Concepts & Theory",
+          "author": "Tamil Nadu State Board (Civics)",
+          "is_memoriter": false,
+          "printed_page_start": 269,
+          "printed_page_end": 275,
+          "pdf_page_start": 275,
+          "pdf_page_end": 281,
+          "checklist_items": [
+            {
+              "id": "tn10_soc_u21_l1_theory_and_concepts_item_1_concept_reading",
+              "lesson_id": "tn10_soc_u21_l1_theory_and_concepts",
+              "order_index": 1,
+              "item_type": "source_activity",
+              "section_name": "Core Concepts",
+              "label": "Read & Understand Core Concepts: India’s Foreign Policy",
+              "description": "Read foundational principles, key events, definitions, constitutional articles, and core mechanisms of India’s Foreign Policy.",
+              "printed_page": 269,
+              "pdf_page": 275,
+              "source_reference": "Standard Ten Social Science (Civics), pp. 269–275",
+              "is_required": true
+            },
+            {
+              "id": "tn10_soc_u21_l1_theory_and_concepts_item_2_activities_and_case_studies",
+              "lesson_id": "tn10_soc_u21_l1_theory_and_concepts",
+              "order_index": 2,
+              "item_type": "source_activity",
+              "section_name": "In-text Figures & Case Studies",
+              "label": "In-text Activities, Tables, Infographics & Case Studies",
+              "description": "Review illustrated diagrams, statistical charts, comparative tables, and in-text case studies for India’s Foreign Policy.",
+              "printed_page": 270,
+              "pdf_page": 276,
+              "source_reference": "Standard Ten Social Science (Civics), In-text features",
+              "is_required": true
+            }
+          ]
+        },
+        {
+          "id": "tn10_soc_u21_l2_textbook_evaluation",
+          "unit_id": "tn10_soc_u21",
+          "unit_number": 21,
+          "lesson_number": 2,
+          "lesson_type": "exercise",
+          "title": "India’s Foreign Policy: Textbook Evaluation & Assessment",
+          "author": "Tamil Nadu State Board (Civics)",
+          "is_memoriter": false,
+          "printed_page_start": 276,
+          "printed_page_end": 277,
+          "pdf_page_start": 282,
+          "pdf_page_end": 283,
+          "checklist_items": [
+            {
+              "id": "tn10_soc_u21_l2_textbook_evaluation_item_1_objective_questions",
+              "lesson_id": "tn10_soc_u21_l2_textbook_evaluation",
+              "order_index": 1,
+              "item_type": "source_activity",
+              "section_name": "Objective Evaluation (Part I)",
+              "label": "Part I: MCQs, Fill in Blanks, True/False & Match Items",
+              "description": "Complete all 1-mark multiple choice questions, fill in the blanks, matching pairs, and assertion-reason questions for Unit 21.",
+              "printed_page": 276,
+              "pdf_page": 282,
+              "source_reference": "Standard Ten Social Science, Unit 21 Evaluation, Part I",
+              "is_required": true
+            },
+            {
+              "id": "tn10_soc_u21_l2_textbook_evaluation_item_2_short_answers",
+              "lesson_id": "tn10_soc_u21_l2_textbook_evaluation",
+              "order_index": 2,
+              "item_type": "source_activity",
+              "section_name": "Short Answers & Distinctions (Part II)",
+              "label": "Part II: Short Answer Questions & Distinguish Between (2 Marks)",
+              "description": "Answer all concise 2-mark conceptual questions, distinguish between pairs, and give reasons for Unit 21.",
+              "printed_page": 277,
+              "pdf_page": 283,
+              "source_reference": "Standard Ten Social Science, Unit 21 Evaluation, Part II",
+              "is_required": true
+            },
+            {
+              "id": "tn10_soc_u21_l2_textbook_evaluation_item_3_detailed_answers",
+              "lesson_id": "tn10_soc_u21_l2_textbook_evaluation",
+              "order_index": 3,
+              "item_type": "source_activity",
+              "section_name": "Detailed Answers & Essays (Part III)",
+              "label": "Part III: Detailed Answers, Essays & HOTS (5 & 8 Marks)",
+              "description": "Write comprehensive paragraph/essay answers, historical event analyses, and Higher Order Thinking Questions for Unit 21.",
+              "printed_page": 277,
+              "pdf_page": 283,
+              "source_reference": "Standard Ten Social Science, Unit 21 Evaluation, Part III",
+              "is_required": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tn10_soc_u22",
+      "unit_number": 22,
+      "title": "Unit 22: India’s International Relations",
+      "theme": "Civics: Relations with Immediate Neighbors (Pakistan, China, Bangladesh, Sri Lanka, Nepal), BRICS, G20, Look East & Global Partnerships",
+      "lessons": [
+        {
+          "id": "tn10_soc_u22_l1_theory_and_concepts",
+          "unit_id": "tn10_soc_u22",
+          "unit_number": 22,
+          "lesson_number": 1,
+          "lesson_type": "theory",
+          "title": "India’s International Relations: Core Concepts & Theory",
+          "author": "Tamil Nadu State Board (Civics)",
+          "is_memoriter": false,
+          "printed_page_start": 278,
+          "printed_page_end": 287,
+          "pdf_page_start": 284,
+          "pdf_page_end": 293,
+          "checklist_items": [
+            {
+              "id": "tn10_soc_u22_l1_theory_and_concepts_item_1_concept_reading",
+              "lesson_id": "tn10_soc_u22_l1_theory_and_concepts",
+              "order_index": 1,
+              "item_type": "source_activity",
+              "section_name": "Core Concepts",
+              "label": "Read & Understand Core Concepts: India’s International Relations",
+              "description": "Read foundational principles, key events, definitions, constitutional articles, and core mechanisms of India’s International Relations.",
+              "printed_page": 278,
+              "pdf_page": 284,
+              "source_reference": "Standard Ten Social Science (Civics), pp. 278–287",
+              "is_required": true
+            },
+            {
+              "id": "tn10_soc_u22_l1_theory_and_concepts_item_2_activities_and_case_studies",
+              "lesson_id": "tn10_soc_u22_l1_theory_and_concepts",
+              "order_index": 2,
+              "item_type": "source_activity",
+              "section_name": "In-text Figures & Case Studies",
+              "label": "In-text Activities, Tables, Infographics & Case Studies",
+              "description": "Review illustrated diagrams, statistical charts, comparative tables, and in-text case studies for India’s International Relations.",
+              "printed_page": 279,
+              "pdf_page": 285,
+              "source_reference": "Standard Ten Social Science (Civics), In-text features",
+              "is_required": true
+            }
+          ]
+        },
+        {
+          "id": "tn10_soc_u22_l2_textbook_evaluation",
+          "unit_id": "tn10_soc_u22",
+          "unit_number": 22,
+          "lesson_number": 2,
+          "lesson_type": "exercise",
+          "title": "India’s International Relations: Textbook Evaluation & Assessment",
+          "author": "Tamil Nadu State Board (Civics)",
+          "is_memoriter": false,
+          "printed_page_start": 288,
+          "printed_page_end": 290,
+          "pdf_page_start": 294,
+          "pdf_page_end": 296,
+          "checklist_items": [
+            {
+              "id": "tn10_soc_u22_l2_textbook_evaluation_item_1_objective_questions",
+              "lesson_id": "tn10_soc_u22_l2_textbook_evaluation",
+              "order_index": 1,
+              "item_type": "source_activity",
+              "section_name": "Objective Evaluation (Part I)",
+              "label": "Part I: MCQs, Fill in Blanks, True/False & Match Items",
+              "description": "Complete all 1-mark multiple choice questions, fill in the blanks, matching pairs, and assertion-reason questions for Unit 22.",
+              "printed_page": 288,
+              "pdf_page": 294,
+              "source_reference": "Standard Ten Social Science, Unit 22 Evaluation, Part I",
+              "is_required": true
+            },
+            {
+              "id": "tn10_soc_u22_l2_textbook_evaluation_item_2_short_answers",
+              "lesson_id": "tn10_soc_u22_l2_textbook_evaluation",
+              "order_index": 2,
+              "item_type": "source_activity",
+              "section_name": "Short Answers & Distinctions (Part II)",
+              "label": "Part II: Short Answer Questions & Distinguish Between (2 Marks)",
+              "description": "Answer all concise 2-mark conceptual questions, distinguish between pairs, and give reasons for Unit 22.",
+              "printed_page": 289,
+              "pdf_page": 295,
+              "source_reference": "Standard Ten Social Science, Unit 22 Evaluation, Part II",
+              "is_required": true
+            },
+            {
+              "id": "tn10_soc_u22_l2_textbook_evaluation_item_3_detailed_answers",
+              "lesson_id": "tn10_soc_u22_l2_textbook_evaluation",
+              "order_index": 3,
+              "item_type": "source_activity",
+              "section_name": "Detailed Answers & Essays (Part III)",
+              "label": "Part III: Detailed Answers, Essays & HOTS (5 & 8 Marks)",
+              "description": "Write comprehensive paragraph/essay answers, historical event analyses, and Higher Order Thinking Questions for Unit 22.",
+              "printed_page": 290,
+              "pdf_page": 296,
+              "source_reference": "Standard Ten Social Science, Unit 22 Evaluation, Part III",
+              "is_required": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tn10_soc_u23",
+      "unit_number": 23,
+      "title": "Unit 23: Gross Domestic Product and its Growth: an Introduction",
+      "theme": "Economics: Concept of GDP, NDP, GNP, NNP, Primary/Secondary/Tertiary Sectors, Human Development Index (HDI) & Economic Development",
+      "lessons": [
+        {
+          "id": "tn10_soc_u23_l1_theory_and_concepts",
+          "unit_id": "tn10_soc_u23",
+          "unit_number": 23,
+          "lesson_number": 1,
+          "lesson_type": "theory",
+          "title": "Gross Domestic Product and its Growth: an Introduction: Core Concepts & Theory",
+          "author": "Tamil Nadu State Board (Economics)",
+          "is_memoriter": false,
+          "printed_page_start": 292,
+          "printed_page_end": 299,
+          "pdf_page_start": 298,
+          "pdf_page_end": 305,
+          "checklist_items": [
+            {
+              "id": "tn10_soc_u23_l1_theory_and_concepts_item_1_concept_reading",
+              "lesson_id": "tn10_soc_u23_l1_theory_and_concepts",
+              "order_index": 1,
+              "item_type": "source_activity",
+              "section_name": "Core Concepts",
+              "label": "Read & Understand Core Concepts: Gross Domestic Product and its Growth: an Introduction",
+              "description": "Read foundational principles, key events, definitions, constitutional articles, and core mechanisms of Gross Domestic Product and its Growth: an Introduction.",
+              "printed_page": 292,
+              "pdf_page": 298,
+              "source_reference": "Standard Ten Social Science (Economics), pp. 292–299",
+              "is_required": true
+            },
+            {
+              "id": "tn10_soc_u23_l1_theory_and_concepts_item_2_activities_and_case_studies",
+              "lesson_id": "tn10_soc_u23_l1_theory_and_concepts",
+              "order_index": 2,
+              "item_type": "source_activity",
+              "section_name": "In-text Figures & Case Studies",
+              "label": "In-text Activities, Tables, Infographics & Case Studies",
+              "description": "Review illustrated diagrams, statistical charts, comparative tables, and in-text case studies for Gross Domestic Product and its Growth: an Introduction.",
+              "printed_page": 293,
+              "pdf_page": 299,
+              "source_reference": "Standard Ten Social Science (Economics), In-text features",
+              "is_required": true
+            }
+          ]
+        },
+        {
+          "id": "tn10_soc_u23_l2_textbook_evaluation",
+          "unit_id": "tn10_soc_u23",
+          "unit_number": 23,
+          "lesson_number": 2,
+          "lesson_type": "exercise",
+          "title": "Gross Domestic Product and its Growth: an Introduction: Textbook Evaluation & Assessment",
+          "author": "Tamil Nadu State Board (Economics)",
+          "is_memoriter": false,
+          "printed_page_start": 300,
+          "printed_page_end": 302,
+          "pdf_page_start": 306,
+          "pdf_page_end": 308,
+          "checklist_items": [
+            {
+              "id": "tn10_soc_u23_l2_textbook_evaluation_item_1_objective_questions",
+              "lesson_id": "tn10_soc_u23_l2_textbook_evaluation",
+              "order_index": 1,
+              "item_type": "source_activity",
+              "section_name": "Objective Evaluation (Part I)",
+              "label": "Part I: MCQs, Fill in Blanks, True/False & Match Items",
+              "description": "Complete all 1-mark multiple choice questions, fill in the blanks, matching pairs, and assertion-reason questions for Unit 23.",
+              "printed_page": 300,
+              "pdf_page": 306,
+              "source_reference": "Standard Ten Social Science, Unit 23 Evaluation, Part I",
+              "is_required": true
+            },
+            {
+              "id": "tn10_soc_u23_l2_textbook_evaluation_item_2_short_answers",
+              "lesson_id": "tn10_soc_u23_l2_textbook_evaluation",
+              "order_index": 2,
+              "item_type": "source_activity",
+              "section_name": "Short Answers & Distinctions (Part II)",
+              "label": "Part II: Short Answer Questions & Distinguish Between (2 Marks)",
+              "description": "Answer all concise 2-mark conceptual questions, distinguish between pairs, and give reasons for Unit 23.",
+              "printed_page": 301,
+              "pdf_page": 307,
+              "source_reference": "Standard Ten Social Science, Unit 23 Evaluation, Part II",
+              "is_required": true
+            },
+            {
+              "id": "tn10_soc_u23_l2_textbook_evaluation_item_3_detailed_answers",
+              "lesson_id": "tn10_soc_u23_l2_textbook_evaluation",
+              "order_index": 3,
+              "item_type": "source_activity",
+              "section_name": "Detailed Answers & Essays (Part III)",
+              "label": "Part III: Detailed Answers, Essays & HOTS (5 & 8 Marks)",
+              "description": "Write comprehensive paragraph/essay answers, historical event analyses, and Higher Order Thinking Questions for Unit 23.",
+              "printed_page": 302,
+              "pdf_page": 308,
+              "source_reference": "Standard Ten Social Science, Unit 23 Evaluation, Part III",
+              "is_required": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tn10_soc_u24",
+      "unit_number": 24,
+      "title": "Unit 24: Globalization and Trade",
+      "theme": "Economics: Historical Background of Trade, Silk Route, Multi-National Corporations (MNCs), GATT, WTO & Impact of Globalization in India",
+      "lessons": [
+        {
+          "id": "tn10_soc_u24_l1_theory_and_concepts",
+          "unit_id": "tn10_soc_u24",
+          "unit_number": 24,
+          "lesson_number": 1,
+          "lesson_type": "theory",
+          "title": "Globalization and Trade: Core Concepts & Theory",
+          "author": "Tamil Nadu State Board (Economics)",
+          "is_memoriter": false,
+          "printed_page_start": 303,
+          "printed_page_end": 308,
+          "pdf_page_start": 309,
+          "pdf_page_end": 314,
+          "checklist_items": [
+            {
+              "id": "tn10_soc_u24_l1_theory_and_concepts_item_1_concept_reading",
+              "lesson_id": "tn10_soc_u24_l1_theory_and_concepts",
+              "order_index": 1,
+              "item_type": "source_activity",
+              "section_name": "Core Concepts",
+              "label": "Read & Understand Core Concepts: Globalization and Trade",
+              "description": "Read foundational principles, key events, definitions, constitutional articles, and core mechanisms of Globalization and Trade.",
+              "printed_page": 303,
+              "pdf_page": 309,
+              "source_reference": "Standard Ten Social Science (Economics), pp. 303–308",
+              "is_required": true
+            },
+            {
+              "id": "tn10_soc_u24_l1_theory_and_concepts_item_2_activities_and_case_studies",
+              "lesson_id": "tn10_soc_u24_l1_theory_and_concepts",
+              "order_index": 2,
+              "item_type": "source_activity",
+              "section_name": "In-text Figures & Case Studies",
+              "label": "In-text Activities, Tables, Infographics & Case Studies",
+              "description": "Review illustrated diagrams, statistical charts, comparative tables, and in-text case studies for Globalization and Trade.",
+              "printed_page": 304,
+              "pdf_page": 310,
+              "source_reference": "Standard Ten Social Science (Economics), In-text features",
+              "is_required": true
+            }
+          ]
+        },
+        {
+          "id": "tn10_soc_u24_l2_textbook_evaluation",
+          "unit_id": "tn10_soc_u24",
+          "unit_number": 24,
+          "lesson_number": 2,
+          "lesson_type": "exercise",
+          "title": "Globalization and Trade: Textbook Evaluation & Assessment",
+          "author": "Tamil Nadu State Board (Economics)",
+          "is_memoriter": false,
+          "printed_page_start": 309,
+          "printed_page_end": 310,
+          "pdf_page_start": 315,
+          "pdf_page_end": 316,
+          "checklist_items": [
+            {
+              "id": "tn10_soc_u24_l2_textbook_evaluation_item_1_objective_questions",
+              "lesson_id": "tn10_soc_u24_l2_textbook_evaluation",
+              "order_index": 1,
+              "item_type": "source_activity",
+              "section_name": "Objective Evaluation (Part I)",
+              "label": "Part I: MCQs, Fill in Blanks, True/False & Match Items",
+              "description": "Complete all 1-mark multiple choice questions, fill in the blanks, matching pairs, and assertion-reason questions for Unit 24.",
+              "printed_page": 309,
+              "pdf_page": 315,
+              "source_reference": "Standard Ten Social Science, Unit 24 Evaluation, Part I",
+              "is_required": true
+            },
+            {
+              "id": "tn10_soc_u24_l2_textbook_evaluation_item_2_short_answers",
+              "lesson_id": "tn10_soc_u24_l2_textbook_evaluation",
+              "order_index": 2,
+              "item_type": "source_activity",
+              "section_name": "Short Answers & Distinctions (Part II)",
+              "label": "Part II: Short Answer Questions & Distinguish Between (2 Marks)",
+              "description": "Answer all concise 2-mark conceptual questions, distinguish between pairs, and give reasons for Unit 24.",
+              "printed_page": 310,
+              "pdf_page": 316,
+              "source_reference": "Standard Ten Social Science, Unit 24 Evaluation, Part II",
+              "is_required": true
+            },
+            {
+              "id": "tn10_soc_u24_l2_textbook_evaluation_item_3_detailed_answers",
+              "lesson_id": "tn10_soc_u24_l2_textbook_evaluation",
+              "order_index": 3,
+              "item_type": "source_activity",
+              "section_name": "Detailed Answers & Essays (Part III)",
+              "label": "Part III: Detailed Answers, Essays & HOTS (5 & 8 Marks)",
+              "description": "Write comprehensive paragraph/essay answers, historical event analyses, and Higher Order Thinking Questions for Unit 24.",
+              "printed_page": 310,
+              "pdf_page": 316,
+              "source_reference": "Standard Ten Social Science, Unit 24 Evaluation, Part III",
+              "is_required": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tn10_soc_u25",
+      "unit_number": 25,
+      "title": "Unit 25: Food Security and Nutrition",
+      "theme": "Economics: Availability, Access & Absorption of Food, Public Distribution System (PDS), Buffer Stock, Green Revolution & Nutrition Schemes in TN",
+      "lessons": [
+        {
+          "id": "tn10_soc_u25_l1_theory_and_concepts",
+          "unit_id": "tn10_soc_u25",
+          "unit_number": 25,
+          "lesson_number": 1,
+          "lesson_type": "theory",
+          "title": "Food Security and Nutrition: Core Concepts & Theory",
+          "author": "Tamil Nadu State Board (Economics)",
+          "is_memoriter": false,
+          "printed_page_start": 311,
+          "printed_page_end": 317,
+          "pdf_page_start": 317,
+          "pdf_page_end": 323,
+          "checklist_items": [
+            {
+              "id": "tn10_soc_u25_l1_theory_and_concepts_item_1_concept_reading",
+              "lesson_id": "tn10_soc_u25_l1_theory_and_concepts",
+              "order_index": 1,
+              "item_type": "source_activity",
+              "section_name": "Core Concepts",
+              "label": "Read & Understand Core Concepts: Food Security and Nutrition",
+              "description": "Read foundational principles, key events, definitions, constitutional articles, and core mechanisms of Food Security and Nutrition.",
+              "printed_page": 311,
+              "pdf_page": 317,
+              "source_reference": "Standard Ten Social Science (Economics), pp. 311–317",
+              "is_required": true
+            },
+            {
+              "id": "tn10_soc_u25_l1_theory_and_concepts_item_2_activities_and_case_studies",
+              "lesson_id": "tn10_soc_u25_l1_theory_and_concepts",
+              "order_index": 2,
+              "item_type": "source_activity",
+              "section_name": "In-text Figures & Case Studies",
+              "label": "In-text Activities, Tables, Infographics & Case Studies",
+              "description": "Review illustrated diagrams, statistical charts, comparative tables, and in-text case studies for Food Security and Nutrition.",
+              "printed_page": 312,
+              "pdf_page": 318,
+              "source_reference": "Standard Ten Social Science (Economics), In-text features",
+              "is_required": true
+            }
+          ]
+        },
+        {
+          "id": "tn10_soc_u25_l2_textbook_evaluation",
+          "unit_id": "tn10_soc_u25",
+          "unit_number": 25,
+          "lesson_number": 2,
+          "lesson_type": "exercise",
+          "title": "Food Security and Nutrition: Textbook Evaluation & Assessment",
+          "author": "Tamil Nadu State Board (Economics)",
+          "is_memoriter": false,
+          "printed_page_start": 318,
+          "printed_page_end": 320,
+          "pdf_page_start": 324,
+          "pdf_page_end": 326,
+          "checklist_items": [
+            {
+              "id": "tn10_soc_u25_l2_textbook_evaluation_item_1_objective_questions",
+              "lesson_id": "tn10_soc_u25_l2_textbook_evaluation",
+              "order_index": 1,
+              "item_type": "source_activity",
+              "section_name": "Objective Evaluation (Part I)",
+              "label": "Part I: MCQs, Fill in Blanks, True/False & Match Items",
+              "description": "Complete all 1-mark multiple choice questions, fill in the blanks, matching pairs, and assertion-reason questions for Unit 25.",
+              "printed_page": 318,
+              "pdf_page": 324,
+              "source_reference": "Standard Ten Social Science, Unit 25 Evaluation, Part I",
+              "is_required": true
+            },
+            {
+              "id": "tn10_soc_u25_l2_textbook_evaluation_item_2_short_answers",
+              "lesson_id": "tn10_soc_u25_l2_textbook_evaluation",
+              "order_index": 2,
+              "item_type": "source_activity",
+              "section_name": "Short Answers & Distinctions (Part II)",
+              "label": "Part II: Short Answer Questions & Distinguish Between (2 Marks)",
+              "description": "Answer all concise 2-mark conceptual questions, distinguish between pairs, and give reasons for Unit 25.",
+              "printed_page": 319,
+              "pdf_page": 325,
+              "source_reference": "Standard Ten Social Science, Unit 25 Evaluation, Part II",
+              "is_required": true
+            },
+            {
+              "id": "tn10_soc_u25_l2_textbook_evaluation_item_3_detailed_answers",
+              "lesson_id": "tn10_soc_u25_l2_textbook_evaluation",
+              "order_index": 3,
+              "item_type": "source_activity",
+              "section_name": "Detailed Answers & Essays (Part III)",
+              "label": "Part III: Detailed Answers, Essays & HOTS (5 & 8 Marks)",
+              "description": "Write comprehensive paragraph/essay answers, historical event analyses, and Higher Order Thinking Questions for Unit 25.",
+              "printed_page": 320,
+              "pdf_page": 326,
+              "source_reference": "Standard Ten Social Science, Unit 25 Evaluation, Part III",
+              "is_required": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tn10_soc_u26",
+      "unit_number": 26,
+      "title": "Unit 26: Government and Taxes",
+      "theme": "Economics: Direct Taxes (Income Tax, Corporate Tax), Indirect Taxes (GST, Customs, Excise), Black Money, Tax Evasion & Public Expenditure",
+      "lessons": [
+        {
+          "id": "tn10_soc_u26_l1_theory_and_concepts",
+          "unit_id": "tn10_soc_u26",
+          "unit_number": 26,
+          "lesson_number": 1,
+          "lesson_type": "theory",
+          "title": "Government and Taxes: Core Concepts & Theory",
+          "author": "Tamil Nadu State Board (Economics)",
+          "is_memoriter": false,
+          "printed_page_start": 321,
+          "printed_page_end": 325,
+          "pdf_page_start": 327,
+          "pdf_page_end": 331,
+          "checklist_items": [
+            {
+              "id": "tn10_soc_u26_l1_theory_and_concepts_item_1_concept_reading",
+              "lesson_id": "tn10_soc_u26_l1_theory_and_concepts",
+              "order_index": 1,
+              "item_type": "source_activity",
+              "section_name": "Core Concepts",
+              "label": "Read & Understand Core Concepts: Government and Taxes",
+              "description": "Read foundational principles, key events, definitions, constitutional articles, and core mechanisms of Government and Taxes.",
+              "printed_page": 321,
+              "pdf_page": 327,
+              "source_reference": "Standard Ten Social Science (Economics), pp. 321–325",
+              "is_required": true
+            },
+            {
+              "id": "tn10_soc_u26_l1_theory_and_concepts_item_2_activities_and_case_studies",
+              "lesson_id": "tn10_soc_u26_l1_theory_and_concepts",
+              "order_index": 2,
+              "item_type": "source_activity",
+              "section_name": "In-text Figures & Case Studies",
+              "label": "In-text Activities, Tables, Infographics & Case Studies",
+              "description": "Review illustrated diagrams, statistical charts, comparative tables, and in-text case studies for Government and Taxes.",
+              "printed_page": 322,
+              "pdf_page": 328,
+              "source_reference": "Standard Ten Social Science (Economics), In-text features",
+              "is_required": true
+            }
+          ]
+        },
+        {
+          "id": "tn10_soc_u26_l2_textbook_evaluation",
+          "unit_id": "tn10_soc_u26",
+          "unit_number": 26,
+          "lesson_number": 2,
+          "lesson_type": "exercise",
+          "title": "Government and Taxes: Textbook Evaluation & Assessment",
+          "author": "Tamil Nadu State Board (Economics)",
+          "is_memoriter": false,
+          "printed_page_start": 326,
+          "printed_page_end": 327,
+          "pdf_page_start": 332,
+          "pdf_page_end": 333,
+          "checklist_items": [
+            {
+              "id": "tn10_soc_u26_l2_textbook_evaluation_item_1_objective_questions",
+              "lesson_id": "tn10_soc_u26_l2_textbook_evaluation",
+              "order_index": 1,
+              "item_type": "source_activity",
+              "section_name": "Objective Evaluation (Part I)",
+              "label": "Part I: MCQs, Fill in Blanks, True/False & Match Items",
+              "description": "Complete all 1-mark multiple choice questions, fill in the blanks, matching pairs, and assertion-reason questions for Unit 26.",
+              "printed_page": 326,
+              "pdf_page": 332,
+              "source_reference": "Standard Ten Social Science, Unit 26 Evaluation, Part I",
+              "is_required": true
+            },
+            {
+              "id": "tn10_soc_u26_l2_textbook_evaluation_item_2_short_answers",
+              "lesson_id": "tn10_soc_u26_l2_textbook_evaluation",
+              "order_index": 2,
+              "item_type": "source_activity",
+              "section_name": "Short Answers & Distinctions (Part II)",
+              "label": "Part II: Short Answer Questions & Distinguish Between (2 Marks)",
+              "description": "Answer all concise 2-mark conceptual questions, distinguish between pairs, and give reasons for Unit 26.",
+              "printed_page": 327,
+              "pdf_page": 333,
+              "source_reference": "Standard Ten Social Science, Unit 26 Evaluation, Part II",
+              "is_required": true
+            },
+            {
+              "id": "tn10_soc_u26_l2_textbook_evaluation_item_3_detailed_answers",
+              "lesson_id": "tn10_soc_u26_l2_textbook_evaluation",
+              "order_index": 3,
+              "item_type": "source_activity",
+              "section_name": "Detailed Answers & Essays (Part III)",
+              "label": "Part III: Detailed Answers, Essays & HOTS (5 & 8 Marks)",
+              "description": "Write comprehensive paragraph/essay answers, historical event analyses, and Higher Order Thinking Questions for Unit 26.",
+              "printed_page": 327,
+              "pdf_page": 333,
+              "source_reference": "Standard Ten Social Science, Unit 26 Evaluation, Part III",
+              "is_required": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tn10_soc_u27",
+      "unit_number": 27,
+      "title": "Unit 27: Industrial Clusters in Tamil Nadu",
+      "theme": "Economics: Determinants of Industrial Clusters, Textile Hub (Tirupur, Coimbatore), Leather Hub (Vellore, Ambur), Fireworks (Sivakasi), Auto Hub (Chennai) & SIPCOT/TIDCO",
+      "lessons": [
+        {
+          "id": "tn10_soc_u27_l1_theory_and_concepts",
+          "unit_id": "tn10_soc_u27",
+          "unit_number": 27,
+          "lesson_number": 1,
+          "lesson_type": "theory",
+          "title": "Industrial Clusters in Tamil Nadu: Core Concepts & Theory",
+          "author": "Tamil Nadu State Board (Economics)",
+          "is_memoriter": false,
+          "printed_page_start": 328,
+          "printed_page_end": 335,
+          "pdf_page_start": 334,
+          "pdf_page_end": 341,
+          "checklist_items": [
+            {
+              "id": "tn10_soc_u27_l1_theory_and_concepts_item_1_concept_reading",
+              "lesson_id": "tn10_soc_u27_l1_theory_and_concepts",
+              "order_index": 1,
+              "item_type": "source_activity",
+              "section_name": "Core Concepts",
+              "label": "Read & Understand Core Concepts: Industrial Clusters in Tamil Nadu",
+              "description": "Read foundational principles, key events, definitions, constitutional articles, and core mechanisms of Industrial Clusters in Tamil Nadu.",
+              "printed_page": 328,
+              "pdf_page": 334,
+              "source_reference": "Standard Ten Social Science (Economics), pp. 328–335",
+              "is_required": true
+            },
+            {
+              "id": "tn10_soc_u27_l1_theory_and_concepts_item_2_activities_and_case_studies",
+              "lesson_id": "tn10_soc_u27_l1_theory_and_concepts",
+              "order_index": 2,
+              "item_type": "source_activity",
+              "section_name": "In-text Figures & Case Studies",
+              "label": "In-text Activities, Tables, Infographics & Case Studies",
+              "description": "Review illustrated diagrams, statistical charts, comparative tables, and in-text case studies for Industrial Clusters in Tamil Nadu.",
+              "printed_page": 329,
+              "pdf_page": 335,
+              "source_reference": "Standard Ten Social Science (Economics), In-text features",
+              "is_required": true
+            }
+          ]
+        },
+        {
+          "id": "tn10_soc_u27_l2_textbook_evaluation",
+          "unit_id": "tn10_soc_u27",
+          "unit_number": 27,
+          "lesson_number": 2,
+          "lesson_type": "exercise",
+          "title": "Industrial Clusters in Tamil Nadu: Textbook Evaluation & Assessment",
+          "author": "Tamil Nadu State Board (Economics)",
+          "is_memoriter": false,
+          "printed_page_start": 336,
+          "printed_page_end": 337,
+          "pdf_page_start": 342,
+          "pdf_page_end": 343,
+          "checklist_items": [
+            {
+              "id": "tn10_soc_u27_l2_textbook_evaluation_item_1_objective_questions",
+              "lesson_id": "tn10_soc_u27_l2_textbook_evaluation",
+              "order_index": 1,
+              "item_type": "source_activity",
+              "section_name": "Objective Evaluation (Part I)",
+              "label": "Part I: MCQs, Fill in Blanks, True/False & Match Items",
+              "description": "Complete all 1-mark multiple choice questions, fill in the blanks, matching pairs, and assertion-reason questions for Unit 27.",
+              "printed_page": 336,
+              "pdf_page": 342,
+              "source_reference": "Standard Ten Social Science, Unit 27 Evaluation, Part I",
+              "is_required": true
+            },
+            {
+              "id": "tn10_soc_u27_l2_textbook_evaluation_item_2_short_answers",
+              "lesson_id": "tn10_soc_u27_l2_textbook_evaluation",
+              "order_index": 2,
+              "item_type": "source_activity",
+              "section_name": "Short Answers & Distinctions (Part II)",
+              "label": "Part II: Short Answer Questions & Distinguish Between (2 Marks)",
+              "description": "Answer all concise 2-mark conceptual questions, distinguish between pairs, and give reasons for Unit 27.",
+              "printed_page": 337,
+              "pdf_page": 343,
+              "source_reference": "Standard Ten Social Science, Unit 27 Evaluation, Part II",
+              "is_required": true
+            },
+            {
+              "id": "tn10_soc_u27_l2_textbook_evaluation_item_3_detailed_answers",
+              "lesson_id": "tn10_soc_u27_l2_textbook_evaluation",
+              "order_index": 3,
+              "item_type": "source_activity",
+              "section_name": "Detailed Answers & Essays (Part III)",
+              "label": "Part III: Detailed Answers, Essays & HOTS (5 & 8 Marks)",
+              "description": "Write comprehensive paragraph/essay answers, historical event analyses, and Higher Order Thinking Questions for Unit 27.",
+              "printed_page": 337,
+              "pdf_page": 343,
+              "source_reference": "Standard Ten Social Science, Unit 27 Evaluation, Part III",
+              "is_required": true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "total_units": 27,
+    "total_lessons": 54,
+    "total_checklist_items": 152
+  }
+}

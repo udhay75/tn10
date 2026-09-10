@@ -1,0 +1,1676 @@
+#!/usr/bin/env python3
+"""
+Generate and validate Class 10 Mathematics (2025 Edition) Curriculum Data
+Matches the CurriculumData schema used in the Tamil Nadu State Board Class 10 PWA.
+"""
+
+import json
+import os
+
+curriculum = {
+    "board": {
+        "code": "tn_state_board",
+        "name": "Tamil Nadu State Board of School Education",
+        "state": "Tamil Nadu"
+    },
+    "class": {
+        "grade_number": 10,
+        "title": "Standard 10",
+        "code": "class_10"
+    },
+    "medium": {
+        "code": "english",
+        "name": "English Medium"
+    },
+    "subject": {
+        "code": "class_10_math",
+        "title": "Mathematics",
+        "curriculum_version": "2025 Edition",
+        "textbook": {
+            "title": "Standard Ten Mathematics",
+            "edition": "Revised Edition 2020, 2021, 2022, 2023, 2025 Reprint 2024",
+            "first_edition_year": 2019,
+            "reprint_year": 2024,
+            "publisher": "Tamil Nadu Textbook and Educational Services Corporation",
+            "source_file": "Class_10_Mathematics_English_2025_Edition.pdf",
+            "total_pages": 352,
+            "page_offset": 6
+        }
+    },
+    "units": [
+        # ---------------------------------------------------------------------
+        # Unit 1: Relations and Functions
+        # ---------------------------------------------------------------------
+        {
+            "id": "tn10_math_u1",
+            "unit_number": 1,
+            "title": "Relations and Functions",
+            "theme": "Ordered Pairs, Cartesian Products, Relations & Function Mappings",
+            "lessons": [
+                {
+                    "id": "tn10_math_u1_l1_cartesian_and_relations",
+                    "unit_id": "tn10_math_u1",
+                    "unit_number": 1,
+                    "lesson_number": 1,
+                    "lesson_type": "exercise",
+                    "title": "Cartesian Products & Relations",
+                    "author": "Department of School Education, Tamil Nadu",
+                    "is_memoriter": False,
+                    "printed_page_start": 1,
+                    "printed_page_end": 10,
+                    "pdf_page_start": 7,
+                    "pdf_page_end": 16,
+                    "checklist_items": [
+                        {
+                            "id": "tn10_math_u1_l1_item_ex_1_1",
+                            "lesson_id": "tn10_math_u1_l1_cartesian_and_relations",
+                            "order_index": 1,
+                            "item_type": "source_activity",
+                            "section_name": "Exercise 1.1",
+                            "label": "Exercise 1.1: Cartesian Products & Ordered Pairs",
+                            "description": "Find A x B, A x A, B x A, non-empty subsets, and verify distributive properties of Cartesian product (Questions 1 to 7).",
+                            "printed_page": 6,
+                            "pdf_page": 12,
+                            "source_reference": "Textbook p. 6 (PDF p. 12)",
+                            "is_required": True
+                        },
+                        {
+                            "id": "tn10_math_u1_l1_item_ex_1_2",
+                            "lesson_id": "tn10_math_u1_l1_cartesian_and_relations",
+                            "order_index": 2,
+                            "item_type": "source_activity",
+                            "section_name": "Exercise 1.2",
+                            "label": "Exercise 1.2: Relations & Representations",
+                            "description": "Determine whether given relations are subsets of A x B; arrow diagrams, roster form, domain and range (Questions 1 to 5).",
+                            "printed_page": 9,
+                            "pdf_page": 15,
+                            "source_reference": "Textbook p. 9 (PDF p. 15)",
+                            "is_required": True
+                        }
+                    ]
+                },
+                {
+                    "id": "tn10_math_u1_l2_functions_and_types",
+                    "unit_id": "tn10_math_u1",
+                    "unit_number": 1,
+                    "lesson_number": 2,
+                    "lesson_type": "exercise",
+                    "title": "Functions & Types of Functions",
+                    "author": "Department of School Education, Tamil Nadu",
+                    "is_memoriter": False,
+                    "printed_page_start": 10,
+                    "printed_page_end": 26,
+                    "pdf_page_start": 16,
+                    "pdf_page_end": 32,
+                    "checklist_items": [
+                        {
+                            "id": "tn10_math_u1_l2_item_ex_1_3",
+                            "lesson_id": "tn10_math_u1_l2_functions_and_types",
+                            "order_index": 1,
+                            "item_type": "source_activity",
+                            "section_name": "Exercise 1.3",
+                            "label": "Exercise 1.3: Functions, Domain & Mapping",
+                            "description": "Identify functions, evaluate function values f(x), determine domain and range from algebraic and word formulations (Questions 1 to 10).",
+                            "printed_page": 13,
+                            "pdf_page": 19,
+                            "source_reference": "Textbook p. 13 (PDF p. 19)",
+                            "is_required": True
+                        },
+                        {
+                            "id": "tn10_math_u1_l2_item_ex_1_4",
+                            "lesson_id": "tn10_math_u1_l2_functions_and_types",
+                            "order_index": 2,
+                            "item_type": "source_activity",
+                            "section_name": "Exercise 1.4",
+                            "label": "Exercise 1.4: Types of Functions & Vertical Line Test",
+                            "description": "Classify one-one, onto, bijection, identity, constant functions; use vertical & horizontal line tests (Questions 1 to 12).",
+                            "printed_page": 24,
+                            "pdf_page": 30,
+                            "source_reference": "Textbook p. 24 (PDF p. 30)",
+                            "is_required": True
+                        }
+                    ]
+                },
+                {
+                    "id": "tn10_math_u1_l3_composition_of_functions",
+                    "unit_id": "tn10_math_u1",
+                    "unit_number": 1,
+                    "lesson_number": 3,
+                    "lesson_type": "exercise",
+                    "title": "Composition of Functions & Graphs",
+                    "author": "Department of School Education, Tamil Nadu",
+                    "is_memoriter": False,
+                    "printed_page_start": 26,
+                    "printed_page_end": 31,
+                    "pdf_page_start": 32,
+                    "pdf_page_end": 37,
+                    "checklist_items": [
+                        {
+                            "id": "tn10_math_u1_l3_item_ex_1_5",
+                            "lesson_id": "tn10_math_u1_l3_composition_of_functions",
+                            "order_index": 1,
+                            "item_type": "source_activity",
+                            "section_name": "Exercise 1.5",
+                            "label": "Exercise 1.5: Composition of Functions (f o g & g o f)",
+                            "description": "Calculate composite functions f o g and g o f, verify associativity f o (g o h) = (f o g) o h, solve for unknowns (Questions 1 to 10).",
+                            "printed_page": 31,
+                            "pdf_page": 37,
+                            "source_reference": "Textbook p. 31 (PDF p. 37)",
+                            "is_required": True
+                        }
+                    ]
+                },
+                {
+                    "id": "tn10_math_u1_l4_unit_review",
+                    "unit_id": "tn10_math_u1",
+                    "unit_number": 1,
+                    "lesson_number": 4,
+                    "lesson_type": "review",
+                    "title": "Unit 1 Review & Assessment",
+                    "author": "Department of School Education, Tamil Nadu",
+                    "is_memoriter": False,
+                    "printed_page_start": 32,
+                    "printed_page_end": 35,
+                    "pdf_page_start": 38,
+                    "pdf_page_end": 41,
+                    "checklist_items": [
+                        {
+                            "id": "tn10_math_u1_l4_item_ex_1_6_mcq",
+                            "lesson_id": "tn10_math_u1_l4_unit_review",
+                            "order_index": 1,
+                            "item_type": "source_activity",
+                            "section_name": "Exercise 1.6 (MCQ)",
+                            "label": "Exercise 1.6: Multiple Choice Questions",
+                            "description": "Practice 15 board exam-style objective questions covering relations and functions (Questions 1 to 15).",
+                            "printed_page": 32,
+                            "pdf_page": 38,
+                            "source_reference": "Textbook p. 32 (PDF p. 38)",
+                            "is_required": True
+                        },
+                        {
+                            "id": "tn10_math_u1_l4_item_unit_ex_1",
+                            "lesson_id": "tn10_math_u1_l4_unit_review",
+                            "order_index": 2,
+                            "item_type": "source_activity",
+                            "section_name": "Unit Exercise 1",
+                            "label": "Unit Exercise - 1: Comprehensive Review Problems",
+                            "description": "High-order thinking skills and comprehensive revision problems for Unit 1 (Questions 1 to 15).",
+                            "printed_page": 33,
+                            "pdf_page": 39,
+                            "source_reference": "Textbook p. 33 (PDF p. 39)",
+                            "is_required": True
+                        },
+                        {
+                            "id": "tn10_math_u1_l4_item_points_to_remember",
+                            "lesson_id": "tn10_math_u1_l4_unit_review",
+                            "order_index": 3,
+                            "item_type": "app_task",
+                            "section_name": "Points to Remember",
+                            "label": "Points to Remember & Definitions Summary",
+                            "description": "Review key definitions: Cartesian product, relation, function, types of mappings, and composition properties.",
+                            "printed_page": 34,
+                            "pdf_page": 40,
+                            "source_reference": "Textbook p. 34 (PDF p. 40)",
+                            "is_required": True
+                        }
+                    ]
+                }
+            ]
+        },
+
+        # ---------------------------------------------------------------------
+        # Unit 2: Numbers and Sequences
+        # ---------------------------------------------------------------------
+        {
+            "id": "tn10_math_u2",
+            "unit_number": 2,
+            "title": "Numbers and Sequences",
+            "theme": "Euclid's Lemma, Fundamental Theorem of Arithmetic, AP, GP & Special Series",
+            "lessons": [
+                {
+                    "id": "tn10_math_u2_l1_euclid_and_fta",
+                    "unit_id": "tn10_math_u2",
+                    "unit_number": 2,
+                    "lesson_number": 1,
+                    "lesson_type": "exercise",
+                    "title": "Euclid's Division & Fundamental Theorem of Arithmetic",
+                    "author": "Department of School Education, Tamil Nadu",
+                    "is_memoriter": False,
+                    "printed_page_start": 36,
+                    "printed_page_end": 46,
+                    "pdf_page_start": 42,
+                    "pdf_page_end": 52,
+                    "checklist_items": [
+                        {
+                            "id": "tn10_math_u2_l1_item_ex_2_1",
+                            "lesson_id": "tn10_math_u2_l1_euclid_and_fta",
+                            "order_index": 1,
+                            "item_type": "source_activity",
+                            "section_name": "Exercise 2.1",
+                            "label": "Exercise 2.1: Euclid's Division Lemma & Algorithm",
+                            "description": "Apply a = bq + r (0 <= r < b) to find HCF and prove properties of positive integers (Questions 1 to 10).",
+                            "printed_page": 42,
+                            "pdf_page": 48,
+                            "source_reference": "Textbook p. 42 (PDF p. 48)",
+                            "is_required": True
+                        },
+                        {
+                            "id": "tn10_math_u2_l1_item_ex_2_2",
+                            "lesson_id": "tn10_math_u2_l1_euclid_and_fta",
+                            "order_index": 2,
+                            "item_type": "source_activity",
+                            "section_name": "Exercise 2.2",
+                            "label": "Exercise 2.2: Fundamental Theorem of Arithmetic",
+                            "description": "Prime factorizations, finding LCM and HCF, and resolving exponential divisibility questions (Questions 1 to 9).",
+                            "printed_page": 46,
+                            "pdf_page": 52,
+                            "source_reference": "Textbook p. 46 (PDF p. 52)",
+                            "is_required": True
+                        }
+                    ]
+                },
+                {
+                    "id": "tn10_math_u2_l2_modular_and_sequences",
+                    "unit_id": "tn10_math_u2",
+                    "unit_number": 2,
+                    "lesson_number": 2,
+                    "lesson_type": "exercise",
+                    "title": "Modular Arithmetic & Sequences",
+                    "author": "Department of School Education, Tamil Nadu",
+                    "is_memoriter": False,
+                    "printed_page_start": 46,
+                    "printed_page_end": 55,
+                    "pdf_page_start": 52,
+                    "pdf_page_end": 61,
+                    "checklist_items": [
+                        {
+                            "id": "tn10_math_u2_l2_item_ex_2_3",
+                            "lesson_id": "tn10_math_u2_l2_modular_and_sequences",
+                            "order_index": 1,
+                            "item_type": "source_activity",
+                            "section_name": "Exercise 2.3",
+                            "label": "Exercise 2.3: Modular Arithmetic & Congruence Modulo",
+                            "description": "Solve congruences a ≡ b (mod n), find least positive values of x, and solve time/clock arithmetic (Questions 1 to 9).",
+                            "printed_page": 51,
+                            "pdf_page": 57,
+                            "source_reference": "Textbook p. 51 (PDF p. 57)",
+                            "is_required": True
+                        },
+                        {
+                            "id": "tn10_math_u2_l2_item_ex_2_4",
+                            "lesson_id": "tn10_math_u2_l2_modular_and_sequences",
+                            "order_index": 2,
+                            "item_type": "source_activity",
+                            "section_name": "Exercise 2.4",
+                            "label": "Exercise 2.4: Sequences & nth Terms",
+                            "description": "Generate terms of sequences, find nth term from recurrence relations and piecewise rules (Questions 1 to 6).",
+                            "printed_page": 55,
+                            "pdf_page": 61,
+                            "source_reference": "Textbook p. 55 (PDF p. 61)",
+                            "is_required": True
+                        }
+                    ]
+                },
+                {
+                    "id": "tn10_math_u2_l3_arithmetic_progression",
+                    "unit_id": "tn10_math_u2",
+                    "unit_number": 2,
+                    "lesson_number": 3,
+                    "lesson_type": "exercise",
+                    "title": "Arithmetic Progression & Series (AP)",
+                    "author": "Department of School Education, Tamil Nadu",
+                    "is_memoriter": False,
+                    "printed_page_start": 55,
+                    "printed_page_end": 67,
+                    "pdf_page_start": 61,
+                    "pdf_page_end": 73,
+                    "checklist_items": [
+                        {
+                            "id": "tn10_math_u2_l3_item_ex_2_5",
+                            "lesson_id": "tn10_math_u2_l3_arithmetic_progression",
+                            "order_index": 1,
+                            "item_type": "source_activity",
+                            "section_name": "Exercise 2.5",
+                            "label": "Exercise 2.5: Arithmetic Progression (nth term tn = a + (n-1)d)",
+                            "description": "Determine whether sequences are in AP, find first term, common difference, general term tn, and consecutive terms (Questions 1 to 14).",
+                            "printed_page": 61,
+                            "pdf_page": 67,
+                            "source_reference": "Textbook p. 61 (PDF p. 67)",
+                            "is_required": True
+                        },
+                        {
+                            "id": "tn10_math_u2_l3_item_ex_2_6",
+                            "lesson_id": "tn10_math_u2_l3_arithmetic_progression",
+                            "order_index": 2,
+                            "item_type": "source_activity",
+                            "section_name": "Exercise 2.6",
+                            "label": "Exercise 2.6: Sum of n terms of an AP (Sn)",
+                            "description": "Calculate sum of AP using Sn = n/2(2a + (n-1)d) and Sn = n/2(a + l); solve real-life applied problems (Questions 1 to 12).",
+                            "printed_page": 67,
+                            "pdf_page": 73,
+                            "source_reference": "Textbook p. 67 (PDF p. 73)",
+                            "is_required": True
+                        }
+                    ]
+                },
+                {
+                    "id": "tn10_math_u2_l4_geometric_and_special_series",
+                    "unit_id": "tn10_math_u2",
+                    "unit_number": 2,
+                    "lesson_number": 4,
+                    "lesson_type": "exercise",
+                    "title": "Geometric Progression & Special Series",
+                    "author": "Department of School Education, Tamil Nadu",
+                    "is_memoriter": False,
+                    "printed_page_start": 67,
+                    "printed_page_end": 81,
+                    "pdf_page_start": 73,
+                    "pdf_page_end": 87,
+                    "checklist_items": [
+                        {
+                            "id": "tn10_math_u2_l4_item_ex_2_7",
+                            "lesson_id": "tn10_math_u2_l4_geometric_and_special_series",
+                            "order_index": 1,
+                            "item_type": "source_activity",
+                            "section_name": "Exercise 2.7",
+                            "label": "Exercise 2.7: Geometric Progression (tn = a*r^(n-1))",
+                            "description": "Identify GP, common ratio r, find general term, solve for terms in continued proportion (Questions 1 to 12).",
+                            "printed_page": 72,
+                            "pdf_page": 78,
+                            "source_reference": "Textbook p. 72 (PDF p. 78)",
+                            "is_required": True
+                        },
+                        {
+                            "id": "tn10_math_u2_l4_item_ex_2_8",
+                            "lesson_id": "tn10_math_u2_l4_geometric_and_special_series",
+                            "order_index": 2,
+                            "item_type": "source_activity",
+                            "section_name": "Exercise 2.8",
+                            "label": "Exercise 2.8: Sum to n terms of a GP (Sn)",
+                            "description": "Calculate sum of finite and infinite GP series using Sn = a(r^n - 1)/(r - 1) and S∞ = a/(1 - r) (Questions 1 to 10).",
+                            "printed_page": 76,
+                            "pdf_page": 82,
+                            "source_reference": "Textbook p. 76 (PDF p. 82)",
+                            "is_required": True
+                        },
+                        {
+                            "id": "tn10_math_u2_l4_item_ex_2_9",
+                            "lesson_id": "tn10_math_u2_l4_geometric_and_special_series",
+                            "order_index": 3,
+                            "item_type": "source_activity",
+                            "section_name": "Exercise 2.9",
+                            "label": "Exercise 2.9: Special Series (Sum of n, n², n³)",
+                            "description": "Compute sums of first n natural numbers, odd numbers, squares ∑k², and cubes ∑k³ (Questions 1 to 7).",
+                            "printed_page": 81,
+                            "pdf_page": 87,
+                            "source_reference": "Textbook p. 81 (PDF p. 87)",
+                            "is_required": True
+                        }
+                    ]
+                },
+                {
+                    "id": "tn10_math_u2_l5_unit_review",
+                    "unit_id": "tn10_math_u2",
+                    "unit_number": 2,
+                    "lesson_number": 5,
+                    "lesson_type": "review",
+                    "title": "Unit 2 Review & Assessment",
+                    "author": "Department of School Education, Tamil Nadu",
+                    "is_memoriter": False,
+                    "printed_page_start": 82,
+                    "printed_page_end": 84,
+                    "pdf_page_start": 88,
+                    "pdf_page_end": 90,
+                    "checklist_items": [
+                        {
+                            "id": "tn10_math_u2_l5_item_ex_2_10_mcq",
+                            "lesson_id": "tn10_math_u2_l5_unit_review",
+                            "order_index": 1,
+                            "item_type": "source_activity",
+                            "section_name": "Exercise 2.10 (MCQ)",
+                            "label": "Exercise 2.10: Multiple Choice Questions",
+                            "description": "15 objective questions on Euclid's lemma, modular arithmetic, AP, GP, and series (Questions 1 to 15).",
+                            "printed_page": 82,
+                            "pdf_page": 88,
+                            "source_reference": "Textbook p. 82 (PDF p. 88)",
+                            "is_required": True
+                        },
+                        {
+                            "id": "tn10_math_u2_l5_item_unit_ex_2",
+                            "lesson_id": "tn10_math_u2_l5_unit_review",
+                            "order_index": 2,
+                            "item_type": "source_activity",
+                            "section_name": "Unit Exercise 2",
+                            "label": "Unit Exercise - 2: Comprehensive Review Problems",
+                            "description": "Challenging review questions on numbers, progressions, and series (Questions 1 to 15).",
+                            "printed_page": 83,
+                            "pdf_page": 89,
+                            "source_reference": "Textbook p. 83 (PDF p. 89)",
+                            "is_required": True
+                        },
+                        {
+                            "id": "tn10_math_u2_l5_item_points_to_remember",
+                            "lesson_id": "tn10_math_u2_l5_unit_review",
+                            "order_index": 3,
+                            "item_type": "app_task",
+                            "section_name": "Points to Remember",
+                            "label": "Points to Remember: Progression Formulas",
+                            "description": "Memorize and review key formulas for AP (tn, Sn), GP (tn, Sn, S∞), and special summation identities.",
+                            "printed_page": 83,
+                            "pdf_page": 89,
+                            "source_reference": "Textbook p. 83 (PDF p. 89)",
+                            "is_required": True
+                        }
+                    ]
+                }
+            ]
+        },
+
+        # ---------------------------------------------------------------------
+        # Unit 3: Algebra
+        # ---------------------------------------------------------------------
+        {
+            "id": "tn10_math_u3",
+            "unit_number": 3,
+            "title": "Algebra",
+            "theme": "Linear Systems, GCD/LCM, Rational Expressions, Quadratic Equations, Variations & Matrices",
+            "lessons": [
+                {
+                    "id": "tn10_math_u3_l1_linear_and_polynomials",
+                    "unit_id": "tn10_math_u3",
+                    "unit_number": 3,
+                    "lesson_number": 1,
+                    "lesson_type": "exercise",
+                    "title": "Linear Systems, GCD & LCM of Polynomials",
+                    "author": "Department of School Education, Tamil Nadu",
+                    "is_memoriter": False,
+                    "printed_page_start": 85,
+                    "printed_page_end": 98,
+                    "pdf_page_start": 91,
+                    "pdf_page_end": 104,
+                    "checklist_items": [
+                        {
+                            "id": "tn10_math_u3_l1_item_ex_3_1",
+                            "lesson_id": "tn10_math_u3_l1_linear_and_polynomials",
+                            "order_index": 1,
+                            "item_type": "source_activity",
+                            "section_name": "Exercise 3.1",
+                            "label": "Exercise 3.1: Simultaneous Linear Equations in Three Variables",
+                            "description": "Solve systems of linear equations in three variables using elimination and classify nature of solutions (Questions 1 to 3).",
+                            "printed_page": 92,
+                            "pdf_page": 98,
+                            "source_reference": "Textbook p. 92 (PDF p. 98)",
+                            "is_required": True
+                        },
+                        {
+                            "id": "tn10_math_u3_l1_item_ex_3_2",
+                            "lesson_id": "tn10_math_u3_l1_linear_and_polynomials",
+                            "order_index": 2,
+                            "item_type": "source_activity",
+                            "section_name": "Exercise 3.2",
+                            "label": "Exercise 3.2: GCD of Polynomials by Long Division",
+                            "description": "Find Greatest Common Divisor (GCD) of polynomials using long division algorithm (Questions 1 to 2).",
+                            "printed_page": 96,
+                            "pdf_page": 102,
+                            "source_reference": "Textbook p. 96 (PDF p. 102)",
+                            "is_required": True
+                        },
+                        {
+                            "id": "tn10_math_u3_l1_item_ex_3_3",
+                            "lesson_id": "tn10_math_u3_l1_linear_and_polynomials",
+                            "order_index": 3,
+                            "item_type": "source_activity",
+                            "section_name": "Exercise 3.3",
+                            "label": "Exercise 3.3: LCM and Relationship between LCM & GCD",
+                            "description": "Find LCM of polynomials and verify f(x) * g(x) = LCM * GCD (Questions 1 to 4).",
+                            "printed_page": 97,
+                            "pdf_page": 103,
+                            "source_reference": "Textbook p. 97 (PDF p. 103)",
+                            "is_required": True
+                        }
+                    ]
+                },
+                {
+                    "id": "tn10_math_u3_l2_rational_expressions",
+                    "unit_id": "tn10_math_u3",
+                    "unit_number": 3,
+                    "lesson_number": 2,
+                    "lesson_type": "exercise",
+                    "title": "Rational Expressions & Square Root of Polynomials",
+                    "author": "Department of School Education, Tamil Nadu",
+                    "is_memoriter": False,
+                    "printed_page_start": 98,
+                    "printed_page_end": 106,
+                    "pdf_page_start": 104,
+                    "pdf_page_end": 112,
+                    "checklist_items": [
+                        {
+                            "id": "tn10_math_u3_l2_item_ex_3_4",
+                            "lesson_id": "tn10_math_u3_l2_rational_expressions",
+                            "order_index": 1,
+                            "item_type": "source_activity",
+                            "section_name": "Exercise 3.4",
+                            "label": "Exercise 3.4: Reduction & Excluded Values of Rational Expressions",
+                            "description": "Reduce rational expressions to lowest terms and find excluded values where denominator is zero (Questions 1 to 2).",
+                            "printed_page": 99,
+                            "pdf_page": 105,
+                            "source_reference": "Textbook p. 99 (PDF p. 105)",
+                            "is_required": True
+                        },
+                        {
+                            "id": "tn10_math_u3_l2_item_ex_3_5",
+                            "lesson_id": "tn10_math_u3_l2_rational_expressions",
+                            "order_index": 2,
+                            "item_type": "source_activity",
+                            "section_name": "Exercise 3.5",
+                            "label": "Exercise 3.5: Multiplication & Division of Rational Expressions",
+                            "description": "Perform multiplication and division on rational algebraic fractions (Questions 1 to 5).",
+                            "printed_page": 101,
+                            "pdf_page": 107,
+                            "source_reference": "Textbook p. 101 (PDF p. 107)",
+                            "is_required": True
+                        },
+                        {
+                            "id": "tn10_math_u3_l2_item_ex_3_6",
+                            "lesson_id": "tn10_math_u3_l2_rational_expressions",
+                            "order_index": 3,
+                            "item_type": "source_activity",
+                            "section_name": "Exercise 3.6",
+                            "label": "Exercise 3.6: Addition & Subtraction of Rational Expressions",
+                            "description": "Add and subtract rational expressions with like and unlike denominators (Questions 1 to 8).",
+                            "printed_page": 103,
+                            "pdf_page": 109,
+                            "source_reference": "Textbook p. 103 (PDF p. 109)",
+                            "is_required": True
+                        },
+                        {
+                            "id": "tn10_math_u3_l2_item_ex_3_7",
+                            "lesson_id": "tn10_math_u3_l2_rational_expressions",
+                            "order_index": 4,
+                            "item_type": "source_activity",
+                            "section_name": "Exercise 3.7",
+                            "label": "Exercise 3.7: Square Root of Polynomials by Factorization",
+                            "description": "Find square root of expressions and trinomials using factorization identities (Questions 1 to 2).",
+                            "printed_page": 105,
+                            "pdf_page": 111,
+                            "source_reference": "Textbook p. 105 (PDF p. 111)",
+                            "is_required": True
+                        },
+                        {
+                            "id": "tn10_math_u3_l2_item_ex_3_8",
+                            "lesson_id": "tn10_math_u3_l2_rational_expressions",
+                            "order_index": 5,
+                            "item_type": "source_activity",
+                            "section_name": "Exercise 3.8",
+                            "label": "Exercise 3.8: Square Root by Division Method (5-Mark Essential)",
+                            "description": "Find square root of 4th degree polynomials using division algorithm and determine unknown coefficients (Questions 1 to 3).",
+                            "printed_page": 106,
+                            "pdf_page": 112,
+                            "source_reference": "Textbook p. 106 (PDF p. 112)",
+                            "is_required": True
+                        }
+                    ]
+                },
+                {
+                    "id": "tn10_math_u3_l3_quadratic_equations",
+                    "unit_id": "tn10_math_u3",
+                    "unit_number": 3,
+                    "lesson_number": 3,
+                    "lesson_type": "exercise",
+                    "title": "Quadratic Equations: Methods, Roots & Applied Problems",
+                    "author": "Department of School Education, Tamil Nadu",
+                    "is_memoriter": False,
+                    "printed_page_start": 106,
+                    "printed_page_end": 123,
+                    "pdf_page_start": 112,
+                    "pdf_page_end": 129,
+                    "checklist_items": [
+                        {
+                            "id": "tn10_math_u3_l3_item_ex_3_9",
+                            "lesson_id": "tn10_math_u3_l3_quadratic_equations",
+                            "order_index": 1,
+                            "item_type": "source_activity",
+                            "section_name": "Exercise 3.9",
+                            "label": "Exercise 3.9: Formation of Quadratic Equations",
+                            "description": "Form quadratic equations given sum and product of roots x² - (Sum)x + Product = 0 (Questions 1 to 2).",
+                            "printed_page": 109,
+                            "pdf_page": 115,
+                            "source_reference": "Textbook p. 109 (PDF p. 115)",
+                            "is_required": True
+                        },
+                        {
+                            "id": "tn10_math_u3_l3_item_ex_3_10",
+                            "lesson_id": "tn10_math_u3_l3_quadratic_equations",
+                            "order_index": 2,
+                            "item_type": "source_activity",
+                            "section_name": "Exercise 3.10",
+                            "label": "Exercise 3.10: Solving Quadratic Equations by Factorization",
+                            "description": "Solve quadratic equations by factoring into linear binomials (Questions 1 to 2).",
+                            "printed_page": 111,
+                            "pdf_page": 117,
+                            "source_reference": "Textbook p. 111 (PDF p. 117)",
+                            "is_required": True
+                        },
+                        {
+                            "id": "tn10_math_u3_l3_item_ex_3_11",
+                            "lesson_id": "tn10_math_u3_l3_quadratic_equations",
+                            "order_index": 3,
+                            "item_type": "source_activity",
+                            "section_name": "Exercise 3.11",
+                            "label": "Exercise 3.11: Completing the Square & Quadratic Formula",
+                            "description": "Solve using method of completing the square and quadratic formula x = (-b ± √(b² - 4ac)) / (2a) (Questions 1 to 3).",
+                            "printed_page": 114,
+                            "pdf_page": 120,
+                            "source_reference": "Textbook p. 114 (PDF p. 120)",
+                            "is_required": True
+                        },
+                        {
+                            "id": "tn10_math_u3_l3_item_ex_3_12",
+                            "lesson_id": "tn10_math_u3_l3_quadratic_equations",
+                            "order_index": 4,
+                            "item_type": "source_activity",
+                            "section_name": "Exercise 3.12",
+                            "label": "Exercise 3.12: Applied Word Problems on Quadratic Equations",
+                            "description": "Solve real-life word problems involving numbers, speed-distance-time, geometry, and age (Questions 1 to 9).",
+                            "printed_page": 116,
+                            "pdf_page": 122,
+                            "source_reference": "Textbook p. 116 (PDF p. 122)",
+                            "is_required": True
+                        },
+                        {
+                            "id": "tn10_math_u3_l3_item_ex_3_13",
+                            "lesson_id": "tn10_math_u3_l3_quadratic_equations",
+                            "order_index": 5,
+                            "item_type": "source_activity",
+                            "section_name": "Exercise 3.13",
+                            "label": "Exercise 3.13: Nature of Roots (Discriminant Δ = b² - 4ac)",
+                            "description": "Classify roots as real and unequal, real and equal, or no real roots; solve for unknown parameters (Questions 1 to 5).",
+                            "printed_page": 119,
+                            "pdf_page": 125,
+                            "source_reference": "Textbook p. 119 (PDF p. 125)",
+                            "is_required": True
+                        },
+                        {
+                            "id": "tn10_math_u3_l3_item_ex_3_14",
+                            "lesson_id": "tn10_math_u3_l3_quadratic_equations",
+                            "order_index": 6,
+                            "item_type": "source_activity",
+                            "section_name": "Exercise 3.14",
+                            "label": "Exercise 3.14: Relation between Roots and Coefficients",
+                            "description": "Evaluate symmetric expressions in α and β (α² + β², α/β + β/α) and construct new quadratic equations (Questions 1 to 6).",
+                            "printed_page": 122,
+                            "pdf_page": 128,
+                            "source_reference": "Textbook p. 122 (PDF p. 128)",
+                            "is_required": True
+                        }
+                    ]
+                },
+                {
+                    "id": "tn10_math_u3_l4_graph_of_variations",
+                    "unit_id": "tn10_math_u3",
+                    "unit_number": 3,
+                    "lesson_number": 4,
+                    "lesson_type": "practical",
+                    "title": "Practical Graphs (8-Mark Board Exam Section)",
+                    "author": "Department of School Education, Tamil Nadu",
+                    "is_memoriter": False,
+                    "printed_page_start": 123,
+                    "printed_page_end": 137,
+                    "pdf_page_start": 129,
+                    "pdf_page_end": 143,
+                    "checklist_items": [
+                        {
+                            "id": "tn10_math_u3_l4_item_ex_3_15",
+                            "lesson_id": "tn10_math_u3_l4_graph_of_variations",
+                            "order_index": 1,
+                            "item_type": "source_activity",
+                            "section_name": "Exercise 3.15",
+                            "label": "Exercise 3.15: Graph of Variations (Direct & Inverse Variation)",
+                            "description": "Draw graphs of direct variation (y = kx) and inverse variation (xy = k), find constant of variation and interpolate values (Questions 1 to 6).",
+                            "printed_page": 129,
+                            "pdf_page": 135,
+                            "source_reference": "Textbook p. 129 (PDF p. 135)",
+                            "is_required": True
+                        },
+                        {
+                            "id": "tn10_math_u3_l4_item_ex_3_16",
+                            "lesson_id": "tn10_math_u3_l4_graph_of_variations",
+                            "order_index": 2,
+                            "item_type": "source_activity",
+                            "section_name": "Exercise 3.16",
+                            "label": "Exercise 3.16: Quadratic Graphs & Intersections (Parabolas)",
+                            "description": "Draw graphs of parabolas y = ax² + bx + c and determine roots graphically by solving simultaneously with straight lines (Questions 1 to 8).",
+                            "printed_page": 137,
+                            "pdf_page": 143,
+                            "source_reference": "Textbook p. 137 (PDF p. 143)",
+                            "is_required": True
+                        }
+                    ]
+                },
+                {
+                    "id": "tn10_math_u3_l5_matrices",
+                    "unit_id": "tn10_math_u3",
+                    "unit_number": 3,
+                    "lesson_number": 5,
+                    "lesson_type": "exercise",
+                    "title": "Matrices: Order, Operations & Multiplication",
+                    "author": "Department of School Education, Tamil Nadu",
+                    "is_memoriter": False,
+                    "printed_page_start": 137,
+                    "printed_page_end": 154,
+                    "pdf_page_start": 143,
+                    "pdf_page_end": 160,
+                    "checklist_items": [
+                        {
+                            "id": "tn10_math_u3_l5_item_ex_3_17",
+                            "lesson_id": "tn10_math_u3_l5_matrices",
+                            "order_index": 1,
+                            "item_type": "source_activity",
+                            "section_name": "Exercise 3.17",
+                            "label": "Exercise 3.17: Matrix Types, Order & Transpose",
+                            "description": "Identify order of matrices, construct matrices from general rules aij, and compute matrix transposes (Questions 1 to 7).",
+                            "printed_page": 144,
+                            "pdf_page": 150,
+                            "source_reference": "Textbook p. 144 (PDF p. 150)",
+                            "is_required": True
+                        },
+                        {
+                            "id": "tn10_math_u3_l5_item_ex_3_18",
+                            "lesson_id": "tn10_math_u3_l5_matrices",
+                            "order_index": 2,
+                            "item_type": "source_activity",
+                            "section_name": "Exercise 3.18",
+                            "label": "Exercise 3.18: Matrix Addition, Subtraction & Scalar Operations",
+                            "description": "Perform addition and subtraction of conformable matrices, solve matrix equations for X (Questions 1 to 8).",
+                            "printed_page": 148,
+                            "pdf_page": 154,
+                            "source_reference": "Textbook p. 148 (PDF p. 154)",
+                            "is_required": True
+                        },
+                        {
+                            "id": "tn10_math_u3_l5_item_ex_3_19",
+                            "lesson_id": "tn10_math_u3_l5_matrices",
+                            "order_index": 3,
+                            "item_type": "source_activity",
+                            "section_name": "Exercise 3.19",
+                            "label": "Exercise 3.19: Matrix Multiplication & Properties",
+                            "description": "Verify matrix multiplication compatibility, associative property A(BC) = (AB)C, distributive property, and (AB)ᵀ = BᵀAᵀ (Questions 1 to 13).",
+                            "printed_page": 153,
+                            "pdf_page": 159,
+                            "source_reference": "Textbook p. 153 (PDF p. 159)",
+                            "is_required": True
+                        }
+                    ]
+                },
+                {
+                    "id": "tn10_math_u3_l6_unit_review",
+                    "unit_id": "tn10_math_u3",
+                    "unit_number": 3,
+                    "lesson_number": 6,
+                    "lesson_type": "review",
+                    "title": "Unit 3 Review & Assessment",
+                    "author": "Department of School Education, Tamil Nadu",
+                    "is_memoriter": False,
+                    "printed_page_start": 154,
+                    "printed_page_end": 160,
+                    "pdf_page_start": 160,
+                    "pdf_page_end": 166,
+                    "checklist_items": [
+                        {
+                            "id": "tn10_math_u3_l6_item_ex_3_20_mcq",
+                            "lesson_id": "tn10_math_u3_l6_unit_review",
+                            "order_index": 1,
+                            "item_type": "source_activity",
+                            "section_name": "Exercise 3.20 (MCQ)",
+                            "label": "Exercise 3.20: Multiple Choice Questions",
+                            "description": "20 high-yield board exam multiple choice questions covering the entire algebra syllabus (Questions 1 to 20).",
+                            "printed_page": 154,
+                            "pdf_page": 160,
+                            "source_reference": "Textbook p. 154 (PDF p. 160)",
+                            "is_required": True
+                        },
+                        {
+                            "id": "tn10_math_u3_l6_item_unit_ex_3",
+                            "lesson_id": "tn10_math_u3_l6_unit_review",
+                            "order_index": 2,
+                            "item_type": "source_activity",
+                            "section_name": "Unit Exercise 3",
+                            "label": "Unit Exercise - 3: Comprehensive Review Problems",
+                            "description": "Advanced problem-solving across linear systems, rational expressions, quadratic equations, and matrices (Questions 1 to 20).",
+                            "printed_page": 156,
+                            "pdf_page": 162,
+                            "source_reference": "Textbook p. 156 (PDF p. 162)",
+                            "is_required": True
+                        },
+                        {
+                            "id": "tn10_math_u3_l6_item_points_to_remember",
+                            "lesson_id": "tn10_math_u3_l6_unit_review",
+                            "order_index": 3,
+                            "item_type": "app_task",
+                            "section_name": "Points to Remember",
+                            "label": "Points to Remember: Algebra Formulas & Theorems",
+                            "description": "Consolidated summary of quadratic formulas, discriminant conditions, variation rules, and matrix properties.",
+                            "printed_page": 158,
+                            "pdf_page": 164,
+                            "source_reference": "Textbook p. 158 (PDF p. 164)",
+                            "is_required": True
+                        }
+                    ]
+                }
+            ]
+        },
+
+        # ---------------------------------------------------------------------
+        # Unit 4: Geometry
+        # ---------------------------------------------------------------------
+        {
+            "id": "tn10_math_u4",
+            "unit_number": 4,
+            "title": "Geometry",
+            "theme": "Similarity, Thales Theorem, Pythagoras Theorem, Circles, Tangents & Concurrency",
+            "lessons": [
+                {
+                    "id": "tn10_math_u4_l1_similarity_and_theorems",
+                    "unit_id": "tn10_math_u4",
+                    "unit_number": 4,
+                    "lesson_number": 1,
+                    "lesson_type": "exercise",
+                    "title": "Similarity, Thales Theorem & Angle Bisector Theorem",
+                    "author": "Department of School Education, Tamil Nadu",
+                    "is_memoriter": False,
+                    "printed_page_start": 161,
+                    "printed_page_end": 183,
+                    "pdf_page_start": 167,
+                    "pdf_page_end": 189,
+                    "checklist_items": [
+                        {
+                            "id": "tn10_math_u4_l1_item_ex_4_1",
+                            "lesson_id": "tn10_math_u4_l1_similarity_and_theorems",
+                            "order_index": 1,
+                            "item_type": "source_activity",
+                            "section_name": "Exercise 4.1",
+                            "label": "Exercise 4.1: Similarity of Triangles & Criteria",
+                            "description": "Establish similarity using AAA, SAS, SSS criteria; ratio of areas of similar triangles (Questions 1 to 13).",
+                            "printed_page": 170,
+                            "pdf_page": 176,
+                            "source_reference": "Textbook p. 170 (PDF p. 176)",
+                            "is_required": True
+                        },
+                        {
+                            "id": "tn10_math_u4_l1_item_thales_bpt_proof",
+                            "lesson_id": "tn10_math_u4_l1_similarity_and_theorems",
+                            "order_index": 2,
+                            "item_type": "app_task",
+                            "section_name": "Theorem Study",
+                            "label": "Theorem 1 & 3 Proofs: Thales (BPT) & Angle Bisector Theorems",
+                            "description": "Master statement and formal proofs for Basic Proportionality Theorem (BPT) and Angle Bisector Theorem.",
+                            "printed_page": 172,
+                            "pdf_page": 178,
+                            "source_reference": "Textbook p. 172-175 (PDF p. 178-181)",
+                            "is_required": True
+                        },
+                        {
+                            "id": "tn10_math_u4_l1_item_ex_4_2",
+                            "lesson_id": "tn10_math_u4_l1_similarity_and_theorems",
+                            "order_index": 3,
+                            "item_type": "source_activity",
+                            "section_name": "Exercise 4.2",
+                            "label": "Exercise 4.2: Applications of Thales & Angle Bisector Theorems",
+                            "description": "Apply Thales theorem, converse of Thales theorem, and Angle Bisector theorem to compute unknown lengths (Questions 1 to 14).",
+                            "printed_page": 181,
+                            "pdf_page": 187,
+                            "source_reference": "Textbook p. 181 (PDF p. 187)",
+                            "is_required": True
+                        }
+                    ]
+                },
+                {
+                    "id": "tn10_math_u4_l2_pythagoras_and_circles",
+                    "unit_id": "tn10_math_u4",
+                    "unit_number": 4,
+                    "lesson_number": 2,
+                    "lesson_type": "exercise",
+                    "title": "Pythagoras Theorem, Circles & Tangents",
+                    "author": "Department of School Education, Tamil Nadu",
+                    "is_memoriter": False,
+                    "printed_page_start": 183,
+                    "printed_page_end": 198,
+                    "pdf_page_start": 189,
+                    "pdf_page_end": 204,
+                    "checklist_items": [
+                        {
+                            "id": "tn10_math_u4_l2_item_pythagoras_proof",
+                            "lesson_id": "tn10_math_u4_l2_pythagoras_and_circles",
+                            "order_index": 1,
+                            "item_type": "app_task",
+                            "section_name": "Theorem Study",
+                            "label": "Theorem 5 Proof: Pythagoras Theorem (Baudhayana Theorem)",
+                            "description": "Learn and memorize the formal proof of Pythagoras Theorem and its converse.",
+                            "printed_page": 184,
+                            "pdf_page": 190,
+                            "source_reference": "Textbook p. 184 (PDF p. 190)",
+                            "is_required": True
+                        },
+                        {
+                            "id": "tn10_math_u4_l2_item_ex_4_3",
+                            "lesson_id": "tn10_math_u4_l2_pythagoras_and_circles",
+                            "order_index": 2,
+                            "item_type": "source_activity",
+                            "section_name": "Exercise 4.3",
+                            "label": "Exercise 4.3: Applications of Pythagoras Theorem",
+                            "description": "Solve geometrical right-triangle problems, ladders, distances, and prove geometric relations (Questions 1 to 8).",
+                            "printed_page": 187,
+                            "pdf_page": 193,
+                            "source_reference": "Textbook p. 187 (PDF p. 193)",
+                            "is_required": True
+                        },
+                        {
+                            "id": "tn10_math_u4_l2_item_alternate_segment_proof",
+                            "lesson_id": "tn10_math_u4_l2_pythagoras_and_circles",
+                            "order_index": 3,
+                            "item_type": "app_task",
+                            "section_name": "Theorem Study",
+                            "label": "Theorem 6, Ceva & Menelaus: Tangent & Concurrency Theorems",
+                            "description": "Master Alternate Segment Theorem, chord-tangent power theorems, and concurrency conditions (Ceva & Menelaus).",
+                            "printed_page": 190,
+                            "pdf_page": 196,
+                            "source_reference": "Textbook p. 190-196 (PDF p. 196-202)",
+                            "is_required": True
+                        },
+                        {
+                            "id": "tn10_math_u4_l2_item_ex_4_4",
+                            "lesson_id": "tn10_math_u4_l2_pythagoras_and_circles",
+                            "order_index": 4,
+                            "item_type": "source_activity",
+                            "section_name": "Exercise 4.4",
+                            "label": "Exercise 4.4: Circles, Tangents & Alternate Segment Theorem",
+                            "description": "Calculate tangent lengths, angles in alternate segment, chord intersections, and concurrency (Questions 1 to 16).",
+                            "printed_page": 198,
+                            "pdf_page": 204,
+                            "source_reference": "Textbook p. 198 (PDF p. 204)",
+                            "is_required": True
+                        }
+                    ]
+                },
+                {
+                    "id": "tn10_math_u4_l3_unit_review",
+                    "unit_id": "tn10_math_u4",
+                    "unit_number": 4,
+                    "lesson_number": 3,
+                    "lesson_type": "review",
+                    "title": "Unit 4 Review & Practical Geometry Check",
+                    "author": "Department of School Education, Tamil Nadu",
+                    "is_memoriter": False,
+                    "printed_page_start": 199,
+                    "printed_page_end": 202,
+                    "pdf_page_start": 205,
+                    "pdf_page_end": 208,
+                    "checklist_items": [
+                        {
+                            "id": "tn10_math_u4_l3_item_ex_4_5_mcq",
+                            "lesson_id": "tn10_math_u4_l3_unit_review",
+                            "order_index": 1,
+                            "item_type": "source_activity",
+                            "section_name": "Exercise 4.5 (MCQ)",
+                            "label": "Exercise 4.5: Multiple Choice Questions",
+                            "description": "16 objective geometry questions on similarity, circles, tangents, and theorems (Questions 1 to 16).",
+                            "printed_page": 199,
+                            "pdf_page": 205,
+                            "source_reference": "Textbook p. 199 (PDF p. 205)",
+                            "is_required": True
+                        },
+                        {
+                            "id": "tn10_math_u4_l3_item_unit_ex_4",
+                            "lesson_id": "tn10_math_u4_l3_unit_review",
+                            "order_index": 2,
+                            "item_type": "source_activity",
+                            "section_name": "Unit Exercise 4",
+                            "label": "Unit Exercise - 4: Comprehensive Geometry Problems",
+                            "description": "Challenging geometric proofs and computations (Questions 1 to 15).",
+                            "printed_page": 200,
+                            "pdf_page": 206,
+                            "source_reference": "Textbook p. 200 (PDF p. 206)",
+                            "is_required": True
+                        },
+                        {
+                            "id": "tn10_math_u4_l3_item_points_to_remember",
+                            "lesson_id": "tn10_math_u4_l3_unit_review",
+                            "order_index": 3,
+                            "item_type": "app_task",
+                            "section_name": "Points to Remember",
+                            "label": "Points to Remember: Geometric Theorems Summary",
+                            "description": "Review statements of BPT, Angle Bisector, Pythagoras, Alternate Segment, Ceva, and Menelaus theorems.",
+                            "printed_page": 201,
+                            "pdf_page": 207,
+                            "source_reference": "Textbook p. 201 (PDF p. 207)",
+                            "is_required": True
+                        }
+                    ]
+                }
+            ]
+        },
+
+        # ---------------------------------------------------------------------
+        # Unit 5: Coordinate Geometry
+        # ---------------------------------------------------------------------
+        {
+            "id": "tn10_math_u5",
+            "unit_number": 5,
+            "title": "Coordinate Geometry",
+            "theme": "Area of Figures, Slope of Lines & Straight Line Equations",
+            "lessons": [
+                {
+                    "id": "tn10_math_u5_l1_area_and_collinearity",
+                    "unit_id": "tn10_math_u5",
+                    "unit_number": 5,
+                    "lesson_number": 1,
+                    "lesson_type": "exercise",
+                    "title": "Area of Triangle & Quadrilateral",
+                    "author": "Department of School Education, Tamil Nadu",
+                    "is_memoriter": False,
+                    "printed_page_start": 203,
+                    "printed_page_end": 212,
+                    "pdf_page_start": 209,
+                    "pdf_page_end": 218,
+                    "checklist_items": [
+                        {
+                            "id": "tn10_math_u5_l1_item_ex_5_1",
+                            "lesson_id": "tn10_math_u5_l1_area_and_collinearity",
+                            "order_index": 1,
+                            "item_type": "source_activity",
+                            "section_name": "Exercise 5.1",
+                            "label": "Exercise 5.1: Area of Triangle, Quadrilateral & Collinearity",
+                            "description": "Calculate area of triangle 1/2[(x1(y2-y3)+...], prove collinearity of three points, and find quadrilateral area (Questions 1 to 11).",
+                            "printed_page": 211,
+                            "pdf_page": 217,
+                            "source_reference": "Textbook p. 211 (PDF p. 217)",
+                            "is_required": True
+                        }
+                    ]
+                },
+                {
+                    "id": "tn10_math_u5_l2_slope_and_straight_lines",
+                    "unit_id": "tn10_math_u5",
+                    "unit_number": 5,
+                    "lesson_number": 2,
+                    "lesson_type": "exercise",
+                    "title": "Slope, Inclination & Straight Line Equations",
+                    "author": "Department of School Education, Tamil Nadu",
+                    "is_memoriter": False,
+                    "printed_page_start": 212,
+                    "printed_page_end": 235,
+                    "pdf_page_start": 218,
+                    "pdf_page_end": 241,
+                    "checklist_items": [
+                        {
+                            "id": "tn10_math_u5_l2_item_ex_5_2",
+                            "lesson_id": "tn10_math_u5_l2_slope_and_straight_lines",
+                            "order_index": 1,
+                            "item_type": "source_activity",
+                            "section_name": "Exercise 5.2",
+                            "label": "Exercise 5.2: Slope (m = tan θ = (y2-y1)/(x2-x1)), Parallel & Perpendicular Lines",
+                            "description": "Compute slope of lines, use condition for parallel lines (m1 = m2) and perpendicular lines (m1 * m2 = -1) (Questions 1 to 13).",
+                            "printed_page": 220,
+                            "pdf_page": 226,
+                            "source_reference": "Textbook p. 220 (PDF p. 226)",
+                            "is_required": True
+                        },
+                        {
+                            "id": "tn10_math_u5_l2_item_ex_5_3",
+                            "lesson_id": "tn10_math_u5_l2_slope_and_straight_lines",
+                            "order_index": 2,
+                            "item_type": "source_activity",
+                            "section_name": "Exercise 5.3",
+                            "label": "Exercise 5.3: Straight Line Equations (Forms: Slope-Intercept, Point-Slope, Two-Point, Intercept)",
+                            "description": "Derive line equations using y = mx + c, y - y1 = m(x - x1), (y - y1)/(y2 - y1) = (x - x1)/(x2 - x1), x/a + y/b = 1 (Questions 1 to 14).",
+                            "printed_page": 229,
+                            "pdf_page": 235,
+                            "source_reference": "Textbook p. 229 (PDF p. 235)",
+                            "is_required": True
+                        },
+                        {
+                            "id": "tn10_math_u5_l2_item_ex_5_4",
+                            "lesson_id": "tn10_math_u5_l2_slope_and_straight_lines",
+                            "order_index": 3,
+                            "item_type": "source_activity",
+                            "section_name": "Exercise 5.4",
+                            "label": "Exercise 5.4: General Form of Straight Line (ax + by + c = 0)",
+                            "description": "Find slope -a/b, y-intercept -c/b, equation of lines parallel (ax+by+k=0) and perpendicular (bx-ay+k=0), and intersection points (Questions 1 to 12).",
+                            "printed_page": 235,
+                            "pdf_page": 241,
+                            "source_reference": "Textbook p. 235 (PDF p. 241)",
+                            "is_required": True
+                        }
+                    ]
+                },
+                {
+                    "id": "tn10_math_u5_l3_unit_review",
+                    "unit_id": "tn10_math_u5",
+                    "unit_number": 5,
+                    "lesson_number": 3,
+                    "lesson_type": "review",
+                    "title": "Unit 5 Review & Assessment",
+                    "author": "Department of School Education, Tamil Nadu",
+                    "is_memoriter": False,
+                    "printed_page_start": 235,
+                    "printed_page_end": 238,
+                    "pdf_page_start": 241,
+                    "pdf_page_end": 244,
+                    "checklist_items": [
+                        {
+                            "id": "tn10_math_u5_l3_item_ex_5_5_mcq",
+                            "lesson_id": "tn10_math_u5_l3_unit_review",
+                            "order_index": 1,
+                            "item_type": "source_activity",
+                            "section_name": "Exercise 5.5 (MCQ)",
+                            "label": "Exercise 5.5: Multiple Choice Questions",
+                            "description": "15 board exam multiple choice questions on area, slopes, and straight line forms (Questions 1 to 15).",
+                            "printed_page": 235,
+                            "pdf_page": 241,
+                            "source_reference": "Textbook p. 235 (PDF p. 241)",
+                            "is_required": True
+                        },
+                        {
+                            "id": "tn10_math_u5_l3_item_unit_ex_5",
+                            "lesson_id": "tn10_math_u5_l3_unit_review",
+                            "order_index": 2,
+                            "item_type": "source_activity",
+                            "section_name": "Unit Exercise 5",
+                            "label": "Unit Exercise - 5: Coordinate Geometry Problems",
+                            "description": "Comprehensive review questions on triangles, quadrilaterals, medians, altitudes, and straight lines (Questions 1 to 10).",
+                            "printed_page": 237,
+                            "pdf_page": 243,
+                            "source_reference": "Textbook p. 237 (PDF p. 243)",
+                            "is_required": True
+                        },
+                        {
+                            "id": "tn10_math_u5_l3_item_points_to_remember",
+                            "lesson_id": "tn10_math_u5_l3_unit_review",
+                            "order_index": 3,
+                            "item_type": "app_task",
+                            "section_name": "Points to Remember",
+                            "label": "Points to Remember: Coordinate Geometry Formulas",
+                            "description": "Quick reference for area formulas, slope formulas, line equation forms, and concurrency relations.",
+                            "printed_page": 237,
+                            "pdf_page": 243,
+                            "source_reference": "Textbook p. 237 (PDF p. 243)",
+                            "is_required": True
+                        }
+                    ]
+                }
+            ]
+        },
+
+        # ---------------------------------------------------------------------
+        # Unit 6: Trigonometry
+        # ---------------------------------------------------------------------
+        {
+            "id": "tn10_math_u6",
+            "unit_number": 6,
+            "title": "Trigonometry",
+            "theme": "Trigonometric Identities, Heights and Distances",
+            "lessons": [
+                {
+                    "id": "tn10_math_u6_l1_identities",
+                    "unit_id": "tn10_math_u6",
+                    "unit_number": 6,
+                    "lesson_number": 1,
+                    "lesson_type": "exercise",
+                    "title": "Trigonometric Identities",
+                    "author": "Department of School Education, Tamil Nadu",
+                    "is_memoriter": False,
+                    "printed_page_start": 239,
+                    "printed_page_end": 250,
+                    "pdf_page_start": 245,
+                    "pdf_page_end": 256,
+                    "checklist_items": [
+                        {
+                            "id": "tn10_math_u6_l1_item_ex_6_1",
+                            "lesson_id": "tn10_math_u6_l1_identities",
+                            "order_index": 1,
+                            "item_type": "source_activity",
+                            "section_name": "Exercise 6.1",
+                            "label": "Exercise 6.1: Proving Trigonometric Identities",
+                            "description": "Prove trigonometric identities using sin²θ + cos²θ = 1, 1 + tan²θ = sec²θ, 1 + cot²θ = cosec²θ (Questions 1 to 10).",
+                            "printed_page": 249,
+                            "pdf_page": 255,
+                            "source_reference": "Textbook p. 249 (PDF p. 255)",
+                            "is_required": True
+                        }
+                    ]
+                },
+                {
+                    "id": "tn10_math_u6_l2_heights_and_distances",
+                    "unit_id": "tn10_math_u6",
+                    "unit_number": 6,
+                    "lesson_number": 2,
+                    "lesson_type": "exercise",
+                    "title": "Heights and Distances (Elevation & Depression)",
+                    "author": "Department of School Education, Tamil Nadu",
+                    "is_memoriter": False,
+                    "printed_page_start": 250,
+                    "printed_page_end": 265,
+                    "pdf_page_start": 256,
+                    "pdf_page_end": 271,
+                    "checklist_items": [
+                        {
+                            "id": "tn10_math_u6_l2_item_ex_6_2",
+                            "lesson_id": "tn10_math_u6_l2_heights_and_distances",
+                            "order_index": 1,
+                            "item_type": "source_activity",
+                            "section_name": "Exercise 6.2",
+                            "label": "Exercise 6.2: Angle of Elevation Applications",
+                            "description": "Solve heights and distances problems involving towers, trees, buildings, and kites with angle of elevation (Questions 1 to 6).",
+                            "printed_page": 257,
+                            "pdf_page": 263,
+                            "source_reference": "Textbook p. 257 (PDF p. 263)",
+                            "is_required": True
+                        },
+                        {
+                            "id": "tn10_math_u6_l2_item_ex_6_3",
+                            "lesson_id": "tn10_math_u6_l2_heights_and_distances",
+                            "order_index": 2,
+                            "item_type": "source_activity",
+                            "section_name": "Exercise 6.3",
+                            "label": "Exercise 6.3: Angle of Depression Applications",
+                            "description": "Calculate heights, depths, and distances using line of sight and angle of depression (Questions 1 to 6).",
+                            "printed_page": 261,
+                            "pdf_page": 267,
+                            "source_reference": "Textbook p. 261 (PDF p. 267)",
+                            "is_required": True
+                        },
+                        {
+                            "id": "tn10_math_u6_l2_item_ex_6_4",
+                            "lesson_id": "tn10_math_u6_l2_heights_and_distances",
+                            "order_index": 3,
+                            "item_type": "source_activity",
+                            "section_name": "Exercise 6.4",
+                            "label": "Exercise 6.4: Combined Elevation & Depression Problems",
+                            "description": "Solve complex real-life scenarios with both elevation and depression from different observation points (Questions 1 to 5).",
+                            "printed_page": 264,
+                            "pdf_page": 270,
+                            "source_reference": "Textbook p. 264 (PDF p. 270)",
+                            "is_required": True
+                        }
+                    ]
+                },
+                {
+                    "id": "tn10_math_u6_l3_unit_review",
+                    "unit_id": "tn10_math_u6",
+                    "unit_number": 6,
+                    "lesson_number": 3,
+                    "lesson_type": "review",
+                    "title": "Unit 6 Review & Assessment",
+                    "author": "Department of School Education, Tamil Nadu",
+                    "is_memoriter": False,
+                    "printed_page_start": 265,
+                    "printed_page_end": 268,
+                    "pdf_page_start": 271,
+                    "pdf_page_end": 274,
+                    "checklist_items": [
+                        {
+                            "id": "tn10_math_u6_l3_item_ex_6_5_mcq",
+                            "lesson_id": "tn10_math_u6_l3_unit_review",
+                            "order_index": 1,
+                            "item_type": "source_activity",
+                            "section_name": "Exercise 6.5 (MCQ)",
+                            "label": "Exercise 6.5: Multiple Choice Questions",
+                            "description": "14 objective questions on trigonometric identities, angles, and heights and distances (Questions 1 to 14).",
+                            "printed_page": 265,
+                            "pdf_page": 271,
+                            "source_reference": "Textbook p. 265 (PDF p. 271)",
+                            "is_required": True
+                        },
+                        {
+                            "id": "tn10_math_u6_l3_item_unit_ex_6",
+                            "lesson_id": "tn10_math_u6_l3_unit_review",
+                            "order_index": 2,
+                            "item_type": "source_activity",
+                            "section_name": "Unit Exercise 6",
+                            "label": "Unit Exercise - 6: Trigonometric Review Problems",
+                            "description": "Challenging identity proofs and multi-step height and distance problems (Questions 1 to 15).",
+                            "printed_page": 267,
+                            "pdf_page": 273,
+                            "source_reference": "Textbook p. 267 (PDF p. 273)",
+                            "is_required": True
+                        },
+                        {
+                            "id": "tn10_math_u6_l3_item_points_to_remember",
+                            "lesson_id": "tn10_math_u6_l3_unit_review",
+                            "order_index": 3,
+                            "item_type": "app_task",
+                            "section_name": "Points to Remember",
+                            "label": "Points to Remember: Trigonometry Values & Identities",
+                            "description": "Memorize trigonometric ratios of standard angles (0°, 30°, 45°, 60°, 90°) and fundamental identities.",
+                            "printed_page": 268,
+                            "pdf_page": 274,
+                            "source_reference": "Textbook p. 268 (PDF p. 274)",
+                            "is_required": True
+                        }
+                    ]
+                }
+            ]
+        },
+
+        # ---------------------------------------------------------------------
+        # Unit 7: Mensuration
+        # ---------------------------------------------------------------------
+        {
+            "id": "tn10_math_u7",
+            "unit_number": 7,
+            "title": "Mensuration",
+            "theme": "Surface Area & Volume of Solids, Combined Solids & Conversion of Shapes",
+            "lessons": [
+                {
+                    "id": "tn10_math_u7_l1_surface_area",
+                    "unit_id": "tn10_math_u7",
+                    "unit_number": 7,
+                    "lesson_number": 1,
+                    "lesson_type": "exercise",
+                    "title": "Surface Area of Solids & Frustum",
+                    "author": "Department of School Education, Tamil Nadu",
+                    "is_memoriter": False,
+                    "printed_page_start": 269,
+                    "printed_page_end": 283,
+                    "pdf_page_start": 275,
+                    "pdf_page_end": 289,
+                    "checklist_items": [
+                        {
+                            "id": "tn10_math_u7_l1_item_ex_7_1",
+                            "lesson_id": "tn10_math_u7_l1_surface_area",
+                            "order_index": 1,
+                            "item_type": "source_activity",
+                            "section_name": "Exercise 7.1",
+                            "label": "Exercise 7.1: CSA & TSA of Cylinder, Hollow Cylinder, Cone, Sphere, Hemisphere & Frustum",
+                            "description": "Calculate Curved Surface Area (CSA) and Total Surface Area (TSA) of standard 3D solids and frustums (Questions 1 to 10).",
+                            "printed_page": 282,
+                            "pdf_page": 288,
+                            "source_reference": "Textbook p. 282 (PDF p. 288)",
+                            "is_required": True
+                        }
+                    ]
+                },
+                {
+                    "id": "tn10_math_u7_l2_volume_and_combinations",
+                    "unit_id": "tn10_math_u7",
+                    "unit_number": 7,
+                    "lesson_number": 2,
+                    "lesson_type": "exercise",
+                    "title": "Volume of Solids, Combined Solids & Conversion",
+                    "author": "Department of School Education, Tamil Nadu",
+                    "is_memoriter": False,
+                    "printed_page_start": 283,
+                    "printed_page_end": 297,
+                    "pdf_page_start": 289,
+                    "pdf_page_end": 303,
+                    "checklist_items": [
+                        {
+                            "id": "tn10_math_u7_l2_item_ex_7_2",
+                            "lesson_id": "tn10_math_u7_l2_volume_and_combinations",
+                            "order_index": 1,
+                            "item_type": "source_activity",
+                            "section_name": "Exercise 7.2",
+                            "label": "Exercise 7.2: Volume of Cylinder, Cone, Sphere, Hemisphere & Frustum",
+                            "description": "Compute volume of cylinders, hollow cylinders, cones, spheres, hemispheres, and frustums (Questions 1 to 10).",
+                            "printed_page": 290,
+                            "pdf_page": 296,
+                            "source_reference": "Textbook p. 290 (PDF p. 296)",
+                            "is_required": True
+                        },
+                        {
+                            "id": "tn10_math_u7_l2_item_ex_7_3",
+                            "lesson_id": "tn10_math_u7_l2_volume_and_combinations",
+                            "order_index": 2,
+                            "item_type": "source_activity",
+                            "section_name": "Exercise 7.3",
+                            "label": "Exercise 7.3: Volume & Surface Area of Combined Solids",
+                            "description": "Solve problems of composite shapes: cylinder surmounted by cone/hemisphere, capsule, tent (Questions 1 to 7).",
+                            "printed_page": 294,
+                            "pdf_page": 300,
+                            "source_reference": "Textbook p. 294 (PDF p. 300)",
+                            "is_required": True
+                        },
+                        {
+                            "id": "tn10_math_u7_l2_item_ex_7_4",
+                            "lesson_id": "tn10_math_u7_l2_volume_and_combinations",
+                            "order_index": 3,
+                            "item_type": "source_activity",
+                            "section_name": "Exercise 7.4",
+                            "label": "Exercise 7.4: Conversion of Solids from One Shape to Another",
+                            "description": "Calculate dimensions, number of objects formed when melting and recasting solids with unchanged volume (Questions 1 to 8).",
+                            "printed_page": 296,
+                            "pdf_page": 302,
+                            "source_reference": "Textbook p. 296 (PDF p. 302)",
+                            "is_required": True
+                        }
+                    ]
+                },
+                {
+                    "id": "tn10_math_u7_l3_unit_review",
+                    "unit_id": "tn10_math_u7",
+                    "unit_number": 7,
+                    "lesson_number": 3,
+                    "lesson_type": "review",
+                    "title": "Unit 7 Review & Assessment",
+                    "author": "Department of School Education, Tamil Nadu",
+                    "is_memoriter": False,
+                    "printed_page_start": 297,
+                    "printed_page_end": 300,
+                    "pdf_page_start": 303,
+                    "pdf_page_end": 306,
+                    "checklist_items": [
+                        {
+                            "id": "tn10_math_u7_l3_item_ex_7_5_mcq",
+                            "lesson_id": "tn10_math_u7_l3_unit_review",
+                            "order_index": 1,
+                            "item_type": "source_activity",
+                            "section_name": "Exercise 7.5 (MCQ)",
+                            "label": "Exercise 7.5: Multiple Choice Questions",
+                            "description": "15 objective questions on surface areas, volumes, combined solids, and conversion (Questions 1 to 15).",
+                            "printed_page": 297,
+                            "pdf_page": 303,
+                            "source_reference": "Textbook p. 297 (PDF p. 303)",
+                            "is_required": True
+                        },
+                        {
+                            "id": "tn10_math_u7_l3_item_unit_ex_7",
+                            "lesson_id": "tn10_math_u7_l3_unit_review",
+                            "order_index": 2,
+                            "item_type": "source_activity",
+                            "section_name": "Unit Exercise 7",
+                            "label": "Unit Exercise - 7: Mensuration Word Problems",
+                            "description": "Applied word problems on cost of painting, water rate flowing through pipes, and melting solids (Questions 1 to 15).",
+                            "printed_page": 298,
+                            "pdf_page": 304,
+                            "source_reference": "Textbook p. 298 (PDF p. 304)",
+                            "is_required": True
+                        },
+                        {
+                            "id": "tn10_math_u7_l3_item_points_to_remember",
+                            "lesson_id": "tn10_math_u7_l3_unit_review",
+                            "order_index": 3,
+                            "item_type": "app_task",
+                            "section_name": "Points to Remember",
+                            "label": "Points to Remember: Mensuration Formulas Table",
+                            "description": "Memorize complete table of CSA, TSA, and Volume formulas for cylinder, cone, sphere, hemisphere, and frustum.",
+                            "printed_page": 299,
+                            "pdf_page": 305,
+                            "source_reference": "Textbook p. 299 (PDF p. 305)",
+                            "is_required": True
+                        }
+                    ]
+                }
+            ]
+        },
+
+        # ---------------------------------------------------------------------
+        # Unit 8: Statistics and Probability
+        # ---------------------------------------------------------------------
+        {
+            "id": "tn10_math_u8",
+            "unit_number": 8,
+            "title": "Statistics and Probability",
+            "theme": "Measures of Dispersion, Coefficient of Variation & Probability Theorems",
+            "lessons": [
+                {
+                    "id": "tn10_math_u8_l1_measures_of_dispersion",
+                    "unit_id": "tn10_math_u8",
+                    "unit_number": 8,
+                    "lesson_number": 1,
+                    "lesson_type": "exercise",
+                    "title": "Measures of Dispersion & Coefficient of Variation",
+                    "author": "Department of School Education, Tamil Nadu",
+                    "is_memoriter": False,
+                    "printed_page_start": 301,
+                    "printed_page_end": 316,
+                    "pdf_page_start": 307,
+                    "pdf_page_end": 322,
+                    "checklist_items": [
+                        {
+                            "id": "tn10_math_u8_l1_item_ex_8_1",
+                            "lesson_id": "tn10_math_u8_l1_measures_of_dispersion",
+                            "order_index": 1,
+                            "item_type": "source_activity",
+                            "section_name": "Exercise 8.1",
+                            "label": "Exercise 8.1: Range, Standard Deviation (σ) & Variance",
+                            "description": "Calculate range L - S, coefficient of range, standard deviation σ by direct, assumed mean, step deviation methods (Questions 1 to 15).",
+                            "printed_page": 313,
+                            "pdf_page": 319,
+                            "source_reference": "Textbook p. 313 (PDF p. 319)",
+                            "is_required": True
+                        },
+                        {
+                            "id": "tn10_math_u8_l1_item_ex_8_2",
+                            "lesson_id": "tn10_math_u8_l1_measures_of_dispersion",
+                            "order_index": 2,
+                            "item_type": "source_activity",
+                            "section_name": "Exercise 8.2",
+                            "label": "Exercise 8.2: Coefficient of Variation (C.V. = σ/x̄ * 100%)",
+                            "description": "Compute Coefficient of Variation (C.V.) to compare consistency and stability between data sets (Questions 1 to 8).",
+                            "printed_page": 316,
+                            "pdf_page": 322,
+                            "source_reference": "Textbook p. 316 (PDF p. 322)",
+                            "is_required": True
+                        }
+                    ]
+                },
+                {
+                    "id": "tn10_math_u8_l2_probability",
+                    "unit_id": "tn10_math_u8",
+                    "unit_number": 8,
+                    "lesson_number": 2,
+                    "lesson_type": "exercise",
+                    "title": "Probability & Addition Theorem",
+                    "author": "Department of School Education, Tamil Nadu",
+                    "is_memoriter": False,
+                    "printed_page_start": 316,
+                    "printed_page_end": 330,
+                    "pdf_page_start": 322,
+                    "pdf_page_end": 336,
+                    "checklist_items": [
+                        {
+                            "id": "tn10_math_u8_l2_item_ex_8_3",
+                            "lesson_id": "tn10_math_u8_l2_probability",
+                            "order_index": 1,
+                            "item_type": "source_activity",
+                            "section_name": "Exercise 8.3",
+                            "label": "Exercise 8.3: Basic Probability, Sample Space & Events",
+                            "description": "Calculate probabilities for tossing coins, rolling dice, pack of cards, and calendar leap year questions (Questions 1 to 13).",
+                            "printed_page": 322,
+                            "pdf_page": 328,
+                            "source_reference": "Textbook p. 322 (PDF p. 328)",
+                            "is_required": True
+                        },
+                        {
+                            "id": "tn10_math_u8_l2_item_ex_8_4",
+                            "lesson_id": "tn10_math_u8_l2_probability",
+                            "order_index": 2,
+                            "item_type": "source_activity",
+                            "section_name": "Exercise 8.4",
+                            "label": "Exercise 8.4: Addition Theorem of Probability",
+                            "description": "Apply P(A ∪ B) = P(A) + P(B) - P(A ∩ B) and P(A ∪ B ∪ C); mutually exclusive and independent events (Questions 1 to 13).",
+                            "printed_page": 329,
+                            "pdf_page": 335,
+                            "source_reference": "Textbook p. 329 (PDF p. 335)",
+                            "is_required": True
+                        }
+                    ]
+                },
+                {
+                    "id": "tn10_math_u8_l3_unit_review",
+                    "unit_id": "tn10_math_u8",
+                    "unit_number": 8,
+                    "lesson_number": 3,
+                    "lesson_type": "review",
+                    "title": "Unit 8 Review & Assessment",
+                    "author": "Department of School Education, Tamil Nadu",
+                    "is_memoriter": False,
+                    "printed_page_start": 330,
+                    "printed_page_end": 333,
+                    "pdf_page_start": 336,
+                    "pdf_page_end": 339,
+                    "checklist_items": [
+                        {
+                            "id": "tn10_math_u8_l3_item_ex_8_5_mcq",
+                            "lesson_id": "tn10_math_u8_l3_unit_review",
+                            "order_index": 1,
+                            "item_type": "source_activity",
+                            "section_name": "Exercise 8.5 (MCQ)",
+                            "label": "Exercise 8.5: Multiple Choice Questions",
+                            "description": "15 objective questions on standard deviation, variance, coefficient of variation, and probability (Questions 1 to 15).",
+                            "printed_page": 330,
+                            "pdf_page": 336,
+                            "source_reference": "Textbook p. 330 (PDF p. 336)",
+                            "is_required": True
+                        },
+                        {
+                            "id": "tn10_math_u8_l3_item_unit_ex_8",
+                            "lesson_id": "tn10_math_u8_l3_unit_review",
+                            "order_index": 2,
+                            "item_type": "source_activity",
+                            "section_name": "Unit Exercise 8",
+                            "label": "Unit Exercise - 8: Statistics & Probability Problems",
+                            "description": "Comprehensive problems on variance of altered data, combining groups, and multi-event probabilities (Questions 1 to 15).",
+                            "printed_page": 331,
+                            "pdf_page": 337,
+                            "source_reference": "Textbook p. 331 (PDF p. 337)",
+                            "is_required": True
+                        },
+                        {
+                            "id": "tn10_math_u8_l3_item_points_to_remember",
+                            "lesson_id": "tn10_math_u8_l3_unit_review",
+                            "order_index": 3,
+                            "item_type": "app_task",
+                            "section_name": "Points to Remember",
+                            "label": "Points to Remember: Statistics & Probability Laws",
+                            "description": "Summary of formulas for standard deviation, variance, C.V., and Addition Theorems of Probability.",
+                            "printed_page": 332,
+                            "pdf_page": 338,
+                            "source_reference": "Textbook p. 332 (PDF p. 338)",
+                            "is_required": True
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
+
+total_units = len(curriculum["units"])
+total_lessons = sum(len(u["lessons"]) for u in curriculum["units"])
+total_items = sum(len(l["checklist_items"]) for u in curriculum["units"] for l in u["lessons"])
+
+curriculum["summary"] = {
+    "total_units": total_units,
+    "total_lessons": total_lessons,
+    "total_checklist_items": total_items,
+    "source_pdf": "Class_10_Mathematics_English_2025_Edition.pdf",
+    "verified": True
+}
+
+output_path = os.path.join(os.path.dirname(__file__), "..", "src", "data", "class_10_math_2025.json")
+with open(output_path, "w", encoding="utf-8") as f:
+    json.dump(curriculum, f, indent=2, ensure_ascii=False)
+
+print(f"Successfully generated {output_path}")
+print(f"Units: {total_units}, Lessons: {total_lessons}, Checklist Items: {total_items}")

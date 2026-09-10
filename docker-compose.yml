@@ -1,0 +1,25 @@
+services:
+  db:
+    build:
+      context: .
+      dockerfile: Dockerfile.db
+    image: tn10-study-postgres:latest
+    container_name: tn10_postgres
+    restart: always
+    environment:
+      POSTGRES_DB: tn10_study
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - tn10_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d tn10_study"]
+      interval: 3s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  tn10_pgdata:
+    driver: local

@@ -1,0 +1,39 @@
+# Dependencies
+node_modules/
+/.pnp
+.pnp.js
+
+# Testing & Logs
+/coverage
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Next.js Build Output
+.next/
+out/
+build/
+dist/
+
+# Large Binary Assets (Textbook PDFs: parsed data is stored in src/data/*.json)
+*.pdf
+
+# Local Environment Variables
+.env*.local
+.env.local
+
+# OS Metadata
+.DS_Store
+*.pem
+Thumbs.db
+
+# Python virtual environment
+pylib/
+__pycache__/
+*.pyc
+
+# Vercel / IDE
+.vercel
+.idea/
+.vscode/

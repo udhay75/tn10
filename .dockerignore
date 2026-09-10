@@ -1,0 +1,10 @@
+.git
+.next
+node_modules
+*.pdf
+.env.local
+.env*.local
+.DS_Store
+pylib
+Dockerfile*
+docker-compose.yml

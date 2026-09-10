@@ -1,0 +1,2534 @@
+{
+  "board": {
+    "code": "tn_state_board",
+    "name": "Tamil Nadu State Board of School Education",
+    "state": "Tamil Nadu"
+  },
+  "class": {
+    "grade_number": 10,
+    "title": "Standard 10",
+    "code": "class_10"
+  },
+  "medium": {
+    "code": "english",
+    "name": "English Medium"
+  },
+  "subject": {
+    "code": "class_10_science",
+    "title": "Science",
+    "curriculum_version": "2024 Edition",
+    "textbook": {
+      "title": "Standard Ten Science",
+      "edition": "Revised Edition 2020, 2022, 2023, Reprint 2021, 2024",
+      "first_edition_year": 2019,
+      "reprint_year": 2024,
+      "publisher": "Tamil Nadu Textbook and Educational Services Corporation",
+      "source_file": "Class_10_Science_English_2024_Edition.pdf",
+      "total_pages": 360,
+      "page_offset": 8
+    }
+  },
+  "units": [
+    {
+      "id": "tn10_sci_u1",
+      "unit_number": 1,
+      "title": "Unit 1: Laws of Motion",
+      "theme": "Physics: Inertia, Linear Momentum, Newton's Laws, Gravitation & Mass vs Weight",
+      "lessons": [
+        {
+          "id": "tn10_sci_u1_l1_theory_and_concepts",
+          "unit_id": "tn10_sci_u1",
+          "unit_number": 1,
+          "lesson_number": 1,
+          "lesson_type": "theory",
+          "title": "Laws of Motion: Core Concepts & Theory",
+          "author": "Tamil Nadu State Board (Physics)",
+          "is_memoriter": false,
+          "printed_page_start": 1,
+          "printed_page_end": 12,
+          "pdf_page_start": 9,
+          "pdf_page_end": 20,
+          "checklist_items": [
+            {
+              "id": "tn10_sci_u1_l1_theory_and_concepts_item_1_concept_reading",
+              "lesson_id": "tn10_sci_u1_l1_theory_and_concepts",
+              "order_index": 1,
+              "item_type": "source_activity",
+              "section_name": "Core Concepts",
+              "label": "Read & Understand Core Concepts: Laws of Motion",
+              "description": "Study the foundational principles, definitions, laws, and chemical/biological mechanisms of Laws of Motion.",
+              "printed_page": 1,
+              "pdf_page": 9,
+              "source_reference": "Textbook pp. 1–12 (PDF pp. 9–20)",
+              "is_required": true
+            },
+            {
+              "id": "tn10_sci_u1_l1_theory_and_concepts_item_2_activities_and_examples",
+              "lesson_id": "tn10_sci_u1_l1_theory_and_concepts",
+              "order_index": 2,
+              "item_type": "source_activity",
+              "section_name": "In-text Activities & Examples",
+              "label": "In-text Activities, Key Diagrams & Solved Examples",
+              "description": "Review labeled scientific diagrams, in-text lab activities, and solved numerical problems for Laws of Motion.",
+              "printed_page": 2,
+              "pdf_page": 10,
+              "source_reference": "Textbook pp. 1–12 (PDF pp. 9–20)",
+              "is_required": true
+            }
+          ]
+        },
+        {
+          "id": "tn10_sci_u1_l2_textbook_evaluation",
+          "unit_id": "tn10_sci_u1",
+          "unit_number": 1,
+          "lesson_number": 2,
+          "lesson_type": "exercise",
+          "title": "Laws of Motion: Textbook Evaluation & Assessment",
+          "author": "Tamil Nadu State Board (Physics)",
+          "is_memoriter": false,
+          "printed_page_start": 13,
+          "printed_page_end": 15,
+          "pdf_page_start": 21,
+          "pdf_page_end": 23,
+          "checklist_items": [
+            {
+              "id": "tn10_sci_u1_l2_textbook_evaluation_item_1_objective_questions",
+              "lesson_id": "tn10_sci_u1_l2_textbook_evaluation",
+              "order_index": 1,
+              "item_type": "source_activity",
+              "section_name": "Objective Evaluation (Parts I–V)",
+              "label": "Parts I–V: MCQs, Fill in Blanks, True/False, Match & Assertion-Reason",
+              "description": "Complete all 1-mark objective questions, fill in the blanks, true/false corrections, match items, and assertion-reason questions for Unit 1.",
+              "printed_page": 13,
+              "pdf_page": 21,
+              "source_reference": "Textbook p. 13 (PDF p. 21)",
+              "is_required": true
+            },
+            {
+              "id": "tn10_sci_u1_l2_textbook_evaluation_item_2_short_answers",
+              "lesson_id": "tn10_sci_u1_l2_textbook_evaluation",
+              "order_index": 2,
+              "item_type": "source_activity",
+              "section_name": "Short Answers (Part VI)",
+              "label": "Part VI: Short Answer Questions (2-Mark Questions)",
+              "description": "Answer all concise scientific reasoning and short conceptual questions for Unit 1.",
+              "printed_page": 14,
+              "pdf_page": 22,
+              "source_reference": "Textbook pp. 13–15 (PDF pp. 21–23)",
+              "is_required": true
+            },
+            {
+              "id": "tn10_sci_u1_l2_textbook_evaluation_item_3_detailed_answers",
+              "lesson_id": "tn10_sci_u1_l2_textbook_evaluation",
+              "order_index": 3,
+              "item_type": "source_activity",
+              "section_name": "Detailed Answers & HOTS (Parts VII–IX)",
+              "label": "Parts VII–IX: Detailed Answers, Numericals & HOT Questions (4 & 7 Marks)",
+              "description": "Write comprehensive paragraph answers, solve numerical problems, and analyze Higher Order Thinking Skills (HOTS) questions for Unit 1.",
+              "printed_page": 15,
+              "pdf_page": 23,
+              "source_reference": "Textbook pp. 13–15 (PDF pp. 21–23)",
+              "is_required": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tn10_sci_u2",
+      "unit_number": 2,
+      "title": "Unit 2: Optics",
+      "theme": "Physics: Light Properties, Refraction, Lenses, Optical Instruments & Human Eye",
+      "lessons": [
+        {
+          "id": "tn10_sci_u2_l1_theory_and_concepts",
+          "unit_id": "tn10_sci_u2",
+          "unit_number": 2,
+          "lesson_number": 1,
+          "lesson_type": "theory",
+          "title": "Optics: Core Concepts & Theory",
+          "author": "Tamil Nadu State Board (Physics)",
+          "is_memoriter": false,
+          "printed_page_start": 16,
+          "printed_page_end": 28,
+          "pdf_page_start": 24,
+          "pdf_page_end": 36,
+          "checklist_items": [
+            {
+              "id": "tn10_sci_u2_l1_theory_and_concepts_item_1_concept_reading",
+              "lesson_id": "tn10_sci_u2_l1_theory_and_concepts",
+              "order_index": 1,
+              "item_type": "source_activity",
+              "section_name": "Core Concepts",
+              "label": "Read & Understand Core Concepts: Optics",
+              "description": "Study the foundational principles, definitions, laws, and chemical/biological mechanisms of Optics.",
+              "printed_page": 16,
+              "pdf_page": 24,
+              "source_reference": "Textbook pp. 16–28 (PDF pp. 24–36)",
+              "is_required": true
+            },
+            {
+              "id": "tn10_sci_u2_l1_theory_and_concepts_item_2_activities_and_examples",
+              "lesson_id": "tn10_sci_u2_l1_theory_and_concepts",
+              "order_index": 2,
+              "item_type": "source_activity",
+              "section_name": "In-text Activities & Examples",
+              "label": "In-text Activities, Key Diagrams & Solved Examples",
+              "description": "Review labeled scientific diagrams, in-text lab activities, and solved numerical problems for Optics.",
+              "printed_page": 17,
+              "pdf_page": 25,
+              "source_reference": "Textbook pp. 16–28 (PDF pp. 24–36)",
+              "is_required": true
+            }
+          ]
+        },
+        {
+          "id": "tn10_sci_u2_l2_textbook_evaluation",
+          "unit_id": "tn10_sci_u2",
+          "unit_number": 2,
+          "lesson_number": 2,
+          "lesson_type": "exercise",
+          "title": "Optics: Textbook Evaluation & Assessment",
+          "author": "Tamil Nadu State Board (Physics)",
+          "is_memoriter": false,
+          "printed_page_start": 29,
+          "printed_page_end": 31,
+          "pdf_page_start": 37,
+          "pdf_page_end": 39,
+          "checklist_items": [
+            {
+              "id": "tn10_sci_u2_l2_textbook_evaluation_item_1_objective_questions",
+              "lesson_id": "tn10_sci_u2_l2_textbook_evaluation",
+              "order_index": 1,
+              "item_type": "source_activity",
+              "section_name": "Objective Evaluation (Parts I–V)",
+              "label": "Parts I–V: MCQs, Fill in Blanks, True/False, Match & Assertion-Reason",
+              "description": "Complete all 1-mark objective questions, fill in the blanks, true/false corrections, match items, and assertion-reason questions for Unit 2.",
+              "printed_page": 29,
+              "pdf_page": 37,
+              "source_reference": "Textbook p. 29 (PDF p. 37)",
+              "is_required": true
+            },
+            {
+              "id": "tn10_sci_u2_l2_textbook_evaluation_item_2_short_answers",
+              "lesson_id": "tn10_sci_u2_l2_textbook_evaluation",
+              "order_index": 2,
+              "item_type": "source_activity",
+              "section_name": "Short Answers (Part VI)",
+              "label": "Part VI: Short Answer Questions (2-Mark Questions)",
+              "description": "Answer all concise scientific reasoning and short conceptual questions for Unit 2.",
+              "printed_page": 30,
+              "pdf_page": 38,
+              "source_reference": "Textbook pp. 29–31 (PDF pp. 37–39)",
+              "is_required": true
+            },
+            {
+              "id": "tn10_sci_u2_l2_textbook_evaluation_item_3_detailed_answers",
+              "lesson_id": "tn10_sci_u2_l2_textbook_evaluation",
+              "order_index": 3,
+              "item_type": "source_activity",
+              "section_name": "Detailed Answers & HOTS (Parts VII–IX)",
+              "label": "Parts VII–IX: Detailed Answers, Numericals & HOT Questions (4 & 7 Marks)",
+              "description": "Write comprehensive paragraph answers, solve numerical problems, and analyze Higher Order Thinking Skills (HOTS) questions for Unit 2.",
+              "printed_page": 31,
+              "pdf_page": 39,
+              "source_reference": "Textbook pp. 29–31 (PDF pp. 37–39)",
+              "is_required": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tn10_sci_u3",
+      "unit_number": 3,
+      "title": "Unit 3: Thermal Physics",
+      "theme": "Physics: Heat, Temperature, Gas Laws (Boyle, Charles, Avogadro) & Absolute Scale",
+      "lessons": [
+        {
+          "id": "tn10_sci_u3_l1_theory_and_concepts",
+          "unit_id": "tn10_sci_u3",
+          "unit_number": 3,
+          "lesson_number": 1,
+          "lesson_type": "theory",
+          "title": "Thermal Physics: Core Concepts & Theory",
+          "author": "Tamil Nadu State Board (Physics)",
+          "is_memoriter": false,
+          "printed_page_start": 32,
+          "printed_page_end": 38,
+          "pdf_page_start": 40,
+          "pdf_page_end": 46,
+          "checklist_items": [
+            {
+              "id": "tn10_sci_u3_l1_theory_and_concepts_item_1_concept_reading",
+              "lesson_id": "tn10_sci_u3_l1_theory_and_concepts",
+              "order_index": 1,
+              "item_type": "source_activity",
+              "section_name": "Core Concepts",
+              "label": "Read & Understand Core Concepts: Thermal Physics",
+              "description": "Study the foundational principles, definitions, laws, and chemical/biological mechanisms of Thermal Physics.",
+              "printed_page": 32,
+              "pdf_page": 40,
+              "source_reference": "Textbook pp. 32–38 (PDF pp. 40–46)",
+              "is_required": true
+            },
+            {
+              "id": "tn10_sci_u3_l1_theory_and_concepts_item_2_activities_and_examples",
+              "lesson_id": "tn10_sci_u3_l1_theory_and_concepts",
+              "order_index": 2,
+              "item_type": "source_activity",
+              "section_name": "In-text Activities & Examples",
+              "label": "In-text Activities, Key Diagrams & Solved Examples",
+              "description": "Review labeled scientific diagrams, in-text lab activities, and solved numerical problems for Thermal Physics.",
+              "printed_page": 33,
+              "pdf_page": 41,
+              "source_reference": "Textbook pp. 32–38 (PDF pp. 40–46)",
+              "is_required": true
+            }
+          ]
+        },
+        {
+          "id": "tn10_sci_u3_l2_textbook_evaluation",
+          "unit_id": "tn10_sci_u3",
+          "unit_number": 3,
+          "lesson_number": 2,
+          "lesson_type": "exercise",
+          "title": "Thermal Physics: Textbook Evaluation & Assessment",
+          "author": "Tamil Nadu State Board (Physics)",
+          "is_memoriter": false,
+          "printed_page_start": 39,
+          "printed_page_end": 41,
+          "pdf_page_start": 47,
+          "pdf_page_end": 49,
+          "checklist_items": [
+            {
+              "id": "tn10_sci_u3_l2_textbook_evaluation_item_1_objective_questions",
+              "lesson_id": "tn10_sci_u3_l2_textbook_evaluation",
+              "order_index": 1,
+              "item_type": "source_activity",
+              "section_name": "Objective Evaluation (Parts I–V)",
+              "label": "Parts I–V: MCQs, Fill in Blanks, True/False, Match & Assertion-Reason",
+              "description": "Complete all 1-mark objective questions, fill in the blanks, true/false corrections, match items, and assertion-reason questions for Unit 3.",
+              "printed_page": 39,
+              "pdf_page": 47,
+              "source_reference": "Textbook p. 39 (PDF p. 47)",
+              "is_required": true
+            },
+            {
+              "id": "tn10_sci_u3_l2_textbook_evaluation_item_2_short_answers",
+              "lesson_id": "tn10_sci_u3_l2_textbook_evaluation",
+              "order_index": 2,
+              "item_type": "source_activity",
+              "section_name": "Short Answers (Part VI)",
+              "label": "Part VI: Short Answer Questions (2-Mark Questions)",
+              "description": "Answer all concise scientific reasoning and short conceptual questions for Unit 3.",
+              "printed_page": 40,
+              "pdf_page": 48,
+              "source_reference": "Textbook pp. 39–41 (PDF pp. 47–49)",
+              "is_required": true
+            },
+            {
+              "id": "tn10_sci_u3_l2_textbook_evaluation_item_3_detailed_answers",
+              "lesson_id": "tn10_sci_u3_l2_textbook_evaluation",
+              "order_index": 3,
+              "item_type": "source_activity",
+              "section_name": "Detailed Answers & HOTS (Parts VII–IX)",
+              "label": "Parts VII–IX: Detailed Answers, Numericals & HOT Questions (4 & 7 Marks)",
+              "description": "Write comprehensive paragraph answers, solve numerical problems, and analyze Higher Order Thinking Skills (HOTS) questions for Unit 3.",
+              "printed_page": 41,
+              "pdf_page": 49,
+              "source_reference": "Textbook pp. 39–41 (PDF pp. 47–49)",
+              "is_required": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tn10_sci_u4",
+      "unit_number": 4,
+      "title": "Unit 4: Electricity",
+      "theme": "Physics: Electric Current, Potential, Ohm's Law, Resistance in Circuits & Heating Effect",
+      "lessons": [
+        {
+          "id": "tn10_sci_u4_l1_theory_and_concepts",
+          "unit_id": "tn10_sci_u4",
+          "unit_number": 4,
+          "lesson_number": 1,
+          "lesson_type": "theory",
+          "title": "Electricity: Core Concepts & Theory",
+          "author": "Tamil Nadu State Board (Physics)",
+          "is_memoriter": false,
+          "printed_page_start": 42,
+          "printed_page_end": 54,
+          "pdf_page_start": 50,
+          "pdf_page_end": 62,
+          "checklist_items": [
+            {
+              "id": "tn10_sci_u4_l1_theory_and_concepts_item_1_concept_reading",
+              "lesson_id": "tn10_sci_u4_l1_theory_and_concepts",
+              "order_index": 1,
+              "item_type": "source_activity",
+              "section_name": "Core Concepts",
+              "label": "Read & Understand Core Concepts: Electricity",
+              "description": "Study the foundational principles, definitions, laws, and chemical/biological mechanisms of Electricity.",
+              "printed_page": 42,
+              "pdf_page": 50,
+              "source_reference": "Textbook pp. 42–54 (PDF pp. 50–62)",
+              "is_required": true
+            },
+            {
+              "id": "tn10_sci_u4_l1_theory_and_concepts_item_2_activities_and_examples",
+              "lesson_id": "tn10_sci_u4_l1_theory_and_concepts",
+              "order_index": 2,
+              "item_type": "source_activity",
+              "section_name": "In-text Activities & Examples",
+              "label": "In-text Activities, Key Diagrams & Solved Examples",
+              "description": "Review labeled scientific diagrams, in-text lab activities, and solved numerical problems for Electricity.",
+              "printed_page": 43,
+              "pdf_page": 51,
+              "source_reference": "Textbook pp. 42–54 (PDF pp. 50–62)",
+              "is_required": true
+            }
+          ]
+        },
+        {
+          "id": "tn10_sci_u4_l2_textbook_evaluation",
+          "unit_id": "tn10_sci_u4",
+          "unit_number": 4,
+          "lesson_number": 2,
+          "lesson_type": "exercise",
+          "title": "Electricity: Textbook Evaluation & Assessment",
+          "author": "Tamil Nadu State Board (Physics)",
+          "is_memoriter": false,
+          "printed_page_start": 55,
+          "printed_page_end": 58,
+          "pdf_page_start": 63,
+          "pdf_page_end": 66,
+          "checklist_items": [
+            {
+              "id": "tn10_sci_u4_l2_textbook_evaluation_item_1_objective_questions",
+              "lesson_id": "tn10_sci_u4_l2_textbook_evaluation",
+              "order_index": 1,
+              "item_type": "source_activity",
+              "section_name": "Objective Evaluation (Parts I–V)",
+              "label": "Parts I–V: MCQs, Fill in Blanks, True/False, Match & Assertion-Reason",
+              "description": "Complete all 1-mark objective questions, fill in the blanks, true/false corrections, match items, and assertion-reason questions for Unit 4.",
+              "printed_page": 55,
+              "pdf_page": 63,
+              "source_reference": "Textbook p. 55 (PDF p. 63)",
+              "is_required": true
+            },
+            {
+              "id": "tn10_sci_u4_l2_textbook_evaluation_item_2_short_answers",
+              "lesson_id": "tn10_sci_u4_l2_textbook_evaluation",
+              "order_index": 2,
+              "item_type": "source_activity",
+              "section_name": "Short Answers (Part VI)",
+              "label": "Part VI: Short Answer Questions (2-Mark Questions)",
+              "description": "Answer all concise scientific reasoning and short conceptual questions for Unit 4.",
+              "printed_page": 56,
+              "pdf_page": 64,
+              "source_reference": "Textbook pp. 55–58 (PDF pp. 63–66)",
+              "is_required": true
+            },
+            {
+              "id": "tn10_sci_u4_l2_textbook_evaluation_item_3_detailed_answers",
+              "lesson_id": "tn10_sci_u4_l2_textbook_evaluation",
+              "order_index": 3,
+              "item_type": "source_activity",
+              "section_name": "Detailed Answers & HOTS (Parts VII–IX)",
+              "label": "Parts VII–IX: Detailed Answers, Numericals & HOT Questions (4 & 7 Marks)",
+              "description": "Write comprehensive paragraph answers, solve numerical problems, and analyze Higher Order Thinking Skills (HOTS) questions for Unit 4.",
+              "printed_page": 58,
+              "pdf_page": 66,
+              "source_reference": "Textbook pp. 55–58 (PDF pp. 63–66)",
+              "is_required": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tn10_sci_u5",
+      "unit_number": 5,
+      "title": "Unit 5: Acoustics",
+      "theme": "Physics: Sound Waves, Velocity, Reflection, Echoes, Doppler Effect & Applications",
+      "lessons": [
+        {
+          "id": "tn10_sci_u5_l1_theory_and_concepts",
+          "unit_id": "tn10_sci_u5",
+          "unit_number": 5,
+          "lesson_number": 1,
+          "lesson_type": "theory",
+          "title": "Acoustics: Core Concepts & Theory",
+          "author": "Tamil Nadu State Board (Physics)",
+          "is_memoriter": false,
+          "printed_page_start": 59,
+          "printed_page_end": 69,
+          "pdf_page_start": 67,
+          "pdf_page_end": 77,
+          "checklist_items": [
+            {
+              "id": "tn10_sci_u5_l1_theory_and_concepts_item_1_concept_reading",
+              "lesson_id": "tn10_sci_u5_l1_theory_and_concepts",
+              "order_index": 1,
+              "item_type": "source_activity",
+              "section_name": "Core Concepts",
+              "label": "Read & Understand Core Concepts: Acoustics",
+              "description": "Study the foundational principles, definitions, laws, and chemical/biological mechanisms of Acoustics.",
+              "printed_page": 59,
+              "pdf_page": 67,
+              "source_reference": "Textbook pp. 59–69 (PDF pp. 67–77)",
+              "is_required": true
+            },
+            {
+              "id": "tn10_sci_u5_l1_theory_and_concepts_item_2_activities_and_examples",
+              "lesson_id": "tn10_sci_u5_l1_theory_and_concepts",
+              "order_index": 2,
+              "item_type": "source_activity",
+              "section_name": "In-text Activities & Examples",
+              "label": "In-text Activities, Key Diagrams & Solved Examples",
+              "description": "Review labeled scientific diagrams, in-text lab activities, and solved numerical problems for Acoustics.",
+              "printed_page": 60,
+              "pdf_page": 68,
+              "source_reference": "Textbook pp. 59–69 (PDF pp. 67–77)",
+              "is_required": true
+            }
+          ]
+        },
+        {
+          "id": "tn10_sci_u5_l2_textbook_evaluation",
+          "unit_id": "tn10_sci_u5",
+          "unit_number": 5,
+          "lesson_number": 2,
+          "lesson_type": "exercise",
+          "title": "Acoustics: Textbook Evaluation & Assessment",
+          "author": "Tamil Nadu State Board (Physics)",
+          "is_memoriter": false,
+          "printed_page_start": 70,
+          "printed_page_end": 73,
+          "pdf_page_start": 78,
+          "pdf_page_end": 81,
+          "checklist_items": [
+            {
+              "id": "tn10_sci_u5_l2_textbook_evaluation_item_1_objective_questions",
+              "lesson_id": "tn10_sci_u5_l2_textbook_evaluation",
+              "order_index": 1,
+              "item_type": "source_activity",
+              "section_name": "Objective Evaluation (Parts I–V)",
+              "label": "Parts I–V: MCQs, Fill in Blanks, True/False, Match & Assertion-Reason",
+              "description": "Complete all 1-mark objective questions, fill in the blanks, true/false corrections, match items, and assertion-reason questions for Unit 5.",
+              "printed_page": 70,
+              "pdf_page": 78,
+              "source_reference": "Textbook p. 70 (PDF p. 78)",
+              "is_required": true
+            },
+            {
+              "id": "tn10_sci_u5_l2_textbook_evaluation_item_2_short_answers",
+              "lesson_id": "tn10_sci_u5_l2_textbook_evaluation",
+              "order_index": 2,
+              "item_type": "source_activity",
+              "section_name": "Short Answers (Part VI)",
+              "label": "Part VI: Short Answer Questions (2-Mark Questions)",
+              "description": "Answer all concise scientific reasoning and short conceptual questions for Unit 5.",
+              "printed_page": 71,
+              "pdf_page": 79,
+              "source_reference": "Textbook pp. 70–73 (PDF pp. 78–81)",
+              "is_required": true
+            },
+            {
+              "id": "tn10_sci_u5_l2_textbook_evaluation_item_3_detailed_answers",
+              "lesson_id": "tn10_sci_u5_l2_textbook_evaluation",
+              "order_index": 3,
+              "item_type": "source_activity",
+              "section_name": "Detailed Answers & HOTS (Parts VII–IX)",
+              "label": "Parts VII–IX: Detailed Answers, Numericals & HOT Questions (4 & 7 Marks)",
+              "description": "Write comprehensive paragraph answers, solve numerical problems, and analyze Higher Order Thinking Skills (HOTS) questions for Unit 5.",
+              "printed_page": 73,
+              "pdf_page": 81,
+              "source_reference": "Textbook pp. 70–73 (PDF pp. 78–81)",
+              "is_required": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tn10_sci_u6",
+      "unit_number": 6,
+      "title": "Unit 6: Nuclear Physics",
+      "theme": "Physics: Radioactivity, Alpha/Beta/Gamma Rays, Nuclear Fission & Fusion, Safety",
+      "lessons": [
+        {
+          "id": "tn10_sci_u6_l1_theory_and_concepts",
+          "unit_id": "tn10_sci_u6",
+          "unit_number": 6,
+          "lesson_number": 1,
+          "lesson_type": "theory",
+          "title": "Nuclear Physics: Core Concepts & Theory",
+          "author": "Tamil Nadu State Board (Physics)",
+          "is_memoriter": false,
+          "printed_page_start": 74,
+          "printed_page_end": 85,
+          "pdf_page_start": 82,
+          "pdf_page_end": 93,
+          "checklist_items": [
+            {
+              "id": "tn10_sci_u6_l1_theory_and_concepts_item_1_concept_reading",
+              "lesson_id": "tn10_sci_u6_l1_theory_and_concepts",
+              "order_index": 1,
+              "item_type": "source_activity",
+              "section_name": "Core Concepts",
+              "label": "Read & Understand Core Concepts: Nuclear Physics",
+              "description": "Study the foundational principles, definitions, laws, and chemical/biological mechanisms of Nuclear Physics.",
+              "printed_page": 74,
+              "pdf_page": 82,
+              "source_reference": "Textbook pp. 74–85 (PDF pp. 82–93)",
+              "is_required": true
+            },
+            {
+              "id": "tn10_sci_u6_l1_theory_and_concepts_item_2_activities_and_examples",
+              "lesson_id": "tn10_sci_u6_l1_theory_and_concepts",
+              "order_index": 2,
+              "item_type": "source_activity",
+              "section_name": "In-text Activities & Examples",
+              "label": "In-text Activities, Key Diagrams & Solved Examples",
+              "description": "Review labeled scientific diagrams, in-text lab activities, and solved numerical problems for Nuclear Physics.",
+              "printed_page": 75,
+              "pdf_page": 83,
+              "source_reference": "Textbook pp. 74–85 (PDF pp. 82–93)",
+              "is_required": true
+            }
+          ]
+        },
+        {
+          "id": "tn10_sci_u6_l2_textbook_evaluation",
+          "unit_id": "tn10_sci_u6",
+          "unit_number": 6,
+          "lesson_number": 2,
+          "lesson_type": "exercise",
+          "title": "Nuclear Physics: Textbook Evaluation & Assessment",
+          "author": "Tamil Nadu State Board (Physics)",
+          "is_memoriter": false,
+          "printed_page_start": 86,
+          "printed_page_end": 90,
+          "pdf_page_start": 94,
+          "pdf_page_end": 98,
+          "checklist_items": [
+            {
+              "id": "tn10_sci_u6_l2_textbook_evaluation_item_1_objective_questions",
+              "lesson_id": "tn10_sci_u6_l2_textbook_evaluation",
+              "order_index": 1,
+              "item_type": "source_activity",
+              "section_name": "Objective Evaluation (Parts I–V)",
+              "label": "Parts I–V: MCQs, Fill in Blanks, True/False, Match & Assertion-Reason",
+              "description": "Complete all 1-mark objective questions, fill in the blanks, true/false corrections, match items, and assertion-reason questions for Unit 6.",
+              "printed_page": 86,
+              "pdf_page": 94,
+              "source_reference": "Textbook p. 86 (PDF p. 94)",
+              "is_required": true
+            },
+            {
+              "id": "tn10_sci_u6_l2_textbook_evaluation_item_2_short_answers",
+              "lesson_id": "tn10_sci_u6_l2_textbook_evaluation",
+              "order_index": 2,
+              "item_type": "source_activity",
+              "section_name": "Short Answers (Part VI)",
+              "label": "Part VI: Short Answer Questions (2-Mark Questions)",
+              "description": "Answer all concise scientific reasoning and short conceptual questions for Unit 6.",
+              "printed_page": 87,
+              "pdf_page": 95,
+              "source_reference": "Textbook pp. 86–90 (PDF pp. 94–98)",
+              "is_required": true
+            },
+            {
+              "id": "tn10_sci_u6_l2_textbook_evaluation_item_3_detailed_answers",
+              "lesson_id": "tn10_sci_u6_l2_textbook_evaluation",
+              "order_index": 3,
+              "item_type": "source_activity",
+              "section_name": "Detailed Answers & HOTS (Parts VII–IX)",
+              "label": "Parts VII–IX: Detailed Answers, Numericals & HOT Questions (4 & 7 Marks)",
+              "description": "Write comprehensive paragraph answers, solve numerical problems, and analyze Higher Order Thinking Skills (HOTS) questions for Unit 6.",
+              "printed_page": 90,
+              "pdf_page": 98,
+              "source_reference": "Textbook pp. 86–90 (PDF pp. 94–98)",
+              "is_required": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tn10_sci_u7",
+      "unit_number": 7,
+      "title": "Unit 7: Atoms and Molecules",
+      "theme": "Chemistry: Atomic Mass, Molecular Mass, Mole Concept & Avogadro's Number",
+      "lessons": [
+        {
+          "id": "tn10_sci_u7_l1_theory_and_concepts",
+          "unit_id": "tn10_sci_u7",
+          "unit_number": 7,
+          "lesson_number": 1,
+          "lesson_type": "theory",
+          "title": "Atoms and Molecules: Core Concepts & Theory",
+          "author": "Tamil Nadu State Board (Chemistry)",
+          "is_memoriter": false,
+          "printed_page_start": 91,
+          "printed_page_end": 101,
+          "pdf_page_start": 99,
+          "pdf_page_end": 109,
+          "checklist_items": [
+            {
+              "id": "tn10_sci_u7_l1_theory_and_concepts_item_1_concept_reading",
+              "lesson_id": "tn10_sci_u7_l1_theory_and_concepts",
+              "order_index": 1,
+              "item_type": "source_activity",
+              "section_name": "Core Concepts",
+              "label": "Read & Understand Core Concepts: Atoms and Molecules",
+              "description": "Study the foundational principles, definitions, laws, and chemical/biological mechanisms of Atoms and Molecules.",
+              "printed_page": 91,
+              "pdf_page": 99,
+              "source_reference": "Textbook pp. 91–101 (PDF pp. 99–109)",
+              "is_required": true
+            },
+            {
+              "id": "tn10_sci_u7_l1_theory_and_concepts_item_2_activities_and_examples",
+              "lesson_id": "tn10_sci_u7_l1_theory_and_concepts",
+              "order_index": 2,
+              "item_type": "source_activity",
+              "section_name": "In-text Activities & Examples",
+              "label": "In-text Activities, Key Diagrams & Solved Examples",
+              "description": "Review labeled scientific diagrams, in-text lab activities, and solved numerical problems for Atoms and Molecules.",
+              "printed_page": 92,
+              "pdf_page": 100,
+              "source_reference": "Textbook pp. 91–101 (PDF pp. 99–109)",
+              "is_required": true
+            }
+          ]
+        },
+        {
+          "id": "tn10_sci_u7_l2_textbook_evaluation",
+          "unit_id": "tn10_sci_u7",
+          "unit_number": 7,
+          "lesson_number": 2,
+          "lesson_type": "exercise",
+          "title": "Atoms and Molecules: Textbook Evaluation & Assessment",
+          "author": "Tamil Nadu State Board (Chemistry)",
+          "is_memoriter": false,
+          "printed_page_start": 102,
+          "printed_page_end": 105,
+          "pdf_page_start": 110,
+          "pdf_page_end": 113,
+          "checklist_items": [
+            {
+              "id": "tn10_sci_u7_l2_textbook_evaluation_item_1_objective_questions",
+              "lesson_id": "tn10_sci_u7_l2_textbook_evaluation",
+              "order_index": 1,
+              "item_type": "source_activity",
+              "section_name": "Objective Evaluation (Parts I–V)",
+              "label": "Parts I–V: MCQs, Fill in Blanks, True/False, Match & Assertion-Reason",
+              "description": "Complete all 1-mark objective questions, fill in the blanks, true/false corrections, match items, and assertion-reason questions for Unit 7.",
+              "printed_page": 102,
+              "pdf_page": 110,
+              "source_reference": "Textbook p. 102 (PDF p. 110)",
+              "is_required": true
+            },
+            {
+              "id": "tn10_sci_u7_l2_textbook_evaluation_item_2_short_answers",
+              "lesson_id": "tn10_sci_u7_l2_textbook_evaluation",
+              "order_index": 2,
+              "item_type": "source_activity",
+              "section_name": "Short Answers (Part VI)",
+              "label": "Part VI: Short Answer Questions (2-Mark Questions)",
+              "description": "Answer all concise scientific reasoning and short conceptual questions for Unit 7.",
+              "printed_page": 103,
+              "pdf_page": 111,
+              "source_reference": "Textbook pp. 102–105 (PDF pp. 110–113)",
+              "is_required": true
+            },
+            {
+              "id": "tn10_sci_u7_l2_textbook_evaluation_item_3_detailed_answers",
+              "lesson_id": "tn10_sci_u7_l2_textbook_evaluation",
+              "order_index": 3,
+              "item_type": "source_activity",
+              "section_name": "Detailed Answers & HOTS (Parts VII–IX)",
+              "label": "Parts VII–IX: Detailed Answers, Numericals & HOT Questions (4 & 7 Marks)",
+              "description": "Write comprehensive paragraph answers, solve numerical problems, and analyze Higher Order Thinking Skills (HOTS) questions for Unit 7.",
+              "printed_page": 105,
+              "pdf_page": 113,
+              "source_reference": "Textbook pp. 102–105 (PDF pp. 110–113)",
+              "is_required": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tn10_sci_u8",
+      "unit_number": 8,
+      "title": "Unit 8: Periodic Classification of Elements",
+      "theme": "Chemistry: Modern Periodic Table, Periodic Trends & Metallurgy",
+      "lessons": [
+        {
+          "id": "tn10_sci_u8_l1_theory_and_concepts",
+          "unit_id": "tn10_sci_u8",
+          "unit_number": 8,
+          "lesson_number": 1,
+          "lesson_type": "theory",
+          "title": "Periodic Classification of Elements: Core Concepts & Theory",
+          "author": "Tamil Nadu State Board (Chemistry)",
+          "is_memoriter": false,
+          "printed_page_start": 106,
+          "printed_page_end": 120,
+          "pdf_page_start": 114,
+          "pdf_page_end": 128,
+          "checklist_items": [
+            {
+              "id": "tn10_sci_u8_l1_theory_and_concepts_item_1_concept_reading",
+              "lesson_id": "tn10_sci_u8_l1_theory_and_concepts",
+              "order_index": 1,
+              "item_type": "source_activity",
+              "section_name": "Core Concepts",
+              "label": "Read & Understand Core Concepts: Periodic Classification of Elements",
+              "description": "Study the foundational principles, definitions, laws, and chemical/biological mechanisms of Periodic Classification of Elements.",
+              "printed_page": 106,
+              "pdf_page": 114,
+              "source_reference": "Textbook pp. 106–120 (PDF pp. 114–128)",
+              "is_required": true
+            },
+            {
+              "id": "tn10_sci_u8_l1_theory_and_concepts_item_2_activities_and_examples",
+              "lesson_id": "tn10_sci_u8_l1_theory_and_concepts",
+              "order_index": 2,
+              "item_type": "source_activity",
+              "section_name": "In-text Activities & Examples",
+              "label": "In-text Activities, Key Diagrams & Solved Examples",
+              "description": "Review labeled scientific diagrams, in-text lab activities, and solved numerical problems for Periodic Classification of Elements.",
+              "printed_page": 107,
+              "pdf_page": 115,
+              "source_reference": "Textbook pp. 106–120 (PDF pp. 114–128)",
+              "is_required": true
+            }
+          ]
+        },
+        {
+          "id": "tn10_sci_u8_l2_textbook_evaluation",
+          "unit_id": "tn10_sci_u8",
+          "unit_number": 8,
+          "lesson_number": 2,
+          "lesson_type": "exercise",
+          "title": "Periodic Classification of Elements: Textbook Evaluation & Assessment",
+          "author": "Tamil Nadu State Board (Chemistry)",
+          "is_memoriter": false,
+          "printed_page_start": 121,
+          "printed_page_end": 123,
+          "pdf_page_start": 129,
+          "pdf_page_end": 131,
+          "checklist_items": [
+            {
+              "id": "tn10_sci_u8_l2_textbook_evaluation_item_1_objective_questions",
+              "lesson_id": "tn10_sci_u8_l2_textbook_evaluation",
+              "order_index": 1,
+              "item_type": "source_activity",
+              "section_name": "Objective Evaluation (Parts I–V)",
+              "label": "Parts I–V: MCQs, Fill in Blanks, True/False, Match & Assertion-Reason",
+              "description": "Complete all 1-mark objective questions, fill in the blanks, true/false corrections, match items, and assertion-reason questions for Unit 8.",
+              "printed_page": 121,
+              "pdf_page": 129,
+              "source_reference": "Textbook p. 121 (PDF p. 129)",
+              "is_required": true
+            },
+            {
+              "id": "tn10_sci_u8_l2_textbook_evaluation_item_2_short_answers",
+              "lesson_id": "tn10_sci_u8_l2_textbook_evaluation",
+              "order_index": 2,
+              "item_type": "source_activity",
+              "section_name": "Short Answers (Part VI)",
+              "label": "Part VI: Short Answer Questions (2-Mark Questions)",
+              "description": "Answer all concise scientific reasoning and short conceptual questions for Unit 8.",
+              "printed_page": 122,
+              "pdf_page": 130,
+              "source_reference": "Textbook pp. 121–123 (PDF pp. 129–131)",
+              "is_required": true
+            },
+            {
+              "id": "tn10_sci_u8_l2_textbook_evaluation_item_3_detailed_answers",
+              "lesson_id": "tn10_sci_u8_l2_textbook_evaluation",
+              "order_index": 3,
+              "item_type": "source_activity",
+              "section_name": "Detailed Answers & HOTS (Parts VII–IX)",
+              "label": "Parts VII–IX: Detailed Answers, Numericals & HOT Questions (4 & 7 Marks)",
+              "description": "Write comprehensive paragraph answers, solve numerical problems, and analyze Higher Order Thinking Skills (HOTS) questions for Unit 8.",
+              "printed_page": 123,
+              "pdf_page": 131,
+              "source_reference": "Textbook pp. 121–123 (PDF pp. 129–131)",
+              "is_required": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tn10_sci_u9",
+      "unit_number": 9,
+      "title": "Unit 9: Solutions",
+      "theme": "Chemistry: Solute, Solvent, Solubility Factors, Concentration of Solutions & Hydration",
+      "lessons": [
+        {
+          "id": "tn10_sci_u9_l1_theory_and_concepts",
+          "unit_id": "tn10_sci_u9",
+          "unit_number": 9,
+          "lesson_number": 1,
+          "lesson_type": "theory",
+          "title": "Solutions: Core Concepts & Theory",
+          "author": "Tamil Nadu State Board (Chemistry)",
+          "is_memoriter": false,
+          "printed_page_start": 124,
+          "printed_page_end": 133,
+          "pdf_page_start": 132,
+          "pdf_page_end": 141,
+          "checklist_items": [
+            {
+              "id": "tn10_sci_u9_l1_theory_and_concepts_item_1_concept_reading",
+              "lesson_id": "tn10_sci_u9_l1_theory_and_concepts",
+              "order_index": 1,
+              "item_type": "source_activity",
+              "section_name": "Core Concepts",
+              "label": "Read & Understand Core Concepts: Solutions",
+              "description": "Study the foundational principles, definitions, laws, and chemical/biological mechanisms of Solutions.",
+              "printed_page": 124,
+              "pdf_page": 132,
+              "source_reference": "Textbook pp. 124–133 (PDF pp. 132–141)",
+              "is_required": true
+            },
+            {
+              "id": "tn10_sci_u9_l1_theory_and_concepts_item_2_activities_and_examples",
+              "lesson_id": "tn10_sci_u9_l1_theory_and_concepts",
+              "order_index": 2,
+              "item_type": "source_activity",
+              "section_name": "In-text Activities & Examples",
+              "label": "In-text Activities, Key Diagrams & Solved Examples",
+              "description": "Review labeled scientific diagrams, in-text lab activities, and solved numerical problems for Solutions.",
+              "printed_page": 125,
+              "pdf_page": 133,
+              "source_reference": "Textbook pp. 124–133 (PDF pp. 132–141)",
+              "is_required": true
+            }
+          ]
+        },
+        {
+          "id": "tn10_sci_u9_l2_textbook_evaluation",
+          "unit_id": "tn10_sci_u9",
+          "unit_number": 9,
+          "lesson_number": 2,
+          "lesson_type": "exercise",
+          "title": "Solutions: Textbook Evaluation & Assessment",
+          "author": "Tamil Nadu State Board (Chemistry)",
+          "is_memoriter": false,
+          "printed_page_start": 134,
+          "printed_page_end": 136,
+          "pdf_page_start": 142,
+          "pdf_page_end": 144,
+          "checklist_items": [
+            {
+              "id": "tn10_sci_u9_l2_textbook_evaluation_item_1_objective_questions",
+              "lesson_id": "tn10_sci_u9_l2_textbook_evaluation",
+              "order_index": 1,
+              "item_type": "source_activity",
+              "section_name": "Objective Evaluation (Parts I–V)",
+              "label": "Parts I–V: MCQs, Fill in Blanks, True/False, Match & Assertion-Reason",
+              "description": "Complete all 1-mark objective questions, fill in the blanks, true/false corrections, match items, and assertion-reason questions for Unit 9.",
+              "printed_page": 134,
+              "pdf_page": 142,
+              "source_reference": "Textbook p. 134 (PDF p. 142)",
+              "is_required": true
+            },
+            {
+              "id": "tn10_sci_u9_l2_textbook_evaluation_item_2_short_answers",
+              "lesson_id": "tn10_sci_u9_l2_textbook_evaluation",
+              "order_index": 2,
+              "item_type": "source_activity",
+              "section_name": "Short Answers (Part VI)",
+              "label": "Part VI: Short Answer Questions (2-Mark Questions)",
+              "description": "Answer all concise scientific reasoning and short conceptual questions for Unit 9.",
+              "printed_page": 135,
+              "pdf_page": 143,
+              "source_reference": "Textbook pp. 134–136 (PDF pp. 142–144)",
+              "is_required": true
+            },
+            {
+              "id": "tn10_sci_u9_l2_textbook_evaluation_item_3_detailed_answers",
+              "lesson_id": "tn10_sci_u9_l2_textbook_evaluation",
+              "order_index": 3,
+              "item_type": "source_activity",
+              "section_name": "Detailed Answers & HOTS (Parts VII–IX)",
+              "label": "Parts VII–IX: Detailed Answers, Numericals & HOT Questions (4 & 7 Marks)",
+              "description": "Write comprehensive paragraph answers, solve numerical problems, and analyze Higher Order Thinking Skills (HOTS) questions for Unit 9.",
+              "printed_page": 136,
+              "pdf_page": 144,
+              "source_reference": "Textbook pp. 134–136 (PDF pp. 142–144)",
+              "is_required": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tn10_sci_u10",
+      "unit_number": 10,
+      "title": "Unit 10: Types of Chemical Reactions",
+      "theme": "Chemistry: Combination, Decomposition, Displacement, Neutralization & pH Scale",
+      "lessons": [
+        {
+          "id": "tn10_sci_u10_l1_theory_and_concepts",
+          "unit_id": "tn10_sci_u10",
+          "unit_number": 10,
+          "lesson_number": 1,
+          "lesson_type": "theory",
+          "title": "Types of Chemical Reactions: Core Concepts & Theory",
+          "author": "Tamil Nadu State Board (Chemistry)",
+          "is_memoriter": false,
+          "printed_page_start": 137,
+          "printed_page_end": 151,
+          "pdf_page_start": 145,
+          "pdf_page_end": 159,
+          "checklist_items": [
+            {
+              "id": "tn10_sci_u10_l1_theory_and_concepts_item_1_concept_reading",
+              "lesson_id": "tn10_sci_u10_l1_theory_and_concepts",
+              "order_index": 1,
+              "item_type": "source_activity",
+              "section_name": "Core Concepts",
+              "label": "Read & Understand Core Concepts: Types of Chemical Reactions",
+              "description": "Study the foundational principles, definitions, laws, and chemical/biological mechanisms of Types of Chemical Reactions.",
+              "printed_page": 137,
+              "pdf_page": 145,
+              "source_reference": "Textbook pp. 137–151 (PDF pp. 145–159)",
+              "is_required": true
+            },
+            {
+              "id": "tn10_sci_u10_l1_theory_and_concepts_item_2_activities_and_examples",
+              "lesson_id": "tn10_sci_u10_l1_theory_and_concepts",
+              "order_index": 2,
+              "item_type": "source_activity",
+              "section_name": "In-text Activities & Examples",
+              "label": "In-text Activities, Key Diagrams & Solved Examples",
+              "description": "Review labeled scientific diagrams, in-text lab activities, and solved numerical problems for Types of Chemical Reactions.",
+              "printed_page": 138,
+              "pdf_page": 146,
+              "source_reference": "Textbook pp. 137–151 (PDF pp. 145–159)",
+              "is_required": true
+            }
+          ]
+        },
+        {
+          "id": "tn10_sci_u10_l2_textbook_evaluation",
+          "unit_id": "tn10_sci_u10",
+          "unit_number": 10,
+          "lesson_number": 2,
+          "lesson_type": "exercise",
+          "title": "Types of Chemical Reactions: Textbook Evaluation & Assessment",
+          "author": "Tamil Nadu State Board (Chemistry)",
+          "is_memoriter": false,
+          "printed_page_start": 152,
+          "printed_page_end": 154,
+          "pdf_page_start": 160,
+          "pdf_page_end": 162,
+          "checklist_items": [
+            {
+              "id": "tn10_sci_u10_l2_textbook_evaluation_item_1_objective_questions",
+              "lesson_id": "tn10_sci_u10_l2_textbook_evaluation",
+              "order_index": 1,
+              "item_type": "source_activity",
+              "section_name": "Objective Evaluation (Parts I–V)",
+              "label": "Parts I–V: MCQs, Fill in Blanks, True/False, Match & Assertion-Reason",
+              "description": "Complete all 1-mark objective questions, fill in the blanks, true/false corrections, match items, and assertion-reason questions for Unit 10.",
+              "printed_page": 152,
+              "pdf_page": 160,
+              "source_reference": "Textbook p. 152 (PDF p. 160)",
+              "is_required": true
+            },
+            {
+              "id": "tn10_sci_u10_l2_textbook_evaluation_item_2_short_answers",
+              "lesson_id": "tn10_sci_u10_l2_textbook_evaluation",
+              "order_index": 2,
+              "item_type": "source_activity",
+              "section_name": "Short Answers (Part VI)",
+              "label": "Part VI: Short Answer Questions (2-Mark Questions)",
+              "description": "Answer all concise scientific reasoning and short conceptual questions for Unit 10.",
+              "printed_page": 153,
+              "pdf_page": 161,
+              "source_reference": "Textbook pp. 152–154 (PDF pp. 160–162)",
+              "is_required": true
+            },
+            {
+              "id": "tn10_sci_u10_l2_textbook_evaluation_item_3_detailed_answers",
+              "lesson_id": "tn10_sci_u10_l2_textbook_evaluation",
+              "order_index": 3,
+              "item_type": "source_activity",
+              "section_name": "Detailed Answers & HOTS (Parts VII–IX)",
+              "label": "Parts VII–IX: Detailed Answers, Numericals & HOT Questions (4 & 7 Marks)",
+              "description": "Write comprehensive paragraph answers, solve numerical problems, and analyze Higher Order Thinking Skills (HOTS) questions for Unit 10.",
+              "printed_page": 154,
+              "pdf_page": 162,
+              "source_reference": "Textbook pp. 152–154 (PDF pp. 160–162)",
+              "is_required": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tn10_sci_u11",
+      "unit_number": 11,
+      "title": "Unit 11: Carbon and its Compounds",
+      "theme": "Chemistry: Bonding, Allotropy, Hydrocarbons, Functional Groups & Soaps/Detergents",
+      "lessons": [
+        {
+          "id": "tn10_sci_u11_l1_theory_and_concepts",
+          "unit_id": "tn10_sci_u11",
+          "unit_number": 11,
+          "lesson_number": 1,
+          "lesson_type": "theory",
+          "title": "Carbon and its Compounds: Core Concepts & Theory",
+          "author": "Tamil Nadu State Board (Chemistry)",
+          "is_memoriter": false,
+          "printed_page_start": 155,
+          "printed_page_end": 169,
+          "pdf_page_start": 163,
+          "pdf_page_end": 177,
+          "checklist_items": [
+            {
+              "id": "tn10_sci_u11_l1_theory_and_concepts_item_1_concept_reading",
+              "lesson_id": "tn10_sci_u11_l1_theory_and_concepts",
+              "order_index": 1,
+              "item_type": "source_activity",
+              "section_name": "Core Concepts",
+              "label": "Read & Understand Core Concepts: Carbon and its Compounds",
+              "description": "Study the foundational principles, definitions, laws, and chemical/biological mechanisms of Carbon and its Compounds.",
+              "printed_page": 155,
+              "pdf_page": 163,
+              "source_reference": "Textbook pp. 155–169 (PDF pp. 163–177)",
+              "is_required": true
+            },
+            {
+              "id": "tn10_sci_u11_l1_theory_and_concepts_item_2_activities_and_examples",
+              "lesson_id": "tn10_sci_u11_l1_theory_and_concepts",
+              "order_index": 2,
+              "item_type": "source_activity",
+              "section_name": "In-text Activities & Examples",
+              "label": "In-text Activities, Key Diagrams & Solved Examples",
+              "description": "Review labeled scientific diagrams, in-text lab activities, and solved numerical problems for Carbon and its Compounds.",
+              "printed_page": 156,
+              "pdf_page": 164,
+              "source_reference": "Textbook pp. 155–169 (PDF pp. 163–177)",
+              "is_required": true
+            }
+          ]
+        },
+        {
+          "id": "tn10_sci_u11_l2_textbook_evaluation",
+          "unit_id": "tn10_sci_u11",
+          "unit_number": 11,
+          "lesson_number": 2,
+          "lesson_type": "exercise",
+          "title": "Carbon and its Compounds: Textbook Evaluation & Assessment",
+          "author": "Tamil Nadu State Board (Chemistry)",
+          "is_memoriter": false,
+          "printed_page_start": 170,
+          "printed_page_end": 172,
+          "pdf_page_start": 178,
+          "pdf_page_end": 180,
+          "checklist_items": [
+            {
+              "id": "tn10_sci_u11_l2_textbook_evaluation_item_1_objective_questions",
+              "lesson_id": "tn10_sci_u11_l2_textbook_evaluation",
+              "order_index": 1,
+              "item_type": "source_activity",
+              "section_name": "Objective Evaluation (Parts I–V)",
+              "label": "Parts I–V: MCQs, Fill in Blanks, True/False, Match & Assertion-Reason",
+              "description": "Complete all 1-mark objective questions, fill in the blanks, true/false corrections, match items, and assertion-reason questions for Unit 11.",
+              "printed_page": 170,
+              "pdf_page": 178,
+              "source_reference": "Textbook p. 170 (PDF p. 178)",
+              "is_required": true
+            },
+            {
+              "id": "tn10_sci_u11_l2_textbook_evaluation_item_2_short_answers",
+              "lesson_id": "tn10_sci_u11_l2_textbook_evaluation",
+              "order_index": 2,
+              "item_type": "source_activity",
+              "section_name": "Short Answers (Part VI)",
+              "label": "Part VI: Short Answer Questions (2-Mark Questions)",
+              "description": "Answer all concise scientific reasoning and short conceptual questions for Unit 11.",
+              "printed_page": 171,
+              "pdf_page": 179,
+              "source_reference": "Textbook pp. 170–172 (PDF pp. 178–180)",
+              "is_required": true
+            },
+            {
+              "id": "tn10_sci_u11_l2_textbook_evaluation_item_3_detailed_answers",
+              "lesson_id": "tn10_sci_u11_l2_textbook_evaluation",
+              "order_index": 3,
+              "item_type": "source_activity",
+              "section_name": "Detailed Answers & HOTS (Parts VII–IX)",
+              "label": "Parts VII–IX: Detailed Answers, Numericals & HOT Questions (4 & 7 Marks)",
+              "description": "Write comprehensive paragraph answers, solve numerical problems, and analyze Higher Order Thinking Skills (HOTS) questions for Unit 11.",
+              "printed_page": 172,
+              "pdf_page": 180,
+              "source_reference": "Textbook pp. 170–172 (PDF pp. 178–180)",
+              "is_required": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tn10_sci_u12",
+      "unit_number": 12,
+      "title": "Unit 12: Plant Anatomy and Plant Physiology",
+      "theme": "Biology: Internal Plant Tissues, Chloroplasts, Photosynthesis & Respiration",
+      "lessons": [
+        {
+          "id": "tn10_sci_u12_l1_theory_and_concepts",
+          "unit_id": "tn10_sci_u12",
+          "unit_number": 12,
+          "lesson_number": 1,
+          "lesson_type": "theory",
+          "title": "Plant Anatomy and Plant Physiology: Core Concepts & Theory",
+          "author": "Tamil Nadu State Board (Biology)",
+          "is_memoriter": false,
+          "printed_page_start": 173,
+          "printed_page_end": 183,
+          "pdf_page_start": 181,
+          "pdf_page_end": 191,
+          "checklist_items": [
+            {
+              "id": "tn10_sci_u12_l1_theory_and_concepts_item_1_concept_reading",
+              "lesson_id": "tn10_sci_u12_l1_theory_and_concepts",
+              "order_index": 1,
+              "item_type": "source_activity",
+              "section_name": "Core Concepts",
+              "label": "Read & Understand Core Concepts: Plant Anatomy and Plant Physiology",
+              "description": "Study the foundational principles, definitions, laws, and chemical/biological mechanisms of Plant Anatomy and Plant Physiology.",
+              "printed_page": 173,
+              "pdf_page": 181,
+              "source_reference": "Textbook pp. 173–183 (PDF pp. 181–191)",
+              "is_required": true
+            },
+            {
+              "id": "tn10_sci_u12_l1_theory_and_concepts_item_2_activities_and_examples",
+              "lesson_id": "tn10_sci_u12_l1_theory_and_concepts",
+              "order_index": 2,
+              "item_type": "source_activity",
+              "section_name": "In-text Activities & Examples",
+              "label": "In-text Activities, Key Diagrams & Solved Examples",
+              "description": "Review labeled scientific diagrams, in-text lab activities, and solved numerical problems for Plant Anatomy and Plant Physiology.",
+              "printed_page": 174,
+              "pdf_page": 182,
+              "source_reference": "Textbook pp. 173–183 (PDF pp. 181–191)",
+              "is_required": true
+            }
+          ]
+        },
+        {
+          "id": "tn10_sci_u12_l2_textbook_evaluation",
+          "unit_id": "tn10_sci_u12",
+          "unit_number": 12,
+          "lesson_number": 2,
+          "lesson_type": "exercise",
+          "title": "Plant Anatomy and Plant Physiology: Textbook Evaluation & Assessment",
+          "author": "Tamil Nadu State Board (Biology)",
+          "is_memoriter": false,
+          "printed_page_start": 184,
+          "printed_page_end": 186,
+          "pdf_page_start": 192,
+          "pdf_page_end": 194,
+          "checklist_items": [
+            {
+              "id": "tn10_sci_u12_l2_textbook_evaluation_item_1_objective_questions",
+              "lesson_id": "tn10_sci_u12_l2_textbook_evaluation",
+              "order_index": 1,
+              "item_type": "source_activity",
+              "section_name": "Objective Evaluation (Parts I–V)",
+              "label": "Parts I–V: MCQs, Fill in Blanks, True/False, Match & Assertion-Reason",
+              "description": "Complete all 1-mark objective questions, fill in the blanks, true/false corrections, match items, and assertion-reason questions for Unit 12.",
+              "printed_page": 184,
+              "pdf_page": 192,
+              "source_reference": "Textbook p. 184 (PDF p. 192)",
+              "is_required": true
+            },
+            {
+              "id": "tn10_sci_u12_l2_textbook_evaluation_item_2_short_answers",
+              "lesson_id": "tn10_sci_u12_l2_textbook_evaluation",
+              "order_index": 2,
+              "item_type": "source_activity",
+              "section_name": "Short Answers (Part VI)",
+              "label": "Part VI: Short Answer Questions (2-Mark Questions)",
+              "description": "Answer all concise scientific reasoning and short conceptual questions for Unit 12.",
+              "printed_page": 185,
+              "pdf_page": 193,
+              "source_reference": "Textbook pp. 184–186 (PDF pp. 192–194)",
+              "is_required": true
+            },
+            {
+              "id": "tn10_sci_u12_l2_textbook_evaluation_item_3_detailed_answers",
+              "lesson_id": "tn10_sci_u12_l2_textbook_evaluation",
+              "order_index": 3,
+              "item_type": "source_activity",
+              "section_name": "Detailed Answers & HOTS (Parts VII–IX)",
+              "label": "Parts VII–IX: Detailed Answers, Numericals & HOT Questions (4 & 7 Marks)",
+              "description": "Write comprehensive paragraph answers, solve numerical problems, and analyze Higher Order Thinking Skills (HOTS) questions for Unit 12.",
+              "printed_page": 186,
+              "pdf_page": 194,
+              "source_reference": "Textbook pp. 184–186 (PDF pp. 192–194)",
+              "is_required": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tn10_sci_u13",
+      "unit_number": 13,
+      "title": "Unit 13: Structural Organisation of Animals",
+      "theme": "Biology: Morphology and Anatomy of Leech and Rabbit",
+      "lessons": [
+        {
+          "id": "tn10_sci_u13_l1_theory_and_concepts",
+          "unit_id": "tn10_sci_u13",
+          "unit_number": 13,
+          "lesson_number": 1,
+          "lesson_type": "theory",
+          "title": "Structural Organisation of Animals: Core Concepts & Theory",
+          "author": "Tamil Nadu State Board (Biology)",
+          "is_memoriter": false,
+          "printed_page_start": 187,
+          "printed_page_end": 196,
+          "pdf_page_start": 195,
+          "pdf_page_end": 204,
+          "checklist_items": [
+            {
+              "id": "tn10_sci_u13_l1_theory_and_concepts_item_1_concept_reading",
+              "lesson_id": "tn10_sci_u13_l1_theory_and_concepts",
+              "order_index": 1,
+              "item_type": "source_activity",
+              "section_name": "Core Concepts",
+              "label": "Read & Understand Core Concepts: Structural Organisation of Animals",
+              "description": "Study the foundational principles, definitions, laws, and chemical/biological mechanisms of Structural Organisation of Animals.",
+              "printed_page": 187,
+              "pdf_page": 195,
+              "source_reference": "Textbook pp. 187–196 (PDF pp. 195–204)",
+              "is_required": true
+            },
+            {
+              "id": "tn10_sci_u13_l1_theory_and_concepts_item_2_activities_and_examples",
+              "lesson_id": "tn10_sci_u13_l1_theory_and_concepts",
+              "order_index": 2,
+              "item_type": "source_activity",
+              "section_name": "In-text Activities & Examples",
+              "label": "In-text Activities, Key Diagrams & Solved Examples",
+              "description": "Review labeled scientific diagrams, in-text lab activities, and solved numerical problems for Structural Organisation of Animals.",
+              "printed_page": 188,
+              "pdf_page": 196,
+              "source_reference": "Textbook pp. 187–196 (PDF pp. 195–204)",
+              "is_required": true
+            }
+          ]
+        },
+        {
+          "id": "tn10_sci_u13_l2_textbook_evaluation",
+          "unit_id": "tn10_sci_u13",
+          "unit_number": 13,
+          "lesson_number": 2,
+          "lesson_type": "exercise",
+          "title": "Structural Organisation of Animals: Textbook Evaluation & Assessment",
+          "author": "Tamil Nadu State Board (Biology)",
+          "is_memoriter": false,
+          "printed_page_start": 197,
+          "printed_page_end": 199,
+          "pdf_page_start": 205,
+          "pdf_page_end": 207,
+          "checklist_items": [
+            {
+              "id": "tn10_sci_u13_l2_textbook_evaluation_item_1_objective_questions",
+              "lesson_id": "tn10_sci_u13_l2_textbook_evaluation",
+              "order_index": 1,
+              "item_type": "source_activity",
+              "section_name": "Objective Evaluation (Parts I–V)",
+              "label": "Parts I–V: MCQs, Fill in Blanks, True/False, Match & Assertion-Reason",
+              "description": "Complete all 1-mark objective questions, fill in the blanks, true/false corrections, match items, and assertion-reason questions for Unit 13.",
+              "printed_page": 197,
+              "pdf_page": 205,
+              "source_reference": "Textbook p. 197 (PDF p. 205)",
+              "is_required": true
+            },
+            {
+              "id": "tn10_sci_u13_l2_textbook_evaluation_item_2_short_answers",
+              "lesson_id": "tn10_sci_u13_l2_textbook_evaluation",
+              "order_index": 2,
+              "item_type": "source_activity",
+              "section_name": "Short Answers (Part VI)",
+              "label": "Part VI: Short Answer Questions (2-Mark Questions)",
+              "description": "Answer all concise scientific reasoning and short conceptual questions for Unit 13.",
+              "printed_page": 198,
+              "pdf_page": 206,
+              "source_reference": "Textbook pp. 197–199 (PDF pp. 205–207)",
+              "is_required": true
+            },
+            {
+              "id": "tn10_sci_u13_l2_textbook_evaluation_item_3_detailed_answers",
+              "lesson_id": "tn10_sci_u13_l2_textbook_evaluation",
+              "order_index": 3,
+              "item_type": "source_activity",
+              "section_name": "Detailed Answers & HOTS (Parts VII–IX)",
+              "label": "Parts VII–IX: Detailed Answers, Numericals & HOT Questions (4 & 7 Marks)",
+              "description": "Write comprehensive paragraph answers, solve numerical problems, and analyze Higher Order Thinking Skills (HOTS) questions for Unit 13.",
+              "printed_page": 199,
+              "pdf_page": 207,
+              "source_reference": "Textbook pp. 197–199 (PDF pp. 205–207)",
+              "is_required": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tn10_sci_u14",
+      "unit_number": 14,
+      "title": "Unit 14: Transportation in Plants and Circulation in Animals",
+      "theme": "Biology: Xylem/Phloem, Ascent of Sap, Blood Components, Heart & Cardiac Cycle",
+      "lessons": [
+        {
+          "id": "tn10_sci_u14_l1_theory_and_concepts",
+          "unit_id": "tn10_sci_u14",
+          "unit_number": 14,
+          "lesson_number": 1,
+          "lesson_type": "theory",
+          "title": "Transportation in Plants and Circulation in Animals: Core Concepts & Theory",
+          "author": "Tamil Nadu State Board (Biology)",
+          "is_memoriter": false,
+          "printed_page_start": 200,
+          "printed_page_end": 212,
+          "pdf_page_start": 208,
+          "pdf_page_end": 220,
+          "checklist_items": [
+            {
+              "id": "tn10_sci_u14_l1_theory_and_concepts_item_1_concept_reading",
+              "lesson_id": "tn10_sci_u14_l1_theory_and_concepts",
+              "order_index": 1,
+              "item_type": "source_activity",
+              "section_name": "Core Concepts",
+              "label": "Read & Understand Core Concepts: Transportation in Plants and Circulation in Animals",
+              "description": "Study the foundational principles, definitions, laws, and chemical/biological mechanisms of Transportation in Plants and Circulation in Animals.",
+              "printed_page": 200,
+              "pdf_page": 208,
+              "source_reference": "Textbook pp. 200–212 (PDF pp. 208–220)",
+              "is_required": true
+            },
+            {
+              "id": "tn10_sci_u14_l1_theory_and_concepts_item_2_activities_and_examples",
+              "lesson_id": "tn10_sci_u14_l1_theory_and_concepts",
+              "order_index": 2,
+              "item_type": "source_activity",
+              "section_name": "In-text Activities & Examples",
+              "label": "In-text Activities, Key Diagrams & Solved Examples",
+              "description": "Review labeled scientific diagrams, in-text lab activities, and solved numerical problems for Transportation in Plants and Circulation in Animals.",
+              "printed_page": 201,
+              "pdf_page": 209,
+              "source_reference": "Textbook pp. 200–212 (PDF pp. 208–220)",
+              "is_required": true
+            }
+          ]
+        },
+        {
+          "id": "tn10_sci_u14_l2_textbook_evaluation",
+          "unit_id": "tn10_sci_u14",
+          "unit_number": 14,
+          "lesson_number": 2,
+          "lesson_type": "exercise",
+          "title": "Transportation in Plants and Circulation in Animals: Textbook Evaluation & Assessment",
+          "author": "Tamil Nadu State Board (Biology)",
+          "is_memoriter": false,
+          "printed_page_start": 213,
+          "printed_page_end": 217,
+          "pdf_page_start": 221,
+          "pdf_page_end": 225,
+          "checklist_items": [
+            {
+              "id": "tn10_sci_u14_l2_textbook_evaluation_item_1_objective_questions",
+              "lesson_id": "tn10_sci_u14_l2_textbook_evaluation",
+              "order_index": 1,
+              "item_type": "source_activity",
+              "section_name": "Objective Evaluation (Parts I–V)",
+              "label": "Parts I–V: MCQs, Fill in Blanks, True/False, Match & Assertion-Reason",
+              "description": "Complete all 1-mark objective questions, fill in the blanks, true/false corrections, match items, and assertion-reason questions for Unit 14.",
+              "printed_page": 213,
+              "pdf_page": 221,
+              "source_reference": "Textbook p. 213 (PDF p. 221)",
+              "is_required": true
+            },
+            {
+              "id": "tn10_sci_u14_l2_textbook_evaluation_item_2_short_answers",
+              "lesson_id": "tn10_sci_u14_l2_textbook_evaluation",
+              "order_index": 2,
+              "item_type": "source_activity",
+              "section_name": "Short Answers (Part VI)",
+              "label": "Part VI: Short Answer Questions (2-Mark Questions)",
+              "description": "Answer all concise scientific reasoning and short conceptual questions for Unit 14.",
+              "printed_page": 214,
+              "pdf_page": 222,
+              "source_reference": "Textbook pp. 213–217 (PDF pp. 221–225)",
+              "is_required": true
+            },
+            {
+              "id": "tn10_sci_u14_l2_textbook_evaluation_item_3_detailed_answers",
+              "lesson_id": "tn10_sci_u14_l2_textbook_evaluation",
+              "order_index": 3,
+              "item_type": "source_activity",
+              "section_name": "Detailed Answers & HOTS (Parts VII–IX)",
+              "label": "Parts VII–IX: Detailed Answers, Numericals & HOT Questions (4 & 7 Marks)",
+              "description": "Write comprehensive paragraph answers, solve numerical problems, and analyze Higher Order Thinking Skills (HOTS) questions for Unit 14.",
+              "printed_page": 217,
+              "pdf_page": 225,
+              "source_reference": "Textbook pp. 213–217 (PDF pp. 221–225)",
+              "is_required": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tn10_sci_u15",
+      "unit_number": 15,
+      "title": "Unit 15: Nervous System",
+      "theme": "Biology: Neurons, Central/Peripheral/Autonomic Nervous System & Reflex Arc",
+      "lessons": [
+        {
+          "id": "tn10_sci_u15_l1_theory_and_concepts",
+          "unit_id": "tn10_sci_u15",
+          "unit_number": 15,
+          "lesson_number": 1,
+          "lesson_type": "theory",
+          "title": "Nervous System: Core Concepts & Theory",
+          "author": "Tamil Nadu State Board (Biology)",
+          "is_memoriter": false,
+          "printed_page_start": 218,
+          "printed_page_end": 225,
+          "pdf_page_start": 226,
+          "pdf_page_end": 233,
+          "checklist_items": [
+            {
+              "id": "tn10_sci_u15_l1_theory_and_concepts_item_1_concept_reading",
+              "lesson_id": "tn10_sci_u15_l1_theory_and_concepts",
+              "order_index": 1,
+              "item_type": "source_activity",
+              "section_name": "Core Concepts",
+              "label": "Read & Understand Core Concepts: Nervous System",
+              "description": "Study the foundational principles, definitions, laws, and chemical/biological mechanisms of Nervous System.",
+              "printed_page": 218,
+              "pdf_page": 226,
+              "source_reference": "Textbook pp. 218–225 (PDF pp. 226–233)",
+              "is_required": true
+            },
+            {
+              "id": "tn10_sci_u15_l1_theory_and_concepts_item_2_activities_and_examples",
+              "lesson_id": "tn10_sci_u15_l1_theory_and_concepts",
+              "order_index": 2,
+              "item_type": "source_activity",
+              "section_name": "In-text Activities & Examples",
+              "label": "In-text Activities, Key Diagrams & Solved Examples",
+              "description": "Review labeled scientific diagrams, in-text lab activities, and solved numerical problems for Nervous System.",
+              "printed_page": 219,
+              "pdf_page": 227,
+              "source_reference": "Textbook pp. 218–225 (PDF pp. 226–233)",
+              "is_required": true
+            }
+          ]
+        },
+        {
+          "id": "tn10_sci_u15_l2_textbook_evaluation",
+          "unit_id": "tn10_sci_u15",
+          "unit_number": 15,
+          "lesson_number": 2,
+          "lesson_type": "exercise",
+          "title": "Nervous System: Textbook Evaluation & Assessment",
+          "author": "Tamil Nadu State Board (Biology)",
+          "is_memoriter": false,
+          "printed_page_start": 226,
+          "printed_page_end": 228,
+          "pdf_page_start": 234,
+          "pdf_page_end": 236,
+          "checklist_items": [
+            {
+              "id": "tn10_sci_u15_l2_textbook_evaluation_item_1_objective_questions",
+              "lesson_id": "tn10_sci_u15_l2_textbook_evaluation",
+              "order_index": 1,
+              "item_type": "source_activity",
+              "section_name": "Objective Evaluation (Parts I–V)",
+              "label": "Parts I–V: MCQs, Fill in Blanks, True/False, Match & Assertion-Reason",
+              "description": "Complete all 1-mark objective questions, fill in the blanks, true/false corrections, match items, and assertion-reason questions for Unit 15.",
+              "printed_page": 226,
+              "pdf_page": 234,
+              "source_reference": "Textbook p. 226 (PDF p. 234)",
+              "is_required": true
+            },
+            {
+              "id": "tn10_sci_u15_l2_textbook_evaluation_item_2_short_answers",
+              "lesson_id": "tn10_sci_u15_l2_textbook_evaluation",
+              "order_index": 2,
+              "item_type": "source_activity",
+              "section_name": "Short Answers (Part VI)",
+              "label": "Part VI: Short Answer Questions (2-Mark Questions)",
+              "description": "Answer all concise scientific reasoning and short conceptual questions for Unit 15.",
+              "printed_page": 227,
+              "pdf_page": 235,
+              "source_reference": "Textbook pp. 226–228 (PDF pp. 234–236)",
+              "is_required": true
+            },
+            {
+              "id": "tn10_sci_u15_l2_textbook_evaluation_item_3_detailed_answers",
+              "lesson_id": "tn10_sci_u15_l2_textbook_evaluation",
+              "order_index": 3,
+              "item_type": "source_activity",
+              "section_name": "Detailed Answers & HOTS (Parts VII–IX)",
+              "label": "Parts VII–IX: Detailed Answers, Numericals & HOT Questions (4 & 7 Marks)",
+              "description": "Write comprehensive paragraph answers, solve numerical problems, and analyze Higher Order Thinking Skills (HOTS) questions for Unit 15.",
+              "printed_page": 228,
+              "pdf_page": 236,
+              "source_reference": "Textbook pp. 226–228 (PDF pp. 234–236)",
+              "is_required": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tn10_sci_u16",
+      "unit_number": 16,
+      "title": "Unit 16: Plant and Animal Hormones",
+      "theme": "Biology: Phytohormones (Auxin, Gibberellin) & Human Endocrine Glands",
+      "lessons": [
+        {
+          "id": "tn10_sci_u16_l1_theory_and_concepts",
+          "unit_id": "tn10_sci_u16",
+          "unit_number": 16,
+          "lesson_number": 1,
+          "lesson_type": "theory",
+          "title": "Plant and Animal Hormones: Core Concepts & Theory",
+          "author": "Tamil Nadu State Board (Biology)",
+          "is_memoriter": false,
+          "printed_page_start": 229,
+          "printed_page_end": 238,
+          "pdf_page_start": 237,
+          "pdf_page_end": 246,
+          "checklist_items": [
+            {
+              "id": "tn10_sci_u16_l1_theory_and_concepts_item_1_concept_reading",
+              "lesson_id": "tn10_sci_u16_l1_theory_and_concepts",
+              "order_index": 1,
+              "item_type": "source_activity",
+              "section_name": "Core Concepts",
+              "label": "Read & Understand Core Concepts: Plant and Animal Hormones",
+              "description": "Study the foundational principles, definitions, laws, and chemical/biological mechanisms of Plant and Animal Hormones.",
+              "printed_page": 229,
+              "pdf_page": 237,
+              "source_reference": "Textbook pp. 229–238 (PDF pp. 237–246)",
+              "is_required": true
+            },
+            {
+              "id": "tn10_sci_u16_l1_theory_and_concepts_item_2_activities_and_examples",
+              "lesson_id": "tn10_sci_u16_l1_theory_and_concepts",
+              "order_index": 2,
+              "item_type": "source_activity",
+              "section_name": "In-text Activities & Examples",
+              "label": "In-text Activities, Key Diagrams & Solved Examples",
+              "description": "Review labeled scientific diagrams, in-text lab activities, and solved numerical problems for Plant and Animal Hormones.",
+              "printed_page": 230,
+              "pdf_page": 238,
+              "source_reference": "Textbook pp. 229–238 (PDF pp. 237–246)",
+              "is_required": true
+            }
+          ]
+        },
+        {
+          "id": "tn10_sci_u16_l2_textbook_evaluation",
+          "unit_id": "tn10_sci_u16",
+          "unit_number": 16,
+          "lesson_number": 2,
+          "lesson_type": "exercise",
+          "title": "Plant and Animal Hormones: Textbook Evaluation & Assessment",
+          "author": "Tamil Nadu State Board (Biology)",
+          "is_memoriter": false,
+          "printed_page_start": 239,
+          "printed_page_end": 242,
+          "pdf_page_start": 247,
+          "pdf_page_end": 250,
+          "checklist_items": [
+            {
+              "id": "tn10_sci_u16_l2_textbook_evaluation_item_1_objective_questions",
+              "lesson_id": "tn10_sci_u16_l2_textbook_evaluation",
+              "order_index": 1,
+              "item_type": "source_activity",
+              "section_name": "Objective Evaluation (Parts I–V)",
+              "label": "Parts I–V: MCQs, Fill in Blanks, True/False, Match & Assertion-Reason",
+              "description": "Complete all 1-mark objective questions, fill in the blanks, true/false corrections, match items, and assertion-reason questions for Unit 16.",
+              "printed_page": 239,
+              "pdf_page": 247,
+              "source_reference": "Textbook p. 239 (PDF p. 247)",
+              "is_required": true
+            },
+            {
+              "id": "tn10_sci_u16_l2_textbook_evaluation_item_2_short_answers",
+              "lesson_id": "tn10_sci_u16_l2_textbook_evaluation",
+              "order_index": 2,
+              "item_type": "source_activity",
+              "section_name": "Short Answers (Part VI)",
+              "label": "Part VI: Short Answer Questions (2-Mark Questions)",
+              "description": "Answer all concise scientific reasoning and short conceptual questions for Unit 16.",
+              "printed_page": 240,
+              "pdf_page": 248,
+              "source_reference": "Textbook pp. 239–242 (PDF pp. 247–250)",
+              "is_required": true
+            },
+            {
+              "id": "tn10_sci_u16_l2_textbook_evaluation_item_3_detailed_answers",
+              "lesson_id": "tn10_sci_u16_l2_textbook_evaluation",
+              "order_index": 3,
+              "item_type": "source_activity",
+              "section_name": "Detailed Answers & HOTS (Parts VII–IX)",
+              "label": "Parts VII–IX: Detailed Answers, Numericals & HOT Questions (4 & 7 Marks)",
+              "description": "Write comprehensive paragraph answers, solve numerical problems, and analyze Higher Order Thinking Skills (HOTS) questions for Unit 16.",
+              "printed_page": 242,
+              "pdf_page": 250,
+              "source_reference": "Textbook pp. 239–242 (PDF pp. 247–250)",
+              "is_required": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tn10_sci_u17",
+      "unit_number": 17,
+      "title": "Unit 17: Reproduction in Plants and Animals",
+      "theme": "Biology: Vegetative/Asexual/Sexual Reproduction, Pollination & Menstrual Cycle",
+      "lessons": [
+        {
+          "id": "tn10_sci_u17_l1_theory_and_concepts",
+          "unit_id": "tn10_sci_u17",
+          "unit_number": 17,
+          "lesson_number": 1,
+          "lesson_type": "theory",
+          "title": "Reproduction in Plants and Animals: Core Concepts & Theory",
+          "author": "Tamil Nadu State Board (Biology)",
+          "is_memoriter": false,
+          "printed_page_start": 243,
+          "printed_page_end": 255,
+          "pdf_page_start": 251,
+          "pdf_page_end": 263,
+          "checklist_items": [
+            {
+              "id": "tn10_sci_u17_l1_theory_and_concepts_item_1_concept_reading",
+              "lesson_id": "tn10_sci_u17_l1_theory_and_concepts",
+              "order_index": 1,
+              "item_type": "source_activity",
+              "section_name": "Core Concepts",
+              "label": "Read & Understand Core Concepts: Reproduction in Plants and Animals",
+              "description": "Study the foundational principles, definitions, laws, and chemical/biological mechanisms of Reproduction in Plants and Animals.",
+              "printed_page": 243,
+              "pdf_page": 251,
+              "source_reference": "Textbook pp. 243–255 (PDF pp. 251–263)",
+              "is_required": true
+            },
+            {
+              "id": "tn10_sci_u17_l1_theory_and_concepts_item_2_activities_and_examples",
+              "lesson_id": "tn10_sci_u17_l1_theory_and_concepts",
+              "order_index": 2,
+              "item_type": "source_activity",
+              "section_name": "In-text Activities & Examples",
+              "label": "In-text Activities, Key Diagrams & Solved Examples",
+              "description": "Review labeled scientific diagrams, in-text lab activities, and solved numerical problems for Reproduction in Plants and Animals.",
+              "printed_page": 244,
+              "pdf_page": 252,
+              "source_reference": "Textbook pp. 243–255 (PDF pp. 251–263)",
+              "is_required": true
+            }
+          ]
+        },
+        {
+          "id": "tn10_sci_u17_l2_textbook_evaluation",
+          "unit_id": "tn10_sci_u17",
+          "unit_number": 17,
+          "lesson_number": 2,
+          "lesson_type": "exercise",
+          "title": "Reproduction in Plants and Animals: Textbook Evaluation & Assessment",
+          "author": "Tamil Nadu State Board (Biology)",
+          "is_memoriter": false,
+          "printed_page_start": 256,
+          "printed_page_end": 260,
+          "pdf_page_start": 264,
+          "pdf_page_end": 268,
+          "checklist_items": [
+            {
+              "id": "tn10_sci_u17_l2_textbook_evaluation_item_1_objective_questions",
+              "lesson_id": "tn10_sci_u17_l2_textbook_evaluation",
+              "order_index": 1,
+              "item_type": "source_activity",
+              "section_name": "Objective Evaluation (Parts I–V)",
+              "label": "Parts I–V: MCQs, Fill in Blanks, True/False, Match & Assertion-Reason",
+              "description": "Complete all 1-mark objective questions, fill in the blanks, true/false corrections, match items, and assertion-reason questions for Unit 17.",
+              "printed_page": 256,
+              "pdf_page": 264,
+              "source_reference": "Textbook p. 256 (PDF p. 264)",
+              "is_required": true
+            },
+            {
+              "id": "tn10_sci_u17_l2_textbook_evaluation_item_2_short_answers",
+              "lesson_id": "tn10_sci_u17_l2_textbook_evaluation",
+              "order_index": 2,
+              "item_type": "source_activity",
+              "section_name": "Short Answers (Part VI)",
+              "label": "Part VI: Short Answer Questions (2-Mark Questions)",
+              "description": "Answer all concise scientific reasoning and short conceptual questions for Unit 17.",
+              "printed_page": 257,
+              "pdf_page": 265,
+              "source_reference": "Textbook pp. 256–260 (PDF pp. 264–268)",
+              "is_required": true
+            },
+            {
+              "id": "tn10_sci_u17_l2_textbook_evaluation_item_3_detailed_answers",
+              "lesson_id": "tn10_sci_u17_l2_textbook_evaluation",
+              "order_index": 3,
+              "item_type": "source_activity",
+              "section_name": "Detailed Answers & HOTS (Parts VII–IX)",
+              "label": "Parts VII–IX: Detailed Answers, Numericals & HOT Questions (4 & 7 Marks)",
+              "description": "Write comprehensive paragraph answers, solve numerical problems, and analyze Higher Order Thinking Skills (HOTS) questions for Unit 17.",
+              "printed_page": 260,
+              "pdf_page": 268,
+              "source_reference": "Textbook pp. 256–260 (PDF pp. 264–268)",
+              "is_required": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tn10_sci_u18",
+      "unit_number": 18,
+      "title": "Unit 18: Genetics",
+      "theme": "Biology: Mendel's Laws of Inheritance, Monohybrid/Dihybrid Crosses, DNA Structure & Chromosomes",
+      "lessons": [
+        {
+          "id": "tn10_sci_u18_l1_theory_and_concepts",
+          "unit_id": "tn10_sci_u18",
+          "unit_number": 18,
+          "lesson_number": 1,
+          "lesson_type": "theory",
+          "title": "Genetics: Core Concepts & Theory",
+          "author": "Tamil Nadu State Board (Biology)",
+          "is_memoriter": false,
+          "printed_page_start": 261,
+          "printed_page_end": 270,
+          "pdf_page_start": 269,
+          "pdf_page_end": 278,
+          "checklist_items": [
+            {
+              "id": "tn10_sci_u18_l1_theory_and_concepts_item_1_concept_reading",
+              "lesson_id": "tn10_sci_u18_l1_theory_and_concepts",
+              "order_index": 1,
+              "item_type": "source_activity",
+              "section_name": "Core Concepts",
+              "label": "Read & Understand Core Concepts: Genetics",
+              "description": "Study the foundational principles, definitions, laws, and chemical/biological mechanisms of Genetics.",
+              "printed_page": 261,
+              "pdf_page": 269,
+              "source_reference": "Textbook pp. 261–270 (PDF pp. 269–278)",
+              "is_required": true
+            },
+            {
+              "id": "tn10_sci_u18_l1_theory_and_concepts_item_2_activities_and_examples",
+              "lesson_id": "tn10_sci_u18_l1_theory_and_concepts",
+              "order_index": 2,
+              "item_type": "source_activity",
+              "section_name": "In-text Activities & Examples",
+              "label": "In-text Activities, Key Diagrams & Solved Examples",
+              "description": "Review labeled scientific diagrams, in-text lab activities, and solved numerical problems for Genetics.",
+              "printed_page": 262,
+              "pdf_page": 270,
+              "source_reference": "Textbook pp. 261–270 (PDF pp. 269–278)",
+              "is_required": true
+            }
+          ]
+        },
+        {
+          "id": "tn10_sci_u18_l2_textbook_evaluation",
+          "unit_id": "tn10_sci_u18",
+          "unit_number": 18,
+          "lesson_number": 2,
+          "lesson_type": "exercise",
+          "title": "Genetics: Textbook Evaluation & Assessment",
+          "author": "Tamil Nadu State Board (Biology)",
+          "is_memoriter": false,
+          "printed_page_start": 271,
+          "printed_page_end": 273,
+          "pdf_page_start": 279,
+          "pdf_page_end": 281,
+          "checklist_items": [
+            {
+              "id": "tn10_sci_u18_l2_textbook_evaluation_item_1_objective_questions",
+              "lesson_id": "tn10_sci_u18_l2_textbook_evaluation",
+              "order_index": 1,
+              "item_type": "source_activity",
+              "section_name": "Objective Evaluation (Parts I–V)",
+              "label": "Parts I–V: MCQs, Fill in Blanks, True/False, Match & Assertion-Reason",
+              "description": "Complete all 1-mark objective questions, fill in the blanks, true/false corrections, match items, and assertion-reason questions for Unit 18.",
+              "printed_page": 271,
+              "pdf_page": 279,
+              "source_reference": "Textbook p. 271 (PDF p. 279)",
+              "is_required": true
+            },
+            {
+              "id": "tn10_sci_u18_l2_textbook_evaluation_item_2_short_answers",
+              "lesson_id": "tn10_sci_u18_l2_textbook_evaluation",
+              "order_index": 2,
+              "item_type": "source_activity",
+              "section_name": "Short Answers (Part VI)",
+              "label": "Part VI: Short Answer Questions (2-Mark Questions)",
+              "description": "Answer all concise scientific reasoning and short conceptual questions for Unit 18.",
+              "printed_page": 272,
+              "pdf_page": 280,
+              "source_reference": "Textbook pp. 271–273 (PDF pp. 279–281)",
+              "is_required": true
+            },
+            {
+              "id": "tn10_sci_u18_l2_textbook_evaluation_item_3_detailed_answers",
+              "lesson_id": "tn10_sci_u18_l2_textbook_evaluation",
+              "order_index": 3,
+              "item_type": "source_activity",
+              "section_name": "Detailed Answers & HOTS (Parts VII–IX)",
+              "label": "Parts VII–IX: Detailed Answers, Numericals & HOT Questions (4 & 7 Marks)",
+              "description": "Write comprehensive paragraph answers, solve numerical problems, and analyze Higher Order Thinking Skills (HOTS) questions for Unit 18.",
+              "printed_page": 273,
+              "pdf_page": 281,
+              "source_reference": "Textbook pp. 271–273 (PDF pp. 279–281)",
+              "is_required": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tn10_sci_u19",
+      "unit_number": 19,
+      "title": "Unit 19: Origin and Evolution of Life",
+      "theme": "Biology: Theories of Evolution, Lamarckism, Darwinism, Fossils & Ethnobotany",
+      "lessons": [
+        {
+          "id": "tn10_sci_u19_l1_theory_and_concepts",
+          "unit_id": "tn10_sci_u19",
+          "unit_number": 19,
+          "lesson_number": 1,
+          "lesson_type": "theory",
+          "title": "Origin and Evolution of Life: Core Concepts & Theory",
+          "author": "Tamil Nadu State Board (Biology)",
+          "is_memoriter": false,
+          "printed_page_start": 274,
+          "printed_page_end": 281,
+          "pdf_page_start": 282,
+          "pdf_page_end": 289,
+          "checklist_items": [
+            {
+              "id": "tn10_sci_u19_l1_theory_and_concepts_item_1_concept_reading",
+              "lesson_id": "tn10_sci_u19_l1_theory_and_concepts",
+              "order_index": 1,
+              "item_type": "source_activity",
+              "section_name": "Core Concepts",
+              "label": "Read & Understand Core Concepts: Origin and Evolution of Life",
+              "description": "Study the foundational principles, definitions, laws, and chemical/biological mechanisms of Origin and Evolution of Life.",
+              "printed_page": 274,
+              "pdf_page": 282,
+              "source_reference": "Textbook pp. 274–281 (PDF pp. 282–289)",
+              "is_required": true
+            },
+            {
+              "id": "tn10_sci_u19_l1_theory_and_concepts_item_2_activities_and_examples",
+              "lesson_id": "tn10_sci_u19_l1_theory_and_concepts",
+              "order_index": 2,
+              "item_type": "source_activity",
+              "section_name": "In-text Activities & Examples",
+              "label": "In-text Activities, Key Diagrams & Solved Examples",
+              "description": "Review labeled scientific diagrams, in-text lab activities, and solved numerical problems for Origin and Evolution of Life.",
+              "printed_page": 275,
+              "pdf_page": 283,
+              "source_reference": "Textbook pp. 274–281 (PDF pp. 282–289)",
+              "is_required": true
+            }
+          ]
+        },
+        {
+          "id": "tn10_sci_u19_l2_textbook_evaluation",
+          "unit_id": "tn10_sci_u19",
+          "unit_number": 19,
+          "lesson_number": 2,
+          "lesson_type": "exercise",
+          "title": "Origin and Evolution of Life: Textbook Evaluation & Assessment",
+          "author": "Tamil Nadu State Board (Biology)",
+          "is_memoriter": false,
+          "printed_page_start": 282,
+          "printed_page_end": 285,
+          "pdf_page_start": 290,
+          "pdf_page_end": 293,
+          "checklist_items": [
+            {
+              "id": "tn10_sci_u19_l2_textbook_evaluation_item_1_objective_questions",
+              "lesson_id": "tn10_sci_u19_l2_textbook_evaluation",
+              "order_index": 1,
+              "item_type": "source_activity",
+              "section_name": "Objective Evaluation (Parts I–V)",
+              "label": "Parts I–V: MCQs, Fill in Blanks, True/False, Match & Assertion-Reason",
+              "description": "Complete all 1-mark objective questions, fill in the blanks, true/false corrections, match items, and assertion-reason questions for Unit 19.",
+              "printed_page": 282,
+              "pdf_page": 290,
+              "source_reference": "Textbook p. 282 (PDF p. 290)",
+              "is_required": true
+            },
+            {
+              "id": "tn10_sci_u19_l2_textbook_evaluation_item_2_short_answers",
+              "lesson_id": "tn10_sci_u19_l2_textbook_evaluation",
+              "order_index": 2,
+              "item_type": "source_activity",
+              "section_name": "Short Answers (Part VI)",
+              "label": "Part VI: Short Answer Questions (2-Mark Questions)",
+              "description": "Answer all concise scientific reasoning and short conceptual questions for Unit 19.",
+              "printed_page": 283,
+              "pdf_page": 291,
+              "source_reference": "Textbook pp. 282–285 (PDF pp. 290–293)",
+              "is_required": true
+            },
+            {
+              "id": "tn10_sci_u19_l2_textbook_evaluation_item_3_detailed_answers",
+              "lesson_id": "tn10_sci_u19_l2_textbook_evaluation",
+              "order_index": 3,
+              "item_type": "source_activity",
+              "section_name": "Detailed Answers & HOTS (Parts VII–IX)",
+              "label": "Parts VII–IX: Detailed Answers, Numericals & HOT Questions (4 & 7 Marks)",
+              "description": "Write comprehensive paragraph answers, solve numerical problems, and analyze Higher Order Thinking Skills (HOTS) questions for Unit 19.",
+              "printed_page": 285,
+              "pdf_page": 293,
+              "source_reference": "Textbook pp. 282–285 (PDF pp. 290–293)",
+              "is_required": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tn10_sci_u20",
+      "unit_number": 20,
+      "title": "Unit 20: Breeding and Biotechnology",
+      "theme": "Biology: Plant/Animal Breeding, Hybridization, Genetic Engineering & Stem Cells",
+      "lessons": [
+        {
+          "id": "tn10_sci_u20_l1_theory_and_concepts",
+          "unit_id": "tn10_sci_u20",
+          "unit_number": 20,
+          "lesson_number": 1,
+          "lesson_type": "theory",
+          "title": "Breeding and Biotechnology: Core Concepts & Theory",
+          "author": "Tamil Nadu State Board (Biology)",
+          "is_memoriter": false,
+          "printed_page_start": 286,
+          "printed_page_end": 295,
+          "pdf_page_start": 294,
+          "pdf_page_end": 303,
+          "checklist_items": [
+            {
+              "id": "tn10_sci_u20_l1_theory_and_concepts_item_1_concept_reading",
+              "lesson_id": "tn10_sci_u20_l1_theory_and_concepts",
+              "order_index": 1,
+              "item_type": "source_activity",
+              "section_name": "Core Concepts",
+              "label": "Read & Understand Core Concepts: Breeding and Biotechnology",
+              "description": "Study the foundational principles, definitions, laws, and chemical/biological mechanisms of Breeding and Biotechnology.",
+              "printed_page": 286,
+              "pdf_page": 294,
+              "source_reference": "Textbook pp. 286–295 (PDF pp. 294–303)",
+              "is_required": true
+            },
+            {
+              "id": "tn10_sci_u20_l1_theory_and_concepts_item_2_activities_and_examples",
+              "lesson_id": "tn10_sci_u20_l1_theory_and_concepts",
+              "order_index": 2,
+              "item_type": "source_activity",
+              "section_name": "In-text Activities & Examples",
+              "label": "In-text Activities, Key Diagrams & Solved Examples",
+              "description": "Review labeled scientific diagrams, in-text lab activities, and solved numerical problems for Breeding and Biotechnology.",
+              "printed_page": 287,
+              "pdf_page": 295,
+              "source_reference": "Textbook pp. 286–295 (PDF pp. 294–303)",
+              "is_required": true
+            }
+          ]
+        },
+        {
+          "id": "tn10_sci_u20_l2_textbook_evaluation",
+          "unit_id": "tn10_sci_u20",
+          "unit_number": 20,
+          "lesson_number": 2,
+          "lesson_type": "exercise",
+          "title": "Breeding and Biotechnology: Textbook Evaluation & Assessment",
+          "author": "Tamil Nadu State Board (Biology)",
+          "is_memoriter": false,
+          "printed_page_start": 296,
+          "printed_page_end": 299,
+          "pdf_page_start": 304,
+          "pdf_page_end": 307,
+          "checklist_items": [
+            {
+              "id": "tn10_sci_u20_l2_textbook_evaluation_item_1_objective_questions",
+              "lesson_id": "tn10_sci_u20_l2_textbook_evaluation",
+              "order_index": 1,
+              "item_type": "source_activity",
+              "section_name": "Objective Evaluation (Parts I–V)",
+              "label": "Parts I–V: MCQs, Fill in Blanks, True/False, Match & Assertion-Reason",
+              "description": "Complete all 1-mark objective questions, fill in the blanks, true/false corrections, match items, and assertion-reason questions for Unit 20.",
+              "printed_page": 296,
+              "pdf_page": 304,
+              "source_reference": "Textbook p. 296 (PDF p. 304)",
+              "is_required": true
+            },
+            {
+              "id": "tn10_sci_u20_l2_textbook_evaluation_item_2_short_answers",
+              "lesson_id": "tn10_sci_u20_l2_textbook_evaluation",
+              "order_index": 2,
+              "item_type": "source_activity",
+              "section_name": "Short Answers (Part VI)",
+              "label": "Part VI: Short Answer Questions (2-Mark Questions)",
+              "description": "Answer all concise scientific reasoning and short conceptual questions for Unit 20.",
+              "printed_page": 297,
+              "pdf_page": 305,
+              "source_reference": "Textbook pp. 296–299 (PDF pp. 304–307)",
+              "is_required": true
+            },
+            {
+              "id": "tn10_sci_u20_l2_textbook_evaluation_item_3_detailed_answers",
+              "lesson_id": "tn10_sci_u20_l2_textbook_evaluation",
+              "order_index": 3,
+              "item_type": "source_activity",
+              "section_name": "Detailed Answers & HOTS (Parts VII–IX)",
+              "label": "Parts VII–IX: Detailed Answers, Numericals & HOT Questions (4 & 7 Marks)",
+              "description": "Write comprehensive paragraph answers, solve numerical problems, and analyze Higher Order Thinking Skills (HOTS) questions for Unit 20.",
+              "printed_page": 299,
+              "pdf_page": 307,
+              "source_reference": "Textbook pp. 296–299 (PDF pp. 304–307)",
+              "is_required": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tn10_sci_u21",
+      "unit_number": 21,
+      "title": "Unit 21: Health and Diseases",
+      "theme": "Biology: Communicable Diseases, Non-communicable Disorders, Lifestyle & Drug Abuse",
+      "lessons": [
+        {
+          "id": "tn10_sci_u21_l1_theory_and_concepts",
+          "unit_id": "tn10_sci_u21",
+          "unit_number": 21,
+          "lesson_number": 1,
+          "lesson_type": "theory",
+          "title": "Health and Diseases: Core Concepts & Theory",
+          "author": "Tamil Nadu State Board (Biology)",
+          "is_memoriter": false,
+          "printed_page_start": 300,
+          "printed_page_end": 310,
+          "pdf_page_start": 308,
+          "pdf_page_end": 318,
+          "checklist_items": [
+            {
+              "id": "tn10_sci_u21_l1_theory_and_concepts_item_1_concept_reading",
+              "lesson_id": "tn10_sci_u21_l1_theory_and_concepts",
+              "order_index": 1,
+              "item_type": "source_activity",
+              "section_name": "Core Concepts",
+              "label": "Read & Understand Core Concepts: Health and Diseases",
+              "description": "Study the foundational principles, definitions, laws, and chemical/biological mechanisms of Health and Diseases.",
+              "printed_page": 300,
+              "pdf_page": 308,
+              "source_reference": "Textbook pp. 300–310 (PDF pp. 308–318)",
+              "is_required": true
+            },
+            {
+              "id": "tn10_sci_u21_l1_theory_and_concepts_item_2_activities_and_examples",
+              "lesson_id": "tn10_sci_u21_l1_theory_and_concepts",
+              "order_index": 2,
+              "item_type": "source_activity",
+              "section_name": "In-text Activities & Examples",
+              "label": "In-text Activities, Key Diagrams & Solved Examples",
+              "description": "Review labeled scientific diagrams, in-text lab activities, and solved numerical problems for Health and Diseases.",
+              "printed_page": 301,
+              "pdf_page": 309,
+              "source_reference": "Textbook pp. 300–310 (PDF pp. 308–318)",
+              "is_required": true
+            }
+          ]
+        },
+        {
+          "id": "tn10_sci_u21_l2_textbook_evaluation",
+          "unit_id": "tn10_sci_u21",
+          "unit_number": 21,
+          "lesson_number": 2,
+          "lesson_type": "exercise",
+          "title": "Health and Diseases: Textbook Evaluation & Assessment",
+          "author": "Tamil Nadu State Board (Biology)",
+          "is_memoriter": false,
+          "printed_page_start": 311,
+          "printed_page_end": 314,
+          "pdf_page_start": 319,
+          "pdf_page_end": 322,
+          "checklist_items": [
+            {
+              "id": "tn10_sci_u21_l2_textbook_evaluation_item_1_objective_questions",
+              "lesson_id": "tn10_sci_u21_l2_textbook_evaluation",
+              "order_index": 1,
+              "item_type": "source_activity",
+              "section_name": "Objective Evaluation (Parts I–V)",
+              "label": "Parts I–V: MCQs, Fill in Blanks, True/False, Match & Assertion-Reason",
+              "description": "Complete all 1-mark objective questions, fill in the blanks, true/false corrections, match items, and assertion-reason questions for Unit 21.",
+              "printed_page": 311,
+              "pdf_page": 319,
+              "source_reference": "Textbook p. 311 (PDF p. 319)",
+              "is_required": true
+            },
+            {
+              "id": "tn10_sci_u21_l2_textbook_evaluation_item_2_short_answers",
+              "lesson_id": "tn10_sci_u21_l2_textbook_evaluation",
+              "order_index": 2,
+              "item_type": "source_activity",
+              "section_name": "Short Answers (Part VI)",
+              "label": "Part VI: Short Answer Questions (2-Mark Questions)",
+              "description": "Answer all concise scientific reasoning and short conceptual questions for Unit 21.",
+              "printed_page": 312,
+              "pdf_page": 320,
+              "source_reference": "Textbook pp. 311–314 (PDF pp. 319–322)",
+              "is_required": true
+            },
+            {
+              "id": "tn10_sci_u21_l2_textbook_evaluation_item_3_detailed_answers",
+              "lesson_id": "tn10_sci_u21_l2_textbook_evaluation",
+              "order_index": 3,
+              "item_type": "source_activity",
+              "section_name": "Detailed Answers & HOTS (Parts VII–IX)",
+              "label": "Parts VII–IX: Detailed Answers, Numericals & HOT Questions (4 & 7 Marks)",
+              "description": "Write comprehensive paragraph answers, solve numerical problems, and analyze Higher Order Thinking Skills (HOTS) questions for Unit 21.",
+              "printed_page": 314,
+              "pdf_page": 322,
+              "source_reference": "Textbook pp. 311–314 (PDF pp. 319–322)",
+              "is_required": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tn10_sci_u22",
+      "unit_number": 22,
+      "title": "Unit 22: Environmental Management",
+      "theme": "Biology: Forest/Wildlife Conservation, Water Harvesting, Renewable Energy & Waste Management",
+      "lessons": [
+        {
+          "id": "tn10_sci_u22_l1_theory_and_concepts",
+          "unit_id": "tn10_sci_u22",
+          "unit_number": 22,
+          "lesson_number": 1,
+          "lesson_type": "theory",
+          "title": "Environmental Management: Core Concepts & Theory",
+          "author": "Tamil Nadu State Board (Biology)",
+          "is_memoriter": false,
+          "printed_page_start": 315,
+          "printed_page_end": 325,
+          "pdf_page_start": 323,
+          "pdf_page_end": 333,
+          "checklist_items": [
+            {
+              "id": "tn10_sci_u22_l1_theory_and_concepts_item_1_concept_reading",
+              "lesson_id": "tn10_sci_u22_l1_theory_and_concepts",
+              "order_index": 1,
+              "item_type": "source_activity",
+              "section_name": "Core Concepts",
+              "label": "Read & Understand Core Concepts: Environmental Management",
+              "description": "Study the foundational principles, definitions, laws, and chemical/biological mechanisms of Environmental Management.",
+              "printed_page": 315,
+              "pdf_page": 323,
+              "source_reference": "Textbook pp. 315–325 (PDF pp. 323–333)",
+              "is_required": true
+            },
+            {
+              "id": "tn10_sci_u22_l1_theory_and_concepts_item_2_activities_and_examples",
+              "lesson_id": "tn10_sci_u22_l1_theory_and_concepts",
+              "order_index": 2,
+              "item_type": "source_activity",
+              "section_name": "In-text Activities & Examples",
+              "label": "In-text Activities, Key Diagrams & Solved Examples",
+              "description": "Review labeled scientific diagrams, in-text lab activities, and solved numerical problems for Environmental Management.",
+              "printed_page": 316,
+              "pdf_page": 324,
+              "source_reference": "Textbook pp. 315–325 (PDF pp. 323–333)",
+              "is_required": true
+            }
+          ]
+        },
+        {
+          "id": "tn10_sci_u22_l2_textbook_evaluation",
+          "unit_id": "tn10_sci_u22",
+          "unit_number": 22,
+          "lesson_number": 2,
+          "lesson_type": "exercise",
+          "title": "Environmental Management: Textbook Evaluation & Assessment",
+          "author": "Tamil Nadu State Board (Biology)",
+          "is_memoriter": false,
+          "printed_page_start": 326,
+          "printed_page_end": 328,
+          "pdf_page_start": 334,
+          "pdf_page_end": 336,
+          "checklist_items": [
+            {
+              "id": "tn10_sci_u22_l2_textbook_evaluation_item_1_objective_questions",
+              "lesson_id": "tn10_sci_u22_l2_textbook_evaluation",
+              "order_index": 1,
+              "item_type": "source_activity",
+              "section_name": "Objective Evaluation (Parts I–V)",
+              "label": "Parts I–V: MCQs, Fill in Blanks, True/False, Match & Assertion-Reason",
+              "description": "Complete all 1-mark objective questions, fill in the blanks, true/false corrections, match items, and assertion-reason questions for Unit 22.",
+              "printed_page": 326,
+              "pdf_page": 334,
+              "source_reference": "Textbook p. 326 (PDF p. 334)",
+              "is_required": true
+            },
+            {
+              "id": "tn10_sci_u22_l2_textbook_evaluation_item_2_short_answers",
+              "lesson_id": "tn10_sci_u22_l2_textbook_evaluation",
+              "order_index": 2,
+              "item_type": "source_activity",
+              "section_name": "Short Answers (Part VI)",
+              "label": "Part VI: Short Answer Questions (2-Mark Questions)",
+              "description": "Answer all concise scientific reasoning and short conceptual questions for Unit 22.",
+              "printed_page": 327,
+              "pdf_page": 335,
+              "source_reference": "Textbook pp. 326–328 (PDF pp. 334–336)",
+              "is_required": true
+            },
+            {
+              "id": "tn10_sci_u22_l2_textbook_evaluation_item_3_detailed_answers",
+              "lesson_id": "tn10_sci_u22_l2_textbook_evaluation",
+              "order_index": 3,
+              "item_type": "source_activity",
+              "section_name": "Detailed Answers & HOTS (Parts VII–IX)",
+              "label": "Parts VII–IX: Detailed Answers, Numericals & HOT Questions (4 & 7 Marks)",
+              "description": "Write comprehensive paragraph answers, solve numerical problems, and analyze Higher Order Thinking Skills (HOTS) questions for Unit 22.",
+              "printed_page": 328,
+              "pdf_page": 336,
+              "source_reference": "Textbook pp. 326–328 (PDF pp. 334–336)",
+              "is_required": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tn10_sci_u23",
+      "unit_number": 23,
+      "title": "Unit 23: Visual Communication",
+      "theme": "Computer Science: Scratch Software, Animation, Scripting & Graphic Tools",
+      "lessons": [
+        {
+          "id": "tn10_sci_u23_l1_theory_and_concepts",
+          "unit_id": "tn10_sci_u23",
+          "unit_number": 23,
+          "lesson_number": 1,
+          "lesson_type": "theory",
+          "title": "Visual Communication: Core Concepts & Theory",
+          "author": "Tamil Nadu State Board (Computer Science)",
+          "is_memoriter": false,
+          "printed_page_start": 329,
+          "printed_page_end": 332,
+          "pdf_page_start": 337,
+          "pdf_page_end": 340,
+          "checklist_items": [
+            {
+              "id": "tn10_sci_u23_l1_theory_and_concepts_item_1_concept_reading",
+              "lesson_id": "tn10_sci_u23_l1_theory_and_concepts",
+              "order_index": 1,
+              "item_type": "source_activity",
+              "section_name": "Core Concepts",
+              "label": "Read & Understand Core Concepts: Visual Communication",
+              "description": "Study the foundational principles, definitions, laws, and chemical/biological mechanisms of Visual Communication.",
+              "printed_page": 329,
+              "pdf_page": 337,
+              "source_reference": "Textbook pp. 329–332 (PDF pp. 337–340)",
+              "is_required": true
+            },
+            {
+              "id": "tn10_sci_u23_l1_theory_and_concepts_item_2_activities_and_examples",
+              "lesson_id": "tn10_sci_u23_l1_theory_and_concepts",
+              "order_index": 2,
+              "item_type": "source_activity",
+              "section_name": "In-text Activities & Examples",
+              "label": "In-text Activities, Key Diagrams & Solved Examples",
+              "description": "Review labeled scientific diagrams, in-text lab activities, and solved numerical problems for Visual Communication.",
+              "printed_page": 330,
+              "pdf_page": 338,
+              "source_reference": "Textbook pp. 329–332 (PDF pp. 337–340)",
+              "is_required": true
+            }
+          ]
+        },
+        {
+          "id": "tn10_sci_u23_l2_textbook_evaluation",
+          "unit_id": "tn10_sci_u23",
+          "unit_number": 23,
+          "lesson_number": 2,
+          "lesson_type": "exercise",
+          "title": "Visual Communication: Textbook Evaluation & Assessment",
+          "author": "Tamil Nadu State Board (Computer Science)",
+          "is_memoriter": false,
+          "printed_page_start": 333,
+          "printed_page_end": 333,
+          "pdf_page_start": 341,
+          "pdf_page_end": 341,
+          "checklist_items": [
+            {
+              "id": "tn10_sci_u23_l2_textbook_evaluation_item_1_objective_questions",
+              "lesson_id": "tn10_sci_u23_l2_textbook_evaluation",
+              "order_index": 1,
+              "item_type": "source_activity",
+              "section_name": "Objective Evaluation (Parts I–V)",
+              "label": "Parts I–V: MCQs, Fill in Blanks, True/False, Match & Assertion-Reason",
+              "description": "Complete all 1-mark objective questions, fill in the blanks, true/false corrections, match items, and assertion-reason questions for Unit 23.",
+              "printed_page": 333,
+              "pdf_page": 341,
+              "source_reference": "Textbook p. 333 (PDF p. 341)",
+              "is_required": true
+            },
+            {
+              "id": "tn10_sci_u23_l2_textbook_evaluation_item_2_short_answers",
+              "lesson_id": "tn10_sci_u23_l2_textbook_evaluation",
+              "order_index": 2,
+              "item_type": "source_activity",
+              "section_name": "Short Answers (Part VI)",
+              "label": "Part VI: Short Answer Questions (2-Mark Questions)",
+              "description": "Answer all concise scientific reasoning and short conceptual questions for Unit 23.",
+              "printed_page": 333,
+              "pdf_page": 341,
+              "source_reference": "Textbook pp. 333–333 (PDF pp. 341–341)",
+              "is_required": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tn10_sci_practicals",
+      "unit_number": 24,
+      "title": "Science Practicals & Laboratory Experiments",
+      "theme": "Physics, Chemistry & Biology Laboratory Experiments for Public Practical Exam",
+      "lessons": [
+        {
+          "id": "tn10_sci_practicals_l1_physics_chemistry",
+          "unit_id": "tn10_sci_practicals",
+          "unit_number": 24,
+          "lesson_number": 1,
+          "lesson_type": "practical",
+          "title": "Physics & Chemistry Practicals",
+          "author": "Tamil Nadu State Board (Laboratory Manual)",
+          "is_memoriter": false,
+          "printed_page_start": 334,
+          "printed_page_end": 341,
+          "pdf_page_start": 342,
+          "pdf_page_end": 349,
+          "checklist_items": [
+            {
+              "id": "tn10_sci_prac_item_physics",
+              "lesson_id": "tn10_sci_practicals_l1_physics_chemistry",
+              "order_index": 1,
+              "item_type": "source_activity",
+              "section_name": "Physics Practicals",
+              "label": "Physics Experiments: Principle of Moments, Convex Lens & Ohm's Law",
+              "description": "Perform determination of weight using principle of moments, focal length of convex lens, and resistance verification of Ohm's law.",
+              "printed_page": 335,
+              "pdf_page": 343,
+              "source_reference": "Textbook pp. 335–338 (PDF pp. 343–346)",
+              "is_required": true
+            },
+            {
+              "id": "tn10_sci_prac_item_chemistry",
+              "lesson_id": "tn10_sci_practicals_l1_physics_chemistry",
+              "order_index": 2,
+              "item_type": "source_activity",
+              "section_name": "Chemistry Practicals",
+              "label": "Chemistry Experiments: Exothermic/Endothermic Dissolution & Water of Hydration",
+              "description": "Test dissolution of salts (exothermic vs endothermic), water of crystallization in copper sulphate, and testing pH of solutions.",
+              "printed_page": 339,
+              "pdf_page": 347,
+              "source_reference": "Textbook pp. 339–341 (PDF pp. 347–349)",
+              "is_required": true
+            }
+          ]
+        },
+        {
+          "id": "tn10_sci_practicals_l2_biology",
+          "unit_id": "tn10_sci_practicals",
+          "unit_number": 24,
+          "lesson_number": 2,
+          "lesson_type": "practical",
+          "title": "Biology Practicals",
+          "author": "Tamil Nadu State Board (Laboratory Manual)",
+          "is_memoriter": false,
+          "printed_page_start": 342,
+          "printed_page_end": 349,
+          "pdf_page_start": 350,
+          "pdf_page_end": 357,
+          "checklist_items": [
+            {
+              "id": "tn10_sci_prac_item_photosynthesis",
+              "lesson_id": "tn10_sci_practicals_l2_biology",
+              "order_index": 1,
+              "item_type": "source_activity",
+              "section_name": "Botany Practicals",
+              "label": "Biology Experiment: Oxygen Evolution in Photosynthesis (Hydrilla Funnel)",
+              "description": "Prove that oxygen is released during photosynthesis using Hydrilla plant and test-tube funnel setup.",
+              "printed_page": 342,
+              "pdf_page": 350,
+              "source_reference": "Textbook p. 342 (PDF p. 350)",
+              "is_required": true
+            },
+            {
+              "id": "tn10_sci_prac_item_anatomy_slides",
+              "lesson_id": "tn10_sci_practicals_l2_biology",
+              "order_index": 2,
+              "item_type": "source_activity",
+              "section_name": "Zoology/Anatomy Slides",
+              "label": "Biology Identification: Blood Cells, Dicot Stem & Mammalian Heart",
+              "description": "Identify and draw permanent slides of human blood cells, transverse section of dicot stem, and structure of heart.",
+              "printed_page": 345,
+              "pdf_page": 353,
+              "source_reference": "Textbook pp. 345–349 (PDF pp. 353–357)",
+              "is_required": true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "total_units": 24,
+    "total_lessons": 48,
+    "total_checklist_items": 118,
+    "source_pdf": "Class_10_Science_English_2024_Edition.pdf",
+    "verified": true
+  }
+}

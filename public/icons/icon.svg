@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#1e293b" />
+    </linearGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fde047" />
+      <stop offset="100%" stop-color="#ca8a04" />
+    </linearGradient>
+    <linearGradient id="emerald" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#34d399" />
+      <stop offset="100%" stop-color="#059669" />
+    </linearGradient>
+    <linearGradient id="blue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#60a5fa" />
+      <stop offset="100%" stop-color="#2563eb" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background with rounded corners -->
+  <rect width="512" height="512" rx="108" fill="url(#bg)" />
+
+  <!-- Outer subtle glowing border -->
+  <rect x="8" y="8" width="496" height="496" rx="100" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="4" />
+
+  <!-- Central Symbol: Open Textbook & Checklist Star -->
+  <g transform="translate(64, 70)">
+    <!-- Open Book Pages Left and Right -->
+    <path d="M 192 140 C 130 115 50 120 16 135 L 16 320 C 50 305 130 300 192 328 Z" fill="#ffffff" opacity="0.95" />
+    <path d="M 192 140 C 254 115 334 120 368 135 L 368 320 C 334 305 254 300 192 328 Z" fill="#f1f5f9" />
+    
+    <!-- Spine -->
+    <path d="M 188 138 Q 192 135 196 138 L 196 332 Q 192 328 188 332 Z" fill="url(#blue)" />
+
+    <!-- Textbook Bookmark Ribbon -->
+    <path d="M 182 135 L 182 250 L 192 238 L 202 250 L 202 135 Z" fill="url(#gold)" />
+
+    <!-- Checklist Item Lines on Left Page -->
+    <rect x="52" y="168" width="100" height="8" rx="4" fill="#cbd5e1" />
+    <rect x="52" y="196" width="90" height="8" rx="4" fill="#cbd5e1" />
+    <rect x="52" y="224" width="105" height="8" rx="4" fill="#cbd5e1" />
+    <rect x="52" y="252" width="70" height="8" rx="4" fill="#cbd5e1" />
+
+    <!-- Checklist Item Lines on Right Page -->
+    <rect x="232" y="168" width="100" height="8" rx="4" fill="#cbd5e1" />
+    <rect x="232" y="196" width="85" height="8" rx="4" fill="#cbd5e1" />
+    <rect x="232" y="224" width="105" height="8" rx="4" fill="#cbd5e1" />
+    <rect x="232" y="252" width="65" height="8" rx="4" fill="#cbd5e1" />
+
+    <!-- Graduation Cap / Scholar Icon on top -->
+    <path d="M 192 30 L 320 80 L 192 125 L 64 80 Z" fill="url(#blue)" />
+    <polygon points="192,42 300,82 192,115 84,82" fill="#3b82f6" opacity="0.6" />
+    <!-- Cap tassel -->
+    <path d="M 300 80 L 325 110 L 325 150" fill="none" stroke="url(#gold)" stroke-width="4" stroke-linecap="round" />
+    <circle cx="325" cy="154" r="7" fill="url(#gold)" />
+
+    <!-- Floating Badge: Green Checkmark Disc -->
+    <circle cx="295" cy="275" r="54" fill="url(#emerald)" filter="drop-shadow(0px 8px 16px rgba(0,0,0,0.35))" />
+    <circle cx="295" cy="275" r="50" fill="none" stroke="#ffffff" stroke-width="3" opacity="0.7" />
+    <!-- Checkmark path -->
+    <path d="M 276 274 L 289 288 L 316 260" fill="none" stroke="#ffffff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+  </g>
+
+  <!-- Bottom Badge: TN 10 Text -->
+  <rect x="186" y="420" width="140" height="38" rx="19" fill="rgba(255,255,255,0.12)" />
+  <text x="256" y="445" fill="#f8fafc" font-size="20" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="700" text-anchor="middle" letter-spacing="3">TN CLASS 10</text>
+</svg>

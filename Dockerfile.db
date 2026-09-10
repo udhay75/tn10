@@ -1,0 +1,9 @@
+FROM postgres:16-alpine
+
+# Copy all migration scripts directly into entrypoint directory
+COPY supabase/migrations/000_auth_compatibility.sql /docker-entrypoint-initdb.d/00_auth.sql
+COPY supabase/migrations/001_initial_schema.sql /docker-entrypoint-initdb.d/01_schema.sql
+COPY supabase/migrations/002_row_level_security.sql /docker-entrypoint-initdb.d/02_rls.sql
+COPY supabase/migrations/003_seed_english_2024.sql /docker-entrypoint-initdb.d/03_seed.sql
+
+EXPOSE 5432

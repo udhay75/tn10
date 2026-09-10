@@ -1,0 +1,95 @@
+{
+  "id": "/?source=pwa",
+  "name": "TN Class 10 Study Tracker & Checklist",
+  "short_name": "TN10 Study",
+  "description": "Ultra-modern Progressive Web App for Tamil Nadu State Board Class 10 students with 100% offline study, curriculum checklist, and revision sprints.",
+  "start_url": "/dashboard?source=pwa",
+  "scope": "/",
+  "display": "standalone",
+  "display_override": [
+    "window-controls-overlay",
+    "standalone",
+    "minimal-ui"
+  ],
+  "orientation": "portrait-primary",
+  "background_color": "#ffffff",
+  "theme_color": "#0f172a",
+  "lang": "en-IN",
+  "dir": "ltr",
+  "categories": [
+    "education",
+    "productivity",
+    "utilities"
+  ],
+  "prefer_related_applications": false,
+  "icons": [
+    {
+      "src": "/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/maskable-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Tamil (தமிழ் 2025)",
+      "short_name": "Tamil",
+      "description": "Class 10 Tamil 2025 Edition Curriculum & Memoriter Poems",
+      "url": "/dashboard?subject=class_10_tamil",
+      "icons": [{ "src": "/icons/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "English (2024)",
+      "short_name": "English",
+      "description": "Class 10 English 2024 Reprint Edition",
+      "url": "/dashboard?subject=class_10_english",
+      "icons": [{ "src": "/icons/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Mathematics (2025)",
+      "short_name": "Maths",
+      "description": "Class 10 Mathematics 2025 Revised Edition",
+      "url": "/dashboard?subject=class_10_math",
+      "icons": [{ "src": "/icons/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Science (2024)",
+      "short_name": "Science",
+      "description": "Class 10 Science 2024 Reprint Edition",
+      "url": "/dashboard?subject=class_10_science",
+      "icons": [{ "src": "/icons/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Social Science (2025)",
+      "short_name": "Social",
+      "description": "Class 10 Social Science 2025 Revised Edition",
+      "url": "/dashboard?subject=class_10_social_science",
+      "icons": [{ "src": "/icons/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Revision Sprint",
+      "short_name": "Revision",
+      "description": "Access your exam revision queue and review items",
+      "url": "/revision",
+      "icons": [{ "src": "/icons/icon-192.png", "sizes": "192x192" }]
+    }
+  ]
+}
