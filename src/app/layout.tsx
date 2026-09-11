@@ -5,6 +5,7 @@ import { I18nProvider } from "@/lib/i18n/i18n-context";
 import { StudyProvider } from "@/lib/store/study-context";
 import { Header } from "@/components/layout/Header";
 import { Navigation } from "@/components/layout/Navigation";
+import { SidenavDrawer } from "@/components/layout/SidenavDrawer";
 import { AuthGuard } from "@/components/auth/AuthGuard";
 import { PwaInstallPrompt } from "@/components/pwa/PwaInstallPrompt";
 import { PwaNetworkBanner } from "@/components/pwa/PwaNetworkBanner";
@@ -53,6 +54,7 @@ export default function RootLayout({
                 <div className="min-h-screen flex flex-col">
                   <PwaNetworkBanner />
                   <Header />
+                  <SidenavDrawer />
                   <Navigation />
                   <main className="flex-1 max-w-7xl w-full mx-auto px-3 sm:px-6 lg:px-8 py-4 sm:py-6">
                     {children}

@@ -18,9 +18,13 @@ import {
   CheckCircle,
   GraduationCap,
   Flame,
-  Layers
+  Layers,
+  Zap,
+  RotateCcw,
+  Compass
 } from 'lucide-react';
 import { useStudy } from '@/lib/store/study-context';
+import { useAuth } from '@/lib/auth/auth-context';
 import { useI18n } from '@/lib/i18n/i18n-context';
 import { triggerHaptic } from '@/lib/utils/haptics';
 
@@ -90,6 +94,7 @@ export default function DashboardPage() {
     getUnitProgress, 
     isLoading 
   } = useStudy();
+  const { user } = useAuth();
   const { t, lang } = useI18n();
 
   if (isLoading) {
@@ -147,42 +152,57 @@ export default function DashboardPage() {
 
   return (
     <div className="space-y-8 animate-in fade-in duration-300">
-      {/* 1. Hero Bento Banner: Dynamic Welcome & Quick Study Action */}
-      <div className="relative overflow-hidden rounded-3xl border border-white/[0.08] bg-gradient-to-br from-slate-900/90 via-slate-950 to-[#070b14] p-6 sm:p-8 shadow-2xl backdrop-blur-xl">
+      {/* 1. Affan Hero Welcome Banner */}
+      <div className="relative overflow-hidden rounded-3xl border border-white/[0.1] bg-gradient-to-br from-blue-950/60 via-slate-950 to-[#050814] p-6 sm:p-8 shadow-2xl backdrop-blur-xl">
         {/* Subtle decorative radial light orbs */}
-        <div className="absolute top-0 right-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute top-0 right-1/4 w-96 h-96 bg-blue-500/15 rounded-full blur-3xl pointer-events-none" />
         <div className="absolute bottom-0 right-0 w-80 h-80 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none" />
 
         <div className="relative z-10 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
           <div className="max-w-2xl">
             {/* Board Badge & Active Subject Pill */}
             <div className="flex flex-wrap items-center gap-2 mb-3">
-              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-500/10 text-blue-300 border border-blue-500/25 text-xs font-semibold">
-                <GraduationCap className="w-3.5 h-3.5" />
-                <span>Tamil Nadu State Board Class 10</span>
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-500/15 text-blue-300 border border-blue-500/30 text-xs font-bold">
+                <GraduationCap className="w-3.5 h-3.5 text-blue-400" />
+                <span>TN Board Class 10 SSLC</span>
               </div>
-              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-500/10 text-amber-300 border border-amber-500/25 text-xs font-semibold">
-                <Flame className="w-3.5 h-3.5" />
-                <span>5-Subject Unified Tracker</span>
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-400/15 text-amber-300 border border-amber-400/30 text-xs font-bold">
+                <Flame className="w-3.5 h-3.5 text-amber-400" />
+                <span>2025/2026 Edition</span>
               </div>
             </div>
 
             <h1 className="text-2xl sm:text-4xl font-black text-white tracking-tight leading-tight">
-              {t.dashboard.title}
+              {lang === 'ta' 
+                ? `வணக்கம், ${user?.display_name || 'மாணவரே'}! 👋` 
+                : `Welcome back, ${user?.display_name || 'Learner'}! 👋`}
             </h1>
-            <p className="text-sm sm:text-base text-slate-300 mt-2 leading-relaxed max-w-2xl font-normal">
-              {t.dashboard.subtitle}
+            <p className="text-xs sm:text-sm text-slate-300 mt-2 leading-relaxed max-w-xl font-normal">
+              {lang === 'ta'
+                ? 'உங்கள் 10-ஆம் வகுப்பு பொதுத்தேர்வு பாடத்திட்ட பட்டியல், கற்றல் நிலை மற்றும் தினசரி மீள்பார்வை கண்காணிப்பகம்.'
+                : 'Your comprehensive Tamil Nadu Board exam syllabus tracker, self-assessment checklist, and spaced revision engine.'}
             </p>
 
-            {/* Quick Study Action Buttons */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 mt-5">
-              {lastStudiedLesson && (
+            {/* Quick Study Action Buttons (Affan Amber Accent) */}
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 mt-5">
+              {lastStudiedLesson ? (
                 <Link
                   href={`/lesson/${lastStudiedLesson.id}`}
                   onClick={() => triggerHaptic('light')}
-                  className="inline-flex items-center justify-between sm:justify-start gap-2 px-4 py-3 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white text-xs sm:text-sm font-bold shadow-lg shadow-blue-600/25 transition-all duration-200 active:scale-95 cursor-pointer"
+                  className="inline-flex items-center justify-between sm:justify-start gap-2.5 px-5 py-3 rounded-2xl bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 text-slate-950 font-black text-xs sm:text-sm shadow-lg shadow-amber-500/20 transition-all duration-200 active:scale-95 cursor-pointer"
                 >
-                  <span className="truncate">Continue: <strong>{lastStudiedLesson.title}</strong></span>
+                  <Zap className="w-4 h-4 fill-slate-950" />
+                  <span className="truncate">Resume: <strong>{lastStudiedLesson.title}</strong></span>
+                  <ArrowRight className="w-4 h-4 shrink-0" />
+                </Link>
+              ) : (
+                <Link
+                  href="/curriculum"
+                  onClick={() => triggerHaptic('light')}
+                  className="inline-flex items-center justify-between sm:justify-start gap-2.5 px-5 py-3 rounded-2xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-bold text-xs sm:text-sm shadow-lg shadow-blue-600/25 transition-all duration-200 active:scale-95 cursor-pointer"
+                >
+                  <Compass className="w-4 h-4" />
+                  <span>Start Learning Syllabus</span>
                   <ArrowRight className="w-4 h-4 shrink-0" />
                 </Link>
               )}
@@ -191,9 +211,9 @@ export default function DashboardPage() {
                 <Link
                   href="/revision"
                   onClick={() => triggerHaptic('light')}
-                  className="inline-flex items-center justify-between sm:justify-start gap-2 px-4 py-3 rounded-xl bg-indigo-500/15 hover:bg-indigo-500/25 text-indigo-300 border border-indigo-500/30 text-xs sm:text-sm font-bold transition-all duration-200 active:scale-95 cursor-pointer"
+                  className="inline-flex items-center justify-between sm:justify-start gap-2 px-4 py-3 rounded-2xl bg-indigo-500/15 hover:bg-indigo-500/25 text-indigo-300 border border-indigo-500/30 text-xs sm:text-sm font-bold transition-all duration-200 active:scale-95 cursor-pointer"
                 >
-                  <span className="flex items-center gap-1.5">
+                  <span className="flex items-center gap-2">
                     <Bookmark className="w-4 h-4 text-indigo-400 fill-indigo-400/40" />
                     <span>{overallStats.studyAgainCount} {t.dashboard.studyAgainBtn}</span>
                   </span>
@@ -201,33 +221,13 @@ export default function DashboardPage() {
                 </Link>
               )}
             </div>
-
-            {/* Mobile Overall Progress Bar */}
-            <div className="flex lg:hidden items-center justify-between p-3.5 rounded-2xl bg-slate-950/80 border border-white/[0.08] mt-4">
-              <div className="flex items-center gap-3">
-                <CircularProgress 
-                  percentage={overallStats.percentage} 
-                  size={46} 
-                  strokeWidth={4.5} 
-                  colorClass="text-emerald-400" 
-                />
-                <div>
-                  <span className="text-xs font-bold text-white block">
-                    Overall: {overallStats.percentage}% Completed
-                  </span>
-                  <span className="text-[11px] text-slate-400">
-                    {overallStats.completed} of {overallStats.total} items done across 5 subjects
-                  </span>
-                </div>
-              </div>
-            </div>
           </div>
 
           {/* Hero Overall Progress Ring Capsule (Desktop) */}
           <div className="hidden lg:flex flex-col items-center justify-center p-6 rounded-3xl bg-slate-950/70 border border-white/[0.08] shrink-0 shadow-2xl backdrop-blur-md">
             <CircularProgress 
               percentage={overallStats.percentage} 
-              size={84} 
+              size={88} 
               strokeWidth={7} 
               colorClass="text-emerald-400" 
               label="Overall"
@@ -239,6 +239,100 @@ export default function DashboardPage() {
               5 Subjects Unified
             </span>
           </div>
+        </div>
+      </div>
+
+      {/* 2. Affan Feature Quick Stats Grid (4 Columns) */}
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
+        {/* Card 1: Syllabus Progress */}
+        <div className="feature-card bg-slate-900/85 border border-white/[0.08] rounded-2xl p-4 shadow-sm flex items-center justify-between">
+          <div>
+            <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wide block">Overall Progress</span>
+            <span className="text-2xl font-black text-emerald-400 mt-1 block">{overallStats.percentage}%</span>
+            <span className="text-[10px] text-slate-500">{overallStats.completed} / {overallStats.total} items done</span>
+          </div>
+          <CircularProgress 
+            percentage={overallStats.percentage} 
+            size={42} 
+            strokeWidth={4} 
+            colorClass="text-emerald-400"
+            showText={false}
+          />
+        </div>
+
+        {/* Card 2: Completed Checklist Activities */}
+        <div className="feature-card bg-slate-900/85 border border-white/[0.08] rounded-2xl p-4 shadow-sm flex items-center justify-between">
+          <div>
+            <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wide block">Activities Done</span>
+            <span className="text-2xl font-black text-blue-400 mt-1 block">{overallStats.completed}</span>
+            <span className="text-[10px] text-slate-500">of {overallStats.total} textbook exercises</span>
+          </div>
+          <div className="w-10 h-10 rounded-2xl bg-blue-500/10 text-blue-400 border border-blue-500/20 flex items-center justify-center shrink-0">
+            <CheckCircle2 className="w-5 h-5" />
+          </div>
+        </div>
+
+        {/* Card 3: Revisions Due */}
+        <div className="feature-card bg-slate-900/85 border border-white/[0.08] rounded-2xl p-4 shadow-sm flex items-center justify-between">
+          <div>
+            <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wide block">Spaced Revision</span>
+            <span className="text-2xl font-black text-amber-400 mt-1 block">{overallStats.studyAgainCount}</span>
+            <span className="text-[10px] text-slate-500">{overallStats.studyAgainCount > 0 ? 'Review due today' : 'Up to date'}</span>
+          </div>
+          <div className="w-10 h-10 rounded-2xl bg-amber-500/10 text-amber-400 border border-amber-500/20 flex items-center justify-center shrink-0">
+            <Bookmark className="w-5 h-5" />
+          </div>
+        </div>
+
+        {/* Card 4: 5 Board Subjects */}
+        <div className="feature-card bg-slate-900/85 border border-white/[0.08] rounded-2xl p-4 shadow-sm flex items-center justify-between">
+          <div>
+            <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wide block">Board Subjects</span>
+            <span className="text-2xl font-black text-indigo-400 mt-1 block">5</span>
+            <span className="text-[10px] text-slate-500">Tamil, Eng, Mat, Sci, Soc</span>
+          </div>
+          <div className="w-10 h-10 rounded-2xl bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 flex items-center justify-center shrink-0">
+            <Layers className="w-5 h-5" />
+          </div>
+        </div>
+      </div>
+
+      {/* 3. Affan 5-Subject Quick Switcher Row */}
+      <div className="space-y-2">
+        <div className="flex items-center justify-between px-1">
+          <span className="text-xs font-bold uppercase tracking-wider text-slate-400 flex items-center gap-1.5">
+            <Sparkles className="w-3.5 h-3.5 text-blue-400" />
+            <span>Switch Board Subject (பாடங்கள்)</span>
+          </span>
+          <span className="text-[11px] text-slate-500">Tap to view subject details</span>
+        </div>
+
+        <div className="grid grid-cols-5 gap-2 sm:gap-3">
+          {availableSubjects.map((sub) => {
+            const isSelected = activeSubject === sub.code;
+            return (
+              <button
+                key={sub.code}
+                onClick={() => {
+                  triggerHaptic('selection');
+                  setActiveSubject(sub.code);
+                }}
+                className={`py-2.5 px-2 rounded-2xl border transition-all duration-200 cursor-pointer flex flex-col items-center justify-center gap-1 text-center active:scale-95 ${
+                  isSelected
+                    ? 'bg-blue-600/20 border-blue-500/80 shadow-md shadow-blue-500/20 ring-1 ring-blue-500/50'
+                    : 'bg-slate-900/60 border-white/[0.06] hover:bg-slate-800/80 text-slate-400 hover:text-white'
+                }`}
+              >
+                <span className="text-xl sm:text-2xl">{sub.icon}</span>
+                <span className={`text-[11px] sm:text-xs font-bold leading-tight truncate w-full ${isSelected ? 'text-white' : 'text-slate-300'}`}>
+                  {sub.title.split(' ')[0]}
+                </span>
+                <span className={`text-[9px] px-1 rounded font-semibold ${isSelected ? 'bg-blue-500 text-white' : 'bg-slate-800 text-slate-400'}`}>
+                  {sub.edition}
+                </span>
+              </button>
+            );
+          })}
         </div>
       </div>
 
@@ -465,6 +559,42 @@ export default function DashboardPage() {
           </div>
         </div>
       </div>
+
+      {/* Affan Spaced Revision Flash Alert (if any items due) */}
+      {overallStats.studyAgainCount > 0 && (
+        <div className="bg-gradient-to-r from-amber-500/20 via-orange-500/15 to-transparent border border-amber-500/30 rounded-3xl p-5 sm:p-6 shadow-xl flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div className="flex items-start sm:items-center gap-3.5">
+            <div className="w-12 h-12 rounded-2xl bg-amber-400 text-slate-950 flex items-center justify-center font-black shrink-0 shadow-lg shadow-amber-500/25">
+              <Bookmark className="w-6 h-6 fill-slate-950" />
+            </div>
+            <div>
+              <div className="flex items-center gap-2">
+                <span className="text-xs font-black px-2 py-0.5 rounded-full bg-amber-400 text-slate-950 uppercase tracking-wide">
+                  Revision Due Today
+                </span>
+                <span className="text-xs text-amber-300 font-bold">
+                  {overallStats.studyAgainCount} Items
+                </span>
+              </div>
+              <h3 className="text-sm sm:text-base font-bold text-white mt-1">
+                Keep your memory fresh with Spaced Repetition
+              </h3>
+              <p className="text-xs text-slate-300 mt-0.5">
+                Reviewing marked concepts within 24-48 hours drastically boosts retention for board exams.
+              </p>
+            </div>
+          </div>
+
+          <Link
+            href="/revision"
+            onClick={() => triggerHaptic('medium')}
+            className="px-5 py-3 rounded-2xl bg-amber-400 hover:bg-amber-300 text-slate-950 font-black text-xs transition shadow-lg shadow-amber-500/20 shrink-0 flex items-center justify-center gap-2 cursor-pointer active:scale-95"
+          >
+            <span>Review {overallStats.studyAgainCount} Items</span>
+            <ArrowRight className="w-4 h-4" />
+          </Link>
+        </div>
+      )}
 
       {/* 5. Chapters & Units Bento Overview */}
       <div className="space-y-4">

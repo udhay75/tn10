@@ -4,23 +4,78 @@
 
 :root {
   --foreground-rgb: 248, 250, 252;
-  --background-start-rgb: 8, 12, 20;
-  --background-end-rgb: 3, 6, 12;
+  --background-start-rgb: 7, 10, 20;
+  --background-end-rgb: 3, 6, 15;
+
+  /* Affan Design System Palette */
+  --affan-primary: #0d5afd;
+  --affan-primary-dark: #0134d4;
+  --affan-primary-light: #f0f5ff;
+  --affan-navy: #011542;
+  --affan-warning: #f1b10f;
+  --affan-warning-dark: #c18d0b;
+  --affan-success: #2ecc4a;
+  --affan-danger: #ea4c62;
+  --affan-border: rgba(255, 255, 255, 0.08);
 }
 
 body {
   color: rgb(var(--foreground-rgb));
-  background-color: #070a12;
+  background-color: #060913;
   background-image: 
-    radial-gradient(at 15% 15%, rgba(37, 99, 235, 0.08) 0px, transparent 50%),
-    radial-gradient(at 85% 20%, rgba(147, 51, 234, 0.07) 0px, transparent 50%),
-    radial-gradient(at 50% 80%, rgba(16, 185, 129, 0.05) 0px, transparent 60%);
+    radial-gradient(at 15% 15%, rgba(13, 90, 253, 0.12) 0px, transparent 50%),
+    radial-gradient(at 85% 20%, rgba(99, 102, 241, 0.10) 0px, transparent 50%),
+    radial-gradient(at 50% 85%, rgba(16, 185, 129, 0.06) 0px, transparent 60%);
   background-attachment: fixed;
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* Prevent rubber banding on standalone PWA while preserving fluid scrolling */
   overscroll-behavior-y: contain;
+}
+
+/* Affan Card Styling */
+.affan-card {
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--affan-border);
+  border-radius: 1.5rem;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3), 0 8px 10px -6px rgba(0, 0, 0, 0.2);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.affan-card:hover {
+  border-color: rgba(255, 255, 255, 0.16);
+  transform: translateY(-2px);
+}
+
+/* Affan Feature Grid Card (Icon Box) */
+.feature-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.feature-card:active {
+  transform: scale(0.96);
+}
+
+/* Affan Buttons */
+.btn-creative {
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+.btn-creative:active {
+  transform: scale(0.96);
+}
+
+.btn-warning-affan {
+  background-color: #f1b10f;
+  color: #011542;
+  font-weight: 700;
+  box-shadow: 0 4px 14px 0 rgba(241, 177, 15, 0.35);
+}
+.btn-warning-affan:hover {
+  background-color: #d99c07;
+  color: #011542;
 }
 
 /* Glassmorphism primitives */

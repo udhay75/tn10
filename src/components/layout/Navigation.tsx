@@ -58,10 +58,10 @@ export function Navigation() {
 
   return (
     <>
-      {/* Mobile Floating Bottom Dock (Touch-optimised, modern blur) */}
+      {/* Mobile Affan Footer Nav (Fixed to bottom, touch-optimized, safe-area-pb) */}
       <nav 
         aria-label="Mobile Navigation"
-        className="md:hidden fixed bottom-2 left-2 right-2 z-40 bg-slate-950/95 backdrop-blur-2xl border border-white/[0.12] rounded-2xl px-2 py-1 flex items-center justify-around shadow-2xl safe-area-pb ring-1 ring-white/[0.05]"
+        className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-slate-950/95 backdrop-blur-2xl border-t border-white/[0.1] px-2 py-1.5 flex items-center justify-around shadow-2xl safe-area-pb"
       >
         {navItems.map((item) => {
           const Icon = item.icon;
@@ -74,23 +74,23 @@ export function Navigation() {
                   try { navigator.vibrate(8); } catch {}
                 }
               }}
-              className={`relative flex flex-col items-center justify-center flex-1 min-h-[48px] py-1 px-1 rounded-xl transition-all duration-200 active:scale-95 ${
+              className={`relative flex flex-col items-center justify-center flex-1 min-h-[48px] py-1 px-1 rounded-2xl transition-all duration-200 active:scale-95 ${
                 item.active 
-                  ? 'text-blue-400 font-bold' 
+                  ? 'bg-blue-600/15 text-blue-400 font-bold border border-blue-500/25 shadow-sm' 
                   : 'text-slate-400 hover:text-slate-200'
               }`}
             >
               <div className="relative">
-                <Icon className={`w-5 h-5 ${item.active ? 'stroke-[2.5]' : 'stroke-2'}`} />
+                <Icon className={`w-5 h-5 ${item.active ? 'stroke-[2.5] text-blue-400' : 'stroke-2'}`} />
                 {item.badge !== null && item.badge !== undefined && (
-                  <span className="absolute -top-1 -right-2.5 min-w-[18px] h-[18px] px-1 bg-gradient-to-r from-amber-500 to-orange-500 text-slate-950 text-[10px] font-black rounded-full flex items-center justify-center shadow-md">
+                  <span className="absolute -top-1 -right-2.5 min-w-[17px] h-[17px] px-1 bg-amber-400 text-slate-950 text-[9px] font-black rounded-full flex items-center justify-center shadow-md">
                     {item.badge}
                   </span>
                 )}
               </div>
               <span className="text-[10px] mt-0.5 tracking-tight font-medium">{item.label}</span>
               {item.active && (
-                <span className="w-1 h-1 rounded-full bg-blue-400 mt-0.5 shadow-sm shadow-blue-400" />
+                <span className="w-1.5 h-1.5 rounded-full bg-blue-400 mt-0.5 shadow-sm shadow-blue-400" />
               )}
             </Link>
           );
@@ -100,7 +100,7 @@ export function Navigation() {
       {/* Desktop Secondary Subheader Navigation */}
       <nav 
         aria-label="Desktop Navigation"
-        className="hidden md:block bg-slate-950/40 border-b border-white/[0.06] backdrop-blur-md sticky top-16 z-30"
+        className="hidden md:block bg-slate-950/60 border-b border-white/[0.06] backdrop-blur-md sticky top-16 z-30"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center gap-2 h-12">
           {navItems.map((item) => {
@@ -111,14 +111,14 @@ export function Navigation() {
                 href={item.href}
                 className={`flex items-center gap-2 px-3.5 py-1.5 rounded-xl text-xs font-semibold transition-all duration-200 ${
                   item.active 
-                    ? 'bg-blue-600/15 text-blue-300 border border-blue-500/30 shadow-sm' 
+                    ? 'bg-blue-600 text-white shadow-md shadow-blue-600/25 font-bold' 
                     : 'text-slate-400 hover:text-slate-200 hover:bg-slate-800/40'
                 }`}
               >
                 <Icon className="w-4 h-4" />
                 <span>{item.label}</span>
                 {item.badge !== null && item.badge !== undefined && (
-                  <span className="ml-1 px-1.5 py-0.2 bg-gradient-to-r from-amber-500 to-orange-500 text-slate-950 text-[10px] font-bold rounded-full">
+                  <span className="ml-1 px-1.5 py-0.2 bg-amber-400 text-slate-950 text-[10px] font-black rounded-full">
                     {item.badge}
                   </span>
                 )}

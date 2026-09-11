@@ -16,7 +16,8 @@ import {
   ShieldCheck, 
   UserCircle,
   Database,
-  Download
+  Download,
+  Menu
 } from 'lucide-react';
 import { useAuth } from '@/lib/auth/auth-context';
 import { useStudy } from '@/lib/store/study-context';
@@ -37,6 +38,13 @@ export function Header() {
     triggerHaptic('selection');
     if (typeof window !== 'undefined') {
       window.dispatchEvent(new CustomEvent('open-pwa-install'));
+    }
+  };
+
+  const handleToggleSidenav = () => {
+    triggerHaptic('medium');
+    if (typeof window !== 'undefined') {
+      window.dispatchEvent(new CustomEvent('toggle-sidenav'));
     }
   };
 
@@ -122,14 +130,14 @@ export function Header() {
             )}
           </div>
 
-          {/* Install PWA Quick Action Button */}
+          {/* Install PWA Quick Action Button (Affan Accent) */}
           <button
             onClick={handleOpenInstall}
-            className="inline-flex items-center gap-1 px-2.5 sm:px-3 py-1.5 rounded-xl text-xs font-semibold bg-gradient-to-r from-blue-600/20 via-indigo-600/20 to-cyan-500/20 hover:from-blue-600/30 hover:to-indigo-600/30 text-blue-300 border border-blue-500/30 transition active:scale-95 cursor-pointer shadow-sm"
+            className="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-xl text-xs font-bold bg-amber-500/15 hover:bg-amber-500/25 text-amber-300 border border-amber-500/30 transition active:scale-95 cursor-pointer shadow-sm"
             title="Install Progressive Web App on your device"
             aria-label="Install App"
           >
-            <Download className="w-3.5 h-3.5 text-blue-400" />
+            <Download className="w-3.5 h-3.5 text-amber-400" />
             <span className="hidden sm:inline">Install App</span>
           </button>
 
@@ -157,6 +165,16 @@ export function Header() {
               <span>Sign In</span>
             </Link>
           )}
+
+          {/* Affan Sidenav Offcanvas Toggler */}
+          <button
+            onClick={handleToggleSidenav}
+            className="p-2 sm:p-2.5 rounded-xl bg-slate-900/90 hover:bg-slate-800 border border-white/[0.1] text-slate-300 hover:text-white transition flex items-center justify-center cursor-pointer shadow-sm active:scale-95"
+            title="Open Menu Drawer"
+            aria-label="Open Navigation Drawer"
+          >
+            <Menu className="w-4 h-4 text-blue-400" />
+          </button>
         </div>
       </div>
     </header>
